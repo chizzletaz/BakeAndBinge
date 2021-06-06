@@ -163,6 +163,10 @@ This page is admin only and has and option to add a new category. There is a can
 
 **The edit category page:** *(*edit_category.html - route: /edit_category)*  
 This page is admin only and has and option to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
+
+Below is a chart of the webpages and their mutual connections:
+![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/Recipe_pages.png)
+
 ## **Skeleton Level**
 ### Wireframes
 
