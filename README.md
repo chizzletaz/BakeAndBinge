@@ -1,59 +1,255 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+#Grandma's Baking Collection
+![Preview image](#url)
 
-Welcome USER_NAME,
+One or two paragraphs providing an overview of your project.
+Essentially, this part is your sales pitch.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### A live version can be viewed [here](https://chizzletaz.github.io/GrandmasBakingCollection/)
 
-## Gitpod Reminders
+# Table of Content
+- [User Experience (UX)](#user-experience-(ux))  
+	* [Strategic level](#strategic-level)
+        * [User stories](#user-stories)
+        * [Developer stories](#developer-stories)  
+	* [Scope level](#scope-level) 
+        * [Requirements](#requirements) 
+	* [Structure level](#structure-level)
+        * [Interaction Design and Information Design](#interaction-design-and-information-design)
+        * [The pages](#the-pages)
+	* [Skeleton level](#skeleton-level)
+        * [Wireframes](#wireframes) 
+        * [Update](#update) 
+	* [Service Level](#service-level)
+        * [Colors](#colors)
+        * [Typography](#typography)
+- [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features left to implement](#features-left-to-implement)
+- [Technologies Used](#technologies-used)
+    * [Languages](#languages-used)
+    * [Frameworks and libraries](#frameworks-and-libraries-used)
+    * [Tools and Programmes](#tools-and-programmes-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+    * [Deploying to GitHub Pages](#deploying-to-github-pages)
+    * [Making a Local Clone](#making-a-local-clone)
+- [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***
+# **User Experience (UX)**
+## **Strategic level**
+Why? I always like baking and cooking. I learned a lot from my mother and grandmother (who didn’t? :)) As a tribute to my grandmother I named the site Mia’s Baking Corner. 
+The target audience are users that want to search recipes and add their own.
+I want to create a website for people to find nice recipes and give them the opportunity to add their own. 
+With this project I hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB.
 
-`python3 -m http.server`
+### **User stories:**  
+*First time users:*
+- As a first time user, I want to navigate easily across the site. —> nav bar, nav buttons.
+- As a first time user, I want to browse the recipes, so I can find inspiration for a recipe. —> home page with all recipes + browse per category.
 
-A blue button should appear to click: _Make Public_,
+*General users:*
+- As a user, I want to be able to use the website on different screen sizes. —> responsive design
+- As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search bar
+- As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. —> filter buttons or select option
+- As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe. —> sort buttons.
 
-Another blue button should appear to click: _Open Browser_.
+*Regular users:*
+- As a regular user, I want to have my own page, so I can manage my own recipes. —> register/login functionality.
+- As a regular user, I want to add my own recipes, so I can share them with others on the website. —> add recipe page + functionality
+- As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date. —> edit/delete page + functionality.
+- As a regular user, I want to contact the site owner in case I have questions or remarks. —> contact page.
+- As a regular user, I want to be able to rate other recipes. —> rating functionality
+- As a regular user, I want to be able to share recipes. —> share functionality
+- As a regular user, I want to get the latest news and updates 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### **Developer stories**
+*Admin/site owner:*
+- As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.
+- As a site owner, I want to be able to have access to all recipes and the option to manage them. —> admin functionality.
+- As a site owner, I want users to register and login, before they can add, edit or delete their recipes. —> register/login functionality.
+- As a site owner, I want to give the user a pleasant site experience, so they will come back another time.
 
-A blue button should appear to click: _Make Public_,
+## **Scope level**
+I've opted for a MVP (Minimal Viable Project) again and work my way up from there.
+Based on the user stories the minimal requirements for this project are:
 
-Another blue button should appear to click: _Open Browser_.
+### **Requirements**
+1. A navbar and good navigation buttons.
+2. A responsive design.
+3. A homepage with all the recipes.
+4. A search option to search the recipes.
+5. An option to filter by category.
+6. An option to sort by attribute (alphabetically, time, rating)
+7. An option to register and login/logout.
+8. A profile page when users log in. 
+9. An option to Create, Read, Edit and Delete (CRUD) recipes.
+10. A shop page to promote baking tools.
+11. An option for the user to contact the site’s owner.
+12. An Admin page with admin only functionality.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+**Extra requirements:** 
+1. An option to rate recipes.
+2. An option to share recipes.
+3. A tips and tricks page.
+4. An explanation how to add, edit and delete recipes.
+5. An option to delete a profile.
 
-To log into the Heroku toolbelt CLI:
+## **Structure Level**
+### **Interaction Design and Information Design**
+The overall look is kept the same on each page as much as possible, to enhances single-use-learning:
+- Header and footer are kept mostly the same on each page.
+- Buttons are styled in the same way.
+- The use of colours are kept the same on each page.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The navigation is kept simple and consistent:
+- A responsive navigation bar at the top of the page.
+- A landing page with clearly indicating the options for first time users.
+- The logo at the top of the page is also the link to the home page.
+- Buttons can be used to navigate.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+The information provided should be easily visible:
+- Visual aids are used, like icons and complementary colours.
+- The amount of information is kept to a minimum.
 
-## Updates Since The Instructional Video
+The user is given feedback, in order to enhance a pleasant user experience:
+- The user get’s a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
+- Flash messages are used to confirm actions.
+- Modal pop ups are used as defensive programming, i.e. prompting the user if they are sure of their action.
+- The user get's a feedback when an error as occurred.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### **The pages**
+**FRONTEND**  
+The website will have 13 pages. Each page will have a navbar and a footer. The navbar links are depending on whether a user is logged in or not and if the user is the admin. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+**The landing page/home page:** *(index.html - route: /, /home)*  
+The main page has a navbar with links for home, shop, recipes (dropdown menu to search by category), register, login and a search icon.
+Below that an hero image and a short explanation for the site.
+Beneath that are the latest recipes and lastly a section to subscribe to the newsletter.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**The recipes page:** *(recipes.html - route: /recipes)*  
+On this page all the recipes are shown. For large screens there are buttons to filter the recipes by category (route: /recipes/< category_name >). For smaller screens, there is a select input. 
+There is a search bar which leads to this same page with the results of the search (route: /search). 
+From there the user can go to an individual recipe page. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+**The recipe page:** *(recipe.html - route: /recipe/< recipe_id >)*  
+This is the page were individual recipes are shown. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+**The contact page:** *(contact.html - route: /contact)*  
+This page has a contact form to ask questions or give remarks.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+**The shop page:** *(shop.html - route: /shop)*  
+This page has an overview of items that the user can purchase. The links lead to an external website, which opens up in a new window.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+**The register page:** *(register.html - route: /register)*  
+This page has a register form where the user can register and create an account. After registration the user is led to their own profile page.
+The login page: (login.html - route: /login)
+This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. When the user has no account, they are redirected to the register page.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+**The profile page:** *(profile.html - route: /profile/< username >*  
+This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. There is an edit and delete button for each recipe. There is also a button to add a new recipe. When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**The add recipe page:** *(add_recipe.html - route: /add_recipe)*  
+This page has a form where the user can add new recipes. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+**The edit recipe page:** *(edit_recipe.html - route: /edit_recipe)*  
+This page has a pre-filled form where the user can edit their own recipe. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
+ 
+**The categories page:** *(categories.html - route: /categories)* 
+This is an admin only page. This page has an overview of the existing categories. The admin can add, edit or delete categories by clicking the respective buttons.
 
----
+**The add category page:** *(add_category.html - route: /add_category)* 
+This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
-Happy coding!
+**The edit category page:** *(*edit_category.html - route: /edit_category)*  
+This page is admin only and has and option to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
+## **Skeleton Level**
+### Wireframes
+
+## **Service Level**
+
+### **Colors**
+### **Typography** 
+# **Features**
+
+## **Existing Features**
+
+## **Features left to implement**
+\
+# **Technologies used**
+
+### **Languages used**  
+- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup  
+- [CSS](https://en.wikipedia.org/wiki/CSS) for styling
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript) for  interactivity
+
+### **Frameworks and libraries used**   
+- [Bootstrap v5.0](https://getbootstrap.com/)  for precoded code-snippets, like navigation bar, modals, carousel and to help with the responsiveness of the website.
+- [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
+- [Google fonts](https://fonts.google.com/) for the fonts used in the website. 
+- [Open Trivia Database](https://opentdb.com/api_config.php?ref=public-apis), an API that provides questions and answers for this project.
+- [Font Awesome](https://fontawesome.com/) for the icons used on the website.  
+
+### **Tools and Programmes used**
+- [Balsamiq](https://balsamiq.com/) for making the wireframes. 
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+ to debug and checking/testing the website.
+- [Git](https://git-scm.com/) for version control.  
+- [GitHub](https://github.com/) for storing and deploying the website.  
+- [GitPod](https://www.gitpod.io/) for coding (IDE) the website.  
+- [Visual Studio Code](https://code.visualstudio.com/) for trying out code (IDE), due to limited usage time on gitpod.
+- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
+- [JSHint](https://jshint.com/) to check the Javascript code.
+- [Favicon]( http://antifavicon.com/) to make the favicon for the website.
+
+# **Testing**
+For testing results, see [Test.md](Test.md)
+
+## **Deployment**
+
+### Deploying to GitHub pages
+To deploy this website to GitHub, I followed the these steps:
+
+1. Login to GitHub.com.
+2. Go to repositories on the left side and click on the repository named: chizzletaz/Triviata
+![repository](/assets/img/examples/github-repositories.png)
+3. In the repository click on the ‘Settings’-tab at the top.
+![Settings-tab](assets/img/examples/github-settings.png)
+4. Scroll down to ‘GitHub Pages’ section
+![GitHub Pages section](assets/img/examples/github-pages.png).
+5. Under ‘Source’ you see the word ‘None’ with a dropdown menu: select ‘master’
+![master](assets/img/examples/github-master.png).
+6. Click ‘Save’ and scroll back down to GitHub Pages. 
+Here you will find the URL of the deployed website
+![URL of the deployed website](assets/img/examples/github-url.png).
+
+Every time commits and pushes are sent to GitHub, the GitHub Pages site is updated shortly after.
+
+For more information about deploying to GitHub Pages check [here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+### Forking the GitHub Repository
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+Do achieve this follow these steps:
+1. Login to GitHub.com and follow this link to [the GitHub Repository](https://github.com/chizzletaz/Triviata).
+2. At the top right of the page, click on the fork button.
+![fork button](assets/img/examples/forking.png)
+3. You now have a copy of the repository in your GitHub account.
+
+### Making a Local Clone
+1. Follow this link to [the GitHub Repository](https://github.com/chizzletaz/Triviata)
+2. Click on the ‘Code’ button 
+![Code button](assets/img/examples/github-clone.png)
+3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon ![save icon](assets/img/examples/github-copy.png).
+4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
+5. Use  the ‘git clone’ command and add the link that you copied in step 3.
+6. A clone will be created locally.
+
+For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+# **Credits**
+### code
+### Content
+### Media
+
+# Acknowledgements
