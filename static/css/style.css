@@ -14,7 +14,7 @@
 
 /* navbar */
 .navbar {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 li {
@@ -23,9 +23,20 @@ li {
 }
 
 .navbar-brand {
+    font-family: "Noto Serif", serif;
+    font-weight: 500;
+    font-size: 24px;
     letter-spacing: 0.1rem;
 }
 
+.nav-link i {
+    font-size: 16px;
+}
+
+#search {
+    font-size: 30px;
+}
+ 
 /* navbar underline Credit: https://ianlunn.github.io/Hover/ */
 .hvr-underline-from-center {
     display: inline-block;

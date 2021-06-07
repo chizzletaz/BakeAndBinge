@@ -23,12 +23,13 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">Bake & Binge</a>
+                <a class="navbar-brand" href="{{ url_for('home') }}">BAKE & BINGE</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- navlinks on the left -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link hvr-underline-from-center" aria-current="page" href="#">Home</a>
+                            <a class="nav-link hvr-underline-from-center" 
+                            aria-current="page" href="{{ url_for('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link hvr-underline-from-center" href="#">Shop</a>
@@ -58,7 +59,7 @@
                                 Log In</a>
                         </li>
                         <li clas="nav-item">
-                            <a class="nav-link hvr-underline-from-center" href=""><i class="fas fa-search"></i></a>
+                            <a class="nav-link hvr-underline-from-center" href=""><i class="fas fa-search" id="search"></i></a>
                         </li>
                     </ul>
                 </div>
