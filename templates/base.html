@@ -7,74 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
     <title>Bake & Binge</title>
 </head>
 
-<body>
+<body class="main">
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url_for('home') }}">BAKE & BINGE</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- navlinks on the left -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link hvr-underline-from-center" 
-                            aria-current="page" href="{{ url_for('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hvr-underline-from-center" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item dropdown dropend">
-                            <a class="nav-link dropdown-toggle hvr-underline-from-center" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Recipes
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item hvr-overline-from-center" href="#">Bread</a></li>
-                                <li><a class="dropdown-item hvr-overline-from-center" href="#">Cake</a></li>
-                                <li><a class="dropdown-item hvr-overline-from-center" href="#">Cookies</a></li>
-                                <li><a class="dropdown-item hvr-overline-from-center" href="#">Muffins</a></li>
-                                <li><a class="dropdown-item hvr-overline-from-center" href="#">Pie</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- navlinks on the right -->
-                    <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link hvr-underline-from-center" href="#"><i class="fas fa-user-edit"></i>
-                                Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link hvr-underline-from-center" href="#"><i class="fas fa-sign-in-alt"></i>
-                                Log In</a>
-                        </li>
-                        <li clas="nav-item">
-                            <a class="nav-link hvr-underline-from-center" href=""><i class="fas fa-search" id="search"></i></a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="white">
+            <div class="nav-wrapper">
+                <a href="#!" class="center brand-logo black-text">Bake & Binge</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a class="black-text hvr-ufc" href="sass.html">Home</a></li>
+                    <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
+                    <li><a class="black-text dropdown-trigger hvr-ufc" href="#!" data-target="dropdown1">Recipes<i class="fas fa-sort-down"></i></a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li class="nav-item">
+                        <a class="black-text hvr-ufc" href="#"><i class="fas fa-user-edit"></i> Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                    </li>
+                    <li clas="nav-item">
+                        <a class="black-text hvr-ufc" href=""><i class="fas fa-search"></i></a>
+                    </li>
+                </ul>
             </div>
         </nav>
+    
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+            <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
+            <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
+            <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
+            <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+          </ul>
+    
+          <ul class="sidenav" id="mobile-demo">
+    
+            <a href="#!" class="center brand-logo black-text">Mia's Baking Collection</a>
+            <li class="nav-item">
+                <a class="black-text hvr-ufc" href="#"><i class="fas fa-user-edit"></i> Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            </li>
+            <li class="divider"></li>		
+            <li><a class="black-text hvr-ufc" href="sass.html">Home</a></li>
+            <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
+                      <div class="collapsible-body">
+                          <ul>
+                            <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+                            <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
+                            <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
+                            <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
+                            <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+            </li>
+            <li class="divider"></li>			
+            <li clas="nav-item">
+                <a class="black-text" href=""><i class="fas fa-search"></i></a>
+            </li>
+          </ul>
     </header>
+
     {% block content %}
 
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="static/js/script.js"></script>
 </body>
 
