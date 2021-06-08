@@ -5,29 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         type="text/css" />
+        <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
+        <!-- Own stylesheet -->
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
     <title>Bake & Binge</title>
 </head>
 
 <body class="main">
-
     <header>
+        <!-- main navbar -->
         <nav class="white">
             <div class="nav-wrapper">
-                <a href="#!" class="center brand-logo black-text">Bake & Binge</a>
+                <a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
-                    <li><a class="black-text hvr-ufc" href="sass.html">Home</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
-                    <li><a class="black-text dropdown-trigger hvr-ufc" href="#!" data-target="dropdown1">Recipes<i class="fas fa-sort-down"></i></a></li>
+                    <li><a class="black-text dropdown-trigger hvr-ufc" href="#!" data-target="dropdown1">Recipes<i
+                                class="fas fa-sort-down"></i></a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li class="nav-item">
-                        <a class="black-text hvr-ufc" href="#"><i class="fas fa-user-edit"></i> Register</a>
+                        <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i> Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
@@ -38,17 +44,16 @@
                 </ul>
             </div>
         </nav>
-    
+        <!-- dropdown menu -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
             <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
             <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
             <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
             <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
-          </ul>
-    
-          <ul class="sidenav" id="mobile-demo">
-    
+        </ul>
+        <!-- sidebar menu -->
+        <ul class="sidenav" id="mobile-demo">
             <a href="#!" class="center brand-logo black-text">Mia's Baking Collection</a>
             <li class="nav-item">
                 <a class="black-text hvr-ufc" href="#"><i class="fas fa-user-edit"></i> Register</a>
@@ -56,30 +61,30 @@
             <li class="nav-item">
                 <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
             </li>
-            <li class="divider"></li>		
+            <li class="divider"></li>
             <li><a class="black-text hvr-ufc" href="sass.html">Home</a></li>
             <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li>
-                      <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
-                      <div class="collapsible-body">
-                          <ul>
-                            <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
-                            <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
-                            <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
-                            <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
-                            <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
-                        </ul>
-                      </div>
+                        <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+                                <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
+                                <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
+                                <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
+                                <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+                            </ul>
+                        </div>
                     </li>
-                  </ul>
+                </ul>
             </li>
-            <li class="divider"></li>			
+            <li class="divider"></li>
             <li clas="nav-item">
                 <a class="black-text" href=""><i class="fas fa-search"></i></a>
             </li>
-          </ul>
+        </ul>
     </header>
 
     {% block content %}
