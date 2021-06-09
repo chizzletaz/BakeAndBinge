@@ -36,7 +36,7 @@
                         <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i> Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                        <a class="black-text hvr-ufc" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
                     </li>
                     <li clas="nav-item">
                         <a class="black-text hvr-ufc" href=""><i class="fas fa-search"></i></a>
@@ -54,15 +54,15 @@
         </ul>
         <!-- sidebar menu -->
         <ul class="sidenav" id="mobile-demo">
-            <a href="#!" class="center brand-logo black-text">Mia's Baking Collection</a>
+            <a href="{{ url_for('home') }}" class="center brand-logo black-text">Mia's Baking Collection</a>
             <li class="nav-item">
-                <a class="black-text hvr-ufc" href="#"><i class="fas fa-user-edit"></i> Register</a>
+                <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i> Register</a>
             </li>
             <li class="nav-item">
-                <a class="black-text hvr-ufc" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a class="black-text hvr-ufc" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
             </li>
             <li class="divider"></li>
-            <li><a class="black-text hvr-ufc" href="sass.html">Home</a></li>
+            <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
             <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">

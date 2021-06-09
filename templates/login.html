@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Register</h2>
+<h2>Log In</h2>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('login') }}">
       <div class="card">
         <div class="card-content">
             <!-- username -->
@@ -29,16 +29,16 @@
                         characters</span>
                 </div>
             </div>
-            <!-- register -->
+            <!-- Login -->
             <div class="row">
                 <button class="col s12 m8 offset-m2 l6 offset-l3 btn btn-large waves-effect waves-light"
-                    type="submit">Register<i class="fas fa-sign-in-alt"></i></button>
+                    type="submit">Log In<i class="fas fa-sign-in-alt"></i></button>
                 </div>
         </div>
-        <!-- login -->
+        <!-- Register -->
         <div class="card-action center-align">
-            <p>Already registered?</p>
-            <a class="btn waves-effect waves-light" href="{{ url_for('login') }}">Log in here</a>
+            <p>Not registered?</p>
+            <a class="btn waves-effect waves-light" href="{{ url_for('register') }}">Register here</a>
         </div>
       </div>
     </form>
