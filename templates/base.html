@@ -40,6 +40,7 @@
                     </li>
                     <li><a class="black-text hvr-ufc" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a class="black-text hvr-ufc" href="#">Manage Categories</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('logout') }}">Logout</a></li>
                     <li clas="nav-item">
                         <a class="black-text hvr-ufc" href=""><i class="fas fa-search"></i></a>
                     </li>
@@ -84,6 +85,7 @@
                 </ul>
             </li>
             <li class="divider"></li>
+            <li><a class="black-text hvr-ufc" href="{{ url_for('login') }}">Logout</a></li>
             <li clas="nav-item">
                 <a class="black-text" href=""><i class="fas fa-search"></i></a>
             </li>
