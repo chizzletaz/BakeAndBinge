@@ -38,6 +38,8 @@
                     <li class="nav-item">
                         <a class="black-text hvr-ufc" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
                     </li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Manage Categories</a></li>
                     <li clas="nav-item">
                         <a class="black-text hvr-ufc" href=""><i class="fas fa-search"></i></a>
                     </li>
@@ -61,6 +63,7 @@
             <li class="nav-item">
                 <a class="black-text hvr-ufc" href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
             </li>
+            <li><a class="black-text hvr-ufc" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li class="divider"></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
             <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
