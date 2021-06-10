@@ -165,11 +165,23 @@ This page is admin only and has and option to add a new category. There is a can
 This page is admin only and has and option to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
 Below is a chart of the webpages and their mutual connections:
-![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/Recipe_pages.png)
+![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
 
 ## **Skeleton Level**
 ### Wireframes
-
+![Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)
+![Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)
+![Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)
+![Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)
+![Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)
+![Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)
+![Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
+![Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)
+![Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)
+![Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)
+![Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)
+![Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)
+![Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)
 ## **Service Level**
 
 ### **Colors**
