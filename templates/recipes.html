@@ -1,4 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="wrapper">
+    <h2>Recipes</h2>
+
+    
+    <div class="row">
+        <!-- Categories display only on large and extra large size > 992px -->
+        <div class="cat center-align hide-on-med-and-down">
+            <a href="#" class="waves-effect waves-light btn-large">All</a>
+            <a href="#" class="waves-effect waves-light btn-large">Bread</a>
+            <a href="#" class="waves-effect waves-light btn-large">Cake</a>
+            <a href="#" class="waves-effect waves-light btn-large">Cookies</a>
+            <a href="#" class="waves-effect waves-light btn-large">Dessert</a>
+            <a href="#" class="waves-effect waves-light btn-large">Muffins</a>
+            <a href="#" class="waves-effect waves-light btn-large">Pie</a>
+        </div>
+        <!-- Categories display only on small and medium size < 992px -->
+        <div class="col s12 m4 center-align hide-on-med-and-up show-on-medium-and-down">
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-trigger btn btn-large' href='#' data-target='dropdownCat'>Categories</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdownCat' class='dropdown-content'>
+                <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
+                <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+                <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
+                <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
+                <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
+                <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+            </ul>
+        </div>
+        <!-- search and reset buttons -->
+        <div class="col s12 m8 l12">
+            <form>
+                <div class="row">
+                    <div class="col s12 m8">
+                        <input placeholder="What do you want to bake today?" id="search" name="search" type="text"
+                            class="validate">
+                    </div>
+                    <div class="col s12 m4">
+                        <button type="submit" class="waves-effect waves-light btn"><i
+                                class="fas fa-search"></i></button>
+                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn"><i
+                                class="fas fa-times prefix"></i></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
+
+What do you want to bake today?

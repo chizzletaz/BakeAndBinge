@@ -80,3 +80,12 @@ li, .navbar-brand {
     right: 0;
   }
 /* end credit */
+
+/* ID's and classes */
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Recipes */

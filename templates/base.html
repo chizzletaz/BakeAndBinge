@@ -29,7 +29,7 @@
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Contact</a></li>
-                    <li><a class="black-text dropdown-trigger hvr-ufc" href="#!" data-target="dropdown1">Recipes<i
+                    <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes<i
                                 class="fas fa-sort-down"></i></a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
@@ -56,6 +56,7 @@
         </nav>
         <!-- dropdown menu -->
         <ul id="dropdown1" class="dropdown-content">
+            <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
             <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
             <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
             <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
@@ -75,6 +76,7 @@
                         <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
                         <div class="collapsible-body">
                             <ul>
+                                <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
                                 <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
                                 <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
                                 <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
