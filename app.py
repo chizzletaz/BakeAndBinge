@@ -26,12 +26,6 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/recipes")
-def recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -105,6 +99,18 @@ def logout():
     flash("You have been logged out")
     session.pop('user')
     return redirect(url_for("login"))
+
+
+@app.route("/recipes")
+def recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
 
 
 if __name__ == "__main__":

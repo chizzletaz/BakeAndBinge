@@ -40,11 +40,11 @@
                     <div class="col s12 m8 right-align">
                         <input placeholder="What do you want to bake today?" id="search" name="search" type="text"
                             class="validate">
+                    </div>
+                    <div class="col s12 m4 center-align">
                         <button type="submit" class="waves-effect waves-light btn"><i
                                 class="fas fa-search"></i></button>
-                    </div>
-                    <div class="col s12 m2 center-align">
-                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn"><i
+                        <a href="#" class="waves-effect waves-light btn"><i
                                 class="fas fa-times prefix"></i></a>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <p>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action center-align">
-                <a class="btn" href="">Go to recipe</a>
+                <a class="btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a>
             </div>
             <!-- {% if session.user %} -->
             <div class="card-action">
@@ -81,5 +81,3 @@
 
 
 {% endblock %}
-
-What do you want to bake today?

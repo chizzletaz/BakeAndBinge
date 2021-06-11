@@ -101,3 +101,9 @@ li, .navbar-brand {
 #search {
     font-size: 18px;
 }
+
+.indications i {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+}
