@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="wrapper">
+<div class="container align-center">
     <h2>Recipes</h2>
-
     
-    <div class="row">
-        <!-- Categories display only on large and extra large size > 992px -->
-        <div class="cat center-align hide-on-med-and-down">
+    <!-- Categories display only on large and extra large size > 992px -->
+    <div class="row hide-on-med-and-down">
+        <div class="cat center-align ">
             <a href="#" class="waves-effect waves-light btn-large">All</a>
             <a href="#" class="waves-effect waves-light btn-large">Bread</a>
             <a href="#" class="waves-effect waves-light btn-large">Cake</a>
@@ -16,6 +15,9 @@
             <a href="#" class="waves-effect waves-light btn-large">Muffins</a>
             <a href="#" class="waves-effect waves-light btn-large">Pie</a>
         </div>
+    </div>
+
+    <div class="row">
         <!-- Categories display only on small and medium size < 992px -->
         <div class="col s12 m4 center-align hide-on-med-and-up show-on-medium-and-down">
             <!-- Dropdown Trigger -->
@@ -32,16 +34,16 @@
             </ul>
         </div>
         <!-- search and reset buttons -->
-        <div class="col s12 m8 l12">
+        <div class="searchbar col s12 m8 l12">
             <form>
                 <div class="row">
-                    <div class="col s12 m8">
+                    <div class="col s12 m8 right-align">
                         <input placeholder="What do you want to bake today?" id="search" name="search" type="text"
                             class="validate">
-                    </div>
-                    <div class="col s12 m4">
                         <button type="submit" class="waves-effect waves-light btn"><i
                                 class="fas fa-search"></i></button>
+                    </div>
+                    <div class="col s12 m2 center-align">
                         <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn"><i
                                 class="fas fa-times prefix"></i></a>
                     </div>
@@ -49,6 +51,32 @@
             </form>
         </div>
     </div>
+
+    <!-- recipes overview -->
+    {% for recipe in recipes %}
+    <div class="row">
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+            </div>
+            <div class="card-content center-align">
+                <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
+            <div class="card-action center-align">
+                <a class="btn" href="">Go to recipe</a>
+            </div>
+            <!-- {% if session.user %} -->
+            <div class="card-action">
+              <a href="#">Edit Recipe</a>
+              <a href="#">Delete Recipe</a>
+            </div>
+            <!-- {% endif %} -->
+          </div>
+        </div>
+      </div>
+      {% endfor %}
 </div>
 
 
