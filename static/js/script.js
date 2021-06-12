@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $('textarea#recipe_description').characterCounter();
 });
 
 // add_recipe.html

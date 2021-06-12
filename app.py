@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html")
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("index.html", categories=categories)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -115,7 +116,8 @@ def recipe(recipe_id):
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("add_recipe.html", categories=categories)
 
 
 if __name__ == "__main__":

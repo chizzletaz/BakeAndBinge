@@ -10,15 +10,15 @@
 /* general */
 
 h1 {
-    text-align: center;
-    padding: 20px;
     margin: 20px;
 }
 
-h2, h3 {
+h1, h2, h3 {
+    font-family: "Noto Serif", serif;
     text-align: center;
     padding: 20px;
 }
+
 
 /* Colours */
 .main {

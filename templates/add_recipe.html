@@ -1,109 +1,119 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Add your new recipe</h3>
+<div class="container">
+    <h3>Add your new recipe</h3>
 
-<div class="row">
-    <form method="POST" action="" class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="recipe_name"name="recipe_name" type="text" class="validate" required>
-                <label for="recipe_name">Recipe name:</label>
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            <div class="card-panel blue-grey lighten-5">
+                <form method="POST" action="" class="">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                            <label for="recipe_name">Recipe name:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="category_name" , name="category_name" class="validate" required>
+                                <option value="" disabled selected>Category</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label>Recipe category:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea"
+                                maxlength="200" data-length="200"></textarea>
+                            <label for="recipe_description">Short recipe description:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="recipe_image" name=recipe_image type="text" class="validate">
+                            <label for="recipe_image">URL for recipe image:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="prep_time" name="prep_time" type="text" class="validate" required>
+                            <label for="prep_time">Preparation time:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="bake_time" name="bake_time" type="text" class="validate" required>
+                            <label for="bake_time">Baking time:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="total_time" name="total_time" type="text" class="validate" required>
+                            <label for="total_time">Total time:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="total_time" name="total_time" type="text" class="validate" required>
+                            <label for="servings">Serves:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="tools" name="tools" class="materialize-textarea"></textarea>
+                            <label for="tools">Special tools needed:</label>
+                        </div>
+                    </div>
+                    <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
+                    <!-- ingredients -->
+                    <div class="row mb0" id="inputIngredientRow">
+                        <div class="input-field col s12 mb0">
+                            <input id="ingredient" name="ingredient[]" type="text" class="validate" required>
+                            <label for="ingredient">Ingredient</label>
+                        </div>
+                    </div>
+                    <div id="newRowIngredient"></div>
+                    <div class="col s12">
+                        <a id="addRowIngredient" class="btn-floating btn waves-effect waves-light"><i
+                                class="fas fa-plus"></i></a> Add ingredient
+                    </div>
+                    <!-- instructions -->
+                    <div class="row mb0" id="inputStepRow">
+                        <div class="input-field col s12 mb0">
+                            <input id="step" name="step[]" type="text" class="validate" required>
+                            <label for="step">Instructions</label>
+                        </div>
+                    </div>
+                    <div id="newRowStep"></div>
+                    <div class="col s12">
+                        <a id="addRowStep" class="btn-floating btn waves-effect waves-light"><i
+                                class="fas fa-plus"></i></a> Add instruction
+                    </div>
+                    <!-- end credit -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="tips" name="tips" class="materialize-textarea"></textarea>
+                            <label for="tips">Tips and tricks:</label>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="row">
+                        <div class="col s12 ">
+                            <button type="submit" class="btn-large">
+                                Add Recipe <i class="fas fa-plus"></i>
+                            </button>
+                            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red right">Cancel <i
+                                    class="fas fa-times"></i></a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <select id="category_name", name="category_name" class="validate" required>
-                    <option value="" disabled selected>Category</option>
-                    <option value="bread">Bread</option>
-                    <option value="cake">Cake</option>
-                    <option value="cookies">Cookies</option>
-                </select>
-                <label>Recipe category:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="recipe_description" name="recipe_description" class="materialize-textarea"></textarea>
-                <label for="recipe_description">Short recipe description:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="recipe_image" name=recipe_image type="text" class="validate">
-                <label for="recipe_image">URL for recipe image:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="prep_time" name="prep_time" type="text" class="validate" required>
-                <label for="prep_time">Preparation time:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="bake_time" name="bake_time" type="text" class="validate" required>
-                <label for="bake_time">Baking time:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="total_time" name="total_time" type="text" class="validate" required>
-                <label for="total_time">Total time:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="total_time" name="total_time" type="text" class="validate" required>
-                <label for="servings">Serves:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="tools" name="tools" class="materialize-textarea"></textarea>
-                <label for="tools">Special tools needed:</label>
-            </div>
-        </div>
-        <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
-        <!-- ingredients -->
-        <div class="row mb0" id="inputIngredientRow">
-            <div class="input-field col s12 mb0">
-                <input id="ingredient" name="ingredient[]" type="text" class="validate" required>
-                <label for="ingredient">Ingredient</label>
-            </div>
-        </div>
-        <div id="newRowIngredient"></div>
-        <div class="col s12">
-            <a id="addRowIngredient" class="btn-floating btn waves-effect waves-light"><i class="fas fa-plus"></i></a> Add ingredient
-        </div>
-        <!-- instructions -->
-        <div class="row mb0" id="inputStepRow">
-            <div class="input-field col s12 mb0">
-                <input id="step" name="step[]" type="text" class="validate" required>
-                <label for="step">Instructions</label>
-            </div>
-        </div>
-        <div id="newRowStep"></div>
-        <div class="col s12">
-            <a id="addRowStep" class="btn-floating btn waves-effect waves-light"><i class="fas fa-plus"></i></a> Add instruction
-        </div>
-        <!-- end credit -->
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="tips" name="tips" class="materialize-textarea"></textarea>
-                <label for="tips">Tips and tricks:</label>
-            </div>
-        </div>
-        <!-- submit button -->
-        <div class="row">
-            <div class="col s12 ">
-                <button type="submit" class="btn-large">
-                    Add Recipe <i class="fas fa-plus"></i> 
-                </button>
-                <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red right">Cancel <i class="fas fa-times"></i></a>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 
 {% endblock %}

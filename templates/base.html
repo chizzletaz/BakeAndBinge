@@ -29,7 +29,7 @@
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Contact</a></li>
-                    <li><a class="black-text dropdown-trigger  hvr-ufc" data-target="dropdown1">Recipes<i
+                    <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes<i
                                 class="fas fa-sort-down"></i></a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
@@ -57,11 +57,9 @@
         <!-- dropdown menu -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
-            <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
-            <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
-            <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
-            <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
-            <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+            {% for category in categories %}
+                <li><a class="black-text hvr-ufc" href="#">{{ category.category_name }}</a></li>
+            {% endfor %}
         </ul>
         <!-- sidebar menu -->
         <ul class="sidenav" id="mobile-demo">
