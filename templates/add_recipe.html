@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add your new recipe</h3>
+
+<div class="row">
+    <form method="POST" action="" class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="recipe_name"name="recipe_name" type="text" class="validate">
+                <label for="recipe_name">Recipe name:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Category</option>
+                    <option value="bread">Bread</option>
+                    <option value="cake">Cake</option>
+                    <option value="cookies">Cookies</option>
+                </select>
+                <label>Recipe category:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="recipe_description" name="recipe_description" class="materialize-textarea"></textarea>
+                <label for="recipe_description">Short recipe description:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="recipe_image" name=recipe_image type="text" class="validate">
+                <label for="recipe_image">URL for recipe image:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="prep_time" name="prep_time" type="text" class="validate">
+                <label for="prep_time">Preparation time:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="bake_time" name="bake_time" type="text" class="validate">
+                <label for="bake_time">Baking time:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="total_time" name="total_time" type="text" class="validate">
+                <label for="total_time">Total time:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="total_time" name="total_time" type="text" class="validate">
+                <label for="servings">Serves:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="tools" name="tools" class="materialize-textarea"></textarea>
+                <label for="tools">Special tools needed:</label>
+            </div>
+        </div>
+        <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
+        <!-- ingredients -->
+        <div class="row mb0" id="inputIngredientRow">
+            <div class="input-field col s12 mb0">
+                <input id="ingredient" name="ingredient[]" type="text" class="validate">
+                <label for="ingredient">Ingredient</label>
+            </div>
+        </div>
+        <div id="newRowIngredient"></div>
+        <div class="col s12">
+            <button id="addRowIngredient" type="button" class="btn"><i class="fas fa-plus"></i></button>Add ingredient
+        </div>
+        <!-- instructions -->
+        <div class="row mb0" id="inputStepRow">
+            <div class="input-field col s12 mb0">
+                <input id="step" name="step[]" type="text" class="validate">
+                <label for="step">Instructions</label>
+            </div>
+        </div>
+        <div id="newRowStep"></div>
+        <div class="col s12">
+            <button id="addRowStep" type="button" class="btn"><i class="fas fa-plus"></i></button>Add instruction
+        </div>
+        <!-- end credit -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="tips" name="tips" class="materialize-textarea"></textarea>
+                <label for="tips">Tips and tricks:</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
