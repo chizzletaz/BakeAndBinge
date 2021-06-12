@@ -94,6 +94,12 @@ li, .navbar-brand {
     margin: 0 auto;
 }
 
+/* .searchbar .btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+} */
+
 .btn {
     margin: 10px;
 }
@@ -103,7 +109,11 @@ li, .navbar-brand {
 }
 
 .indications i {
-    font-size: 22px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
+}
+
+.card-image p {
+    margin: 10px;
 }
