@@ -197,6 +197,26 @@ def edit_recipe(recipe_id):
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    try:
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+    except Exception as e:
+        print('Exception %s' % str(e))
+        pass
+
+    if session['user'].lower() == recipe['created_by'].lower():
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        flash("Your recipe has been deleted successfully.")
+        return redirect(url_for('profile', username=session["user"]))
+    
+    else:
+        flash("Action denied. This is not your recipe")
+        return redirect(url_for('profile', username=session["user"]))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),

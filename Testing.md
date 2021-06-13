@@ -46,3 +46,16 @@ except Exception as e:
 ---
 Issue:
 When adding a new recipe, the ingredients and the instructions aren't stored.
+
+
+---
+Issue:
+The Jinja condition to only show the edit and delete buttons for the user that created the recipe, doesn't work.
+```
+{% if session.user|lower == recipe.created_by|lower %} 
+    <div class="card-action">
+        <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+        <a class="btn right" href="#">Delete Recipe</a>
+    </div>
+{% endif %}
+```
