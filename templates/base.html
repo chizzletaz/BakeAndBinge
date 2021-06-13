@@ -36,7 +36,9 @@
                     {% if session.user %}
                     <li><a class="black-text hvr-ufc"
                             href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    {% if session.user == 'admin' %}
                     <li><a class="black-text hvr-ufc" href="#">Manage Categories</a></li>
+                    {% endif %}
                     <li><a class="black-text hvr-ufc" href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
                     <li class="nav-item">

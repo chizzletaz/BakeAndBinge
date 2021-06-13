@@ -88,8 +88,9 @@ def profile(username):
         {"username": session["user"]})["username"]
     
     if session['user']:
-        return render_template("profile.html", username=username)
-    
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        return render_template("profile.html", username=username, categories=categories)
+
     return redirect(url_for('login'))
 
 
@@ -105,20 +106,38 @@ def logout():
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
+    for recipe in recipes:
+        try:
+            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+            recipe['category_name'] = category['category_name']
+        except Exception as e:
+            print('Exception %s' % str(e))
+            pass
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
+    try:
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+    except Exception as e:
+        print('Exception %s' % str(e))
+        pass
     return render_template("recipe.html", recipe=recipe)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
+        user = mongo.db.users.find_one({'username': session["user"]})
         recipe = {
-            "category_name": request.form.get("category_name"),
+            "category_name": ObjectId(request.form.get("category_name")),
             "recipe_title": request.form.get("recipe_title"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_image": request.form.get("recipe_image"),
@@ -130,14 +149,14 @@ def add_recipe():
             "ingredients": request.form.getlist("ingredients"),
             "steps": request.form.getlist("steps"),
             "tips": request.form.get("tips"),
-            "username": session["user"],
+            "created_by": ObjectId(user['_id']),
             # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
             "date_added": date.today().strftime("%d %B %Y") 
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Your recipe has been added succesfully.")
         return redirect(url_for('profile', username=session["user"]))
-        
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("add_recipe.html", categories=categories)
 
