@@ -11,14 +11,14 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
+                            <input id="recipe_title" name="recipe_title" type="text" class="validate" >
                             <label for="recipe_title">Recipe name:</label>
                         </div>
                     </div>
                     <!-- recipe category -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <select id="category_name" name="category_name" class="validate" required>
+                            <select id="category_name" name="category_name" class="validate" >
                                 <option value="" disabled selected>Category</option>
                                 {% for category in categories %}
                                     <option value="{{ category._id }}">{{ category.category_name }}</option>
@@ -45,28 +45,28 @@
                     <!-- prep time -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="prep_time" name="prep_time" type="text" class="validate" required>
+                            <input id="prep_time" name="prep_time" type="text" class="validate" >
                             <label for="prep_time">Preparation time:</label>
                         </div>
                     </div>
                     <!-- bake time -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="bake_time" name="bake_time" type="text" class="validate" required>
+                            <input id="bake_time" name="bake_time" type="text" class="validate" >
                             <label for="bake_time">Baking time:</label>
                         </div>
                     </div>
                     <!-- total time -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="total_time" name="total_time" type="text" class="validate" required>
+                            <input id="total_time" name="total_time" type="text" class="validate" >
                             <label for="total_time">Total time:</label>
                         </div>
                     </div>
                     <!-- servings -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="servings" name="servings" type="text" class="validate" required>
+                            <input id="servings" name="servings" type="text" class="validate" >
                             <label for="servings">Serves:</label>
                         </div>
                     </div>
@@ -81,26 +81,26 @@
                     <!-- ingredients -->
                     <div class="row mb0" id="inputIngredientRow">
                         <div class="input-field col s12 mb0">
-                            <input id="ingredient" name="ingredient[]" type="text" class="validate" required>
-                            <label for="ingredient">Ingredient</label>
+                            <input id="ingredients" name="ingredients" type="text" class="validate" >
+                            <label for="ingredients">Ingredient</label>
                         </div>
                     </div>
                     <div id="newRowIngredient"></div>
                     <div class="col s12">
                         <a id="addRowIngredient" class="btn-floating btn waves-effect waves-light"><i
-                                class="fas fa-plus"></i></a> Add ingredient
+                                class="fas fa-plus"></i></a> Add another ingredient
                     </div>
                     <!-- instructions -->
                     <div class="row mb0" id="inputStepRow">
                         <div class="input-field col s12 mb0">
-                            <input id="step" name="step[]" type="text" class="validate" required>
+                            <input id="step" name="step[]" type="text" class="validate" >
                             <label for="step">Instructions</label>
                         </div>
                     </div>
                     <div id="newRowStep"></div>
                     <div class="col s12">
                         <a id="addRowStep" class="btn-floating btn waves-effect waves-light"><i
-                                class="fas fa-plus"></i></a> Add instruction
+                                class="fas fa-plus"></i></a> Add another instruction
                     </div>
                     <!-- end credit -->
                     <!-- tips and tricks -->

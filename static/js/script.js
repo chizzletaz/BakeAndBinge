@@ -48,8 +48,8 @@ $("#addRowIngredient").click(function () {
     var html = `
     <div class="row mb0" id="inputIngredientRow">
         <div class="input-field col s12 mb0">
-            <input id="ingredient" name="ingredient[]" type="text" class="validate">
-            <label for="ingredient">Ingredient</label>
+            <input id="ingredients" name="ingredients" type="text" class="validate">
+            <label for="ingredients">Ingredient</label>
             <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
         </div>`;
 

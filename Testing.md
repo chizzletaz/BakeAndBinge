@@ -20,3 +20,20 @@ Also the list that comes from the find() method, isn't a actual list, but a Mong
 By wrapping the find() method in a Python list(), the list can be used again.
 
 ---
+Issue: 
+Due to the relational connection of category_name in recipes (the category_name in the recipe collection has the value of the
+ObjectId of category_name in the categories collection), the preloading of the category_name on the 'edit_recipe' page is not working as used in the Task Manager Walkthrough.
+```
+{% for category in categories %}
+    {% if category.category_name == recipe.category_name %}
+        <option value="{{ category._id }}">{{ category.category_name }} selected</option>
+    {% else %}
+        <option value="{{ category._id }}">{{ category.category_name }}</option>
+    {% endif %}
+{% endfor %}
+```
+I have to get the 
+
+---
+Issue:
+When adding a new recipe, the ingredients and the instructions aren't stored.
