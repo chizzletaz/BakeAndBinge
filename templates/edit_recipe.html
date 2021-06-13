@@ -24,7 +24,7 @@
                                 <option value="" disabled>Category</option>
                                 {% for category in categories %}
                                     {% if category.category_name == recipe.category_name %}
-                                        <option value="{{ category._id }}">{{ category.category_name }} selected</option>
+                                        <option value="{{ category._id }}" selected>{{ category.category_name }} </option>
                                     {% else %}
                                         <option value="{{ category._id }}">{{ category.category_name }}</option>
                                     {% endif %}

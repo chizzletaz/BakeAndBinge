@@ -8,7 +8,7 @@ add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown()
 Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger. And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.
   
 ---
-Issue:
+Issue: SOLVED
 I used Jinja to add categories dynamically to the 'add recipe page', by adding
     categories = mongo.db.categories.find().sort("category_name", 1)
 to the add_recipe() function.
@@ -20,7 +20,7 @@ Also the list that comes from the find() method, isn't a actual list, but a Mong
 By wrapping the find() method in a Python list(), the list can be used again.
 
 ---
-Issue: 
+Issue: SOLVED
 Due to the relational connection of category_name in recipes (the category_name in the recipe collection has the value of the
 ObjectId of category_name in the categories collection), the preloading of the category_name on the 'edit_recipe' page is not working as used in the Task Manager Walkthrough.
 ```
@@ -32,7 +32,16 @@ ObjectId of category_name in the categories collection), the preloading of the c
     {% endif %}
 {% endfor %}
 ```
-I have to get the 
+Fix: The category_name in the Categories collection has to be connected to the category_id in the Recipe collection.
+Add this to the "GET" method of the recipe() function:
+```
+try:
+    category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+    recipe['category_name'] = category['category_name']
+except Exception as e:
+    print('Exception %s' % str(e))
+    pass
+```
 
 ---
 Issue:

@@ -42,13 +42,14 @@ $(document).ready(function () {
     /* end credit */
 });
 
+// Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery
 // add_recipe.html
 // add ingredient row
 $("#addRowIngredient").click(function () {
     var html = `
-    <div class="row mb0" id="inputIngredientRow">
+     <div class="row mb0" id="inputIngredientRow">
         <div class="input-field col s12 mb0">
-            <input id="ingredients" name="ingredients" type="text" class="validate">
+            <input id="ingredients" name="ingredients[]" type="text" class="validate">
             <label for="ingredients">Ingredient</label>
             <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
         </div>`;

@@ -163,7 +163,37 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if request.method == "POST":
+        # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
+        user = mongo.db.users.find_one({'username': session["user"]})
+        submit = {
+            "category_name": ObjectId(request.form.get("category_name")),
+            "recipe_title": request.form.get("recipe_title"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_image": request.form.get("recipe_image"),
+            "prep_time": request.form.get("prep_time"),
+            "bake_time": request.form.get("bake_time"),
+            "total_time": request.form.get("total_time"),
+            "servings": request.form.get("servings"),
+            "tools": request.form.get("tools"),
+            "ingredients": request.form.getlist("ingredients[]"),
+            "steps": request.form.getlist("steps"),
+            "tips": request.form.get("tips"),
+            "created_by": ObjectId(user['_id']),
+            # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
+            "date_added": date.today().strftime("%d %B %Y") 
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Your recipe has been updated succesfully.")
+
+    
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    try:
+        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        recipe['category_name'] = category['category_name']
+    except Exception as e:
+        print('Exception %s' % str(e))
+        pass
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
