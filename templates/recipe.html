@@ -96,8 +96,8 @@
             </div>
             {% if session.user|lower == recipe.created_by|lower %}
             <div class="card-action">
-                <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
-                <a class="btn right red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
+                <a class="btn blue-grey lighten-4 black-text gb" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+                <a class="btn right red lighten-1" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
             </div>
             {% endif %}
         </div>
