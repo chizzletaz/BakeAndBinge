@@ -27,6 +27,21 @@ def home():
     return render_template("index.html", categories=categories)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    for recipe in recipes:
+        try:
+            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+            recipe['category_name'] = category['category_name']
+        except Exception as e:
+            print('Exception %s' % str(e))
+            pass
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", recipes=recipes, categories=categories)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

@@ -35,16 +35,16 @@
         </div>
         <!-- search and reset buttons -->
         <div class="searchbar col s12 m8 l12">
-            <form>
+            <form action="{{ url_for('search') }}" method="POST">
                 <div class="row">
-                    <div class="col s12 m8 right-align">
-                        <input placeholder="What do you want to bake today?" id="search" name="search" type="text"
+                    <div class="input-field col s12 m8 right-align">
+                        <input placeholder="What do you want to bake today?" id="query" name="query" type="text"
                             class="validate">
                     </div>
                     <div class="col s12 m4 center-align">
                         <button type="submit" class="waves-effect waves-light btn"><i
                                 class="fas fa-search"></i></button>
-                        <a href="#" class="waves-effect waves-light btn"><i
+                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn"><i
                                 class="fas fa-times"></i></a>
                     </div>
                 </div>
@@ -53,6 +53,7 @@
     </div>
 
     <!-- recipes overview -->
+    {% if recipes|length > 0  %}
     {% for recipe in recipes %}
     <div class="row">
         <div class="col s12 m6 l4">
@@ -77,6 +78,9 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+        <h4 class="red-text center-align">Sorry, no results were found</h4>
+      {% endif %}
 </div>
 
 
