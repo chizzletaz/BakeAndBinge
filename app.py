@@ -154,7 +154,7 @@ def add_recipe():
             "date_added": date.today().strftime("%d %B %Y") 
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Your recipe has been added succesfully.")
+        flash("Your recipe has been added.")
         return redirect(url_for('profile', username=session["user"]))
 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -184,7 +184,7 @@ def edit_recipe(recipe_id):
             "date_added": date.today().strftime("%d %B %Y") 
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Your recipe has been updated succesfully.")
+        flash("Your recipe has been updated.")
 
     
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -211,7 +211,7 @@ def delete_recipe(recipe_id):
     if session['user'].lower() == recipe['created_by'].lower():
         
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-        flash("Your recipe has been deleted successfully.")
+        flash("Your recipe has been deleted.")
         return redirect(url_for('profile', username=session["user"]))
     
     else:
@@ -232,7 +232,7 @@ def add_category():
             "category_name": request.form.get("category_name")
         }
         mongo.db.categories.insert_one(category)
-        flash("New category has been added successfully.")
+        flash("New category has been added.")
         return redirect(url_for('categories'))
 
     return render_template("add_category.html")
@@ -246,12 +246,22 @@ def edit_category(category_id):
             "category_name": request.form.get("category_name")
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash('Category has been updated successfully.')
+        flash('Category has been updated.')
         return redirect(url_for('categories'))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    if session['user'] == 'admin'.lower():
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category has been deleted.")
+        return redirect(url_for('categories'))
+    
+    flash('You have no permission to delete a category')
+    return redirect(url_for('profile', username=session["user"]))
 
 
 if __name__ == "__main__":
