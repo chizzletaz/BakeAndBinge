@@ -30,18 +30,18 @@
                     <li><a class="black-text hvr-ufc" href="badges.html">Shop</a></li>
                     <li><a class="black-text hvr-ufc" href="badges.html">Contact</a></li>
                     <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
-                        <i class="material-icons right">arrow_drop_down</i></a></li>
+                            <i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                        <li><a class="black-text hvr-ufc"
+                    <li><a class="black-text hvr-ufc"
                             href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% if session.user|lower == 'admin'|lower %}
-                        <li><a class="black-text hvr-ufc" href="{{ url_for('categories') }}">Manage Categories</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('categories') }}">Manage Categories</a></li>
                     {% endif %}
-                        <li><a class="black-text hvr-ufc" href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                        <li class="nav-item">
+                    <li class="nav-item">
                         <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i>
                             Register</a>
                     </li>
@@ -60,7 +60,7 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
             {% for category in categories %}
-                <li><a class="black-text hvr-ufc" href="#">{{ category.category_name }}</a></li>
+            <li><a class="black-text hvr-ufc" href="#">{{ category.category_name }}</a></li>
             {% endfor %}
         </ul>
         <!-- sidebar menu -->
@@ -130,6 +130,50 @@
         {% endblock %}
     </main>
 
+    <footer class="">
+        <div class="row center-align">
+            <div class="col s10 offset-s1 l5 offset-l1">
+                <div class="card">
+                    <div class="card-content">
+                        <h6 class="card-title">Sign up now for the newest baking trends <br> and the latest
+                            recipes.</h6>
+                        <form>
+                            <div class="row">
+                                <div class="col m8">
+                                    <label for="inputPassword" class="sr-only">Email</label>
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Email address">
+                                </div>
+                                <div class="col m4 right">
+                                    <button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr class="hide-on-med-and-down">
+            <div class="col s12 l4 offset-l1 socials center-align">
+                <a class="list-inline-item fb" href="https://www.facebook.com" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="list-inline-item tw" href="https://www.twitter.com" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="list-inline-item ig" href="https://www.instagram.com" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="list-inline-item pin" href="https://www.pinterest.com" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <p class="copyright text-muted">Copyright &copy; Bake & Binge <span id='copyright'></span></p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

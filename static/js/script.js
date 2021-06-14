@@ -43,6 +43,7 @@ $(document).ready(function () {
     /* end credit */
 });
 
+$("#copyright").text(new Date().getFullYear()); 
 
 // Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery
 // add_recipe.html
