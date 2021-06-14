@@ -44,7 +44,7 @@ except Exception as e:
 ```
 
 ---
-Issue:
+Issue: SOLVED
 When adding a new recipe, the ingredients and the instructions aren't stored.
 I used 'ingredients' and 'steps' for the id, label and name:
 ```

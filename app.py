@@ -218,6 +218,13 @@ def delete_recipe(recipe_id):
         flash("Action denied. This is not your recipe")
         return redirect(url_for('profile', username=session["user"]))
 
+
+@app.route("/categories")
+def categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
