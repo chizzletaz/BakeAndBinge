@@ -8,6 +8,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('textarea#recipe_description').characterCounter();
+    $('.tabs').tabs();
 
     // Credit: Flask mini project: Materialize for validation
     // https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/templates/add_task.html

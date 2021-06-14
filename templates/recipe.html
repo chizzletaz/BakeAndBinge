@@ -20,7 +20,7 @@
                                     <p>{{ recipe.recipe_description }}</p>
                                 </div>
                                 <div class="col s6 m3 l6">
-                                    
+
                                     <p><i class="fas fa-hourglass-end"></i> Prep: {{ recipe.prep_time }}</p>
                                 </div>
                                 <div class="col s6 m3 l6">
@@ -42,38 +42,44 @@
                         <p><i class="fas fa-utensils"></i>Tools</p>
                         <p>{{ recipe.tools }}</p>
                     </div>
-                    <div class="col s12 l5 card-content">
-                        <h4>Ingredients</h4>
-                        {% for ingredient in recipe.ingredients %}
-                        <ul>
-                            <li>
-                            <label>
-                                <input type="checkbox" />
-                                <span>{{ ingredient }}</span>
-                            </label>
-                        </li>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab"><a class="active" href="#test4">Ingredients</a></li>
+                            <li class="tab"><a href="#test5">Instructions</a></li>
                         </ul>
-
-                        {% endfor %}
                     </div>
-                    <div class="col s12 l7 card-content">
-                        <h4>Instructions</h4>
-                        {% for step in recipe.steps %}
-                        <ul>
-                            <li>{{ loop.index }}. {{ step }}</li><br>
-                        </ul>
-                        {% endfor %}
+                    <div class="card-content grey lighten-4">
+                        <div id="test4">
+                            {% for ingredient in recipe.ingredients %}
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>{{ ingredient }}</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        <div id="test5">
+                            {% for step in recipe.steps %}
+                            <ul>
+                                <li>{{ loop.index }}. {{ step }}</li><br>
+                            </ul>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-
-                {% if session.user|lower == recipe.created_by|lower %} 
-                <div class="card-action">
-                    <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
-                    <a class="btn right red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
-                </div>
-                {% endif %}
             </div>
+
+            {% if session.user|lower == recipe.created_by|lower %}
+            <div class="card-action">
+                <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+                <a class="btn right red" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
+            </div>
+            {% endif %}
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
