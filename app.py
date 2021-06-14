@@ -210,7 +210,7 @@ def delete_recipe(recipe_id):
 
     if session['user'].lower() == recipe['created_by'].lower():
         
-        # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Your recipe has been deleted successfully.")
         return redirect(url_for('profile', username=session["user"]))
     
@@ -223,6 +223,19 @@ def delete_recipe(recipe_id):
 def categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New category has been added successfully.")
+        return redirect(url_for('categories'))
+
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":
