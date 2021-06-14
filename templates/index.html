@@ -5,9 +5,9 @@
         <h1 class="display-5">Welcome to Bake & Binge</h1>
         <p class="lead">The website to browse and add your own recipes.</p>
         <p class="lead center-align">
-            <a class="btn btn-primary btn-lg" href="{{ url_for('recipes') }}" role="button">Browse Recipes</a>
+            <a class="waves-effect waves-light pink accent-2 btn" href="{{ url_for('recipes') }}" role="button">Browse Recipes</a>
             {% if not session.user %}
-                <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button">Register here</a>
+                <a class="waves-effect waves-light btn" href="{{ url_for('register') }}" role="button">Register here</a>
             {% endif %}
         </p>
     </div>

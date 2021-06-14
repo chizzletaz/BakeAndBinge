@@ -10,7 +10,7 @@
 /* general */
 
 h1 {
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
 h1, h2, h3 {
@@ -27,11 +27,10 @@ h1, h2, h3 {
 
 /* navbar */
 .navbar {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 li, .navbar-brand {
-    margin: 0 10px;
     letter-spacing: .2rem;
 }
 
@@ -66,7 +65,7 @@ li, .navbar-brand {
     left: 51%;
     right: 51%;
     bottom: 0;
-    background: rgb(197, 18, 97);;
+    background: #ff4081;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -82,8 +81,13 @@ li, .navbar-brand {
 /* end credit */
 
 /* ID's and classes */
+.gb {
+    border: 2px solid #66bb6a;
+}
 
-
+.rb {
+    border: 3px solid #d32f2f;
+}
 /* Recipes */
 .cat {
     padding: 20px 0;
@@ -94,12 +98,9 @@ li, .navbar-brand {
     margin: 0 auto;
 }
 
-/* .searchbar .btn {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-} */
-
+.searchbar i {
+    color: #ffffff;
+}
 .btn {
     margin: 10px;
 }
@@ -117,6 +118,10 @@ li, .navbar-brand {
 .card-image p {
     margin: 10px;
 }
+/* recipe */
+/* .tabs-fixed-width a {
+    padding: 0;
+} */
 
 /* add recipe */
 .input-field .prefix.right{

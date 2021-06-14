@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="recipe_title" name="recipe_title" 
-                                value="{{ recipe.recipe_name }}" type="text"
+                                value="{{ recipe.recipe_title }}" type="text"
                                 class="validate" required>
                             <label for="recipe_title">Recipe name:</label>
                         </div>
@@ -24,7 +24,7 @@
                                 <option value="" disabled>Category</option>
                                 {% for category in categories %}
                                     {% if category.category_name == recipe.category_name %}
-                                        <option value="{{ category._id }}" selected>{{ category.category_name }} </option>
+                                        <option value="{{ category._id }}" selected>{{ category.category_name | capitalize }} </option>
                                     {% else %}
                                         <option value="{{ category._id }}">{{ category.category_name }}</option>
                                     {% endif %}
@@ -94,24 +94,30 @@
                     </div>
                     <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
                     <!-- ingredients -->
+                    {% for ingredient in recipe.ingredients %}
                     <div class="row mb0" id="inputIngredientRow">
                         <div class="input-field col s12 mb0">
-                            <input id="ingredients" name="ingredients[]" type="text" class="validate" required>
+                            <input id="ingredients" name="ingredients[]" type="text"
+                            value="{{ ingredient }}" class="validate">
                             <label for="ingredients">Ingredient</label>
                         </div>
                     </div>
+                    {% endfor %}
                     <div id="newRowIngredient"></div>
                     <div class="col s12">
                         <a id="addRowIngredient" class="btn-floating btn waves-effect waves-light"><i
                                 class="fas fa-plus"></i></a> Add ingredient
                     </div>
                     <!-- instructions -->
+                    {% for step in recipe.steps %}
                     <div class="row mb0" id="inputStepRow">
                         <div class="input-field col s12 mb0">
-                            <input id="step" name="step[]" type="text" class="validate" required>
+                            <input id="step" name="step[]" type="text"
+                            value="{{ step }}" class="validate" required>
                             <label for="step">Instructions</label>
                         </div>
                     </div>
+                    {% endfor %}
                     <div id="newRowStep"></div>
                     <div class="col s12">
                         <a id="addRowStep" class="btn-floating btn waves-effect waves-light"><i

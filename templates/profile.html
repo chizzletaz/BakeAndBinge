@@ -1,10 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>{{ username }}</h2>
+<div class="container">
+    <h2>{{ username }}</h2>
 
-<a class="btn-floating" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus"></i></a><p>Add new recipe</p>
+    <a class="btn-floating pink accent-2" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus"></i></a>
+    <p>Add new recipe</p>
 
+    {% for recipe in recipes %}
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                </div>
+                <div class="card-content center-align">
+                    <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
+                    <p>{{ recipe.recipe_description }}</p>
+                </div>
+                <div class="card-action center-align">
+                    <a class="btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a>
+                </div>
+                {#% if session.user|lower == recipe.created_by|lower %#}
+                <div class="card-action">
+                    <a class="btn pink accent-2" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                    <a class="btn red right" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
+                </div>
+                {#% endif %#}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 
-
+</div>
 {% endblock %}

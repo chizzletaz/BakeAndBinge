@@ -7,10 +7,10 @@
     <!-- Categories display only on large and extra large size > 992px -->
     <div class="row hide-on-med-and-down">
         <div class="cat center-align ">
-            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn-large">All</a>
+            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink lighten-2 btn-large">All</a>
             {% for category in categories %}
             <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
-            class="waves-effect waves-light btn-large">{{ category.category_name }}</a>
+            class="waves-effect waves-light pink lighten-2 btn-large">{{ category.category_name }}</a>
             {% endfor %}
     </div>
 
@@ -39,9 +39,9 @@
                             class="validate">
                     </div>
                     <div class="col s12 m4 center-align">
-                        <button type="submit" class="waves-effect waves-light btn"><i
+                        <button type="submit" class="waves-effect waves-light blue-grey lighten-1 btn"><i
                                 class="fas fa-search"></i></button>
-                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn"><i
+                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light red darken-2 btn"><i
                                 class="fas fa-times"></i></a>
                     </div>
                 </div>
@@ -63,12 +63,12 @@
                 <p>{{ recipe.recipe_description }}</p>
             </div>
             <div class="card-action center-align">
-                <a class="btn" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a>
+                <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a>
             </div>
             {#% if session.user|lower == recipe.created_by|lower %#}
             <div class="card-action">
-              <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-              <a class="btn red right" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
+              <a class="btn blue-grey darken-4 gb" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+              <a class="btn blue-grey darken-4 right rb" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
             </div>
             {#% endif %#}
           </div>
