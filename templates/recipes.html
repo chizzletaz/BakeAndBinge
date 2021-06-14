@@ -7,14 +7,11 @@
     <!-- Categories display only on large and extra large size > 992px -->
     <div class="row hide-on-med-and-down">
         <div class="cat center-align ">
-            <a href="#" class="waves-effect waves-light btn-large">All</a>
-            <a href="#" class="waves-effect waves-light btn-large">Bread</a>
-            <a href="#" class="waves-effect waves-light btn-large">Cake</a>
-            <a href="#" class="waves-effect waves-light btn-large">Cookies</a>
-            <a href="#" class="waves-effect waves-light btn-large">Dessert</a>
-            <a href="#" class="waves-effect waves-light btn-large">Muffins</a>
-            <a href="#" class="waves-effect waves-light btn-large">Pie</a>
-        </div>
+            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light btn-large">All</a>
+            {% for category in categories %}
+            <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
+            class="waves-effect waves-light btn-large">{{ category.category_name }}</a>
+            {% endfor %}
     </div>
 
     <div class="row">

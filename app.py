@@ -20,6 +20,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# HOME
 @app.route("/")
 @app.route("/home")
 def home():
@@ -27,6 +28,7 @@ def home():
     return render_template("index.html", categories=categories)
 
 
+# SEARCH
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -42,6 +44,18 @@ def search():
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
+# FILTER ON CATEGORY
+@app.route("/recipes_filter/<category_name>")
+def recipes_filter(category_name):
+    recipes = list(mongo.db.recipes.find())
+    for recipe in recipes:     
+        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        recipe['category_name'] = category['category_name']
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", recipes=recipes, categories=categories)
+
+
+# REGISTER
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -66,6 +80,7 @@ def register():
     return render_template("register.html")
 
 
+# LOGIN
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -96,6 +111,7 @@ def login():
     return render_template("login.html")
 
 
+# PROFILE PAGE
 @app.route('/profile/<username>', methods=["GET", "POST"])
 def profile(username):
     # get the session user's name from the database
@@ -109,6 +125,7 @@ def profile(username):
     return redirect(url_for('login'))
 
 
+# LOGOUT
 @app.route("/logout")
 def logout():
 
@@ -118,6 +135,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# ALL RECIPES
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
@@ -133,6 +151,7 @@ def recipes():
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
 
+# INDIVIDUAL RECIPE
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -146,6 +165,7 @@ def recipe(recipe_id):
     return render_template("recipe.html", recipe=recipe)
 
 
+# ADD RECIPE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -176,6 +196,7 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+# EDIT RECIPE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -213,6 +234,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
 
+# DELETE RECIPE
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -234,12 +256,14 @@ def delete_recipe(recipe_id):
         return redirect(url_for('profile', username=session["user"]))
 
 
+# MANAGE CATEGORIES
 @app.route("/categories")
 def categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
+# ADD CATEGORY
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -253,6 +277,7 @@ def add_category():
     return render_template("add_category.html")
 
 
+# EDIT CATEGORY
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     
@@ -268,6 +293,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# DELETE CATEGORY
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     if session['user'] == 'admin'.lower():
@@ -279,7 +305,7 @@ def delete_category(category_id):
     return redirect(url_for('profile', username=session["user"]))
 
 
-# Error handlers
+# ERROR HANDLERS
 @app.errorhandler(403)
 def forbidden_access(e):
     return render_template('/error_handlers/403.html'), 403
@@ -295,6 +321,7 @@ def internal_error(e):
     return render_template('/error_handlers/500.html'), 500
 
 
+# APP INITIALISATION
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
