@@ -146,8 +146,8 @@ def add_recipe():
             "total_time": request.form.get("total_time"),
             "servings": request.form.get("servings"),
             "tools": request.form.get("tools"),
-            "ingredients": request.form.getlist("ingredients"),
-            "steps": request.form.getlist("steps"),
+            "ingredients": request.form.getlist("ingredient[]"),
+            "steps": request.form.getlist("step[]"),
             "tips": request.form.get("tips"),
             "created_by": ObjectId(user['_id']),
             # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
@@ -209,7 +209,8 @@ def delete_recipe(recipe_id):
         pass
 
     if session['user'].lower() == recipe['created_by'].lower():
-        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        
+        # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Your recipe has been deleted successfully.")
         return redirect(url_for('profile', username=session["user"]))
     

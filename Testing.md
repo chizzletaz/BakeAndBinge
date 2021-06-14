@@ -46,7 +46,24 @@ except Exception as e:
 ---
 Issue:
 When adding a new recipe, the ingredients and the instructions aren't stored.
+I used 'ingredients' and 'steps' for the id, label and name:
+```
+<input id="ingredients" name="ingredients[]" type="text" class="validate">
+<label for="ingredients">Ingredient</label>
 
+<input id="steps" name="steps[]" type="text" class="validate">
+<label for="steps">Instruction</label>
+```
+Fix:
+I changes the id, label and name to 'ingredient' and 'step':
+```
+<input id="ingredient" name="ingredient[]" type="text" class="validate">
+<label for="ingredient">Ingredient</label>
+
+<input id="step" name="step[]" type="text" class="validate">
+<label for="step">Instruction</label>
+```
+This seemed to solve the problem.
 
 ---
 Issue:
