@@ -308,6 +308,12 @@ def delete_category(category_id):
     return redirect(url_for('profile', username=session["user"]))
 
 
+# CONTACT
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
 # ERROR HANDLERS
 @app.errorhandler(403)
 def forbidden_access(e):

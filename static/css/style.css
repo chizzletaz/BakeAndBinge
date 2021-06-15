@@ -41,6 +41,15 @@ h1, h2, h3 {
 .pin:hover {
     background-color: #E60023;
 }
+
+.gb {
+    border: 2px solid #66bb6a;
+}
+
+.rb {
+    border: 3px solid #d32f2f;
+}
+
 /* navbar */
 .navbar {
     font-size: 16px;
@@ -56,14 +65,11 @@ li, .navbar-brand {
     font-size: 24px;
 }
 
-.nav-link i {
-    font-size: 16px;
+.nav-wrapper i {
+    font-size: 18px;
 }
 
-#search {
-    font-size: 30px;
-}
- 
+
 /* navbar underline Credit: https://ianlunn.github.io/Hover/ */
 .hvr-ufc {
     display: inline-block;
@@ -97,13 +103,7 @@ li, .navbar-brand {
 /* end credit */
 
 /* ID's and classes */
-.gb {
-    border: 2px solid #66bb6a;
-}
 
-.rb {
-    border: 3px solid #d32f2f;
-}
 /* Recipes */
 .cat {
     padding: 20px 0;
@@ -115,7 +115,7 @@ li, .navbar-brand {
 }
 
 .searchbar i {
-    color: #ffffff;
+    color: #fff;
 }
 .btn {
     margin: 10px;
@@ -173,4 +173,9 @@ li, .navbar-brand {
 .socials a {
     width: 60px;
     height: 60px;
+}
+
+/* Contact page */
+.input-field i {
+    font-size: 24px !important;
 }
