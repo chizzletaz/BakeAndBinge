@@ -3,82 +3,85 @@
 
 <div class="container align-center">
     <h2>Recipes</h2>
-    
+
     <!-- Categories display only on large and extra large size > 992px -->
-    <div class="row hide-on-med-and-down">
-        <div class="cat center-align ">
-            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink lighten-2 btn-large">All</a>
+    <div class="row">
+        <div class="cat center-align hide-on-med-and-down">
+            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink lighten-2 btn">All</a>
             {% for category in categories %}
             <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
-            class="waves-effect waves-light pink lighten-2 btn-large">{{ category.category_name }}</a>
+                class="waves-effect waves-light pink lighten-2 btn">{{ category.category_name }}</a>
             {% endfor %}
-    </div>
-
-    <div class="row">
-        <!-- Categories display only on small and medium size < 992px -->
-        <div class="col s12 m4 center-align hide-on-med-and-up show-on-medium-and-down">
-            <!-- Dropdown Trigger -->
-            <a class='dropdown-trigger btn btn-large' href='#' data-target='dropdownCat'>Categories</a>
-
-            <!-- Dropdown Structure -->
-            <ul id='dropdownCat' class='dropdown-content'>
-                <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
-                <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
-                <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
-                <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
-                <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
-                <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
-            </ul>
         </div>
-        <!-- search and reset buttons -->
-        <div class="searchbar col s12 m8 l12">
-            <form action="{{ url_for('search') }}" method="POST">
-                <div class="row">
-                    <div class="input-field col s12 m8 right-align">
-                        <input placeholder="What do you want to bake today?" id="query" name="query" type="text"
-                            class="validate">
+
+        <div class="row">
+            <!-- Categories display only on small and medium size < 992px -->
+            <div class="col s12 m4 center-align hide-on-med-and-up show-on-medium-and-down">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-trigger btn btn-large' href='#' data-target='dropdownCat'>Categories</a>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdownCat' class='dropdown-content'>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
+                    <li><a class="black-text hvr-ufc" href="#">Pie</a></li>
+                </ul>
+            </div>
+            <!-- search and reset buttons -->
+            <div class="searchbar col s12 m8 l12">
+                <form action="{{ url_for('search') }}" method="POST">
+                    <div class="row">
+                        <div class="input-field col s12 m8 right-align">
+                            <input placeholder="What do you want to bake today?" id="query" name="query" type="text"
+                                class="validate">
+                        </div>
+                        <div class="col s12 m4 center-align">
+                            <button type="submit" class="waves-effect waves-light blue-grey lighten-1 btn"><i
+                                    class="fas fa-search"></i></button>
+                            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light red lighten-1 btn"><i
+                                    class="fas fa-times"></i></a>
+                        </div>
                     </div>
-                    <div class="col s12 m4 center-align">
-                        <button type="submit" class="waves-effect waves-light blue-grey lighten-1 btn"><i
-                                class="fas fa-search"></i></button>
-                        <a href="{{ url_for('recipes') }}" class="waves-effect waves-light red lighten-1 btn"><i
-                                class="fas fa-times"></i></a>
+                </form>
+            </div>
+        </div>
+
+        <!-- recipes overview -->
+        {% if recipes|length > 0 %}
+        {% for recipe in recipes %}
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card z-depth-2">
+                    <div class="card-image">
+                        <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                     </div>
+                    <div class="card-content center-align">
+                        <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
+                        <p>{{ recipe.recipe_description }}</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to
+                            recipe</a>
+                    </div>
+                    {#% if session.user|lower == recipe.created_by|lower %#}
+                    <div class="card-action">
+                        <a class="btn blue-grey lighten-4 black-text gb"
+                            href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                        <a class="btn blue-grey lighten-4 black-text right rb"
+                            href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
+                    </div>
+                    {#% endif %#}
                 </div>
-            </form>
+            </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <h4 class="red-text center-align">Sorry, no results were found</h4>
+        {% endif %}
     </div>
 
-    <!-- recipes overview -->
-    {% if recipes|length > 0  %}
-    {% for recipe in recipes %}
-    <div class="row">
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
-            </div>
-            <div class="card-content center-align">
-                <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
-                <p>{{ recipe.recipe_description }}</p>
-            </div>
-            <div class="card-action center-align">
-                <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to recipe</a>
-            </div>
-            {#% if session.user|lower == recipe.created_by|lower %#}
-            <div class="card-action">
-              <a class="btn blue-grey lighten-4 black-text gb" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-              <a class="btn blue-grey lighten-4 black-text right rb" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a>
-            </div>
-            {#% endif %#}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      {% else %}
-        <h4 class="red-text center-align">Sorry, no results were found</h4>
-      {% endif %}
-</div>
 
-
-{% endblock %}
+    {% endblock %}

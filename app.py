@@ -335,6 +335,12 @@ def subscribe():
         return redirect(url_for('home'))
 
 
+@app.route("/shop")
+def shop():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("shop.html", categories=categories)
+
+
 # ERROR HANDLERS
 @app.errorhandler(403)
 def forbidden_access(e):

@@ -13,12 +13,15 @@ h1 {
     margin-bottom: 20px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: "Noto Serif", serif;
     text-align: center;
     padding: 10px;
 }
 
+p {
+    font-family: "Noto Sans", sans-serif;
+}
 
 /* Colours */
 .main {
@@ -186,3 +189,9 @@ footer {
 .input-field i {
     font-size: 24px !important;
 }
+
+/* Shop page */
+.shop .card-image {
+    height: 200px;
+}
+
