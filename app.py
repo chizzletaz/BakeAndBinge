@@ -311,7 +311,28 @@ def delete_category(category_id):
 # CONTACT
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("contact.html", categories=categories)
+
+
+# SUBSCRIBE
+@app.route("/subscribe", methods=["GET", "POST"])
+def subscribe():
+    if request.method == "POST":
+        # check if the email already exists in the database
+        existing_email = mongo.db.subscribe.find_one(
+            {"email": request.form.get("email").lower()})
+
+        if existing_email:
+            flash("Apparently you've subscribe already. This email already exists.")
+            return redirect(url_for('home'))
+
+        subscribe = {
+            "email" : request.form.get("email").lower(),
+        }
+        mongo.db.subscribe.insert_one(subscribe)
+        flash('Subscription succesful!')
+        return redirect(url_for('home'))
 
 
 # ERROR HANDLERS

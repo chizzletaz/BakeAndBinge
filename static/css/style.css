@@ -103,6 +103,9 @@ li, .navbar-brand {
 /* end credit */
 
 /* ID's and classes */
+.container {
+    padding: 20px 0 40px;
+}
 
 /* Recipes */
 .cat {
@@ -149,6 +152,10 @@ li, .navbar-brand {
 }
 
 /* footer */
+footer {
+    margin: 25px 0;
+}
+
 .list-inline-item {
     background-color: #455a64;
     /* border: 1px solid #fff; */
