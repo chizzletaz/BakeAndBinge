@@ -51,7 +51,7 @@
                     </li>
                     {% endif %}
                     <li clas="nav-item">
-                        <a class="black-text hvr-ufc" href=""><i class="fas fa-search"></i></a>
+                        <a class="black-text hvr-ufc" href="{{ url_for('recipes') }}"><i class="fas fa-search"></i></a>
                     </li>
                 </ul>
             </div>
@@ -106,7 +106,7 @@
             {% endif %}
             <li class="divider"></li>
             <li clas="nav-item">
-                <a class="black-text" href=""><i class="fas fa-search"></i></a>
+                <a class="black-text" href="{{ url_for('recipes') }}"><i class="fas fa-search"></i></a>
             </li>
             <li class="divider"></li>
         </ul>
