@@ -1,48 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4 class="center-align">Hello, nice to see you again!</h4>
-<h2>Log In</h2>
+    <div class="bake">
+        <div class="container">
+            
+            <h4 class="center-align">Hello, nice to see you again!</h4>
+            
+            <h2>Log In</h2>
 
-<div class="row">
-    <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('login') }}">
-      <div class="card">
-        <div class="card-content">
-            <!-- username -->
             <div class="row">
-                <div class="input-field">
-                    <i class="far fa-user prefix"></i>
-                    <input id="username" name="username" type="text" minlength="5"
-                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="username">Username</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Enter a unique username, max
-                        20 characters</span>
-                </div>
+                <form class="col s12 m8 offset-m2 l6 offset-l3" method="POST" action="{{ url_for('login') }}">
+                    <div class="card">
+                        <div class="card-content">
+                            <!-- username -->
+                            <div class="row">
+                                <div class="input-field">
+                                    <i class="far fa-user prefix"></i>
+                                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                                    <label for="username">Username</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right">
+                                        Enter a unique username, max 20 characters</span>
+                                </div>
+                            </div>
+                            <!-- password -->
+                            <div class="row">
+                                <div class="input-field">
+                                    <i class="fas fa-key prefix"></i>
+                                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                                    <label for="password">Password</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right">Enter password, max 20
+                                        characters</span>
+                                </div>
+                            </div>
+                            <!-- Login -->
+                            <div class="row">
+                                <button
+                                    class="col s12 m8 offset-m2 l6 offset-l3 pink accent-1 btn-large waves-effect waves-light"
+                                    type="submit">Log In<i class="fas fa-sign-in-alt"></i></button>
+                            </div>
+                        </div>
+                        <!-- Register -->
+                        <div class="card-action center-align">
+                            <p>Not registered?</p>
+                            <a class="btn waves-effect waves-light teal lighten-2" href="{{ url_for('register') }}">Register
+                                here</a>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <!-- password -->
-            <div class="row">
-                <div class="input-field">
-                    <i class="fas fa-key prefix"></i>
-                    <input id="password" name="password" type="password" minlength="5"
-                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="password">Password</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Enter password, max 20
-                        characters</span>
-                </div>
-            </div>
-            <!-- Login -->
-            <div class="row">
-                <button class="col s12 m8 offset-m2 l6 offset-l3 pink accent-1 btn-large waves-effect waves-light"
-                    type="submit">Log In<i class="fas fa-sign-in-alt"></i></button>
-                </div>
         </div>
-        <!-- Register -->
-        <div class="card-action center-align">
-            <p>Not registered?</p>
-            <a class="btn waves-effect waves-light teal lighten-2" href="{{ url_for('register') }}">Register here</a>
-        </div>
-      </div>
-    </form>
-  </div>
-
+    </div>
 {% endblock %}

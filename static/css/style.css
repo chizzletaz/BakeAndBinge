@@ -113,6 +113,12 @@ li, .navbar-brand {
 .container {
     padding: 20px 0 40px;
 }
+
+.bake {
+    background-image: url("../images/bake.jpg");
+    background-position: center;
+    background-size: cover;
+}
 .btn-green {
     background-color: #ace3d9;
 }
