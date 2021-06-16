@@ -123,6 +123,10 @@ li, .navbar-brand {
     background-color: #ace3d9;
 }
 
+.opaque {
+    opacity: 0.8;
+}
+
 /* Index */
 .welcome {
     border-bottom: 2px solid #ff4081;
