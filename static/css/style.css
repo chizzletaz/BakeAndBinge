@@ -11,6 +11,8 @@
 
 h1 {
     margin-bottom: 20px;
+    margin-top: 0;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 h1, h2, h3, h4 {
@@ -109,6 +111,37 @@ li, .navbar-brand {
   }
 /* end credit */
 
+/* footer */
+footer {
+    padding: 25px 0;
+}
+
+.list-inline-item {
+    background-color: #455a64;
+    /* border: 1px solid #fff; */
+    border-radius: 50%;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    padding: 7px;
+    margin: 20px;
+    line-height: 40px;
+}
+
+.list-inline-item i {
+    color: #fff;
+    font-size: 18px;
+}
+
+.socials {
+    margin-top: 65px;
+}
+
+.socials a {
+    width: 60px;
+    height: 60px;
+}
+
 /* ID's and classes */
 .container {
     padding: 20px 0 40px;
@@ -124,13 +157,17 @@ li, .navbar-brand {
 }
 
 .opaque {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 /* Index */
 .welcome {
-    border-bottom: 2px solid #ff4081;
-    padding-bottom: 40px;
+    /* border-bottom: 1px solid #ff4081;
+    border-top: 1px solid #ff4081; */
+    padding: 40px 0;
+    background-image: url("../images/pink_background.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 /* Recipes */
@@ -173,37 +210,6 @@ li, .navbar-brand {
 
 .mb0 {
     margin-bottom: 0 !important;
-}
-
-/* footer */
-footer {
-    margin: 25px 0;
-}
-
-.list-inline-item {
-    background-color: #455a64;
-    /* border: 1px solid #fff; */
-    border-radius: 50%;
-    text-align: center;
-    height: 80px;
-    width: 80px;
-    padding: 7px;
-    margin: 20px;
-    line-height: 40px;
-}
-
-.list-inline-item i {
-    color: #fff;
-    font-size: 18px;
-}
-
-.socials {
-    margin-top: 65px;
-}
-
-.socials a {
-    width: 60px;
-    height: 60px;
 }
 
 /* Contact page */

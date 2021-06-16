@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="welcome">
-    <div class="center-align">
-        <h1 class="display-5">Welcome to Bake & Binge</h1>
-        <h5 class="lead">The website to bake, browse and add your own recipes.</h5>
-        <p class="lead center-align">
-            <a class="waves-effect waves-light pink accent-1 btn" href="{{ url_for('recipes') }}" role="button">Browse Recipes</a>
-            {% if not session.user %}
-                <a class="waves-effect waves-light btn teal lighten-2" href="{{ url_for('register') }}" role="button">Register here</a>
-            {% endif %}
-        </p>
+
+    <div class="welcome">
+        <div class="center-align">
+            <h1 class="display-5">Welcome to Bake & Binge</h1>
+            <h5 class="lead">The website to bake, browse and add your own recipes.</h5>
+            <p class="lead center-align">
+                <a class="waves-effect waves-light pink accent-1 btn" href="{{ url_for('recipes') }}"
+                    role="button">Browse Recipes</a>
+                {% if not session.user %}
+                <a class="waves-effect waves-light btn teal lighten-2" href="{{ url_for('register') }}"
+                    role="button">Register here</a>
+                {% endif %}
+            </p>
+        </div>
     </div>
-</div>
 
 <section class="container">
     <h4>Latest recipes</h4>
