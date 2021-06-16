@@ -7,10 +7,10 @@
     <!-- Categories display only on large and extra large size > 992px -->
     <div class="row">
         <div class="cat center-align hide-on-med-and-down">
-            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink lighten-2 btn">All</a>
+            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink accent-1 btn">All</a>
             {% for category in categories %}
             <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
-                class="waves-effect waves-light pink lighten-2 btn">{{ category.category_name }}</a>
+                class="waves-effect waves-light pink accent-1 btn">{{ category.category_name }}</a>
             {% endfor %}
         </div>
 
@@ -41,25 +41,45 @@
                         <div class="col s12 m4 center-align">
                             <button type="submit" class="waves-effect waves-light blue-grey lighten-1 btn"><i
                                     class="fas fa-search"></i></button>
-                            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light red lighten-1 btn"><i
+                            <a href="{{ url_for('recipes') }}" class="waves-effect waves-light lighten-1 btn btn-red"><i
                                     class="fas fa-times"></i></a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-
-        <!-- recipes overview -->
-        {% if recipes|length > 0 %}
+    </div>
+    <!-- recipes overview -->
+    {% if recipes|length > 0 %}
+    <div class="row">
         {% for recipe in recipes %}
-        <div class="row">
             <div class="col s12 m6 l4">
                 <div class="card z-depth-2">
                     <div class="card-image">
                         <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                     </div>
+                    <div class="div">
+                        <div class="row indications center-align">
+                            <div class="col s6 m3 l6">
+                                <p><i class="fas fa-hourglass-end"></i> Prep: {{ recipe.prep_time }}</p>
+                            </div>
+                            <div class="col s6 m3 l6">
+                                <i class="fas fa-hourglass-start"></i>
+                                <p>Bake: {{ recipe.bake_time }}</p>
+                            </div>
+                            <div class="col s6 m3 l6">
+                                <i class="fas fa-hourglass"></i>
+                                <p>Total: {{ recipe.total_time }}</p>
+                            </div>
+                            <div class="col s6 m3 l6">
+                                <i class="fas fa-user-friends"></i>
+                                <p>Serves: {{ recipe.servings }}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-content center-align">
                         <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
+
                         <p>{{ recipe.recipe_description }}</p>
                     </div>
                     <div class="card-action center-align">
@@ -76,12 +96,12 @@
                     {#% endif %#}
                 </div>
             </div>
-        </div>
         {% endfor %}
-        {% else %}
-        <h4 class="red-text center-align">Sorry, no results were found</h4>
-        {% endif %}
     </div>
+    {% else %}
+        <h4 class="red-text center-align">Sorry, no results were found</h4>
+    {% endif %}
+</div>
 
 
-    {% endblock %}
+{% endblock %}
