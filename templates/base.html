@@ -27,10 +27,14 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
-                    <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
-                    <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
+                    {% if request.endpoint != 'register' %}
+                    {% if request.endpoint != 'login' %}
+                        <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
+                        <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
                             <i class="material-icons right">arrow_drop_down</i></a></li>
+                    {% endif %}
+                    {% endif %}
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}

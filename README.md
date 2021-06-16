@@ -265,7 +265,8 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 
 # **Credits**
 ### code
-Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)
+Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
+Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)
 ### Content
 
 ### Media
