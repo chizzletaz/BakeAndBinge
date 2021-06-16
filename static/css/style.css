@@ -16,7 +16,7 @@ h1 {
 h1, h2, h3, h4 {
     font-family: "Noto Serif", serif;
     text-align: center;
-    padding: 10px;
+    padding: 0 0 10px;
 }
 
 p {
@@ -191,7 +191,7 @@ footer {
 }
 
 /* Shop page */
-.shop .card-image {
-    height: 200px;
-}
+/* .shop .card-image {
+    height: 230px;
+} */
 

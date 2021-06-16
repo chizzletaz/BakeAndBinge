@@ -24,8 +24,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
+    recipes = list(mongo.db.recipes.find().sort("date_added", -1))
+    for recipe in recipes:
+        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        recipe['category_name'] = category['category_name']
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("index.html", categories=categories)
+    return render_template("index.html", recipes=recipes, categories=categories)
 
 
 # SEARCH

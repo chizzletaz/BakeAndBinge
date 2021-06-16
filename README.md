@@ -267,6 +267,7 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 ### code
 Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)
 ### Content
-### Media
 
+### Media
+Shop items and [links](https://www.lecreuset.ie/en_IE/)
 # Acknowledgements
