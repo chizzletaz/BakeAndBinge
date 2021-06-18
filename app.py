@@ -28,6 +28,12 @@ def home():
     for recipe in recipes:
         category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
         recipe['category_name'] = category['category_name']
+    try:
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+    except Exception as e:
+        print('Exception %s' % str(e))
+        pass
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("index.html", recipes=recipes, categories=categories)
 
