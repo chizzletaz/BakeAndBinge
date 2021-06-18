@@ -207,6 +207,10 @@ footer .card-content {
     margin: 0;
 }
 
+.collection-item i {
+    font-size: 20px;
+}
+
 /* Index */
 .welcome {
     /* border-bottom: 1px solid #ff4081;

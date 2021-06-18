@@ -15,18 +15,18 @@
                 <div class="col s12 l5 card-content">
                     <ul class="col s6 l12 collection">
                         <li class="collection-item">
-                            <p><i class="fas fa-hourglass-end prefix"></i> Prep: {{ recipe.prep_time }}</p>
+                            <p><i class="fas fa-hourglass-end prefix"></i> &nbsp&nbsp prep: {{ recipe.prep_time }}</p>
                         </li>
                         <li class="collection-item">
-                            <p><i class="fas fa-hourglass-start prefix"></i> Bake: {{ recipe.bake_time }}</p>
+                            <p><i class="fas fa-hourglass-start prefix"></i> &nbsp&nbsp bake: {{ recipe.bake_time }}</p>
                         </li>
                     </ul>
                     <ul class="col s6 l12 collection">
                         <li class="collection-item">
-                            <p><i class="fas fa-hourglass prefix"></i> Total: {{ recipe.total_time }}</p>
+                            <p><i class="fas fa-hourglass prefix"></i> &nbsp&nbsp total: {{ recipe.total_time }}</p>
                         </li>
                         <li class="collection-item">
-                            <p><i class="fas fa-user-friends prefix"></i> Serves: {{ recipe.servings }}</p>
+                            <p><i class="fas fa-user-friends prefix"></i> &nbsp&nbsp Serves: {{ recipe.servings }}</p>
                         </li>
                     </ul>
                     <div class="col s12 card-content">
@@ -35,7 +35,7 @@
                 </div>
                 <ul class="col s12 collection">
                     <li class="collection-item">
-                        <p><i class="fas fa-utensils"></i> Tools: {{ recipe.tools }}</p>
+                        <p><i class="fas fa-utensils"></i> &nbsp&nbspTools: {{ recipe.tools }}</p>
                     <li class="collection-item">
                 </ul>
                 <!-- for screen sizes < 992px -->
@@ -69,7 +69,7 @@
                 <!-- for screen sizes > 992px -->
                 <div class="row card-content">
                     <div class="col s12 l5 hide-on-med-and-down">
-                        <h4>Ingredients</h4>
+                        <h4>Ingredients</h4><br>
                         {% for ingredient in recipe.ingredients %}
                         <ul>
                             <li>
@@ -83,7 +83,7 @@
                         {% endfor %}
                     </div>
                     <div class="col s12 l7 hide-on-med-and-down">
-                        <h4>Instructions</h4>
+                        <h4>Instructions</h4><br>
                         {% for step in recipe.steps %}
                         <ul>
                             <li>{{ loop.index }}. {{ step }}</li><br>
