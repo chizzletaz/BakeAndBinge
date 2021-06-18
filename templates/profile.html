@@ -36,10 +36,9 @@
                     {% if session.user|lower == recipe.created_by|lower %}
                     <div class="card-action">
                         <a class="btn blue-grey lighten-4 black-text gb"
-                            href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+                            href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
                         <!-- Modal Trigger for confirmation -->
-                        <a class="btn blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1">Delete
-                            Recipe</a>
+                        <a class="btn blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1">Delete</a>
                     </div>
                     <!-- Modal Structure for confirmation-->
                     <div id="modal1" class="modal">
