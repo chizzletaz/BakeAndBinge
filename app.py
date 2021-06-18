@@ -137,7 +137,7 @@ def profile(username):
             except Exception as e:
                 print('Exception %s' % str(e))
                 pass
-        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template("profile.html", recipes=recipes, username=username, categories=categories)
 
     return redirect(url_for('login'))
