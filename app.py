@@ -123,8 +123,22 @@ def profile(username):
         {"username": session["user"]})["username"]
     
     if session['user']:
+        recipes = list(mongo.db.recipes.find().sort("date_added", -1))
+        for recipe in recipes:
+            try:
+                category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+                recipe['category_name'] = category['category_name']
+            except Exception as e:
+                print('Exception %s' % str(e))
+                pass
+            try:
+                user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+                recipe['created_by'] = user['username']
+            except Exception as e:
+                print('Exception %s' % str(e))
+                pass
         categories = list(mongo.db.categories.find().sort("category_name", 1))
-        return render_template("profile.html", username=username, categories=categories)
+        return render_template("profile.html", recipes=recipes, username=username, categories=categories)
 
     return redirect(url_for('login'))
 
@@ -148,6 +162,12 @@ def recipes():
         try:
             category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
             recipe['category_name'] = category['category_name']
+        except Exception as e:
+            print('Exception %s' % str(e))
+            pass
+        try:
+            user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+            recipe['created_by'] = user['username']
         except Exception as e:
             print('Exception %s' % str(e))
             pass
