@@ -182,6 +182,13 @@ footer .card-content {
     padding-bottom: 40px;
 }
 
+.modal, .modal-footer {
+    background-color: #fce4ec !important;
+}
+
+.flashes {
+    background-color: #80cbc4;
+}
 /* Index */
 .welcome {
     /* border-bottom: 1px solid #ff4081;

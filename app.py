@@ -280,7 +280,7 @@ def delete_recipe(recipe_id):
     recipe['created_by'] = user['username']
 
     if session['user'].lower() == recipe['created_by'].lower():
-        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Your recipe has been deleted.")
         return redirect(url_for('profile', username=session["user"]))
     
