@@ -76,3 +76,7 @@ The Jinja condition to only show the edit and delete buttons for the user that c
     </div>
 {% endif %}
 ```
+Issue: SOLVED
+On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).
+Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png). of Materialize.
+
