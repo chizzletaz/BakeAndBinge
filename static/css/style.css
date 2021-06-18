@@ -169,6 +169,10 @@ footer {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.pb {
+    padding-bottom: 40px;
+}
+
 /* Index */
 .welcome {
     /* border-bottom: 1px solid #ff4081;
@@ -180,6 +184,7 @@ footer {
 }
 
 /* Recipes */
+
 .searchbar {
     padding: 20px 0;
     margin: 0 auto;
@@ -197,10 +202,13 @@ footer {
     font-size: 18px;
 }
 
-.indications i {
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
+.indications {
+    font-size: 12px;
+
+}
+
+.indications li{
+    padding: 10px 0 !important;
 }
 
 .card-image p {

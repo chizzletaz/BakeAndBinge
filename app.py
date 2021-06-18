@@ -207,7 +207,6 @@ def add_recipe():
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
         user = mongo.db.users.find_one({'username': session["user"]})
         submit = {
             "category_name": ObjectId(request.form.get("category_name")),
@@ -231,6 +230,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for("recipes"))
 
     
+    # credit for the relations between collections using ObjectId as foreign key: my mentor: Antonio Rodriguez
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     try:
         category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
