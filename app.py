@@ -25,15 +25,17 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     recipes = list(mongo.db.recipes.find().sort("date_added", -1))
+    # Credit for the relations between collections using ObjectId: my mentor, Antonio Rodriguez
+    # Since in the recipe collection, the category_name is stored as the ObjectId of the 
+    # category_name in the category collection, we have to convert the ObjectId-number
+    # of the category name to the category name itself
     for recipe in recipes:
         category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
         recipe['category_name'] = category['category_name']
-    try:
         user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
-    except Exception as e:
-        print('Exception %s' % str(e))
-        pass
+
+    # Getting all the category names 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("index.html", recipes=recipes, categories=categories)
 
@@ -50,6 +52,7 @@ def search():
         except Exception as e:
             print('Exception %s' % str(e))
             pass
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
@@ -57,10 +60,19 @@ def search():
 # FILTER ON CATEGORY
 @app.route("/recipes_filter/<category_name>")
 def recipes_filter(category_name):
-    recipes = list(mongo.db.recipes.find())
-    for recipe in recipes:     
-        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+    # Get the category that is queried 
+    category = mongo.db.categories.find_one({'category_name': category_name})
+    # and find all the recipes with that category
+    recipes = list(mongo.db.recipes.find({'category_name': category['_id']}))
+    
+    for recipe in recipes:
+        # convert the category_name ObjectId to the name
         recipe['category_name'] = category['category_name']
+
+        # convert the created_by ObjectId to the name
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
@@ -125,24 +137,23 @@ def login():
 @app.route('/profile/<username>', methods=["GET", "POST"])
 def profile(username):
     # get the session user's name from the database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     
     if session['user']:
-        recipes = list(mongo.db.recipes.find().sort("date_added", -1))
+        # get recipes from this user
+        recipes = list(mongo.db.recipes.find(
+            {"created_by": user["_id"]}).sort("date_added", -1))
+        
         for recipe in recipes:
-            try:
-                category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
-                recipe['category_name'] = category['category_name']
-            except Exception as e:
-                print('Exception %s' % str(e))
-                pass
-            try:
-                user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
-                recipe['created_by'] = user['username']
-            except Exception as e:
-                print('Exception %s' % str(e))
-                pass
+            # convert category_name ObjectId to the name
+            category = mongo.db.categories.find_one(
+                {'_id': ObjectId(recipe['category_name'])})
+            recipe['category_name'] = category['category_name']
+        
+            # convert created_by ObjectId to the name
+            recipe['created_by'] = user['username']
+
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template("profile.html", recipes=recipes, username=username, categories=categories)
 
@@ -163,20 +174,18 @@ def logout():
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
-    # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
+    
     for recipe in recipes:
-        try:
-            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
-            recipe['category_name'] = category['category_name']
-        except Exception as e:
-            print('Exception %s' % str(e))
-            pass
-        try:
-            user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
-            recipe['created_by'] = user['username']
-        except Exception as e:
-            print('Exception %s' % str(e))
-            pass
+        # convert category_name ObjectId to the name
+        category = mongo.db.categories.find_one(
+            {'_id': ObjectId(recipe['category_name'])})
+        recipe['category_name'] = category['category_name']
+
+        # convert created_by ObjectId to the name
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipes.html", recipes=recipes, categories=categories)
 
@@ -185,15 +194,14 @@ def recipes():
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
-    try:
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
-        recipe['created_by'] = user['username']
-    except Exception as e:
-        print('Exception %s' % str(e))
-        pass
+    # convert created_by ObjectId to the name
+    user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+    recipe['created_by'] = user['username']
+
+    # convert category_name ObjectId to the name
     category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
     recipe['category_name'] = category['category_name']
+    
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipe.html", recipe=recipe, categories=categories)
 
@@ -202,7 +210,6 @@ def recipe(recipe_id):
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        # credit for the relations between collections using ObjectId: my mentor: Antonio Rodriguez
         user = mongo.db.users.find_one({'username': session["user"]})
         recipe = {
             "category_name": ObjectId(request.form.get("category_name")),
@@ -255,15 +262,11 @@ def edit_recipe(recipe_id):
         flash("Your recipe has been updated.")
         return redirect(url_for("recipes"))
 
-    
-    # credit for the relations between collections using ObjectId as foreign key: my mentor: Antonio Rodriguez
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    try:
-        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
-        recipe['category_name'] = category['category_name']
-    except Exception as e:
-        print('Exception %s' % str(e))
-        pass
+    # convert category_name ObjectId to the name
+    category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+    recipe['category_name'] = category['category_name']
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
 
@@ -272,15 +275,11 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    try:
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
-        recipe['created_by'] = user['username']
-    except Exception as e:
-        print('Exception %s' % str(e))
-        pass
+    # convert created_by ObjectId to the name
+    user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+    recipe['created_by'] = user['username']
 
     if session['user'].lower() == recipe['created_by'].lower():
-        
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         flash("Your recipe has been deleted.")
         return redirect(url_for('profile', username=session["user"]))

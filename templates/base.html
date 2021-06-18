@@ -68,7 +68,7 @@
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
             {% for category in categories %}
-            <li><a class="black-text hvr-ufc" href="#">{{ category.category_name }}</a></li>
+            <li><a class="black-text hvr-ufc" href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{ category.category_name }}</a></li>
             {% endfor %}
         </ul>
         <!-- sidebar menu -->

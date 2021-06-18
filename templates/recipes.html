@@ -9,7 +9,7 @@
         <div class="center-align hide-on-med-and-down pb">
             <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink accent-1 btn">All</a>
             {% for category in categories %}
-            <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
+            <a href="{{ url_for('recipes_filter', category_name=category.category_name) }}"
                 class="waves-effect waves-light pink accent-1 btn">{{ category.category_name }}</a>
             {% endfor %}
         </div>
@@ -23,7 +23,7 @@
                 <!-- Dropdown Structure -->
                 <ul id='dropdownCat' class='dropdown-content'>
                     <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
-                    <li><a class="black-text hvr-ufc" href="#">Bread</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}">Bread</a></li>
                     <li><a class="black-text hvr-ufc" href="#">Cake</a></li>
                     <li><a class="black-text hvr-ufc" href="#">Cookies</a></li>
                     <li><a class="black-text hvr-ufc" href="#">Muffins</a></li>
