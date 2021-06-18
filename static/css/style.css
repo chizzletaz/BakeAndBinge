@@ -113,7 +113,12 @@ li, .navbar-brand {
 
 /* footer */
 footer {
-    padding: 25px 0;
+    padding: 25px 0 10px;
+    
+}
+
+footer .card-content {
+    padding: 5px 20px !important;
 }
 
 .list-inline-item {
