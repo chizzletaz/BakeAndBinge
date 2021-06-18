@@ -46,12 +46,11 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     for recipe in recipes:
-        try:
-            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
-            recipe['category_name'] = category['category_name']
-        except Exception as e:
-            print('Exception %s' % str(e))
-            pass
+        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        recipe['category_name'] = category['category_name']
+
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("recipes.html", recipes=recipes, categories=categories)
