@@ -24,13 +24,13 @@ Issue: SOLVED
 Due to the relational connection of category_name in recipes (the category_name in the recipe collection has the value of the
 ObjectId of category_name in the categories collection), the preloading of the category_name on the 'edit_recipe' page is not working as used in the Task Manager Walkthrough.
 ```
-{% for category in categories %}
-    {% if category.category_name == recipe.category_name %}
-        <option value="{{ category._id }}">{{ category.category_name }} selected</option>
-    {% else %}
-        <option value="{{ category._id }}">{{ category.category_name }}</option>
-    {% endif %}
-{% endfor %}
+    {% for category in categories %}
+        {% if category.category_name == recipe.category_name %}
+            <option value="{{ category._id }}">{{ category.category_name }} selected</option>
+        {% else %}
+            <option value="{{ category._id }}">{{ category.category_name }}</option>
+        {% endif %}
+    {% endfor %}
 ```
 Fix: The category_name in the Categories collection has to be connected to the category_id in the Recipe collection.
 Add this to the "GET" method of the recipe() function:
@@ -48,20 +48,20 @@ Issue: SOLVED
 When adding a new recipe, the ingredients and the instructions aren't stored.
 I used 'ingredients' and 'steps' for the id, label and name:
 ```
-<input id="ingredients" name="ingredients[]" type="text" class="validate">
-<label for="ingredients">Ingredient</label>
+    <input id="ingredients" name="ingredients[]" type="text" class="validate">
+    <label for="ingredients">Ingredient</label>
 
-<input id="steps" name="steps[]" type="text" class="validate">
-<label for="steps">Instruction</label>
+    <input id="steps" name="steps[]" type="text" class="validate">
+    <label for="steps">Instruction</label>
 ```
 Fix:
 I changes the id, label and name to 'ingredient' and 'step':
 ```
-<input id="ingredient" name="ingredient[]" type="text" class="validate">
-<label for="ingredient">Ingredient</label>
+    <input id="ingredient" name="ingredient[]" type="text" class="validate">
+    <label for="ingredient">Ingredient</label>
 
-<input id="step" name="step[]" type="text" class="validate">
-<label for="step">Instruction</label>
+    input id="step" name="step[]" type="text" class="validate">
+    <label for="step">Instruction</label>
 ```
 This seemed to solve the problem.
 
@@ -69,12 +69,20 @@ This seemed to solve the problem.
 Issue:
 The Jinja condition to only show the edit and delete buttons for the user that created the recipe, doesn't work.
 ```
-{% if session.user|lower == recipe.created_by|lower %} 
-    <div class="card-action">
-        <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
-        <a class="btn right" href="#">Delete Recipe</a>
-    </div>
-{% endif %}
+    {% if session.user|lower == recipe.created_by|lower %} 
+        <div class="card-action">
+            <a class="btn" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+            <a class="btn right" href="#">Delete Recipe</a>
+        </div>
+    {% endif %}
+```
+Fix: In the recipes collection, the created_by name is stored as the ObjectId of that name in the user collection.
+To use the condition, the created_by has to be converted to the name. 
+Add to recipes() in app.py:
+```
+    user = mongo.db.users.find_one(
+        {'_id': ObjectId(recipe['created_by'])})
+    recipe['created_by'] = user['username']
 ```
 Issue: SOLVED
 On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).
