@@ -219,8 +219,8 @@ def edit_recipe(recipe_id):
             "total_time": request.form.get("total_time"),
             "servings": request.form.get("servings"),
             "tools": request.form.get("tools"),
-            "ingredients": request.form.getlist("ingredients[]"),
-            "steps": request.form.getlist("steps"),
+            "ingredients": request.form.getlist("ingredient[]"),
+            "steps": request.form.getlist("step[]"),
             "tips": request.form.get("tips"),
             "created_by": ObjectId(user['_id']),
             # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime

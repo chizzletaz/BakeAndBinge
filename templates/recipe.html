@@ -13,94 +13,96 @@
                     <p>By: {{ recipe.created_by | capitalize }}</p>
                 </div>
                 <div class="col s12 l5 card-content">
-                    <div class="div">
-                        <div class="row indications center-align">
-                            <div class="col s12 card-content">
-                                <p>{{ recipe.recipe_description }}</p>
-                            </div>
-                            <div class="col s6 m3 l6">
-                                <p><i class="fas fa-hourglass-end"></i> Prep: {{ recipe.prep_time }}</p>
-                            </div>
-                            <div class="col s6 m3 l6">
-                                <i class="fas fa-hourglass-start"></i>
-                                <p>Bake: {{ recipe.bake_time }}</p>
-                            </div>
-                            <div class="col s6 m3 l6">
-                                <i class="fas fa-hourglass"></i>
-                                <p>Total: {{ recipe.total_time }}</p>
-                            </div>
-                            <div class="col s6 m3 l6">
-                                <i class="fas fa-user-friends"></i>
-                                <p>Serves: {{ recipe.servings }}</p>
-                            </div>
+                    <div class="row indications center-align">
+                        <div class="col s12 card-content">
+                            <p>{{ recipe.recipe_description }}</p>
+                        </div>
+                        <div class="col s6 m3 l6">
+                            <p><i class="fas fa-hourglass-end"></i> Prep: {{ recipe.prep_time }}</p>
+                        </div>
+                        <div class="col s6 m3 l6">
+                            <i class="fas fa-hourglass-start"></i>
+                            <p>Bake: {{ recipe.bake_time }}</p>
+                        </div>
+                        <div class="col s6 m3 l6">
+                            <i class="fas fa-hourglass"></i>
+                            <p>Total: {{ recipe.total_time }}</p>
+                        </div>
+                        <div class="col s6 m3 l6">
+                            <i class="fas fa-user-friends"></i>
+                            <p>Serves: {{ recipe.servings }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 card-content">
+                <div class="card-content">
                     <p><i class="fas fa-utensils"></i>Tools</p>
                     <p>{{ recipe.tools }}</p>
                 </div>
                 <!-- for screen sizes < 992px -->
-                <div>
-                    <div class="card-tabs hide-on-med-and-up show-on-medium-and-down">
-                        <ul class="tabs tabs-fixed-width">
-                            <li class="tab"><a class="active" href="#test4">Ingredients</a></li>
-                            <li class="tab"><a href="#test5">Instructions</a></li>
+                <div class="card-tabs show-on-medium-and-down hide-on-med-and-up">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a class="active" href="#test4">Ingredients</a></li>
+                        <li class="tab"><a href="#test5">Instructions</a></li>
+                    </ul>
+                </div>
+                <div class="card-content show-on-medium-and-down hide-on-med-and-up">
+                    <div id="test4">
+                        {% for ingredient in recipe.ingredients %}
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>{{ ingredient }}</span>
+                                </label>
+                            </li>
                         </ul>
+                        {% endfor %}
                     </div>
-                    <div class="card-content hide-on-med-and-up show-on-medium-and-down">
-                        <div id="test4">
-                            {% for ingredient in recipe.ingredients %}
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>{{ ingredient }}</span>
-                                    </label>
-                                </li>
-                            </ul>
-                            {% endfor %}
-                        </div>
-                        <div id="test5">
-                            {% for step in recipe.steps %}
-                            <ul>
-                                <li>{{ loop.index }}. {{ step }}</li><br>
-                            </ul>
-                            {% endfor %}
-                        </div>
+                    <div id="test5">
+                        {% for step in recipe.steps %}
+                        <ul>
+                            <li>{{ loop.index }}. {{ step }}</li><br>
+                        </ul>
+                        {% endfor %}
                     </div>
                 </div>
                 <!-- for screen sizes > 992px -->
-                <div class="col s12 l5 card-content hide-on-med-and-down">
-                    <h4>Ingredients</h4>
-                    {% for ingredient in recipe.ingredients %}
-                    <ul>
-                        <li>
-                            <label>
-                                <input type="checkbox" />
-                                <span>{{ ingredient }}</span>
-                            </label>
-                        </li>
-                    </ul>
+                <div class="row card-content">
+                    <div class="col s12 l5 hide-on-med-and-down">
+                        <h4>Ingredients</h4>
+                        {% for ingredient in recipe.ingredients %}
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>{{ ingredient }}</span>
+                                </label>
+                            </li>
+                        </ul>
 
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <div class="col s12 l7 hide-on-med-and-down">
+                        <h4>Instructions</h4>
+                        {% for step in recipe.steps %}
+                        <ul>
+                            <li>{{ loop.index }}. {{ step }}</li><br>
+                        </ul>
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="col s12 l7 card-content hide-on-med-and-down">
-                    <h4>Instructions</h4>
-                    {% for step in recipe.steps %}
-                    <ul>
-                        <li>{{ loop.index }}. {{ step }}</li><br>
-                    </ul>
-                    {% endfor %}
+                <div class="card-action">
+                    <a class="btn blue-grey lighten-4 black-text gb"
+                        href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+                    <a class="btn right red lighten-1"
+                        href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
                 </div>
             </div>
-            {% if session.user|lower == recipe.created_by|lower %}
-            <div class="card-action">
-                <a class="btn blue-grey lighten-4 black-text gb" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit Recipe</a>
-                <a class="btn right red lighten-1" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete Recipe</a>
-            </div>
-            {% endif %}
+
         </div>
     </div>
+
 </div>
+
+
 {% endblock %}

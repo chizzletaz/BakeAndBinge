@@ -6,7 +6,7 @@
 
     <!-- Categories display only on large and extra large size > 992px -->
     <div class="row">
-        <div class="cat center-align hide-on-med-and-down">
+        <div class="center-align hide-on-med-and-down">
             <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink accent-1 btn">All</a>
             {% for category in categories %}
             <a href="{{ url_for('recipes_filter', category_name=recipes.category_name) }}"
@@ -78,9 +78,7 @@
                         </div>
                     </div>
                     <div class="card-content center-align">
-                        <h4><strong>{{ recipe.recipe_title | capitalize }}</strong></h4>
-
-                        <p>{{ recipe.recipe_description }}</p>
+                        <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
                     </div>
                     <div class="card-action center-align">
                         <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to
