@@ -27,8 +27,10 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
-                    <!-- credit: yuxiaoy on -->
-                    <!-- https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask -->
+                    
+                    <!-- Don't display these navbar links when page is register or login 
+                    credit: yuxiaoy on 
+                    https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask -->
                     {% if request.endpoint != 'register' %}
                     {% if request.endpoint != 'login' %}
                         <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>

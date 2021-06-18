@@ -147,7 +147,7 @@ footer {
 }
 
 .bake {
-    background-image: url("../images/bake.jpg");
+    background-image: url("../images/bake.png");
     background-position: center;
     background-size: cover;
 }
@@ -178,7 +178,7 @@ footer {
     /* border-bottom: 1px solid #ff4081;
     border-top: 1px solid #ff4081; */
     padding: 40px 0;
-    background-image: url("../images/pink_background.jpg");
+    background-image: url("../images/pink_background.png");
     background-position: center;
     background-size: cover;
 }
