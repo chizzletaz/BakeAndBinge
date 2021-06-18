@@ -11,7 +11,7 @@
     <div class="row">
         {% for recipe in recipes %}
             <div class="col s12 m6 l4">
-                <div class="card z-depth-2">
+                <div class="card z-depth-2 hover">
                     <div class="card-image">
                         <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                         <p>By: {{ recipe.created_by | capitalize }}</p>

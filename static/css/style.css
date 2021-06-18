@@ -164,7 +164,7 @@ footer .card-content {
     opacity: 0.7;
 }
 
-.card:hover {
+.hover:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0 ,0.24),0 17px 50px 0 rgba(0, 0, 0, 0.5);
     transform: translate(-0.1rem, 0.1rem);
     transition: transform 150ms;
