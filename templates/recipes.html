@@ -59,18 +59,27 @@
                         <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                         <p>By: {{ recipe.created_by | capitalize }}</p>
                     </div>
-                    <div class="indications">
-                        <ul class="col s6 collection">
-                            <li class="collection-item">
-                            <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p></li>
-                          </ul>
-                          <ul class="col s6 collection">
-                            <li class="collection-item">
-                                <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p></li>
-                          </ul>
-                    </div>
-                    <div class="card-content center-align">
+                    <div class="card-content center-align pt0 grey-bb">
                         <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
+                    </div>
+                    <div class="row">
+                        <div class="card-content indications">
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
+                                </li>
+                            </ul>
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
+                                </li>
+                            </ul>
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="card-action center-align">
                         <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to
@@ -78,10 +87,10 @@
                     </div>
                     {% if session.user|lower == recipe.created_by|lower %}
                     <div class="card-action">
-                        <a class="btn blue-grey lighten-4 black-text gb"
+                        <a class="btn-small blue-grey lighten-4 black-text gb"
                             href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
                         <!-- Modal Trigger for confirmation -->
-                        <a class="btn blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1">Delete</a>
+                        <a class="btn-small blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1">Delete</a>
                     </div>
                     
                     {% endif %}
