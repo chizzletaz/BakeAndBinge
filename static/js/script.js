@@ -9,7 +9,14 @@ $(document).ready(function () {
     $('select').formSelect();
     $('textarea#recipe_description').characterCounter();
     $('.tabs').tabs();
-    $('.modal').modal();
+    // $('.modal').modal();
+    $('.modal').modal({
+        ready: function() {
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+        }
+      });
+      $('#demo-carousel-indicators').carousel({fullWidth: true});
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
 
     // Credit: Flask mini project: Materialize for validation
     // https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/templates/add_task.html

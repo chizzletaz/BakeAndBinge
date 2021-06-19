@@ -2,63 +2,64 @@
 {% block content %}
 
 
-    <div class="welcome">
-        <div class="center-align">
-            <h1 class="display-5">Welcome to Bake & Binge</h1>
-            <h5 class="lead">The website to bake, browse and add your own recipes.</h5>
-            <p class="lead center-align">
-                <a class="waves-effect waves-light pink accent-1 btn" href="{{ url_for('recipes') }}"
-                    role="button">Browse Recipes</a>
-                {% if not session.user %}
-                <a class="waves-effect waves-light btn teal lighten-2" href="{{ url_for('register') }}"
-                    role="button">Register here</a>
-                {% endif %}
-            </p>
-        </div>
+<div class="welcome">
+    <div class="center-align">
+        <h1 class="display-5">Welcome to Bake & Binge</h1>
+        <h5 class="lead">The website to bake, browse and add your own recipes.</h5>
+        <p class="lead center-align">
+            <a class="waves-effect waves-light pink accent-1 btn" href="{{ url_for('recipes') }}" role="button">Browse
+                Recipes</a>
+            {% if not session.user %}
+            <a class="waves-effect waves-light btn teal lighten-2" href="{{ url_for('register') }}"
+                role="button">Register here</a>
+            {% endif %}
+        </p>
     </div>
+</div>
 
 <section class="container">
     <h4>Latest recipes</h4>
     <div class="row">
         {% for recipe in recipes %}
-            <div class="col s12 m6 l4">
-                <div class="card z-depth-2 bs hover">
-                    <div class="card-image">
-                        <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
-                        <p>By: {{ recipe.created_by | capitalize }}</p>
-                    </div>
-                    <div class="card-content center-align pt0">
-                        <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
-                    </div>
-                    <div class="col s12 card-content grey-bb pt0">
-                        <blockquote>{{ recipe.recipe_description }}</blockquote>
-                    </div>
-                    <div class="row">
-                        <div class="card-content indications">
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
-                                </li>
-                            </ul>
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
-                                </li>
-                            </ul>
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}</p>
-                                </li>
-                            </ul>
-    
-                        </div>
-                    </div>
-                    <div class="card-action center-align">
-                        <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to
-                            recipe</a>
+        <div class="col s12 m6 l4">
+            <div class="card z-depth-2 bs hover">
+                <div class="card-image ">
+                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                    <p>By: {{ recipe.created_by | capitalize }}</p>
+                </div>
+                <div class="divider"></div>     <!-- from Materialize: 1 pixel lines that helps break up the content -->
+                <div class="card-content center-align pt0">
+                    <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
+                </div>
+                <div class="col s12 card-content grey-bb pt0">
+                    <blockquote>{{ recipe.recipe_description }}</blockquote>
+                </div>
+                <div class="row">
+                    <div class="card-content indications">
+                        <ul class="col collection">
+                            <li class="collection-item">
+                                <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
+                            </li>
+                        </ul>
+                        <ul class="col collection">
+                            <li class="collection-item">
+                                <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
+                            </li>
+                        </ul>
+                        <ul class="col collection">
+                            <li class="collection-item">
+                                <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}</p>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
+                <div class="card-action center-align">
+                    <a class="btn pink lighten-3" href="{{ url_for('recipe', recipe_id=recipe._id) }}">Go to
+                        recipe</a>
+                </div>
             </div>
+        </div>
         {% endfor %}
     </div>
 </section>
