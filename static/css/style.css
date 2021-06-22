@@ -195,6 +195,7 @@ footer .card-content {
 
 .modal, .modal-footer {
     background-color: #fce4ec !important;
+    width: 35%;
 }
 
 .flashes {

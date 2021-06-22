@@ -46,8 +46,19 @@
                             href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% if session.user|lower == 'admin'|lower %}
                     <li><a class="black-text hvr-ufc" href="{{ url_for('categories') }}">Manage Categories</a></li>
-                    {% endif %}
-                    <li><a class="black-text hvr-ufc" href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %} 
+                    <!-- Modal Trigger for log out confirmation -->
+                    <li><a class="black-text hvr-ufc modal-trigger" href="#modal3">Logout</a></li>
+                    <!-- Modal Structure for log out confirmation-->
+                    <div id="modal3" class="modal">
+                        <div class="modal-content center-align">
+                            <h5>Are you sure you want to log out?</h5>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="modal-close waves-effect waves-green btn-small left">No</a>
+                            <a href="{{ url_for('logout') }}" class="modal-close waves-effect waves-green btn-small">Yes</a>
+                        </div>
+                    </div>
                     {% else %}
                     <li class="nav-item">
                         <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i>
