@@ -254,7 +254,9 @@ footer .card-content {
     margin: 10px;
 }
 /* recipe */
-
+.recipe .card-image {
+    padding: 0;
+}
 
 /* add recipe */
 .input-field .prefix.right{
