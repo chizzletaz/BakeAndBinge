@@ -191,9 +191,11 @@ footer .card-content {
 .m0 {
     margin: 0 !important
 }
-
 .modal, .modal-footer {
     background-color: #fce4ec !important;
+}
+
+#modal1, #modal3, #modal4 {
     width: 35%;
 }
 

@@ -4,14 +4,16 @@
 <div class="container">
     <h2>{{ username }}</h2>
 
-    <a class="btn-floating pink accent-2" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus"></i></a>
-    <p>Add new recipe</p>
+    <div class="center-align">
+        <a class="btn-floating btn-large pink accent-2" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus"></i></a>
+        <h5>Add a new recipe</h5>
+    </div>  
 
     <!-- Modal Trigger for 'how to add a recipe' -->
     <button data-target="modal2" class="btn-floating modal-trigger"><i class="fas fa-question"></i></button>
-    <p>How to add a new recipe</p>
+    <h5>How to add a new recipe</h5>
     
-    <img src="/static/images/how_to1.png">
+    <!-- <img src="/static/images/how_to1.png"> -->
 
     <div class="row">
         {% for recipe in recipes %}
@@ -78,32 +80,17 @@
         {% endfor %}
     </div>
     <!-- Modal Structure for 'how to add a recipe'-->
-    <!-- <div id="modal2" class="modal">
+    <div id="modal2" class="modal">
         <div class="modal-content">
-            <div class="carousel carousel-slider" id="demo-carousel-indicators" data-indicators="true">
-                <a class="carousel-item" href="#one"><img src="./images/how_to1.png"></a>
-                <a class="carousel-item" href="#two"><img src="./images/how_to2.png"></a>
-                <a class="carousel-item" href="#three"><img src="./images/how_to3.png"></a>
-            </div>
+                <img src="{{ url_for('static', filename='/images/how_to1.png') }}"></a>
+                <img src="{{ url_for('static', filename='/images/how_to2.png') }}"></a>
+                <img src="{{ url_for('static', filename='/images/how_to3.png') }}"></a>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn white-text">Done</a>
         </div>
-    </div> -->
-    
-    <div class="modal" id="modal2">
-        <div class="modal-content">
-    
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one"><img src="https://lorempixel.com/800/400/food/1"></a>
-                <a class="carousel-item" href="#two"><img src="https://lorempixel.com/800/400/food/2"></a>
-                <a class="carousel-item" href="#three"><img src="https://lorempixel.com/800/400/food/3"></a>
-                <a class="carousel-item" href="#four"><img src="https://lorempixel.com/800/400/food/4"></a>
-            </div>
-    
-        </div>
-        <div class="modal-close">X</div>
     </div>
+    
 
 </div>
 {% endblock %}
