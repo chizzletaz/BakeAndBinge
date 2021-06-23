@@ -156,17 +156,20 @@ def profile(username):
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template("profile.html", recipes=recipes, username=username, categories=categories)
 
-    return redirect(url_for('login'))
+    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    return redirect(url_for('register'))
 
 
 # LOGOUT
 @app.route("/logout")
 def logout():
+    if session['user']:
+        #remove user from session cookies
+        flash("You have been logged out")
+        session.pop('user')
+        return redirect(url_for("login"))
 
-    #remove user from session cookies
-    flash("You have been logged out")
-    session.pop('user')
-    return redirect(url_for("login"))
+    return redirect(url_for('home'))
 
 
 # ALL RECIPES
@@ -208,84 +211,114 @@ def recipe(recipe_id):
 # ADD RECIPE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if request.method == "POST":
-        user = mongo.db.users.find_one({'username': session["user"]})
-        recipe = {
-            "category_name": ObjectId(request.form.get("category_name")),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_image": request.form.get("recipe_image"),
-            "prep_time": request.form.get("prep_time"),
-            "bake_time": request.form.get("bake_time"),
-            "total_time": request.form.get("total_time"),
-            "servings": request.form.get("servings"),
-            "tools": request.form.get("tools"),
-            "ingredients": request.form.getlist("ingredient[]"),
-            "steps": request.form.getlist("step[]"),
-            "tips": request.form.get("tips"),
-            "created_by": ObjectId(user['_id']),
-            # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
-            "date_added": date.today().strftime("%d %B %Y") 
-        }
-        mongo.db.recipes.insert_one(recipe)
-        flash("Your recipe has been added.")
-        return redirect(url_for('profile', username=session["user"]))
+    if session['user']:
 
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("add_recipe.html", categories=categories)
+        if request.method == "POST":
+
+            user = mongo.db.users.find_one({'username': session["user"]})
+            recipe = {
+                "category_name": ObjectId(request.form.get("category_name")),
+                "recipe_title": request.form.get("recipe_title"),
+                "recipe_description": request.form.get("recipe_description"),
+                "recipe_image": request.form.get("recipe_image"),
+                "prep_time": request.form.get("prep_time"),
+                "bake_time": request.form.get("bake_time"),
+                "total_time": request.form.get("total_time"),
+                "servings": request.form.get("servings"),
+                "tools": request.form.get("tools"),
+                "ingredients": request.form.getlist("ingredient[]"),
+                "steps": request.form.getlist("step[]"),
+                "tips": request.form.get("tips"),
+                "created_by": ObjectId(user['_id']),
+                # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
+                "date_added": date.today().strftime("%d %B %Y") 
+            }
+            mongo.db.recipes.insert_one(recipe)
+            flash("Your recipe has been added.")
+            return redirect(url_for('profile', username=session["user"]))
+
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        return render_template("add_recipe.html", categories=categories)
+
+    flash("Action denied. You don't have an account yet (or aren't logged in). Please register (or login).")
+    return redirect(url_for('register'))
 
 
 # EDIT RECIPE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST":
-        user = mongo.db.users.find_one({'username': session["user"]})
-        submit = {
-            "category_name": ObjectId(request.form.get("category_name")),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_description": request.form.get("recipe_description"),
-            "recipe_image": request.form.get("recipe_image"),
-            "prep_time": request.form.get("prep_time"),
-            "bake_time": request.form.get("bake_time"),
-            "total_time": request.form.get("total_time"),
-            "servings": request.form.get("servings"),
-            "tools": request.form.get("tools"),
-            "ingredients": request.form.getlist("ingredient[]"),
-            "steps": request.form.getlist("step[]"),
-            "tips": request.form.get("tips"),
-            "created_by": ObjectId(user['_id']),
-            # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
-            "date_added": date.today().strftime("%d %B %Y") 
-        }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Your recipe has been updated.")
-        return redirect(url_for("recipes"))
+    if session['user']:
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    # convert category_name ObjectId to the name
-    category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
-    recipe['category_name'] = category['category_name']
+        # find the current recipe
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        # convert created_by ObjectId to the name
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+        
+        # check if the recipe is made by the user
+        if session['user'].lower() == recipe['created_by'].lower():
 
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+            if request.method == "POST":
+                user = mongo.db.users.find_one({'username': session["user"]})
+                submit = {
+                    "category_name": ObjectId(request.form.get("category_name")),
+                    "recipe_title": request.form.get("recipe_title"),
+                    "recipe_description": request.form.get("recipe_description"),
+                    "recipe_image": request.form.get("recipe_image"),
+                    "prep_time": request.form.get("prep_time"),
+                    "bake_time": request.form.get("bake_time"),
+                    "total_time": request.form.get("total_time"),
+                    "servings": request.form.get("servings"),
+                    "tools": request.form.get("tools"),
+                    "ingredients": request.form.getlist("ingredient[]"),
+                    "steps": request.form.getlist("step[]"),
+                    "tips": request.form.get("tips"),
+                    "created_by": ObjectId(user['_id']),
+                    # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
+                    "date_added": date.today().strftime("%d %B %Y") 
+                }
+                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+                flash("Your recipe has been updated.")
+                return redirect(url_for("recipes"))
+
+            recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+            # convert category_name ObjectId to the name
+            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+            recipe['category_name'] = category['category_name']
+            
+            categories = list(mongo.db.categories.find().sort("category_name", 1))
+            return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+
+        flash("Action denied. This isn't your recipe.")
+        return redirect(url_for('profile', username=session["user"]))
+
+    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    return redirect(url_for('register'))
 
 
 # DELETE RECIPE
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    # convert created_by ObjectId to the name
-    user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
-    recipe['created_by'] = user['username']
+    if session['user']:
 
-    if session['user'].lower() == recipe['created_by'].lower():
-        # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-        flash("Your recipe has been deleted.")
-        return redirect(url_for('profile', username=session["user"]))
-    
-    else:
-        flash("Action denied. This is not your recipe")
-        return redirect(url_for('profile', username=session["user"]))
+        # find the current recipe
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        # convert created_by ObjectId to the name
+        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        recipe['created_by'] = user['username']
+
+        # check if the recipe is made by the user
+        if session['user'].lower() == recipe['created_by'].lower():
+            # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            flash("Your recipe has been deleted.")
+            return redirect(url_for('profile', username=session["user"]))
+        
+        else:
+            flash("Action denied. This is not your recipe")
+            return redirect(url_for('profile', username=session["user"]))
+
+    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    return redirect(url_for('register'))
 
 
 # MANAGE CATEGORIES
@@ -298,43 +331,66 @@ def categories():
 # ADD CATEGORY
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New category has been added.")
-        return redirect(url_for('categories'))
+    if session['user']:
 
-    return render_template("add_category.html")
+        if session['user'].lower() == 'admin':
+
+            if request.method == "POST":
+                category = {
+                    "category_name": request.form.get("category_name")
+                }
+                mongo.db.categories.insert_one(category)
+                flash("New category has been added.")
+                return redirect(url_for('categories'))
+
+            return render_template("add_category.html")
+
+        flash("Access denied. You don't have permission for this page.")
+        return redirect(url_for('home'))
+
+    flash("Access denied. You don't have permission for this page.")
+    return redirect(url_for('home'))
 
 
 # EDIT CATEGORY
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    if session['user']:
+
+        if session['user'].lower() == 'admin':
+
+            if request.method == "POST":
+                submit = {
+                    "category_name": request.form.get("category_name")
+                }
+                mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+                flash('Category has been updated.')
+                return redirect(url_for('categories'))
+
+            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+            return render_template("edit_category.html", category=category)
+        
+        flash("Access denied. You don't have permission for this page.")
+        return redirect(url_for('home'))
+
+    flash("Access denied. You don't have permission for this page.")
+    return redirect(url_for('home'))
     
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash('Category has been updated.')
-        return redirect(url_for('categories'))
-
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
-
 
 # DELETE CATEGORY
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    if session['user'] == 'admin'.lower():
-        mongo.db.categories.remove({"_id": ObjectId(category_id)})
-        flash("Category has been deleted.")
-        return redirect(url_for('categories'))
-    
-    flash('You have no permission to delete a category')
-    return redirect(url_for('profile', username=session["user"]))
+    if session['user']:
+        if session['user'] == 'admin'.lower():
+            mongo.db.categories.remove({"_id": ObjectId(category_id)})
+            flash("Category has been deleted.")
+            return redirect(url_for('categories'))
+        
+        flash("Access denied. You don't have permission for this page.")
+        return redirect(url_for('profile', username=session["user"]))
+
+    flash("Access denied. You don't have permission for this page.")
+    return redirect(url_for('home'))
 
 
 # CONTACT

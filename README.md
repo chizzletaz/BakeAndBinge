@@ -46,13 +46,14 @@ With this project I hope to show my knowledge and application of the added codin
 ### **User stories:**  
 *First time users:*
 - As a first time user, I want to navigate easily across the site. —> nav bar, nav buttons.
-- As a first time user, I want to browse the recipes, so I can find inspiration for a recipe. —> home page with all recipes + browse per category.
+- As a first time user, I want to browse the recipes, so I can find inspiration for a recipe. —> recipe page with all recipes + browse per category.
 
 *General users:*
 - As a user, I want to be able to use the website on different screen sizes. —> responsive design
-- As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search bar
+- As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search option
 - As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. —> filter buttons or select option
 - As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe. —> sort buttons.
+- As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet. -> labels for gluten     free, vegan, etc.
 
 *Regular users:*
 - As a regular user, I want to have my own page, so I can manage my own recipes. —> register/login functionality.
@@ -61,7 +62,7 @@ With this project I hope to show my knowledge and application of the added codin
 - As a regular user, I want to contact the site owner in case I have questions or remarks. —> contact page.
 - As a regular user, I want to be able to rate other recipes. —> rating functionality
 - As a regular user, I want to be able to share recipes. —> share functionality
-- As a regular user, I want to get the latest news and updates 
+- As a regular user, I want to get the latest news and updates. -> sign up for newsletter
 
 ### **Developer stories**
 *Admin/site owner:*
@@ -80,10 +81,10 @@ Based on the user stories the minimal requirements for this project are:
 3. A homepage with all the recipes.
 4. A search option to search the recipes.
 5. An option to filter by category.
-6. An option to sort by attribute (alphabetically, time, rating)
+6. An option to subscribe to the newsletter.
 7. An option to register and login/logout.
 8. A profile page when users log in. 
-9. An option to Create, Read, Edit and Delete (CRUD) recipes.
+9. Options to Create, Read, Edit and Delete (CRUD) recipes.
 10. A shop page to promote baking tools.
 11. An option for the user to contact the site’s owner.
 12. An Admin page with admin only functionality.
@@ -94,6 +95,9 @@ Based on the user stories the minimal requirements for this project are:
 3. A tips and tricks page.
 4. An explanation how to add, edit and delete recipes.
 5. An option to delete a profile.
+6. An option to sort by attribute (alphabetically, time, rating)
+7. An option to add labels (e.g. vegan, gluten free) to recipes.
+8. An option to save a recipe to the users profile page.
 
 ## **Structure Level**
 ### **Interaction Design and Information Design**
