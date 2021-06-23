@@ -6,6 +6,7 @@ Solution: according to the documentation of Materialize, you can change the ![co
 add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).
 
 Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger. And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.
+UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
   
 ---
 Issue: SOLVED
