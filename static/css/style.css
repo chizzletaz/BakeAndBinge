@@ -186,7 +186,7 @@ footer .card-content {
     transform: translate(-0.1rem, 0.1rem);
     transition: transform 150ms;
 }
-/* boxshadow */
+
 .bs {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -202,6 +202,7 @@ footer .card-content {
 .m0 {
     margin: 0 !important
 }
+
 .modal, .modal-footer {
     background-color: #fce4ec !important;
 }
@@ -221,7 +222,7 @@ footer .card-content {
 }
 
 .collection-item i {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* Index */
