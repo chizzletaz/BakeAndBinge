@@ -11,20 +11,22 @@
                     <!-- recipe name -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_title" name="recipe_title" type="text" class="validate" >
+                            <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
                             <label for="recipe_title">Recipe name:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- recipe category -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <select id="category_name" name="category_name" class="validate" >
+                            <select id="category_name" name="category_name" class="validate" required>
                                 <option value="" disabled selected>Category</option>
                                 {% for category in categories %}
                                     <option value="{{ category._id }}">{{ category.category_name }}</option>
                                 {% endfor %}
                             </select>
                             <label for="category_name">Recipe category:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- recipe description -->
@@ -38,8 +40,9 @@
                 <!-- recipe image -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="recipe_image" name=recipe_image type="text" class="validate">
+                            <input id="recipe_image" name=recipe_image type="text" class="validate" required>
                             <label for="recipe_image">URL for recipe image:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- prep time -->
@@ -59,15 +62,17 @@
                     <!-- total time -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="total_time" name="total_time" type="text" class="validate" >
+                            <input id="total_time" name="total_time" type="text" class="validate" required>
                             <label for="total_time">Total time:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- servings -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="servings" name="servings" type="text" class="validate" >
+                            <input id="servings" name="servings" type="text" class="validate" required>
                             <label for="servings">Serves:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- tools needed -->
@@ -83,6 +88,7 @@
                         <div class="input-field col s12 mb0">
                             <input id="ingredient" name="ingredient[]" type="text" class="validate" required>
                             <label for="ingredient">Ingredient</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <div id="newRowIngredient"></div>
@@ -93,8 +99,9 @@
                     <!-- instructions -->
                     <div class="row mb0" id="inputStepRow">
                         <div class="input-field col s12 mb0">
-                            <input id="step" name="step[]" type="text" class="validate" >
+                            <input id="step" name="step[]" type="text" class="validate" required>
                             <label for="step">Instructions</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <div id="newRowStep"></div>
