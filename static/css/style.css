@@ -211,6 +211,11 @@ footer .card-content {
     width: 35%;
 }
 
+#modal2 {
+    height: 90%;
+    width: 80%;
+}
+
 .flashes {
     background-color: #80cbc4;
 }
