@@ -59,7 +59,7 @@ $("#addRowIngredient").click(function () {
     var html = `
     <div class="row mb0" id="inputIngredientRow">
         <div class="input-field col s12 mb0">
-            <input id="ingredient" name="ingredient[]" type="text" class="validate">
+            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
             <label for="ingredient">Ingredient</label>
             <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
         </div>`;
@@ -77,7 +77,7 @@ $("#addRowStep").click(function () {
     var html = `
     <div class="row mb0" id="inputStepRow">
         <div class="input-field col s12 mb0">
-            <input id="step" name="step[]" type="text" class="validate">
+            <textarea id="step" name="step[]" class="materialize-textarea" required></textarea>
             <label for="step">Instruction</label>
             <i id="removeRowStep" class="far fa-trash-alt prefix right"></i>    
         </div>`;

@@ -15,6 +15,7 @@
                                 value="{{ recipe.recipe_title }}" type="text"
                                 class="validate" required>
                             <label for="recipe_title">Recipe name:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- recipe category -->
@@ -31,6 +32,7 @@
                                 {% endfor %}
                             </select>
                             <label for="category_name">Recipe category:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- recipe description -->
@@ -47,15 +49,16 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="recipe_image" name=recipe_image type="text"
-                                value="{{ recipe.recipe_image }}" class="validate">
+                                value="{{ recipe.recipe_image }}" class="validate" required>
                             <label for="recipe_image">URL for recipe image:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- prep time -->
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="prep_time" name="prep_time" type="text"
-                                value="{{ recipe.prep_time }}" class="validate" required>
+                                value="{{ recipe.prep_time }}" class="validate">
                             <label for="prep_time">Preparation time:</label>
                         </div>
                     </div>
@@ -63,7 +66,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="bake_time" name="bake_time" type="text"
-                            value="{{ recipe.bake_time }}" class="validate" required>
+                            value="{{ recipe.bake_time }}" class="validate">
                             <label for="bake_time">Baking time:</label>
                         </div>
                     </div>
@@ -73,6 +76,7 @@
                             <input id="total_time" name="total_time" type="text"
                             value="{{ recipe.total_time }}" class="validate" required>
                             <label for="total_time">Total time:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- servings -->
@@ -81,6 +85,7 @@
                             <input id="servings" name="servings" type="text"
                             value="{{ recipe.servings }}" class="validate" required>
                             <label for="servings">Serves:</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     <!-- tools needed -->
@@ -97,9 +102,11 @@
                     {% for ingredient in recipe.ingredients %}
                     <div class="row mb0" id="inputIngredientRow">
                         <div class="input-field col s12 mb0">
-                            <input id="ingredient" name="ingredient[]" type="text"
-                            value="{{ ingredient }}" class="validate">
+                            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required>
+                                {{- ingredient -}}
+                            </textarea>
                             <label for="ingredient">Ingredient</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     {% endfor %}
@@ -112,9 +119,11 @@
                     {% for step in recipe.steps %}
                     <div class="row mb0" id="inputStepRow">
                         <div class="input-field col s12 mb0">
-                            <input id="step" name="step[]" type="text"
-                            value="{{ step }}" class="validate" required>
+                            <textarea id="step" name="step[]" class="materialize-textarea" required>
+                                {{- step -}}
+                            </textarea>
                             <label for="step">Instructions</label>
+                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
                         </div>
                     </div>
                     {% endfor %}
