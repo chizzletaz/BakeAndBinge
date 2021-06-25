@@ -230,6 +230,12 @@ footer .card-content {
     font-size: 16px;
 }
 
+/* Credit bilalkhan891 @ https://github.com/Dogfalo/materialize/issues/2089 */
+.equal-col {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* Index */
 .welcome {
     /* border-bottom: 1px solid #ff4081;
