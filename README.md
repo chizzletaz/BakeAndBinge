@@ -185,6 +185,8 @@ This page shows in case of an internal service error.
 Below is a chart of the webpages and their mutual connections:
 ![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
 
+**BACKEND**
+
 Below are examples of the database collections:
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)
@@ -209,6 +211,7 @@ Below are examples of the database collections:
 ## **Service Level**
 
 ### **Colors**
+
 ### **Typography** 
 # **Features**
 
