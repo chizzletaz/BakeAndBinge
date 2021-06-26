@@ -40,15 +40,16 @@ p {
 
 /* colourcodes from https://usbrandcolors.com/tech/ */
 .fb:hover {
-    background-color: #4267B2
+    background-color: #4267B2;
+    color: #fff;
 }
 
 .tw:hover {
-    background-color: #1DA1F2
+    background-color: #1DA1F2;
 }
 
 .ig:hover {
-    background-color: #833AB4
+    background-color: #833AB4;
 }
 
 .pin:hover {
@@ -144,7 +145,7 @@ footer .card-content {
 
 .list-inline-item {
     background-color: #455a64;
-    border-radius: 50%;
+    border-radius: 20%;
     text-align: center;
     height: 80px;
     width: 80px;

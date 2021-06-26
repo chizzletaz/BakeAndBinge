@@ -77,8 +77,8 @@ The Jinja condition to only show the edit and delete buttons for the user that c
         </div>
     {% endif %}
 ```
-Fix: In the recipes collection, the created_by name is stored as the ObjectId of that name in the user collection.
-To use the condition, the created_by has to be converted to the name. 
+Fix: In the recipes collection, the 'created_by' name is stored as the ObjectId of that name in the user collection.
+To use the condition, the 'created_by' has to be converted to the name. 
 Add to recipes() in app.py:
 ```
     user = mongo.db.users.find_one(
@@ -87,5 +87,13 @@ Add to recipes() in app.py:
 ```
 Issue: SOLVED
 On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).
-Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png). of Materialize.
+Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png) of Materialize.
+
+---
+Issue: partially SOLVED
+When displaying the recipes on the index, recipes and profile page, the cards 
+[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_unequal.png) equal height. 
+Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
+Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
+Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_equal.png).
 
