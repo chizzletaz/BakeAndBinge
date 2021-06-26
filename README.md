@@ -1,8 +1,10 @@
-#Grandma's Baking Collection
-![Preview image](#url)
+#Bake and Binge
+![Preview image](https://grandmas-baking-collection.herokuapp.com)
 
-One or two paragraphs providing an overview of your project.
-Essentially, this part is your sales pitch.
+Like many others, I've always loved baking and cooking. Over the years you try out new recipes and share the result with your family and friends.
+When the recipe is a hit you often you get the question: 'Can you give me the recipe?'.
+Usually you scribble the recipe down on a piece of paper. I have a lot of those papers lying in the kitchen.
+But it would be much easier to add your recipe online and share is that way. No more scribbling, no more loose papers. 
 
 ### A live version can be viewed [here](https://chizzletaz.github.io/GrandmasBakingCollection/)
 
@@ -38,10 +40,10 @@ Essentially, this part is your sales pitch.
 ***
 # **User Experience (UX)**
 ## **Strategic level**
-Why? I always like baking and cooking. I learned a lot from my mother and grandmother (who didn’t? :)) As a tribute to my grandmother I named the site Mia’s Baking Corner. 
+
 The target audience are users that want to search recipes and add their own.
 I want to create a website for people to find nice recipes and give them the opportunity to add their own. 
-With this project I hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB.
+With this project I also hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB.
 
 ### **User stories:**  
 *First time users:*
@@ -53,7 +55,8 @@ With this project I hope to show my knowledge and application of the added codin
 - As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search option
 - As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. —> filter buttons or select option
 - As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe. —> sort buttons.
-- As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet. -> labels for gluten     free, vegan, etc.
+- As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet. -> labels for gluten free, vegan, etc.
+- As a user, I want to know how to add a recipe. -> How to add a new recipe explanation.
 
 *Regular users:*
 - As a regular user, I want to have my own page, so I can manage my own recipes. —> register/login functionality.
@@ -67,7 +70,7 @@ With this project I hope to show my knowledge and application of the added codin
 ### **Developer stories**
 *Admin/site owner:*
 - As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.
-- As a site owner, I want to be able to have access to all recipes and the option to manage them. —> admin functionality.
+- As a site owner, I want to be able to have access to the recipes categories and the option to manage them. —> admin functionality.
 - As a site owner, I want users to register and login, before they can add, edit or delete their recipes. —> register/login functionality.
 - As a site owner, I want to give the user a pleasant site experience, so they will come back another time.
 
@@ -78,7 +81,7 @@ Based on the user stories the minimal requirements for this project are:
 ### **Requirements**
 1. A navbar and good navigation buttons.
 2. A responsive design.
-3. A homepage with all the recipes.
+3. A page with all the recipes.
 4. A search option to search the recipes.
 5. An option to filter by category.
 6. An option to subscribe to the newsletter.
@@ -92,12 +95,11 @@ Based on the user stories the minimal requirements for this project are:
 **Extra requirements:** 
 1. An option to rate recipes.
 2. An option to share recipes.
-3. A tips and tricks page.
-4. An explanation how to add, edit and delete recipes.
+3. An option to save a recipe to the users profile page.
+4. An explanation how to add recipes.
 5. An option to delete a profile.
 6. An option to sort by attribute (alphabetically, time, rating)
 7. An option to add labels (e.g. vegan, gluten free) to recipes.
-8. An option to save a recipe to the users profile page.
 
 ## **Structure Level**
 ### **Interaction Design and Information Design**
@@ -120,11 +122,12 @@ The user is given feedback, in order to enhance a pleasant user experience:
 - The user get’s a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
 - Flash messages are used to confirm actions.
 - Modal pop ups are used as defensive programming, i.e. prompting the user if they are sure of their action.
-- The user get's a feedback when an error as occurred.
+- The user get's a feedback when an error as occurred (warning text or via error handlers).
 
 ### **The pages**
 **FRONTEND**  
-The website will have 13 pages. Each page will have a navbar and a footer. The navbar links are depending on whether a user is logged in or not and if the user is the admin. 
+The website will have 13 pages plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages. 
+The navbar links are depending on whether a user is logged in or not and if the user is the admin. 
 
 **The landing page/home page:** *(index.html - route: /, /home)*  
 The main page has a navbar with links for home, shop, recipes (dropdown menu to search by category), register, login and a search icon.
@@ -147,7 +150,8 @@ This page has an overview of items that the user can purchase. The links lead to
 
 **The register page:** *(register.html - route: /register)*  
 This page has a register form where the user can register and create an account. After registration the user is led to their own profile page.
-The login page: (login.html - route: /login)
+
+**The login page:** *(login.html - route: /login)*
 This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. When the user has no account, they are redirected to the register page.
 
 **The profile page:** *(profile.html - route: /profile/< username >*  
@@ -165,11 +169,27 @@ This is an admin only page. This page has an overview of the existing categories
 **The add category page:** *(add_category.html - route: /add_category)* 
 This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
-**The edit category page:** *(*edit_category.html - route: /edit_category)*  
+**The edit category page:** *(edit_category.html - route: /edit_category)*  
 This page is admin only and has and option to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
+
+**The 403 error handler page:** *(403.html - errorhandler: 403)*
+This page shows in case of forbidden access.
+
+**The 404 error handler page:** *(403.html - errorhandler: 404)*
+This page shows in case no page is found.
+
+**The 500 error handler page:** *(403.html - errorhandler: 500)*
+This page shows in case of an internal service error.
+
 
 Below is a chart of the webpages and their mutual connections:
 ![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
+
+Below are examples of the database collections:
+![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)
+![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)
+![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)
+![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
 ### Wireframes
