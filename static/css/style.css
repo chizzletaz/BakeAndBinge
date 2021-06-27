@@ -94,6 +94,9 @@ p {
     font-size: 18px;
 }
 
+.brand-logo {
+    font-family: "Kaushan Script";
+}
 /* navbar underline Credit: https://ianlunn.github.io/Hover/ */
 .hvr-ufc {
     display: inline-block;

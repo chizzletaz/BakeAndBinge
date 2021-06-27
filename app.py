@@ -434,7 +434,7 @@ def forbidden_access(e):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('/error_handlers/404.html'), 404
+    return render_template('/error_handlers/404.html', hide_nav=True), 404
 
 
 @app.errorhandler(500)
