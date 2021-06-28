@@ -212,15 +212,11 @@ footer .card-content {
     background-color: #ace3d9;
 }
 
-.btn:hover {
-    opacity: 0.5;
-}
-
 .opaque {
     opacity: 0.7;
 }
 
-.hover:hover {
+.btn:hover, .hover:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0 ,0.24),0 17px 50px 0 rgba(0, 0, 0, 0.5);
     transform: translate(-0.1rem, 0.1rem);
     transition: transform 150ms;
