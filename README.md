@@ -293,13 +293,16 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 # **Credits**
 ### code
 Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
-Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)
+Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)  
 Better aligning the recipe cards [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
 
 ### Content
 
 ### Media
-Shop items and [links](https://www.lecreuset.ie/en_IE/)
-[bake background](Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  )
+Shop items and [links](https://www.lecreuset.ie/en_IE/)  
+Bake background - Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
+error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
+error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
+
 # Acknowledgements

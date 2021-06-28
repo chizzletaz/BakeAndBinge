@@ -429,7 +429,7 @@ def shop():
 # ERROR HANDLERS
 @app.errorhandler(403)
 def forbidden_access(e):
-    return render_template('/error_handlers/403.html'), 403
+    return render_template('/error_handlers/403.html', hide_nav=True), 403
 
 
 @app.errorhandler(404)
@@ -439,7 +439,7 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def internal_error(e):
-    return render_template('/error_handlers/500.html'), 500
+    return render_template('/error_handlers/500.html', hide_nav=True), 500
 
 
 # APP INITIALISATION
