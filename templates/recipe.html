@@ -71,7 +71,7 @@
                 <!-- for screen sizes > 992px -->
                 <div class="row card-content">
                     <div class="col s12 l5 hide-on-med-and-down">
-                        <h4>Ingredients</h4><br>
+                        <h4 class="text-pink">Ingredients</h4><br>
                         {% for ingredient in recipe.ingredients %}
                         <ul>
                             <li>
@@ -85,7 +85,7 @@
                         {% endfor %}
                     </div>
                     <div class="col s12 l7 hide-on-med-and-down">
-                        <h4>Instructions</h4><br>
+                        <h4 class="text-pink">Instructions</h4><br>
                         {% for step in recipe.steps %}
                         <ul>
                             <li>{{ loop.index }}. {{ step }}</li><br>

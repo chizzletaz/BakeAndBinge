@@ -39,8 +39,8 @@ p {
     background-color: #fefefa;
 }
 
-.pink-text {
-    color: #ff4081;
+.text-pink {
+    color: #EE6E73;
 }
 
 /* colourcodes from https://usbrandcolors.com/tech/ */
@@ -80,6 +80,7 @@ p {
 .text-shadow {
     text-shadow: 2px 2px 2px #616161;
 }
+
 /* navbar */
 .navbar {
     font-size: 16px;
@@ -176,6 +177,27 @@ footer .card-content {
     height: 60px;
 }
 
+/* margin and padding */
+.pt0 {
+    padding-top: 0 !important
+}
+
+.pb {
+    padding-bottom: 40px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.m0 {
+    margin: 0 !important
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
+}
+
 /* ID's and classes */
 .container {
     padding: 20px 0 40px;
@@ -206,18 +228,6 @@ footer .card-content {
 
 .bs {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-
-.pb {
-    padding-bottom: 40px;
-}
-
-.pt0 {
-    padding-top: 0 !important
-}
-
-.m0 {
-    margin: 0 !important
 }
 
 .modal, .modal-footer {
@@ -306,10 +316,6 @@ footer .card-content {
 .input-field .prefix.right{
     right: 0;
   }
-
-.mb0 {
-    margin-bottom: 0 !important;
-}
 
 /* Contact page */
 .input-field i {

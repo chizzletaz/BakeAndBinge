@@ -18,7 +18,9 @@
 </div>
 
 <section class="container">
-    <h2>Latest recipes</h2>
+    <div class="row">
+        <h2>Latest recipes</h2>
+    </div>
     <div class="row equal-col">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
@@ -31,7 +33,7 @@
                 <div class="card-content center-align pt0">
                     <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
                 </div>
-                <div class="col s12 card-content grey-bb pt0">
+                <div class="col s12 card-content grey-bb pt0">  <!-- 'divider'- from Materialize doesn't work, so I added my own line with grey-bb-->
                     <blockquote>{{ recipe.recipe_description }}</blockquote>
                 </div>
                 <div class="row">
