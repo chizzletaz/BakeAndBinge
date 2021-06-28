@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 * {
     padding: 0;
@@ -24,9 +24,14 @@ h2 {
     text-shadow: 1px 2px 3px #ff4081, 2px 4px 6px #fff;
 }
 
-h2, h3, h4, h5 {
+h2, h3, h4 {
     font-family: "Noto Serif", serif;
     text-align: center;
+    padding: 0 0 10px;
+}
+
+h5 {
+    font-family: "Noto Serif", serif;
     padding: 0 0 10px;
 }
 
