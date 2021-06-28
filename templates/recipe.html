@@ -11,12 +11,12 @@
                 <div class="col s12 l7 card-image">
                     <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                     <p>By: {{ recipe.created_by | capitalize }}</p>
-                    <p><i class="fas fa-list-ul"></i> {{ recipe.category_name | capitalize }}</p>
+                    <p><i class="fas fa-list-ul"></i> &nbsp Category: {{ recipe.category_name | capitalize }}</p>
                 </div>
                 <div class="col s12 l5 card-content">
                     <ul class="col s6 l12 collection">
                         <li class="collection-item">
-                            <p><i class="fas fa-hourglass-end prefix"></i> &nbsp&nbsp prep: {{ recipe.prep_time }}</p>
+                            <p><i class="fas fa-hourglass-end prefix"></i> &nbsp prep: {{ recipe.prep_time }}</p>
                         </li>
                         <li class="collection-item">
                             <p><i class="fas fa-hourglass-start prefix"></i> &nbsp&nbsp bake: {{ recipe.bake_time }}</p>
@@ -36,7 +36,8 @@
                 </div>
                 <ul class="col s12 collection">
                     <li class="collection-item">
-                        <p><i class="fas fa-utensils"></i> &nbsp&nbspTools: {{ recipe.tools }}</p>
+                        <p><i class="fas fa-utensils"></i> &nbsp&nbspTools:</p>
+                        <p>{{ recipe.tools }}</p>
                     <li class="collection-item">
                 </ul>
                 <!-- for screen sizes < 992px -->
