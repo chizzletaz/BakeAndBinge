@@ -6,8 +6,9 @@
         <h2>Recipes</h2>
     </div>
     
-    <!-- Categories display only on large and extra large size > 992px -->
+    
     <div class="row">
+        <!-- Categories display only on large and extra large size > 992px -->
         <div class="center-align hide-on-med-and-down pb">
             <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink accent-1 btn">All</a>
             {% for category in categories %}

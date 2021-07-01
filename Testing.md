@@ -97,3 +97,17 @@ Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dog
 Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
 Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_equal.png).
 
+---
+Issue: SOLVED
+When selecting recipes by category and only 1 recipe displays. The recipe is displayed on the right side of the page.
+Fix: By inspecting the page. The margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
+to the right. By adding
+```
+.equal-col .col {
+    margin-right: auto;
+}
+```
+the recipe is displayed in the middle. When 2 recipes are shown, the recipes are equally distributed over the width.
+
+---
+
