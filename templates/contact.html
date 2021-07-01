@@ -8,13 +8,13 @@
             <form class="col s12 m10 offset-m1 l8 offset-l2" method="POST" action="{{ url_for('contact') }}">
                 <div class="card opaque pt10">
                     <h2>Contact</h2>
-                    <h5>In case you have questions or remarks,<br>please don't hesitate to contact me.</h5>
+                    <p>In case you have questions or remarks,<br>please don't hesitate to contact me.</p><br>
                     <div class="divider"></div>
                     <div class="card-content">
                         <div class="row">
                             <div class="input-field col s12 l6">
                                 <i class="far fa-user prefix"></i>
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                                <input id="first_name" type="text" class="validate">
                                 <label for="first_name">First Name</label>
                             </div>
                             <div class="input-field col s12 l6">
@@ -43,12 +43,6 @@
                                 type="submit">Submit <i class="fas fa-sign-in-alt right"></i></button>
                         </div>
                     </div>
-                    
-                    <!-- <div class="row">
-                        <button
-                            class="col s12 m8 offset-m2 l6 offset-l3 pink accent-1 btn-large waves-effect waves-light"
-                            type="submit">Register<i class="fas fa-sign-in-alt"></i></button>
-                    </div> -->
                 </div>
             </form>
         </div>
