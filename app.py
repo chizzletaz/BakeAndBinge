@@ -394,8 +394,12 @@ def delete_category(category_id):
 
 
 # CONTACT
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        flash('Your message has been sent')
+        return redirect(url_for('home'))
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("contact.html", categories=categories)
 
