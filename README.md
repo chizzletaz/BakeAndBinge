@@ -227,8 +227,16 @@ The finished product. Visual Design: color, topography, effects, imagery.
 What will the product look like? what colours, images, design elements, animations, transition, etc.What will the final product look like?
 Note why you use certain fonts, color and design choices.
 ### **Colors**
+To ensure that colours match better, I've choosen to use the colours of Materialize.
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
-I've choosen the pink colour #ff4081, which is the pink accent-2 colour of Materialize.
+Therefor the main colour is pink.
+
+[#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) is used as the main colour and is the pink accent-2 colour of Materialize.
+This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.
+#fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.
+#009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).
+#80cbc4 is the teal ligthen-3 colour on Materialize. This colour is used for the background colour of the flash messages.
+#fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.
 
 ### **Typography** 
 # **Features**

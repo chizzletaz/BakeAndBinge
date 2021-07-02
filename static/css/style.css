@@ -76,7 +76,7 @@ p {
 }
 
 .btn-red {
-    background-color: #d32f2f;
+    background-color: #d32f2f;      /* red darken-2 colour on Materialize */
 }
 
 .grey-bb {
@@ -213,9 +213,6 @@ footer .card-content {
     background-image: url("../images/bake.png");
     background-position: center;
     background-size: cover;
-}
-.btn-green {
-    background-color: #ace3d9;
 }
 
 .opaque {
