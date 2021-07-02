@@ -148,11 +148,14 @@ p {
 /* footer */
 footer {
     padding: 25px 0 10px;
-    
 }
 
 footer .card-content {
     padding: 5px 20px !important;
+}
+
+.footer-text {
+    font-size: 18px;
 }
 
 .list-inline-item {
