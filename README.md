@@ -195,13 +195,15 @@ Below is a chart of the webpages and their mutual connections:
 **BACKEND**
 
 Below are examples of the database collections:  
-        database category collections:
+database category collections:
+
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
-        database recipe collections:
+database recipe collections:
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
-        database subscribe collections:  
+database subscribe collections:  
 ![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)
-        database users collections:
+database users collections:
+
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
@@ -221,8 +223,12 @@ Below are examples of the database collections:
 - [Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
 
 ## **Service Level**
-
+The finished product. Visual Design: color, topography, effects, imagery. 
+What will the product look like? what colours, images, design elements, animations, transition, etc.What will the final product look like?
+Note why you use certain fonts, color and design choices.
 ### **Colors**
+In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
+I've choosen the pink colour #ff4081, which is the pink accent-2 colour of Materialize.
 
 ### **Typography** 
 # **Features**
@@ -324,5 +330,5 @@ Recipes:
 - Error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
 - Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
 - Error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
-
+- [Colour codes](https://usbrandcolors.com/tech/) of social media icons.
 # Acknowledgements
