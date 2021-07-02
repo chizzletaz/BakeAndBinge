@@ -2,9 +2,13 @@
 ![Preview image](https://grandmas-baking-collection.herokuapp.com)
 
 Like many others, I've always loved baking and cooking. Over the years you try out new recipes and share the result with your family and friends.
-When the recipe is a hit you often you get the question: 'Can you give me the recipe?'.
-Usually you scribble the recipe down on a piece of paper. I have a lot of those papers lying in the kitchen.
-But it would be much easier to add your recipe online and share is that way. No more scribbling, no more loose papers. 
+When the recipe is a hit you often you get the question: 'Can I get the recipe?'.
+Usually you scribble the recipe down on a piece of paper. You collect them and put them on a pile.
+I have a lot of those papers lying in the kitchen as well and I also lost some of recipes, because I lost the piece of paper.
+So therefore it would be much easier to add your recipe online and share is that way. No more scribbling, no more loose papers!
+
+I narrowed the recipes down to only baking recipes, in order to reduce the amount and difficulty of programming and design options. 
+For the CSS-framework I opted to work with Materialize in stead of Bootstrap. Both to learn to work with another framework and to show that I can work with other frameworks.
 
 ### A live version can be viewed [here](https://chizzletaz.github.io/GrandmasBakingCollection/)
 
@@ -41,17 +45,17 @@ But it would be much easier to add your recipe online and share is that way. No 
 # **User Experience (UX)**
 ## **Strategic level**
 
-The target audience are users that want to search or browse recipes and add their own.
-With this website I want to create a website for people to find nice recipes and give them the opportunity to add their own. This way users can share their recipes online.   
+The target audience are users that want to search or browse recipes and add their own. By adding their own recipe,they can share it with others.
+With this website I want to create a website for people to find and try out nice recipes and give them the opportunity to add their own. This way users can share their recipes online.   
 With this project I also hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB as well as using a different CSS-framework, namely Materialize.
 
 ### **User stories:**  
-        First time users:
+*First time users:*
 - As a first time user, I want to navigate easily across the site. —> nav bar, nav buttons.
 - As a first time user, I want to browse the recipes, so I can find inspiration for a recipe. —> recipe page with all recipes + browse per category.
 - As a user, I want to know how to add a recipe. -> How to add a new recipe explanation.
 
-        General users:
+*General users:*
 - As a user, I want to be able to use the website on different screen sizes. —> responsive design
 - As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search option
 - As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. —> filter buttons or select option
@@ -60,7 +64,7 @@ With this project I also hope to show my knowledge and application of the added 
 - As a user, I want to be able to delete my profile, if I no longer wish to use the website. -> delete profile.
 
 
-        Regular users:
+*Regular users:*
 - As a regular user, I want to have my own page, so I can manage my own recipes. —> register/login functionality.
 - As a regular user, I want to add my own recipes, so I can share them with others on the website. —> add recipe page + functionality
 - As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date. —> edit/delete page + functionality.
@@ -71,7 +75,7 @@ With this project I also hope to show my knowledge and application of the added 
 - As a regular user, I want to get the latest news and updates. -> sign up for newsletter
 
 ### **Developer stories**
-        Admin/site owner:
+*Admin/site owner:*
 - As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.
 - As a site owner, I want to be able to have access to the recipes categories and the option to manage them. —> admin functionality.
 - As a site owner, I want users to register and login, before they can add, edit or delete their recipes. —> register/login functionality.
@@ -190,14 +194,14 @@ Below is a chart of the webpages and their mutual connections:
 
 **BACKEND**
 
-Below are examples of the database collections:
-database category collections:
+Below are examples of the database collections:  
+        database category collections:
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
-database recipe collections:
+        database recipe collections:
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
-database subscribe collections:
+        database subscribe collections:  
 ![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)
-database users collections:
+        database users collections:
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
