@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = list(mongo.db.recipes.find().sort("date_added", -1))
+    recipes = list(mongo.db.recipes.find().sort("date_added", -1).limit(6))
     # Credit for the relations between collections using ObjectId: my mentor, Antonio Rodriguez
     # Since in the recipe collection, the category_name is stored as the ObjectId of the 
     # category_name in the category collection, we have to convert the ObjectId-number
