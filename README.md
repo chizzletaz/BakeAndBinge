@@ -230,13 +230,16 @@ Note why you use certain fonts, color and design choices.
 To ensure that colours match better, I've choosen to use the colours of Materialize.
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefor the main colour is pink.
+![colourB&B](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/coloursB&B.png)  
 
-![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) is used as the main colour and is the pink accent-2 colour of Materialize.
+![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.
-#fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.
-#009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).
-#80cbc4 is the teal ligthen-3 colour on Materialize. This colour is used for the background colour of the flash messages.
-#fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.
+![#fefefa](https://via.placeholder.com/15/fefefa/000000?text=+) #fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.
+![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).
+![#80cbc4](https://via.placeholder.com/15/80cbc4/000000?text=+) #80cbc4 is the teal lighten-3 colour on Materialize. This colour is used for the background colour of the flash messages.
+![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.
+![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the border of the edit buttons.
+![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.
 
 ### **Typography** 
 # **Features**
