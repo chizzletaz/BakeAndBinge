@@ -198,10 +198,13 @@ Below are examples of the database collections:
 database category collections:
 
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
+
 database recipe collections:
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
+
 database subscribe collections:  
-![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)
+![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)  
+
 database users collections:
 
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
@@ -235,15 +238,23 @@ Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
+- ![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.  
 - ![#fefefa](https://via.placeholder.com/15/fefefa/000000?text=+) #fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.  
 - ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).  
 - ![#80cbc4](https://via.placeholder.com/15/80cbc4/000000?text=+) #80cbc4 is the teal lighten-3 colour on Materialize. This colour is used for the background colour of the flash messages.  
-- ![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.  
 - ![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the border of the edit buttons.  
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
 
 ### **Typography** 
+For the title and the logo, I've used Kaushan Script. This is a handwritten font and adds a more unique and homemade feeling.
 
+To keep the design consistent, I've decided to use one font-family: Noto.
+Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.  
+For the other headers (h2 to h5) I've used Noto Serif. 
+![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png) 
+For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
+![example of noto sans text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-sans.png)  
+  
 # **Features**
 
 ## **Existing Features**
