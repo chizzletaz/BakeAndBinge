@@ -41,38 +41,40 @@ But it would be much easier to add your recipe online and share is that way. No 
 # **User Experience (UX)**
 ## **Strategic level**
 
-The target audience are users that want to search recipes and add their own.
-I want to create a website for people to find nice recipes and give them the opportunity to add their own. 
-With this project I also hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB.
+The target audience are users that want to search or browse recipes and add their own.
+With this website I want to create a website for people to find nice recipes and give them the opportunity to add their own. This way users can share their recipes online.   
+With this project I also hope to show my knowledge and application of the added coding skills I’ve learning, i.e. Python, using Flask and MongoDB as well as using a different CSS-framework, namely Materialize.
 
 ### **User stories:**  
-*First time users:*
+        First time users:
 - As a first time user, I want to navigate easily across the site. —> nav bar, nav buttons.
 - As a first time user, I want to browse the recipes, so I can find inspiration for a recipe. —> recipe page with all recipes + browse per category.
+- As a user, I want to know how to add a recipe. -> How to add a new recipe explanation.
 
-*General users:*
+        General users:
 - As a user, I want to be able to use the website on different screen sizes. —> responsive design
 - As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. —> search option
 - As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. —> filter buttons or select option
 - As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe. —> sort buttons.
 - As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet. -> labels for gluten free, vegan, etc.
-- As a user, I want to know how to add a recipe. -> How to add a new recipe explanation.
+- As a user, I want to be able to delete my profile, if I no longer wish to use the website. -> delete profile.
 
-*Regular users:*
+
+        Regular users:
 - As a regular user, I want to have my own page, so I can manage my own recipes. —> register/login functionality.
 - As a regular user, I want to add my own recipes, so I can share them with others on the website. —> add recipe page + functionality
 - As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date. —> edit/delete page + functionality.
 - As a regular user, I want to contact the site owner in case I have questions or remarks. —> contact page.
 - As a regular user, I want to be able to rate other recipes. —> rating functionality
+- As a regular user, I want to be able to save other people's recipes. -> save functionality.
 - As a regular user, I want to be able to share recipes. —> share functionality
 - As a regular user, I want to get the latest news and updates. -> sign up for newsletter
 
 ### **Developer stories**
-*Admin/site owner:*
+        Admin/site owner:
 - As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.
 - As a site owner, I want to be able to have access to the recipes categories and the option to manage them. —> admin functionality.
 - As a site owner, I want users to register and login, before they can add, edit or delete their recipes. —> register/login functionality.
-- As a site owner, I want to give the user a pleasant site experience, so they will come back another time.
 
 ## **Scope level**
 I've opted for a MVP (Minimal Viable Project) again and work my way up from there.
@@ -95,8 +97,8 @@ Based on the user stories the minimal requirements for this project are:
 **Extra requirements:** 
 1. An option to rate recipes.
 2. An option to share recipes.
-3. An option to save a recipe to the users profile page.
-4. An explanation how to add recipes.
+3. An option to save a recipe.
+4. An explanation on how to add recipes.
 5. An option to delete a profile.
 6. An option to sort by attribute (alphabetically, time, rating)
 7. An option to add labels (e.g. vegan, gluten free) to recipes.
@@ -125,19 +127,20 @@ The user is given feedback, in order to enhance a pleasant user experience:
 - The user get's a feedback when an error as occurred (warning text or via error handlers).
 
 ### **The pages**
-**FRONTEND**  
+        FRONTEND  
 The website will have 13 pages plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages. 
-The navbar links are depending on whether a user is logged in or not and if the user is the admin. 
+The navbar links are depending on whether a user is logged in or not and if the user is the admin or not.   
+The main navbar has links to home, shop, contact, recipes (dropdown menu to search by category), register, login and a search icon.  
+When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.  
+When the user is admin, a extra link for managing categories is shown.  
+The footer has a section to subscribe to the newsletter and links to socials.
 
 **The landing page/home page:** *(index.html - route: /, /home)*  
-The main page has a navbar with links for home, shop, recipes (dropdown menu to search by category), register, login and a search icon.
-Below that an hero image and a short explanation for the site.
-Beneath that are the latest recipes and lastly a section to subscribe to the newsletter.
+The main page has the main navbar. Below that an hero image and a short explanation for the site. Beneath that are the latest recipes.
 
 **The recipes page:** *(recipes.html - route: /recipes)*  
-On this page all the recipes are shown. For large screens there are buttons to filter the recipes by category (route: /recipes/< category_name >). For smaller screens, there is a select input. 
-There is a search bar which leads to this same page with the results of the search (route: /search). 
-From there the user can go to an individual recipe page. 
+On this page all the recipes are shown. For large screens there are buttons to filter the recipes by category (route: /recipes/< category_name >). For smaller screens, there is a select input.   
+There is a search bar which leads to this same page with the results of the search (route: /search). From there the user can go to an individual recipe page. 
 
 **The recipe page:** *(recipe.html - route: /recipe/< recipe_id >)*  
 This is the page were individual recipes are shown. 
@@ -149,13 +152,13 @@ This page has a contact form to ask questions or give remarks.
 This page has an overview of items that the user can purchase. The links lead to an external website, which opens up in a new window.
 
 **The register page:** *(register.html - route: /register)*  
-This page has a register form where the user can register and create an account. After registration the user is led to their own profile page.
+This page has a register form where the user can register and create an account. After registration the user is redirected to their own profile page. There is a button to go to the login page, when a user already has an account.
 
-**The login page:** *(login.html - route: /login)*
-This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. When the user has no account, they are redirected to the register page.
+**The login page:** *(login.html - route: /login)*  
+This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. There is a button to the register page, in case the user has no account.
 
 **The profile page:** *(profile.html - route: /profile/< username >*  
-This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. There is an edit and delete button for each recipe. There is also a button to add a new recipe. When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
+This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. There is an edit and delete button for each recipe. There is also a button that opens a modal with an explanation on how to add a new recipe. When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
 
 **The add recipe page:** *(add_recipe.html - route: /add_recipe)*  
 This page has a form where the user can add new recipes. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
@@ -163,22 +166,22 @@ This page has a form where the user can add new recipes. When submitted, the use
 **The edit recipe page:** *(edit_recipe.html - route: /edit_recipe)*  
 This page has a pre-filled form where the user can edit their own recipe. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
  
-**The categories page:** *(categories.html - route: /categories)* 
+**The categories page:** *(categories.html - route: /categories)*   
 This is an admin only page. This page has an overview of the existing categories. The admin can add, edit or delete categories by clicking the respective buttons.
 
-**The add category page:** *(add_category.html - route: /add_category)* 
+**The add category page:** *(add_category.html - route: /add_category)*   
 This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
 **The edit category page:** *(edit_category.html - route: /edit_category)*  
-This page is admin only and has and option to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
+This page is admin only and has a prefilles form to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
-**The 403 error handler page:** *(403.html - errorhandler: 403)*
+**The 403 error handler page:** *(403.html - errorhandler: 403)*  
 This page shows in case of forbidden access.
 
-**The 404 error handler page:** *(403.html - errorhandler: 404)*
+**The 404 error handler page:** *(403.html - errorhandler: 404)*  
 This page shows in case no page is found.
 
-**The 500 error handler page:** *(403.html - errorhandler: 500)*
+**The 500 error handler page:** *(403.html - errorhandler: 500)*  
 This page shows in case of an internal service error.
 
 
@@ -188,26 +191,30 @@ Below is a chart of the webpages and their mutual connections:
 **BACKEND**
 
 Below are examples of the database collections:
-![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)
-![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)
+database category collections:
+![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
+database recipe collections:
+![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
+database subscribe collections:
 ![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)
+database users collections:
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
 ### Wireframes
-![Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)
-![Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)
-![Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)
-![Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)
-![Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)
-![Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)
-![Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
-![Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)
-![Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)
-![Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)
-![Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)
-![Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)
-![Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)
+[Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)  
+[Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)  
+[Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)  
+[Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)  
+[Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)  
+[Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)  
+[Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
+[Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)  
+[Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)  
+[Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)  
+[Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)  
+[Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)  
+[Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
 ## **Service Level**
 
 ### **Colors**
@@ -292,18 +299,25 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 
 # **Credits**
 ### code
-Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
-Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)  
-Better aligning the recipe cards [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)  
-[Hide](https://jinja.palletsprojects.com/en/3.0.x/tricks/) navbar and footer on error handler pages.
+- Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
+- Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)  
+- Better aligning the recipe cards [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)  
+- [Hide](https://jinja.palletsprojects.com/en/3.0.x/tricks/) navbar and footer on error handler pages.
 
 ### Content
+Recipes:
+- [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
+- [Artisan bread](https://sallysbakingaddiction.com/homemade-artisan-bread/#tasty-recipes-80079-jump-target)  
+- [Almond cookies](https://www.foodless.nl/amandelkoekjes-met-citroen/)  
+- The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
 
 ### Media
-Shop items and [links](https://www.lecreuset.ie/en_IE/)  
-Bake background - Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
-error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
-error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
-error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
+- Shop items and [links](https://www.lecreuset.ie/en_IE/)  
+- Pink background on landing page - Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon McCutcheon</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Bake background - Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+
+- Error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
+- Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
+- Error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
 
 # Acknowledgements

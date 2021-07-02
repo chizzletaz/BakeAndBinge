@@ -99,15 +99,16 @@ Now each row has the height of the [largest card](https://github.com/chizzletaz/
 
 ---
 Issue: SOLVED
-When selecting recipes by category and only 1 recipe displays. The recipe is displayed on the right side of the page.
-Fix: By inspecting the page. The margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
-to the right. By adding
+When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.
+Fix: Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
+to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding margin-right: auto
+to the columns of class 'equal-right':
 ```
 .equal-col .col {
     margin-right: auto;
 }
 ```
 the recipe is displayed in the middle. When 2 recipes are shown, the recipes are equally distributed over the width.
-
+I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
 ---
 
