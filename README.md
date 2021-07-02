@@ -192,21 +192,16 @@ This page shows in case of an internal service error.
 Below is a chart of the webpages and their mutual connections:
 ![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
 
-**BACKEND**
+        BACKEND
 
 Below are examples of the database collections:  
 database category collections:
-
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
-
 database recipe collections:
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
-
 database subscribe collections:  
 ![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)  
-
 database users collections:
-
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
@@ -234,7 +229,7 @@ To ensure that colours match better, I've choosen to use the colours of Material
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
-- ![colourB&B](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/coloursB&B.png)  
+![colourB&B](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/coloursB&B.png)  
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
@@ -246,15 +241,15 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
 
 ### **Typography** 
-For the title and the logo, I've used Kaushan Script. This is a handwritten font and adds a more unique and homemade feeling.
-
+For the title and the logo, I've used Kaushan Script. This is a handwritten font and adds a more unique and homemade feeling.  
+![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
 To keep the design consistent, I've decided to use one font-family: Noto.
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.  
 For the other headers (h2 to h5) I've used Noto Serif. 
-![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png) 
+![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png)   
 For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
 ![example of noto sans text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-sans.png)  
-  
+
 # **Features**
 
 ## **Existing Features**
@@ -269,10 +264,9 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 - [Javascript](https://en.wikipedia.org/wiki/JavaScript) for  interactivity
 
 ### **Frameworks and libraries used**   
-- [Bootstrap v5.0](https://getbootstrap.com/)  for precoded code-snippets, like navigation bar, modals, carousel and to help with the responsiveness of the website.
+- [Materialize v1.0.0](https://materializecss.com/) a CSS-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
 - [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
 - [Google fonts](https://fonts.google.com/) for the fonts used in the website. 
-- [Open Trivia Database](https://opentdb.com/api_config.php?ref=public-apis), an API that provides questions and answers for this project.
 - [Font Awesome](https://fontawesome.com/) for the icons used on the website.  
 
 ### **Tools and Programmes used**
@@ -281,8 +275,7 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
  to debug and checking/testing the website.
 - [Git](https://git-scm.com/) for version control.  
 - [GitHub](https://github.com/) for storing and deploying the website.  
-- [GitPod](https://www.gitpod.io/) for coding (IDE) the website.  
-- [Visual Studio Code](https://code.visualstudio.com/) for trying out code (IDE), due to limited usage time on gitpod.
+- [Visual Studio Code](https://code.visualstudio.com/) for coding (IDE) the website.
 - [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
 - [JSHint](https://jshint.com/) to check the Javascript code.
@@ -297,7 +290,7 @@ For testing results, see [Test.md](Test.md)
 To deploy this website to GitHub, I followed the these steps:
 
 1. Login to GitHub.com.
-2. Go to repositories on the left side and click on the repository named: chizzletaz/Triviata
+2. Go to repositories on the left side and click on the repository named: chizzletaz/Bake&Binge
 ![repository](/assets/img/examples/github-repositories.png)
 3. In the repository click on the ‘Settings’-tab at the top.
 ![Settings-tab](assets/img/examples/github-settings.png)
