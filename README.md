@@ -139,53 +139,53 @@ When a user is logged in, the register and login links are hidden and a profile 
 When the user is admin, a extra link for managing categories is shown.  
 The footer has a section to subscribe to the newsletter and links to socials.
 
-**The landing page/home page:** *(index.html - route: /, /home)*  
+- **The landing page/home page:** *(index.html - route: /, /home)*  
 The main page has the main navbar. Below that an hero image and a short explanation for the site. Beneath that are the latest recipes.
 
-**The recipes page:** *(recipes.html - route: /recipes)*  
+- **The recipes page:** *(recipes.html - route: /recipes)*  
 On this page all the recipes are shown. For large screens there are buttons to filter the recipes by category (route: /recipes/< category_name >). For smaller screens, there is a select input.   
 There is a search bar which leads to this same page with the results of the search (route: /search). From there the user can go to an individual recipe page. 
 
-**The recipe page:** *(recipe.html - route: /recipe/< recipe_id >)*  
+- **The recipe page:** *(recipe.html - route: /recipe/< recipe_id >)*  
 This is the page were individual recipes are shown. 
 
-**The contact page:** *(contact.html - route: /contact)*  
+- **The contact page:** *(contact.html - route: /contact)*  
 This page has a contact form to ask questions or give remarks.
 
-**The shop page:** *(shop.html - route: /shop)*  
+- **The shop page:** *(shop.html - route: /shop)*  
 This page has an overview of items that the user can purchase. The links lead to an external website, which opens up in a new window.
 
-**The register page:** *(register.html - route: /register)*  
+- **The register page:** *(register.html - route: /register)*  
 This page has a register form where the user can register and create an account. After registration the user is redirected to their own profile page. There is a button to go to the login page, when a user already has an account.
 
-**The login page:** *(login.html - route: /login)*  
+- **The login page:** *(login.html - route: /login)*  
 This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. There is a button to the register page, in case the user has no account.
 
-**The profile page:** *(profile.html - route: /profile/< username >*  
+- **The profile page:** *(profile.html - route: /profile/< username >*  
 This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. There is an edit and delete button for each recipe. There is also a button that opens a modal with an explanation on how to add a new recipe. When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
 
-**The add recipe page:** *(add_recipe.html - route: /add_recipe)*  
+- **The add recipe page:** *(add_recipe.html - route: /add_recipe)*  
 This page has a form where the user can add new recipes. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
 
-**The edit recipe page:** *(edit_recipe.html - route: /edit_recipe)*  
+- **The edit recipe page:** *(edit_recipe.html - route: /edit_recipe)*  
 This page has a pre-filled form where the user can edit their own recipe. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
  
-**The categories page:** *(categories.html - route: /categories)*   
+- **The categories page:** *(categories.html - route: /categories)*   
 This is an admin only page. This page has an overview of the existing categories. The admin can add, edit or delete categories by clicking the respective buttons.
 
-**The add category page:** *(add_category.html - route: /add_category)*   
+- **The add category page:** *(add_category.html - route: /add_category)*   
 This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
-**The edit category page:** *(edit_category.html - route: /edit_category)*  
+- **The edit category page:** *(edit_category.html - route: /edit_category)*  
 This page is admin only and has a prefilles form to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
 
-**The 403 error handler page:** *(403.html - errorhandler: 403)*  
+- **The 403 error handler page:** *(403.html - errorhandler: 403)*  
 This page shows in case of forbidden access.
 
-**The 404 error handler page:** *(403.html - errorhandler: 404)*  
+- **The 404 error handler page:** *(403.html - errorhandler: 404)*  
 This page shows in case no page is found.
 
-**The 500 error handler page:** *(403.html - errorhandler: 500)*  
+- **The 500 error handler page:** *(403.html - errorhandler: 500)*  
 This page shows in case of an internal service error.
 
 
@@ -206,19 +206,20 @@ Below are examples of the database collections:
 
 ## **Skeleton Level**
 ### Wireframes
-[Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)  
-[Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)  
-[Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)  
-[Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)  
-[Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)  
-[Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)  
-[Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
-[Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)  
-[Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)  
-[Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)  
-[Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)  
-[Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)  
-[Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
+- [Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)  
+- [Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)  
+- [Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)  
+- [Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)  
+- [Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)  
+- [Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)  
+- [Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
+- [Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)  
+- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)  
+- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)  
+- [Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)  
+- [Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)  
+- [Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
+
 ## **Service Level**
 
 ### **Colors**
