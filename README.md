@@ -192,35 +192,35 @@ This page shows in case of an internal service error.
 
 
 Below is a chart of the webpages and their mutual connections:  
-![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
+![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/Recipe_pages.png)
 
         BACKEND
 
 Below are examples of the database collections:  
 database category collections:  
-![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
+![database category collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_category.png)  
 database recipe collections:  
-![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
+![database recipe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_recipe.png)  
 database subscribe collections:  
-![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)  
+![database subscribe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_subscribe.png)  
 database users collections:  
-![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
+![database users collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
 ### Wireframes
-- [Wireframes for Home Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/landing.pdf)  
-- [Wireframes for Recipes Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipes.pdf)  
-- [Wireframes for Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/recipe.pdf)  
-- [Wireframes for Contact Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/contact.pdf)  
-- [Wireframes for Shop Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/shop.pdf)  
-- [Wireframes for Register Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/register.pdf)  
-- [Wireframes for Login Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/login.pdf)
-- [Wireframes for Profile Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/profile.pdf)  
-- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_recipe.pdf)  
-- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_recipe.pdf)  
-- [Wireframes for Categories Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/categories.pdf)  
-- [Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)  
-- [Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
+- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/landing.pdf)  
+- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/recipes.pdf)  
+- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/recipe.pdf)  
+- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/contact.pdf)  
+- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/shop.pdf)  
+- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/register.pdf)  
+- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/login.pdf)
+- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/profile.pdf)  
+- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/add_recipe.pdf)  
+- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/edit_recipe.pdf)  
+- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/categories.pdf)  
+- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/add_category.pdf)  
+- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/edit_category.pdf)  
 
 > ### Update
 >
@@ -232,7 +232,7 @@ To ensure that colours match well, I've choosen to use the colours of Materializ
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
-![colourB&B](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/coloursB&B.png)  
+![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/coloursB&B.png)  
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
@@ -245,17 +245,17 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 
 ### **Typography** 
 For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
-> ![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
+> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/kaushan-script.png)  
 
 To keep the design consistent, I've decided to use one font-family: Noto.  
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
 
 For the other headers (h2 to h5) I've used Noto Serif. 
-> ![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png)  
+> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/noto-serif.png)  
 
 For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
 
-> ![example of noto sans text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-sans.png)  
+> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/noto-sans.png)  
 
 # **Features**
 
@@ -351,26 +351,46 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 For testing results, see [Test.md](Test.md)
 
 ## **Deployment**
+Heroku is used to deploy this application, since GitHub can only deploy static websites.
 
-### Deploying to GitHub pages
-To deploy this website to GitHub, I followed the these steps:
+This application was developed using VSCode as IDE, commited to Git and pushed to GitHub.
+The GitHub repository is linked to the Heroku App via automatic deployment (see below).
+Every time commits and pushes are sent to GitHub, the Heroku App is updated shortly after.
 
-1. Login to GitHub.com.
-2. Go to repositories on the left side and click on the repository named: chizzletaz/Bake&Binge
-![repository](/assets/img/examples/github-repositories.png)
-3. In the repository click on the ‘Settings’-tab at the top.
-![Settings-tab](assets/img/examples/github-settings.png)
-4. Scroll down to ‘GitHub Pages’ section
-![GitHub Pages section](assets/img/examples/github-pages.png).
-5. Under ‘Source’ you see the word ‘None’ with a dropdown menu: select ‘master’
-![master](assets/img/examples/github-master.png).
-6. Click ‘Save’ and scroll back down to GitHub Pages. 
-Here you will find the URL of the deployed website
-![URL of the deployed website](assets/img/examples/github-url.png).
+Before we create our Heroku application, we need to setup some files that Heroku needs to run the app.
+**Create a 'requirements.txt' file**
+A requirements.txt file contains a list of the Python dependencies that our project needs in order to run successfully.
+First, we need to tell Heroku which applications and dependencies are required to run our app:
+1. In the terminal window of the IDE type: **pip3 freeze --local > requirements.txt**
+2. Then type: **git add -A**
+3. Then type: **git commit -m “Add requirements.txt”**
 
-Every time commits and pushes are sent to GitHub, the GitHub Pages site is updated shortly after.
+**Create a Heroku 'Procfile'**
+The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
+1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
+2. Then type: **git add Procfile**
+3. Then type: **git commit -m “Add Profile.”**
+4. Then type: **git push**
 
-For more information about deploying to GitHub Pages check [here](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
+
+**Create a Heroku App**
+1. Click ‘Create New App’ button
+2. Give a unique name and set region to your nearest region.
+3. Click ‘Create App’
+
+**Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**
+**Add secret key to Heroku**
+
+
+**Create a MongoDB Database**
+1. Login to MongoDB.
+2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/clusters.png). 
+**Create new collections**
+1. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/collections.png) 
+2. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/create-db.png) and enter 
+3. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/db-coll.png)
+4. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
 
 ### Forking the GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
@@ -380,16 +400,24 @@ Do achieve this follow these steps:
 ![fork button](assets/img/examples/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
-### Making a Local Clone
-1. Follow this link to [the GitHub Repository](https://github.com/chizzletaz/Triviata)
+### Clone this GitHub repository
+1. Follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge)
 2. Click on the ‘Code’ button 
-![Code button](assets/img/examples/github-clone.png)
-3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon ![save icon](assets/img/examples/github-copy.png).
+![Code button](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/github-clone.png)
+3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon ![save icon](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
-6. A clone will be created locally.
+6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
+7. Click the button 'Clone Repository', add the url you copied above and hit enter.
+8. A clone will be created locally.
 
 For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+### Preparing local copy
+Before we create our Heroku application, we need to setup some files that Heroku needs
+to run the app.
+1. Install the 'requirements.txt' file by typing: **pip3 install -r requirements.txt**
+
 
 # **Credits**
 ### code
