@@ -245,20 +245,76 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 
 ### **Typography** 
 For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
-![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
+> ![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
+
 To keep the design consistent, I've decided to use one font-family: Noto.
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.  
 For the other headers (h2 to h5) I've used Noto Serif. 
-![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png)   
+> ![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png)  
+
 For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
-![example of noto sans text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-sans.png)  
+
+> ![example of noto sans text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-sans.png)  
 
 # **Features**
 
 ## **Existing Features**
+Feature 1 - allows users X to achieve Y, by having them fill out Z
+For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+
+
+- **Responsiveness** on all viewports, which allow users to use the website on all devices.
+- A **navigation bar**, which allow users to easily navigate the website. On devices below 992px, the navbar collapses into a hamburger menu, to reduce the real estate and create a cleaner, calmer look.
+- A **subscription option**, which allow users to subscribe to the newsletter, by entering their email address in the subscribe card. 
+
+- **Recipe cards**, which allow users to see information about a recipe. By clicking on the recipe, the user is redirected to the recipe page.
+- **Register functionality**, which allow users to create an account, by filling in the register form. 
+- **Login functionality**, which allow users to log in their account, by filling in the login form. 
+- **Logout functionality**, which allow users to log out of their account, by clicking the logout button.
+- A **CTA (Call to Action button) button**, which allow users to register to the website (incase they are not logged in).
+- A **search bar**, which allow users to search recipes, by entering a keyword in the search bar.
+- **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.
+- **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
+- A **collapsible**, which allows users to get more information about a product on the shop page, by clicking on the three dots icon.
+
+**Modals** 
+- A modal for how to add a recipe, which gives users information on how to a new recipe.
+- A confirmation modal as a defensive programming tool, which allows users to confirm to delete a recipe or category (in case of admin) or to log out.
+
+**icons**
+- Social media icons, which allows users to go to the corresponding social platform, by clicking on the social icon.
+- Icons as a visual aid, which allow users to quickly and intuitively see what is meant. E.g. a cross-icon to signify a delete function, a plus-icon to signify to add a recipe or category or an @-icon to enter an email address.
+
+**Forms**
+- A form that allow users to get in contact with the website owner, by filling in the form.
+- A form that allow users to add a new recipe, by filling in the form on the add-recipe page.
+- A form that allow users to edit a recipe, by editing the prefilled recipe form on the edit-recipe page.
+- A form that allows the admin to add a new category, by filling in the form on the add-category page.
+- A form that allows the admin to edit a category, by editing the prefilled form on the edit-category page.
+
+**CRUD functionality**
+Create:
+- Logged in users can create new recipes.
+- Admin can create new categories.
+Read:
+- All users can search and view recipes.
+Update:
+- Logged in users can edit their own recipes.
+- Admin can edit categories.
+Delete:
+- Logged in users can delete new recipes.
+- Admin can delete new categories.
 
 ## **Features left to implement**
-\
+- Rating/liking recipes by other users.
+- Share recipes via social media, email or other communication forms.
+- A save option to save other users recipes.
+- Deleting a profile, when a user doesn't want to use the account anymore.
+- A sort option, so users can sort by attribute (alphabetically, time, rating).
+- An option to add labels (e.g. vegan, gluten free) to recipes.
+- Pagination, in case the number of recipes gets too large. It would be more user friendly to have pagination.
+- Reset password, in case the user has lost their password and wants to reset it.
+
 # **Technologies used**
 
 ### **Languages used**  
