@@ -228,7 +228,7 @@ database users collections:
 ## **Service Level**
 
 ### **Colors**
-To ensure that colours match well, I've choosen to use the colours of Materialize.
+To ensure that colours match well, I've choosen to use the colours of Materialize.  
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
@@ -247,8 +247,9 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
 > ![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
 
-To keep the design consistent, I've decided to use one font-family: Noto.
-Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.  
+To keep the design consistent, I've decided to use one font-family: Noto.  
+Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
+
 For the other headers (h2 to h5) I've used Noto Serif. 
 > ![example of noto serif text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/noto-serif.png)  
 
@@ -259,9 +260,6 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 # **Features**
 
 ## **Existing Features**
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
 
 - **Responsiveness** on all viewports, which allow users to use the website on all devices.
 - A **navigation bar**, which allow users to easily navigate the website. On devices below 992px, the navbar collapses into a hamburger menu, to reduce the real estate and create a cleaner, calmer look.
@@ -292,53 +290,62 @@ For some/all of your features, you may choose to reference the specific project 
 - A form that allows the admin to add a new category, by filling in the form on the add-category page.
 - A form that allows the admin to edit a category, by editing the prefilled form on the edit-category page.
 
-**CRUD functionality**
-Create:
+**CRUD (Create, Read, Update, Delete) functionality**  
+*Create:*  
 - Logged in users can create new recipes.
-- Admin can create new categories.
-Read:
-- All users can search and view recipes.
-Update:
+- Admin can create new categories.  
+
+*Read:*  
+- All users can search and view recipes.  
+
+*Update:*
 - Logged in users can edit their own recipes.
 - Admin can edit categories.
-Delete:
+
+*Delete:*
 - Logged in users can delete new recipes.
 - Admin can delete new categories.
 
 ## **Features left to implement**
-- Rating/liking recipes by other users.
-- Share recipes via social media, email or other communication forms.
-- A save option to save other users recipes.
-- Deleting a profile, when a user doesn't want to use the account anymore.
-- A sort option, so users can sort by attribute (alphabetically, time, rating).
-- An option to add labels (e.g. vegan, gluten free) to recipes.
-- Pagination, in case the number of recipes gets too large. It would be more user friendly to have pagination.
-- Reset password, in case the user has lost their password and wants to reset it.
+- **Rating/liking recipes** by other users.
+- **Sharing recipes** via social media, email or other communication forms.
+- A **save option** to save other users recipes.
+- **Deleting a profile**, when a user doesn't want to use the account anymore.
+- A **sort option**, so users can sort by attribute (alphabetically, time, rating).
+- An **add labels** option to add labels about (e.g. vegan, gluten free) to recipes.
+- **Pagination**, in case the number of recipes gets too large. It would be more user friendly to have pagination.
+- **Reset password**, in case the user has lost their password and wants to reset it.
 
 # **Technologies used**
 
 ### **Languages used**  
-- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup  
-- [CSS](https://en.wikipedia.org/wiki/CSS) for styling
-- [Javascript](https://en.wikipedia.org/wiki/JavaScript) for  interactivity
+- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup.  
+- [CSS](https://en.wikipedia.org/wiki/CSS) for styling.
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript) for interactivity.
+- [Python3](https://www.python.org/) for backend programming.
 
 ### **Frameworks and libraries used**   
-- [Materialize v1.0.0](https://materializecss.com/) a CSS-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
+- [Materialize v1.0.0](https://materializecss.com/) a frontend-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
 - [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
-- [Google fonts](https://fonts.google.com/) for the fonts used in the website. 
-- [Font Awesome](https://fontawesome.com/) for the icons used on the website.  
+- [Google fonts](https://fonts.google.com/) for the fonts used on the website. 
+- [Font Awesome](https://fontawesome.com/) for the icons used on the website. 
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) is a micro Python web application framework. 
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) is a fast, expressive, extensible templating engine for Python.
 
 ### **Tools and Programmes used**
 - [Balsamiq](https://balsamiq.com/) for making the wireframes. 
 - [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
  to debug and checking/testing the website.
 - [Git](https://git-scm.com/) for version control.  
-- [GitHub](https://github.com/) for storing and deploying the website.  
+- [GitHub](https://github.com/) for storing the files and version control of the website.  
 - [Visual Studio Code](https://code.visualstudio.com/) for coding (IDE) the website.
-- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the cloud database.
+- [Heroku](https://www.heroku.com/) a cloud platform for deploying the website.
+- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
 - [JSHint](https://jshint.com/) to check the Javascript code.
 - [Favicon]( http://antifavicon.com/) to make the favicon for the website.
+- [Coolors](https://coolors.co/) to make the colour scheme.
 
 # **Testing**
 For testing results, see [Test.md](Test.md)
