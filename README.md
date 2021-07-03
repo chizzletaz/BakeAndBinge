@@ -10,10 +10,10 @@ So therefore it would be much easier to add your recipe online and share is that
 I narrowed the recipes down to only baking recipes, in order to reduce the amount and difficulty of programming and design options. 
 For the CSS-framework I opted to work with Materialize in stead of Bootstrap. Both to learn to work with another framework and to show that I can work with other frameworks.
 
-### A live version can be viewed [here](https://chizzletaz.github.io/GrandmasBakingCollection/)
+### A live version can be viewed [here](https://git.heroku.com/bake-and-binge.git)
 
 # Table of Content
-- [User Experience (UX)](#user-experience-(ux))  
+- [User Experience (UX)](#user-experience-ux)  
 	* [Strategic level](#strategic-level)
         * [User stories](#user-stories)
         * [Developer stories](#developer-stories)  
@@ -21,7 +21,7 @@ For the CSS-framework I opted to work with Materialize in stead of Bootstrap. Bo
         * [Requirements](#requirements) 
 	* [Structure level](#structure-level)
         * [Interaction Design and Information Design](#interaction-design-and-information-design)
-        * [The pages](#the-pages)
+        * [The pages](#the-pages) 
 	* [Skeleton level](#skeleton-level)
         * [Wireframes](#wireframes) 
         * [Update](#update) 
@@ -132,11 +132,13 @@ The user is given feedback, in order to enhance a pleasant user experience:
 
 ### **The pages**
         FRONTEND  
-The website will have 13 pages plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages. 
+The website will have 13 pages plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages.
+
 The navbar links are depending on whether a user is logged in or not and if the user is the admin or not.   
 The main navbar has links to home, shop, contact, recipes (dropdown menu to search by category), register, login and a search icon.  
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.  
 When the user is admin, a extra link for managing categories is shown.  
+
 The footer has a section to subscribe to the newsletter and links to socials.
 
 - **The landing page/home page:** *(index.html - route: /, /home)*  
@@ -189,19 +191,19 @@ This page shows in case no page is found.
 This page shows in case of an internal service error.
 
 
-Below is a chart of the webpages and their mutual connections:
+Below is a chart of the webpages and their mutual connections:  
 ![pages chart](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/Recipe_pages.png)
 
         BACKEND
 
 Below are examples of the database collections:  
-database category collections:
+database category collections:  
 ![database category collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_category.png)  
-database recipe collections:
+database recipe collections:  
 ![database recipe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_recipe.png)  
 database subscribe collections:  
 ![database subscribe collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_subscribe.png)  
-database users collections:
+database users collections:  
 ![database users collections](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/DB_users.png)
 
 ## **Skeleton Level**
@@ -220,12 +222,13 @@ database users collections:
 - [Wireframes for Add Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/add_category.pdf)  
 - [Wireframes for Edit Category Page](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/wireframes/edit_category.pdf)  
 
+> ### Update
+>
+
 ## **Service Level**
-The finished product. Visual Design: color, topography, effects, imagery. 
-What will the product look like? what colours, images, design elements, animations, transition, etc.What will the final product look like?
-Note why you use certain fonts, color and design choices.
+
 ### **Colors**
-To ensure that colours match better, I've choosen to use the colours of Materialize.
+To ensure that colours match well, I've choosen to use the colours of Materialize.
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
@@ -233,15 +236,15 @@ Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
-- ![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.  
-- ![#fefefa](https://via.placeholder.com/15/fefefa/000000?text=+) #fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.  
+- ![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.    
 - ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).  
-- ![#80cbc4](https://via.placeholder.com/15/80cbc4/000000?text=+) #80cbc4 is the teal lighten-3 colour on Materialize. This colour is used for the background colour of the flash messages.  
+- ![#80cbc4](https://via.placeholder.com/15/80cbc4/000000?text=+) #80cbc4 is the teal lighten-3 colour on Materialize. This colour is used for the background colour of the flash messages.
+- ![#fefefa](https://via.placeholder.com/15/fefefa/000000?text=+) #fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.  
 - ![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the border of the edit buttons.  
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
 
 ### **Typography** 
-For the title and the logo, I've used Kaushan Script. This is a handwritten font and adds a more unique and homemade feeling.  
+For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
 ![example of kaushan script text](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/kaushan-script.png)  
 To keep the design consistent, I've decided to use one font-family: Noto.
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.  
