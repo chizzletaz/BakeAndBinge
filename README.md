@@ -1,4 +1,4 @@
-#Bake and Binge
+# Bake and Binge
 ![Preview image](https://grandmas-baking-collection.herokuapp.com)
 
 Like many others, I've always loved baking and cooking. Over the years you try out new recipes and share the result with your family and friends.
@@ -256,7 +256,7 @@ For the other headers (h2 to h5) I've used Noto Serif.
 For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
 
 > ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/noto-sans.png)  
-
+---
 # **Features**
 
 ## **Existing Features**
@@ -315,7 +315,7 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 - An **add labels** option to add labels about (e.g. vegan, gluten free) to recipes.
 - **Pagination**, in case the number of recipes gets too large. It would be more user friendly to have pagination.
 - **Reset password**, in case the user has lost their password and wants to reset it.
-
+---
 # **Technologies used**
 
 ### **Languages used**  
@@ -346,10 +346,11 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 - [JSHint](https://jshint.com/) to check the Javascript code.
 - [Favicon]( http://antifavicon.com/) to make the favicon for the website.
 - [Coolors](https://coolors.co/) to make the colour scheme.
-
+---
 # **Testing**
-For testing results, see [Test.md](Test.md)
+For testing results, see [Testing.md](https://github.com/chizzletaz/BakeAndBinge/blob/master/Testing.md)
 
+---
 ## **Deployment**
 Heroku is used to deploy this application, since GitHub can only deploy static websites.
 
@@ -385,7 +386,8 @@ The Procfile might add a blank line at the bottom, and sometimes this can cause 
 
 **Create a MongoDB Database**
 1. Login to MongoDB.
-2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/clusters.png). 
+2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/clusters.png).
+
 **Create new collections**
 1. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/collections.png) 
 2. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/create-db.png) and enter 
@@ -418,7 +420,7 @@ Before we create our Heroku application, we need to setup some files that Heroku
 to run the app.
 1. Install the 'requirements.txt' file by typing: **pip3 install -r requirements.txt**
 
-
+---
 # **Credits**
 ### code
 - Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
@@ -431,7 +433,7 @@ Recipes:
 - [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
 - [Artisan bread](https://sallysbakingaddiction.com/homemade-artisan-bread/#tasty-recipes-80079-jump-target)  
 - [Almond cookies](https://www.foodless.nl/amandelkoekjes-met-citroen/)  
-- The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
+The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
 
 ### Media
 - Shop items and [links](https://www.lecreuset.ie/en_IE/)  
@@ -442,4 +444,5 @@ Recipes:
 - Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
 - Error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
 - [Colour codes](https://usbrandcolors.com/tech/) of social media icons.
+---
 # Acknowledgements

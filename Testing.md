@@ -1,4 +1,86 @@
-# Bugs
+Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/README.md)
+
+# **Testing**
+## Table of Contents
+- [Testing User stories](#testing-user-stories)  
+    * [First time users](#first-time-users)
+    * [Regular users](#regular-users)
+    * [Returning users](#returning-users)
+    * [Developer stories](#developer-stories)
+- [Manual testing features](#manual-testing-features)
+- [Code Validation](#code-validation)  
+- [Testing across web browsers](#testing-across-web-browsers)  
+- [Testing Responsiveness](#testing-responsiveness)  
+- [Bugs and Problems](#bugs-and-problems)  
+***
+
+## Testing user stories
+### First time users:
+**1. As a first time user, I want to navigate easily across the website.**  
+- The user can return to the landing page by either using the 'Triviata' text on top of the challenge, practice and high scores page or use the button with the home-icon. 
+- The user can use buttons to navigate to the game pages or the high scores page.
+
+
+### Returning users:  
+**1. As a user, I want to play the game on different screen sizes.**  
+- The user can use a mobile device, a tablet or a desktop computer to play the game. See [below](#testing-browser-compatibility) for testing.
+
+
+### **Developer stories:**  
+**2. As a developer I want to challenge the users, so they will play another game or they will come back another time.**  
+- The challenge page has three levels. The questions increase with difficulty every time a new level is played.
+- The users can save their score and check out if their score made it to the high scores.
+
+## Manual testing features
+**Navigation to the landing page:**  
+Expected: The logo text and the home button direct the user to the landing page.  
+Testing:
+1. Go to any page but the landing page.  
+2. Click on ‘Triviata’-text at the top of the page and verify you are directed to the landing page.
+3. Go to any page but the landing page.
+4. Click on the button with the house-icon and verify you are directed to the landing page.
+
+Result: The logo text and the home button direct the user to the landing page.
+
+---
+## Code validation
+[W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
+Running the code through the validator gives:  
+### For index.html:
+- No errors or warnings to show.
+![Index.html validation](assets/img/examples/html-index.png)
+
+
+---
+[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
+Running the code through the validator gives:
+### For style.css:
+- No errors are found.  
+![style.css validation](assets/img/examples/css-style.png)
+
+---
+[JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.    
+Running the code through the validator gives:
+### For start.js:
+- No errors, just some warnings about semi-colons and an error 'Expected an assignment or function call and instead saw an expression.'  
+![start.js validation](assets/img/examples/js-start.png)
+
+---
+## Testing browser compatibility
+I've tested the site on Safari, Chrome and Mozilla Firefox.
+The testing was done by checking all elements, functionalities and links.
+No issues arose during testing.  
+
+---
+## Testing responsiveness
+To test the responsiveness of the  website, I've used [Chrome Dev Tools](https://github.com/chizzletaz/MilestoneProject1/blob/master/assets/img/extra/responsiveness_chrome_dev_tools.png) and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
+The testing was done on widths down to a screen resolution of 280px. All the elements on each page were checked.  
+The following issues arose:
+- Issue: At a width of 280px, the size of the buttons on the landing page go outside the screen.   
+![button responsive wrong](assets/img/examples/responsive-button-wrong.png)
+
+## Bugs and problems
+
 Issue: SOLVED
 The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.
 Furthermore, when clicking on the 'Recipes', the name disappears. 
