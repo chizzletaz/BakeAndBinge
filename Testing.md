@@ -17,19 +17,53 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 ## Testing user stories
 ### First time users:
 **1. As a first time user, I want to navigate easily across the website.**  
-- The user can return to the landing page by either using the 'Triviata' text on top of the challenge, practice and high scores page or use the button with the home-icon. 
-- The user can use buttons to navigate to the game pages or the high scores page.
+ —> nav bar, nav buttons.
 
+**2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
+ —> recipe page with all recipes + browse per category.
+**3. As a user, I want to know how to add a recipe.**
+ -> How to add a new recipe explanation.
 
-### Returning users:  
-**1. As a user, I want to play the game on different screen sizes.**  
-- The user can use a mobile device, a tablet or a desktop computer to play the game. See [below](#testing-browser-compatibility) for testing.
+### General users:  
+**1. As a user, I want to be able to use the website on different screen sizes.**
+ —> responsive design
+**2. As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully.**
+ —> search option
+**3. As a user, I want to filter recipes by category, so I narrow down my search and/or search per category.**
+ —> filter buttons or select option
+**4. As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe.**
+ —> sort buttons.
+**5. As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.**
+ -> labels for gluten free, vegan, etc.
+**6. As a user, I want to be able to delete my profile, if I no longer wish to use the website.**
+ -> delete profile.
 
+### Regular users:
+**1. As a regular user, I want to have my own page, so I can manage my own recipes.**
+ —> register/login functionality.
+ **2. As a regular user, I want to add my own recipes, so I can share them with others on the website.**
+  —> add recipe page + functionality
+**3. As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date.**
+ —> edit/delete page + functionality.
+**4. As a regular user, I want to contact the site owner in case I have questions or remarks.**
+ —> contact page.
+**5. As a regular user, I want to be able to rate other recipes.**
+ —> rating functionality
+**6. As a regular user, I want to be able to save other people's recipes.**
+  -> save functionality.
+**7. As a regular user, I want to be able to share recipes.**
+ —> share functionality
+**8. As a regular user, I want to get the latest news and updates.** 
+-> sign up for newsletter
 
-### **Developer stories:**  
-**2. As a developer I want to challenge the users, so they will play another game or they will come back another time.**  
-- The challenge page has three levels. The questions increase with difficulty every time a new level is played.
-- The users can save their score and check out if their score made it to the high scores.
+## Developer stories:
+### Admin/site owner:
+**1. As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.**
+-> shop site
+**2. As a site owner, I want to be able to have access to the recipes categories and the option to manage them.**
+ —> admin functionality.
+**3. As a site owner, I want users to register and login, before they can add, edit or delete their recipes.** 
+—> register/login functionality.
 
 ## Manual testing features
 **Navigation to the landing page:**  
