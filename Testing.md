@@ -132,13 +132,15 @@ The following issues arose:
 
 Issue: SOLVED  
 The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.  
-Furthermore, when clicking on the 'Recipes', the name disappears.   
-Solution: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/contrainwidth.png).  
+Furthermore, when clicking on the 'Recipes', the name disappears.  
+
+Fix: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/contrainwidth.png).  
 add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).  
 
 Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger.   
 And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.  
-UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
+
+> UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
   
 ---
 Issue: SOLVED  
@@ -147,6 +149,7 @@ I used Jinja to add categories dynamically to the 'add recipe page', by adding
 to the add_recipe() function.  
 I wanted to dynamically add the categories to the navbar as well. However, this time it worked for the navbar, but not for the 
 select option on the 'add recipe' page.   
+
 Fix: I remembered from the Task Manager Walkthrough that I'm looping over the categories list twice.
 This means that the first (navbar) iterate over the list, it unpacks and leaves it empty afterwards.   
 Also the list that comes from the find() method, isn't a actual list, but a Mongo Cursor Object.
@@ -219,20 +222,23 @@ Add to recipes() in app.py:
 ```
 ---
 Issue: SOLVED  
-On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).
+On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).  
+
 Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png) of Materialize.
 
 ---
 Issue: partially SOLVED  
 When displaying the recipes on the index, recipes and profile page, the cards 
-[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_unequal.png) equal height. 
-Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
+[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_unequal.png) equal height.  
+
+Fix: Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
 Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
 Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_equal.png).
 
 ---
 Issue: SOLVED  
 When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.  
+
 Fix: Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
 to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding margin-right: auto
 to the columns of class 'equal-right':
