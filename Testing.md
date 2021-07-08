@@ -34,7 +34,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
  per category.
 ![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-large.png)  
-![category small image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-small.png)  
+![category small image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-small.png =200x)  
 
 **3. As a user, I want to know how to add a recipe.**
  -> How to add a new recipe explanation.
