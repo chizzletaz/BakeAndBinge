@@ -130,29 +130,30 @@ The following issues arose:
 
 ## Bugs and problems
 
-Issue: SOLVED
-The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.
-Furthermore, when clicking on the 'Recipes', the name disappears. 
-Solution: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/contrainwidth.png).
-add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).
+Issue: SOLVED  
+The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.  
+Furthermore, when clicking on the 'Recipes', the name disappears.   
+Solution: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/contrainwidth.png).  
+add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).  
 
-Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger. And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.
+Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger.   
+And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.  
 UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
   
 ---
-Issue: SOLVED
-I used Jinja to add categories dynamically to the 'add recipe page', by adding
-    categories = mongo.db.categories.find().sort("category_name", 1)
-to the add_recipe() function.
+Issue: SOLVED  
+I used Jinja to add categories dynamically to the 'add recipe page', by adding  
+    categories = mongo.db.categories.find().sort("category_name", 1)  
+to the add_recipe() function.  
 I wanted to dynamically add the categories to the navbar as well. However, this time it worked for the navbar, but not for the 
-select option on the 'add recipe' page. 
+select option on the 'add recipe' page.   
 Fix: I remembered from the Task Manager Walkthrough that I'm looping over the categories list twice.
-This means that the first (navbar) iterate over the list, it unpacks and leaves it empty afterwards. 
+This means that the first (navbar) iterate over the list, it unpacks and leaves it empty afterwards.   
 Also the list that comes from the find() method, isn't a actual list, but a Mongo Cursor Object.
 By wrapping the find() method in a Python list(), the list can be used again.
 
 ---
-Issue: SOLVED
+Issue: SOLVED  
 Due to the relational connection of category_name in recipes (the category_name in the recipe collection has the value of the
 ObjectId of category_name in the categories collection), the preloading of the category_name on the 'edit_recipe' page is not working as used in the Task Manager Walkthrough.
 ```
@@ -176,7 +177,7 @@ except Exception as e:
 ```
 
 ---
-Issue: SOLVED
+Issue: SOLVED  
 When adding a new recipe, the ingredients and the instructions aren't stored.
 I used 'ingredients' and 'steps' for the id, label and name:
 ```
@@ -198,7 +199,7 @@ I changes the id, label and name to 'ingredient' and 'step':
 This seemed to solve the problem.
 
 ---
-Issue:
+Issue: SOLVED  
 The Jinja condition to only show the edit and delete buttons for the user that created the recipe, doesn't work.
 ```
     {% if session.user|lower == recipe.created_by|lower %} 
@@ -216,12 +217,13 @@ Add to recipes() in app.py:
         {'_id': ObjectId(recipe['created_by'])})
     recipe['created_by'] = user['username']
 ```
-Issue: SOLVED
+---
+Issue: SOLVED  
 On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).
 Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png) of Materialize.
 
 ---
-Issue: partially SOLVED
+Issue: partially SOLVED  
 When displaying the recipes on the index, recipes and profile page, the cards 
 [aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_unequal.png) equal height. 
 Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
@@ -229,8 +231,8 @@ Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/m
 Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_equal.png).
 
 ---
-Issue: SOLVED
-When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.
+Issue: SOLVED  
+When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.  
 Fix: Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
 to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding margin-right: auto
 to the columns of class 'equal-right':
@@ -239,7 +241,7 @@ to the columns of class 'equal-right':
     margin-right: auto;
 }
 ```
-the recipe is displayed in the middle. When 2 recipes are shown, the recipes are equally distributed over the width.
+The recipe is displayed in the middle. When 2 recipes are shown, the recipes are equally distributed over the width.
 I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
 ---
 
