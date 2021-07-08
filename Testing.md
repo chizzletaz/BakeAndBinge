@@ -6,7 +6,8 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
     * [First time users](#first-time-users)
     * [Regular users](#regular-users)
     * [Returning users](#returning-users)
-    * [Developer stories](#developer-stories)
+- [Testing Developer stories](#developer-stories)
+    * [Admin/site owner](#adminsite-owner)
 - [Manual testing features](#manual-testing-features)
 - [Code Validation](#code-validation)  
 - [Testing across web browsers](#testing-across-web-browsers)  
@@ -18,9 +19,23 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 ### First time users:
 **1. As a first time user, I want to navigate easily across the website.**  
  —> nav bar, nav buttons.
+- The user can navigate the website by using the links in the navbar.  
+![navbar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/navbar.png) 
+- The user can return to the landing page by clicking the logo or clicking the Home button in the navbar.  
+![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/navbar2.png) 
+- The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the indivudual recipe page.  
+![go to recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/go-to-recipe.png) 
+
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
  —> recipe page with all recipes + browse per category.
+ - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.  
+ ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/browse-recipes.png)
+ - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
+ per category.
+![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-large.png)  
+![category small image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-small.png)  
+
 **3. As a user, I want to know how to add a recipe.**
  -> How to add a new recipe explanation.
 
