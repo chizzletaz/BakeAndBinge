@@ -52,7 +52,7 @@ When the user clicks this button, a modal pops up with an explanation on how to 
 ![search bar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/searchbar.png)
 - The user can go to the recipes page by clicking the ‘browse recipes’ button on the landing page or use the search icon in the navbar to be redirected to the recipes page.  
 browse recipe button | search icon large screens | search icon small screen
-:---:|:---:|:---:
+--- | --- | ---
 ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-large.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-small.png)  
 
 
