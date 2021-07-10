@@ -194,11 +194,11 @@ I forgot to close 2 div's.
 Fix: add closing div element.
 
 **The register page:**
-- no errors or warnings to show.
+- No errors or warnings to show.
 ![html register error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-register.png)
 
 **The login page:** 
-- no errors or warnings to show.
+- No errors or warnings to show.
 ![html login error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-login.png)
 
 **The profile page:**
@@ -219,7 +219,7 @@ However, since the recipes are rendered by looping, the modals are duplicated as
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
 
 **The add recipe page:**
-- no errors or warnings to show.
+- No errors or warnings to show.
 ![html add recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The edit recipe page:**
@@ -262,15 +262,22 @@ Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID
 use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
 
 **The add category page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- No errors or warnings to show.
+![html category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-category.png)
+
 **The edit category page:** 
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- No errors or warnings to show.
+![html category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-category.png)
+
 **The 403 error handler page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 **The 404 error handler page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 **The 500 error handler page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
