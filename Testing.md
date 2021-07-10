@@ -137,13 +137,26 @@ Result: The logo text and the home button direct the user to the landing page.
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
 Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.
 How to validate the rendered page:
-Right click on the page, show source code, then, copy all that and paste it into the validator.
+Use the source code of the rendered page
+- Right click on the page
+- Click 'show source code'
+- Copy all HTML
+- Paste into the validator.
 Or
-enter the url of the heroku live link.
+Enter the url of the heroku live link.
+
 Running the code through the validator gives:  
 ### For index.html:
-
-![Index.html validation](assets/img/examples/html-index.png)
+- 5 errors shown  
+![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
+1. Element h4 not allowed as child of element ul in this context.
+Fix: According to HTML5 spec, you can't have header tags as children within a <ul></ul>, you should populate it with <li></li>, then insert your content within each list, so wrap the h4 in <li></li>
+Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
+2. Section lacks heading. 
+Fix: change section into div.
+3. Start tag a seen but an element of the same type was already open.
+I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag. 
+Fix: change the the anchor tag of the button to a button tag.
 
 **The recipes page:**
 

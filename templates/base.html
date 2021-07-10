@@ -89,7 +89,7 @@
         </ul>
         <!-- sidebar menu -->
         <ul class="sidenav" id="mobile-demo">
-            <h4><a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a></h4>
+            <li><h4><a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a></h4></li>
             <li class="divider"></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
@@ -134,7 +134,7 @@
         </ul>
     </header>
 
-    <section>
+    <div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -145,7 +145,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section>
+    </div>
 
     <main>
         {% block content %}
