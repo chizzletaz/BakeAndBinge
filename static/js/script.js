@@ -57,9 +57,9 @@ $("#copyright").text(new Date().getFullYear());
 // add ingredient row
 $("#addRowIngredient").click(function () {
     var html = `
-    <div class="row mb0" id="inputIngredientRow">
+    <div class="row mb0">
         <div class="input-field col s12 mb0">
-            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
+            <textarea id="ingredient[]" name="ingredient[]" class="materialize-textarea" required></textarea>
             <label for="ingredient">Ingredient</label>
             <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
         </div>`;
@@ -68,9 +68,25 @@ $("#addRowIngredient").click(function () {
 });
 // remove ingredient row
 $(document).on('click', '#removeRowIngredient', function () {
-    $(this).closest('#inputIngredientRow').remove();
+    $(this).parent('div').remove();
 });
 
+// // add ingredient row
+// $("#addRowIngredient").click(function () {
+//     var html = `
+//     <div class="row mb0" id="inputIngredientRow">
+//         <div class="input-field col s12 mb0">
+//             <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
+//             <label for="ingredient">Ingredient</label>
+//             <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
+//         </div>`;
+
+//     $('#newRowIngredient').append(html);
+// });
+// // remove ingredient row
+// $(document).on('click', '#removeRowIngredient', function () {
+//     $(this).closest('#inputIngredientRow').remove();
+// });
 
 // add instruction row
 $("#addRowStep").click(function () {

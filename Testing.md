@@ -144,6 +144,7 @@ Use the source code of the rendered page
 - Paste into the validator.
 Or
 Enter the url of the heroku live link.
+However, when authentication is used, the live link can't be used to validate the page.
 
 Running the code through the validator gives:  
 ### For index.html:
@@ -210,11 +211,21 @@ Fix: put the modal structure outside of the ul.
 I wrapped the the whole card in an anchor tag, so the whole card can be used to open a recepe.
 However on the profile page, 2 more anchor tags are added as edit and delete button. This results in anchor tags within anchor tags.
 Fix: keep the card-action div outside the first anchor tag.
+After fixing the mistakes, other errors suddenly appear.
+![html further profile error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-profile2.png)
+3. Duplicate ID modal1.
+There is a duplication of the modal that asks the user for confirmation on deleting a recipe.
+However, since the recipes are rendered by looping, the modals are duplicated as well. 
+Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
+
 **The add recipe page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- no errors or warnings to show.
+![html add recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The edit recipe page:**
- ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- 4 errors are shown.
+ ![html edit recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-edit-recipe.png)
+ 1. The ID's for ingredient, inputIngredientRow, step and inputStepRow are not unique because they are created using
 
 **The categories page:** 
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
