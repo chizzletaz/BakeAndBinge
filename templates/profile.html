@@ -18,7 +18,7 @@
     <div class="row equal-col">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
-            <a class="hover" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
             <div class="card z-depth-2 hover">
                 <div class="card-image">
                     <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">

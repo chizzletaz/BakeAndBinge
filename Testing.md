@@ -150,7 +150,7 @@ Running the code through the validator gives:
 - 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
 1. Element h4 not allowed as child of element ul in this context.
-Fix: According to HTML5 spec, you can't have header tags as children within a <ul></ul>, you should populate it with <li></li>, then insert your content within each list, so wrap the h4 in <li></li>
+Fix: According to HTML5 spec, you can't have header tags as children within a <ul></ul>, you can only have <li> elements as children. So you should populate it with <li></li>, then insert your content within each list, so wrap the h4 in <li></li>
 Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
 2. Section lacks heading. 
 Fix: change section into div.
@@ -170,13 +170,13 @@ Fix: Change button tag to p tag with button class.
 1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
 I forgot to add the ; after $nbsp to indicate a space.
 Fix: add semi-colon after $nbsp.
-2. Element br not allowed as child of element ul in this context.
+2. Element br not allowed as child of element ul in this context. According to HTML5 spec, you can only have <li> elements as children.
 I used the br element to add padding between each ingredient and step.
 But ul elements can only have li elements as children.
 Fix: remove the br element and add an empty li (<li></li>)
 
 **The contact page:**
-- 1 error and 1 warning shown
+- 1 error and 1 warning are shown
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 1. Duplicate ID email.
 I used 'email' for the ID and name in the contact form. But 'email' is already used for ID and name in the subcribe form in the footer. 
@@ -184,7 +184,7 @@ Fix: change the ID and name to 'contactemail'.
 2. The warning is gone after fixing error 1.
 
 **The shop page:**
-- 3 errors shown
+- 3 errors are shown
 ![html shop error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-shop.png)
 1.  End tag main seen, but there were open elements.
 I forgot to close 2 div's. See below at number 2.
@@ -193,17 +193,27 @@ I forgot to close 2 div's.
 Fix: add closing div element.
 
 **The register page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- no errors or warnings to show.
+![html register error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-register.png)
+
 **The login page:** 
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- no errors or warnings to show.
+![html login error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-login.png)
+
 **The profile page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+![html profile error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-profile.png)
+- 4 errors are shown.
+1. Element div not allowed as child of element ul in this context.
+The div element belongs to a modal. According to HTML5 spec, you can only have <li> elements as children. 
 **The add recipe page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 **The edit recipe page:**
  ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 **The categories page:** 
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+
 **The add category page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The edit category page:** 
