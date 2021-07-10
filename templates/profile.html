@@ -5,56 +5,59 @@
     <h3>{{ username | capitalize }}'s profile page</h3>
 
     <div class="center-align">
-        <a class="btn-floating btn-large pink accent-2" href="{{ url_for('add_recipe') }}"><i class="fas fa-plus"></i></a>
+        <a class="btn-floating btn-large pink accent-2" href="{{ url_for('add_recipe') }}"><i
+                class="fas fa-plus"></i></a>
         <h5>Add a new recipe</h5>
-    </div>  
+    </div>
 
     <!-- Modal Trigger for 'how to add a recipe' -->
     <button data-target="modal2" class="btn-floating modal-trigger"><i class="fas fa-question"></i></button>
     <h5>How to add a new recipe</h5>
-    
+
     <!-- <img src="/static/images/how_to1.png"> -->
 
     <div class="row equal-col">
         {% for recipe in recipes %}
         <div class="col s12 m6 l4">
-            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
             <div class="card z-depth-2 hover">
-                <div class="card-image">
-                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
-                    <p>By: {{ recipe.created_by | capitalize }}</p>
-                </div>
-                <div class="divider"></div>     <!-- from Materialize: 1 pixel lines that helps break up the content -->
-                <div class="card-content center-align pb0">
-                    <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
-                </div>
-                <div class="col s12 card-content grey-bb pt0">
-                    <blockquote>{{ recipe.recipe_description }}</blockquote>
-                </div>
-                <div class="row">
-                    <div class="card-content indications">
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
-                            </li>
-                        </ul>
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
-                            </li>
-                        </ul>
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}</p>
-                            </li>
-                        </ul>
-
+                <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                    <div class="card-image">
+                        <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                        <p>By: {{ recipe.created_by | capitalize }}</p>
                     </div>
-                </div>
-                <div class="card-action center-align">
-                    <p class="btn pink lighten-3">Go to
-                        recipe</p>
-                </div>
+                    <div class="divider"></div> <!-- from Materialize: 1 pixel lines that helps break up the content -->
+                    <div class="card-content center-align pb0">
+                        <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
+                    </div>
+                    <div class="col s12 card-content grey-bb pt0">
+                        <blockquote>{{ recipe.recipe_description }}</blockquote>
+                    </div>
+                    <div class="row">
+                        <div class="card-content indications">
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
+                                </li>
+                            </ul>
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
+                                </li>
+                            </ul>
+                            <ul class="col collection">
+                                <li class="collection-item">
+                                    <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="card-action center-align">
+                        <p class="btn pink lighten-3">Go to
+                            recipe</p>
+                    </div>
+                </a>
                 {% if session.user|lower == recipe.created_by|lower %}
                 <div class="card-action">
                     <a class="btn-small blue-grey lighten-4 black-text gb"
@@ -65,7 +68,7 @@
 
                 {% endif %}
             </div>
-        </a>
+
         </div>
         <!-- Modal Structure for confirmation-->
         <div id="modal1" class="modal">
@@ -84,15 +87,15 @@
     <!-- Modal Structure for 'how to add a recipe'-->
     <div id="modal2" class="modal">
         <div class="modal-content center-align">
-                <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to1.png') }}"></a>
-                <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to2.png') }}"></a>
-                <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to3.png') }}"></a>
+            <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to1.png') }}"></a>
+            <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to2.png') }}"></a>
+            <img class="responsive-img" src="{{ url_for('static', filename='/images/how_to3.png') }}"></a>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn white-text">Done</a>
         </div>
     </div>
-    
+
 
 </div>
 {% endblock %}

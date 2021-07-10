@@ -205,6 +205,11 @@ Fix: add closing div element.
 - 4 errors are shown.
 1. Element div not allowed as child of element ul in this context.
 The div element belongs to a modal. According to HTML5 spec, you can only have <li> elements as children. 
+Fix: put the modal structure outside of the ul.
+2. Start tag a seen but an element of the same type was already open.
+I wrapped the the whole card in an anchor tag, so the whole card can be used to open a recepe.
+However on the profile page, 2 more anchor tags are added as edit and delete button. This results in anchor tags within anchor tags.
+Fix: keep the card-action div outside the first anchor tag.
 **The add recipe page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 
