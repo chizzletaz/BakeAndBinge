@@ -100,9 +100,9 @@
                     <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
                     <!-- ingredients -->
                     {% for ingredient in recipe.ingredients %}
-                    <div class="row mb0" id="inputIngredientRow">
+                    <div class="row mb0">
                         <div class="input-field col s12 mb0">
-                            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required>
+                            <textarea id="ingredient[]" name="ingredient[]" class="materialize-textarea" required>
                                 {{- ingredient -}}
                             </textarea>
                             <label for="ingredient">Ingredient</label>
