@@ -184,29 +184,36 @@ Fix: change the ID and name to 'contactemail'.
 2. The warning is gone after fixing error 1.
 
 **The shop page:**
+- 3 errors shown
+![html shop error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-shop.png)
+1.  End tag main seen, but there were open elements.
+I forgot to close 2 div's. See below at number 2.
+2. Unclosed element div.
+I forgot to close 2 div's.
+Fix: add closing div element.
 
 **The register page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The login page:** 
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The profile page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The add recipe page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The edit recipe page:**
- 
+ ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The categories page:** 
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The add category page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The edit category page:** 
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The 403 error handler page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The 404 error handler page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 **The 500 error handler page:**
-
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
