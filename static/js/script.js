@@ -74,7 +74,7 @@ $(document).on('click', '#removeRowIngredient', function () {
 // add instruction row
 $("#addRowStep").click(function () {
     var html = `
-    <div class="row mb0" id="inputStepRow">
+    <div class="row mb0">
         <div class="input-field col s12 mb0">
             <textarea id="step" name="step[]" class="materialize-textarea" required></textarea>
             <label for="step">Instruction</label>
@@ -86,5 +86,5 @@ $("#addRowStep").click(function () {
 
 // remove instruction row
 $(document).on('click', '#removeRowStep', function () {
-    $(this).closest('#inputStepRow').remove();
+    $(this).parent('div').remove();
 });

@@ -102,7 +102,7 @@
                     {% for ingredient in recipe.ingredients %}
                     <div class="row mb0">
                         <div class="input-field col s12 mb0">
-                            <textarea id="ingredient[]" name="ingredient[]" class="materialize-textarea" required>
+                            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required>
                                 {{- ingredient -}}
                             </textarea>
                             <label for="ingredient">Ingredient</label>
@@ -117,7 +117,7 @@
                     </div>
                     <!-- instructions -->
                     {% for step in recipe.steps %}
-                    <div class="row mb0" id="inputStepRow">
+                    <div class="row mb0">
                         <div class="input-field col s12 mb0">
                             <textarea id="step" name="step[]" class="materialize-textarea" required>
                                 {{- step -}}
