@@ -147,7 +147,7 @@ Enter the url of the heroku live link.
 
 Running the code through the validator gives:  
 ### For index.html:
-- 5 errors shown  
+- 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
 1. Element h4 not allowed as child of element ul in this context.
 Fix: According to HTML5 spec, you can't have header tags as children within a <ul></ul>, you should populate it with <li></li>, then insert your content within each list, so wrap the h4 in <li></li>
@@ -156,7 +156,10 @@ Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-no
 Fix: change section into div.
 3. Start tag a seen but an element of the same type was already open.
 I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag. 
-Fix: change the the anchor tag of the button to a button tag.
+Fix: change the the anchor tag of the button to a button tag and remove the href.
+This gives another error: The element button must not appear as a descendant of the a element.
+Fix: Change button tag to p tag with button class.
+
 
 **The recipes page:**
 
