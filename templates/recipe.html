@@ -86,10 +86,11 @@
                         {% endfor %}
                     </div>
                     <div class="col s12 l7 hide-on-med-and-down">
-                        <h4 class="text-pink">Instructions</h4><br>
+                        <h4 class="text-pink">Instructions</h4>
                         {% for step in recipe.steps %}
                         <ul>
-                            <li>{{ loop.index }}. {{ step }}</li><br>
+                            <li>{{ loop.index }}. {{ step }}</li>
+                            <li></li>
                         </ul>
                         {% endfor %}
                     </div>
