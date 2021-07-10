@@ -23,22 +23,20 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 - The user can return to the landing page by clicking the logo or clicking the Home button in the navbar.  
 ![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar2.png) 
 - The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the indivudual recipe page.  
-<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png" alt="category small image" width="400"/>
+<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png" alt="go to recipe image" width="400"/>
 
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
  - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.  
- ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png)
+ <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/> 
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
- per category.
-![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-large.png)  
-<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="400"/>  
+ per category. (see 'general users 3')
 
 **3. As a user, I want to know how to add a recipe.**
 - When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
-On this page there is a button with a question mark. 
+- On this page there is a button with a question mark. 
 ![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)  
-When the user clicks this button, a modal pops up with an explanation on how to add a recipe. The explanation consists of the ‘add recipe’ form with explanatory text.
+- When the user clicks this button, a modal pops up with an explanation on how to add a recipe. The explanation consists of the ‘add recipe’ form with explanatory text.
 ![how to add modal image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-modal.png)
 
 ### General users:  
@@ -47,78 +45,83 @@ When the user clicks this button, a modal pops up with an explanation on how to 
 - When the size of the window is changed, the content adapts responsively.
 
 **2. As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully.**
- —> search option
 - On the recipe page there is a search bar, where the user can enter keywords to search the recipes.
 ![search bar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/searchbar.png)
 - The user can go to the recipes page by clicking the ‘browse recipes’ button on the landing page or use the search icon in the navbar to be redirected to the recipes page.  
-browse recipe button | search icon large screens | search icon small screen
---- | --- | ---
-![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-large.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-small.png)  
+![search options image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-options.png)  
 
 
 **3. As a user, I want to filter recipes by category, so I narrow down my search and/or search per category.**
- —> filter buttons or select option
-On the recipes page, the user can select a category to filter by that category.
-On large screens (> 992px) there are individual buttons, on smaller screens (< 992px) there is a dropdown menu to select a category.
+- On the recipes page, the user can select a category to filter by that category.
+- On large screens (> 992px) there are individual buttons.  
+![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-large.png) 
+- On smaller screens (< 992px) there is a dropdown menu to select a category.  
+<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="400"/>
 
 **4. As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe.**
 This is a feature left to implement.
 
 **5. As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.**
- -> labels for gluten free, vegan, 
 This is a feature left to implement.
 
 **6. As a user, I want to be able to delete my profile, if I no longer wish to use the website.**
- -> delete profile.
 This is a feature left to implement.
 
 ### Regular users:
 **1. As a regular user, I want to have my own page, so I can manage my own recipes.**
-When a user registers or logs in, they are redirected to their own profile page. On this page, the use can manage (add, edit or delete) their recipes.
-
- —> register/login functionality.
+- When a user registers or logs in, they are redirected to their own profile page. 
+- On this page, the use can manage (add, edit or delete) their recipes (see below).
+- The user can go to their profile page by clicking the 'Profile' link in the navbar.  
+![profile image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/profile-page.png) 
 
  **2. As a regular user, I want to add my own recipes, so I can share them with others on the website.**
-  —> add recipe page + functionality
-When a user is logged in they can add a new recipe by going to their profile page and click the ‘add a new recipe’ button.
+- When a user is logged in they can add a new recipe by going to their profile page and click the ‘add a new recipe’ button.
+![add recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/add-recipe-button.png) 
 
 **3. As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date.**
  —> edit/delete page + functionality.
-When a user is logged in they can edit or delete their own recipes, by going to their profile page and click on the ‘edit’ or ‘delete’ button of the recipe they want to edit or delete.
+- When a user is logged in they can edit or delete their own recipes, by going to their profile page and click on the ‘edit’ or ‘delete’ button of the recipe they want to edit or delete.  
+![edit delete buttons image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/edit-delete-recipe.png) 
 
 **4. As a regular user, I want to contact the site owner in case I have questions or remarks.**
  —> contact page.
-The navbar has a link to the contact page. There the user can fill in the form to contact the site owner.
+- The navbar has a link to the contact page. 
+![contact link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/contact-link.png) 
+- On the contact page, the user can fill in the form to contact the site owner.
+
 
 **5. As a regular user, I want to be able to rate other recipes.**
- —> rating functionality
 This is a feature left to implement.
 
 **6. As a regular user, I want to be able to save other people's recipes.**
-  -> save functionality.
 This is a feature left to implement.
 
 **7. As a regular user, I want to be able to share recipes.**
- —> share functionality
 This is a feature left to implement.
 
 **8. As a regular user, I want to get the latest news and updates.** 
--> sign up for newsletter
-The footer has a subscribe form, where the user can enter their email address to get the latest news and updates.
+- The footer has a subscribe form, where the user can enter their email address to get the latest news and updates.  
+![footer image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/footer.png) 
 
 ## Developer stories:
 ### Admin/site owner:
 **1. As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.**
-The navbar has a link to the shop page. Thus page has cards with info on baking tools. When the user clicks the ‘buy now’ button, they are redirected to an external page where they can buy the item.
+- The navbar has a link to the shop page. 
+![shop link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/shop-link.png) 
+- This page has cards with info on baking tools. 
+- When the user clicks the ‘buy now’ button, they are redirected to an external page where they can buy the item.  
+![buy now image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/buy-now.png) 
 
 -> shop site
 **2. As a site owner, I want to be able to have access to the recipes categories and the option to manage them.**
- —> admin functionality.
-When the site owner logs in as admin, they have an extra link in the navbar to manage categories. When they click on this link, the categories page is opened. On this page the admin can create a new category, edit or delete an existing category.
+- When the site owner logs in as admin, they have an extra link in the navbar to manage categories. 
+![manage categories image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/manage-categories.png)  
+- When they click on this link, the categories page is opened. 
+- On this page the admin can create a new category, edit or delete an existing category.  
+![create edit delete categories image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/CRUD-admin.png) 
 
 **3. As a site owner, I want users to register and login, before they can add, edit or delete their recipes.** 
-—> register/login functionality.
-A user has to register or log to add, edit or delete 
+- A user has to register or log to add, edit or delete. (see above 'Regular users 1, 2 and 3')
 
 ## Manual testing features
 **Navigation to the landing page:**  
