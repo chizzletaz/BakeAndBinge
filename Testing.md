@@ -162,8 +162,14 @@ Fix: Change button tag to p tag with button class.
 > Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
 
 **The recipes page:**
-
+- No errors or warnings to show.
+![html recipes error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipes.png)
 **The recipe page:**
+- 2 different errors are shown:
+![html recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipe.png)
+1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
+I forgot to add the ; after $nbsp to indicate a space.
+Fix: add semi-colon after $nbsp.
 
 **The contact page:**
 
