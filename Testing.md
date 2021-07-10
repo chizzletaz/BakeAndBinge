@@ -23,7 +23,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 - The user can return to the landing page by clicking the logo or clicking the Home button in the navbar.  
 ![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar2.png) 
 - The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the indivudual recipe page.  
-![go to recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png) 
+<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png" alt="category small image" width="400"/>
 
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
@@ -32,25 +32,29 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
  per category.
 ![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-large.png)  
-<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="300"/>  
+<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="400"/>  
 
 **3. As a user, I want to know how to add a recipe.**
-When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
+- When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
 On this page there is a button with a question mark. 
-![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)
+![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)  
 When the user clicks this button, a modal pops up with an explanation on how to add a recipe. The explanation consists of the ‘add recipe’ form with explanatory text.
 ![how to add modal image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-modal.png)
 
 ### General users:  
 **1. As a user, I want to be able to use the website on different screen sizes.**
- —> responsive design
-The user can use a mobile device, a tablet or a desktop computer to use the website.
-This website is designed for different view screens. When the size of the window is changed, the content adapts responsively.
+- This website is designed to be responsive, so the users can play on a mobile device, a tablet or a desktop for different view screens. 
+- When the size of the window is changed, the content adapts responsively.
 
 **2. As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully.**
  —> search option
-On the recipe page there is a search bar, where the user can enter keywords to search the recipes.
-The user can go to the recipes page by clicking the ‘browse recipes’ button on the landing page or use the search icon in the navbar to be redirected to the recipes page.
+- On the recipe page there is a search bar, where the user can enter keywords to search the recipes.
+![search bar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/searchbar.png)
+- The user can go to the recipes page by clicking the ‘browse recipes’ button on the landing page or use the search icon in the navbar to be redirected to the recipes page.  
+browse recipe button | search icon large screens | search icon small screen
+:---:|:---:|:---:
+![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-large.png) | ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-small.png)  
+
 
 **3. As a user, I want to filter recipes by category, so I narrow down my search and/or search per category.**
  —> filter buttons or select option
