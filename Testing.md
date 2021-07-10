@@ -135,14 +135,14 @@ Result: The logo text and the home button direct the user to the landing page.
 ---
 ## Code validation
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
-Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.
+Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
 How to validate the rendered page:
 Use the source code of the rendered page
 - Right click on the page
 - Click 'show source code'
 - Copy all HTML
-- Paste into the validator.
-Or
+- Paste into the validator.  
+Or  
 Enter the url of the heroku live link.
 However, when authentication is used, the live link can't be used to validate the page.
 
@@ -150,37 +150,37 @@ Running the code through the validator gives:
 ### For index.html:
 - 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
-1. Element h4 not allowed as child of element ul in this context.
-Fix: According to HTML5 spec, you can't have header tags as children within a <ul></ul>, you can only have <li> elements as children. So you should populate it with <li></li>, then insert your content within each list, so wrap the h4 in <li></li>
+1. Element h4 not allowed as child of element ul in this context.  
+Fix: According to HTML5 spec, you can't have header tags as children within a ```<ul></ul>```, you can only have ```<li>``` elements as children. So you should populate it with ```<li></li>```, then insert your content within each list, so wrap the h4 in <li></li>
 Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
-2. Section lacks heading. 
+2. Section lacks heading.   
 Fix: change section into div.
-3. Start tag a seen but an element of the same type was already open.
-I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag. 
+3. Start tag a seen but an element of the same type was already open.  
+I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag.   
 Fix: change the the anchor tag of the button to a button tag and remove the href.
-This gives another error: The element button must not appear as a descendant of the a element.
+This gives another error: The element button must not appear as a descendant of the a element.  
 Fix: Change button tag to p tag with button class.
 > Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
 
 **The recipes page:**
 - No errors or warnings to show.
 ![html recipes error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipes.png)
+
 **The recipe page:**
 - 2 different errors are shown:
 ![html recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipe.png)
 1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
-I forgot to add the ; after $nbsp to indicate a space.
+I forgot to add the ; after $nbsp to indicate a space.  
 Fix: add semi-colon after $nbsp.
-2. Element br not allowed as child of element ul in this context. According to HTML5 spec, you can only have <li> elements as children.
-I used the br element to add padding between each ingredient and step.
-But ul elements can only have li elements as children.
-Fix: remove the br element and add an empty li (<li></li>)
+2. Element br not allowed as child of element ul in this context. According to HTML5 spec, you can only have ```<li>``` elements as children. I used the ```<br>``` element to add padding between each ingredient and step.
+But ul elements can only have ```<li>``` elements as children.  
+Fix: remove the br element and add an empty li (```<li></li>```)
 
 **The contact page:**
 - 1 error and 1 warning are shown
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 1. Duplicate ID email.
-I used 'email' for the ID and name in the contact form. But 'email' is already used for ID and name in the subcribe form in the footer. 
+I used 'email' for the ID and name in the contact form. But 'email' is already used for ID and name in the subcribe form in the footer.   
 Fix: change the ID and name to 'contactemail'.
 2. The warning is gone after fixing error 1.
 
@@ -188,9 +188,10 @@ Fix: change the ID and name to 'contactemail'.
 - 3 errors are shown
 ![html shop error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-shop.png)
 1.  End tag main seen, but there were open elements.
-I forgot to close 2 div's. See below at number 2.
+I forgot to close 2 div's.   
+Fix: See below at number 2.
 2. Unclosed element div.
-I forgot to close 2 div's.
+I forgot to close 2 div's.  
 Fix: add closing div element.
 
 **The register page:**
@@ -204,16 +205,16 @@ Fix: add closing div element.
 **The profile page:**
 ![html profile error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-profile.png)
 - 4 errors are shown.
-1. Element div not allowed as child of element ul in this context.
-The div element belongs to a modal. According to HTML5 spec, you can only have <li> elements as children. 
+1. Element div not allowed as child of element ul in this context.  
+The div element belongs to a modal. According to HTML5 spec, you can only have ```<li>``` elements as children. 
 Fix: put the modal structure outside of the ul.
-2. Start tag a seen but an element of the same type was already open.
+2. Start tag a seen but an element of the same type was already open.  
 I wrapped the the whole card in an anchor tag, so the whole card can be used to open a recepe.
-However on the profile page, 2 more anchor tags are added as edit and delete button. This results in anchor tags within anchor tags.
+However on the profile page, 2 more anchor tags are added as edit and delete button. This results in anchor tags within anchor tags.  
 Fix: keep the card-action div outside the first anchor tag.
 After fixing the mistakes, other errors suddenly appear.
 ![html further profile error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-profile2.png)
-3. Duplicate ID modal1.
+3. Duplicate ID modal1.  
 There is a duplication of the modal that asks the user for confirmation on deleting a recipe.
 However, since the recipes are rendered by looping, the modals are duplicated as well. 
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
@@ -244,15 +245,15 @@ $(document).on('click', '#removeRowIngredient', function () {
     $(this).closest('#inputIngredientRow').remove();
 });
  ```
-Fix: use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
+ Fix: use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
 
-2. The ID's for 'inputStepRow' are not unique because of the way they are created with javascript.
+2. The ID's for 'inputStepRow' are not unique because of the way they are created with javascript.  
 Fix: see above at number 1.
 
-3. The ID's for 'ingredient' are not unique because of the way they are created with javascript.
+3. The ID's for 'ingredient' are not unique because of the way they are created with javascript.  
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
 
-4. The ID's for 'step' are not unique because of the way they are created with javascript.
+4. The ID's for 'step' are not unique because of the way they are created with javascript.  
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
 
 **The categories page:** 
@@ -263,20 +264,20 @@ use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 
 **The add category page:**
 - No errors or warnings to show.
-![html category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-category.png)
+![html add category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The edit category page:** 
 - No errors or warnings to show.
-![html category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-category.png)
+![html edit category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 403 error handler page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+![html 403 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 404 error handler page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+![html 404 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 500 error handler page:**
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+![html 500 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
