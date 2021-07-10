@@ -170,8 +170,18 @@ Fix: Change button tag to p tag with button class.
 1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
 I forgot to add the ; after $nbsp to indicate a space.
 Fix: add semi-colon after $nbsp.
+2. Element br not allowed as child of element ul in this context.
+I used the br element to add padding between each ingredient and step.
+But ul elements can only have li elements as children.
+Fix: remove the br element and add an empty li (<li></li>)
 
 **The contact page:**
+- 1 error and 1 warning shown
+![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+1. Duplicate ID email.
+I used 'email' for the ID and name in the contact form. But 'email' is already used for ID and name in the subcribe form in the footer. 
+Fix: change the ID and name to 'contactemail'.
+2. The warning is gone after fixing error 1.
 
 **The shop page:**
 
