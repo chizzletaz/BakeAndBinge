@@ -192,35 +192,35 @@ This page shows in case of an internal service error.
 
 
 Below is a chart of the webpages and their mutual connections:  
-![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/Recipe_pages.png)
+![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/Recipe_pages.png)
 
         BACKEND
 
 Below are examples of the database collections:  
 database category collections:  
-![database category collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_category.png)  
+![database category collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_category.png)  
 database recipe collections:  
-![database recipe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_recipe.png)  
+![database recipe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_recipe.png)  
 database subscribe collections:  
-![database subscribe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_subscribe.png)  
+![database subscribe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_subscribe.png)  
 database users collections:  
-![database users collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/DB_users.png)
+![database users collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_users.png)
 
 ## **Skeleton Level**
 ### Wireframes
-- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/landing.pdf)  
-- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/recipes.pdf)  
-- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/recipe.pdf)  
-- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/contact.pdf)  
-- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/shop.pdf)  
-- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/register.pdf)  
-- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/login.pdf)
-- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/profile.pdf)  
-- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/add_recipe.pdf)  
-- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/edit_recipe.pdf)  
-- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/categories.pdf)  
-- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/add_category.pdf)  
-- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/wireframes/edit_category.pdf)  
+- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/landing.pdf)  
+- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/recipes.pdf)  
+- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/recipe.pdf)  
+- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/contact.pdf)  
+- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/shop.pdf)  
+- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/register.pdf)  
+- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/login.pdf)
+- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/profile.pdf)  
+- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/add_recipe.pdf)  
+- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/edit_recipe.pdf)  
+- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/categories.pdf)  
+- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/add_category.pdf)  
+- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/edit_category.pdf)  
 
 > ### Update
 >
@@ -232,7 +232,7 @@ To ensure that colours match well, I've choosen to use the colours of Materializ
 In food, bright colours connote pops of flavour such as sweets and desserts - pink is expecially associated with baking and sweets.
 Therefore the main colour is pink. As a contrasting colour I've choosen green.
 
-![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/coloursB&B.png)  
+![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/coloursB&B.png)  
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
@@ -245,17 +245,17 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 
 ### **Typography** 
 For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
-> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/kaushan-script.png)  
+> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/kaushan-script.png)  
 
 To keep the design consistent, I've decided to use one font-family: Noto.  
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
 
 For the other headers (h2 to h5) I've used Noto Serif. 
-> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/noto-serif.png)  
+> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-serif.png)  
 
 For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for display of text on computer screens.  
 
-> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/noto-sans.png)  
+> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-sans.png)  
 ---
 # **Features**
 
@@ -386,12 +386,12 @@ The Procfile might add a blank line at the bottom, and sometimes this can cause 
 
 **Create a MongoDB Database**
 1. Login to MongoDB.
-2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/clusters.png).
+2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
 
 **Create new collections**
-1. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/collections.png) 
-2. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/create-db.png) and enter 
-3. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/db-coll.png)
+1. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
+2. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
+3. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
 4. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
 
 ### Forking the GitHub Repository
@@ -405,8 +405,8 @@ Do achieve this follow these steps:
 ### Clone this GitHub repository
 1. Follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge)
 2. Click on the ‘Code’ button 
-![Code button](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/github-clone.png)
-3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon ![save icon](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/github-copy.png).
+![Code button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/github-clone.png)
+3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon ![save icon](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
 6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 

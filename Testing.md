@@ -17,68 +17,104 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 ## Testing user stories
 ### First time users:
-**1. As a first time user, I want to navigate easily across the website.**  
- —> nav bar, nav buttons.
+**1. As a first time user, I want to navigate easily across the website.**
 - The user can navigate the website by using the links in the navbar.  
-![navbar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/navbar.png) 
+![navbar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar.png) 
 - The user can return to the landing page by clicking the logo or clicking the Home button in the navbar.  
-![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/navbar2.png) 
+![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar2.png) 
 - The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the indivudual recipe page.  
-![go to recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/go-to-recipe.png) 
+![go to recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png) 
 
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
- —> recipe page with all recipes + browse per category.
  - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.  
- ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/browse-recipes.png)
+ ![browse recipes image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png)
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
  per category.
-![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-large.png)  
-<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/static/images/README/category-small.png" alt="category small image" width="300"/>  
+![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-large.png)  
+<img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="300"/>  
 
 **3. As a user, I want to know how to add a recipe.**
- -> How to add a new recipe explanation.
+When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
+On this page there is a button with a question mark. 
+![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)
+When the user clicks this button, a modal pops up with an explanation on how to add a recipe. The explanation consists of the ‘add recipe’ form with explanatory text.
+![how to add modal image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-modal.png)
 
 ### General users:  
 **1. As a user, I want to be able to use the website on different screen sizes.**
  —> responsive design
+The user can use a mobile device, a tablet or a desktop computer to use the website.
+This website is designed for different view screens. When the size of the window is changed, the content adapts responsively.
+
 **2. As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully.**
  —> search option
+On the recipe page there is a search bar, where the user can enter keywords to search the recipes.
+The user can go to the recipes page by clicking the ‘browse recipes’ button on the landing page or use the search icon in the navbar to be redirected to the recipes page.
+
 **3. As a user, I want to filter recipes by category, so I narrow down my search and/or search per category.**
  —> filter buttons or select option
+On the recipes page, the user can select a category to filter by that category.
+On large screens (> 992px) there are individual buttons, on smaller screens (< 992px) there is a dropdown menu to select a category.
+
 **4. As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe.**
- —> sort buttons.
+This is a feature left to implement.
+
 **5. As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.**
- -> labels for gluten free, vegan, etc.
+ -> labels for gluten free, vegan, 
+This is a feature left to implement.
+
 **6. As a user, I want to be able to delete my profile, if I no longer wish to use the website.**
  -> delete profile.
+This is a feature left to implement.
 
 ### Regular users:
 **1. As a regular user, I want to have my own page, so I can manage my own recipes.**
+When a user registers or logs in, they are redirected to their own profile page. On this page, the use can manage (add, edit or delete) their recipes.
+
  —> register/login functionality.
+
  **2. As a regular user, I want to add my own recipes, so I can share them with others on the website.**
   —> add recipe page + functionality
+When a user is logged in they can add a new recipe by going to their profile page and click the ‘add a new recipe’ button.
+
 **3. As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date.**
  —> edit/delete page + functionality.
+When a user is logged in they can edit or delete their own recipes, by going to their profile page and click on the ‘edit’ or ‘delete’ button of the recipe they want to edit or delete.
+
 **4. As a regular user, I want to contact the site owner in case I have questions or remarks.**
  —> contact page.
+The navbar has a link to the contact page. There the user can fill in the form to contact the site owner.
+
 **5. As a regular user, I want to be able to rate other recipes.**
  —> rating functionality
+This is a feature left to implement.
+
 **6. As a regular user, I want to be able to save other people's recipes.**
   -> save functionality.
+This is a feature left to implement.
+
 **7. As a regular user, I want to be able to share recipes.**
  —> share functionality
+This is a feature left to implement.
+
 **8. As a regular user, I want to get the latest news and updates.** 
 -> sign up for newsletter
+The footer has a subscribe form, where the user can enter their email address to get the latest news and updates.
 
 ## Developer stories:
 ### Admin/site owner:
 **1. As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.**
+The navbar has a link to the shop page. Thus page has cards with info on baking tools. When the user clicks the ‘buy now’ button, they are redirected to an external page where they can buy the item.
+
 -> shop site
 **2. As a site owner, I want to be able to have access to the recipes categories and the option to manage them.**
  —> admin functionality.
+When the site owner logs in as admin, they have an extra link in the navbar to manage categories. When they click on this link, the categories page is opened. On this page the admin can create a new category, edit or delete an existing category.
+
 **3. As a site owner, I want users to register and login, before they can add, edit or delete their recipes.** 
 —> register/login functionality.
+A user has to register or log to add, edit or delete 
 
 ## Manual testing features
 **Navigation to the landing page:**  
@@ -134,11 +170,11 @@ Issue: SOLVED
 The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.  
 Furthermore, when clicking on the 'Recipes', the name disappears.  
 
-Fix: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/contrainwidth.png).  
+Fix: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/contrainwidth.png).  
 add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).  
 
-Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/covertrigger.png), so the dropdown menu will display below the trigger.   
-And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/hover.png), so the dropdown menu will open on hover.  
+Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/covertrigger.png), so the dropdown menu will display below the trigger.   
+And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/hover.png), so the dropdown menu will open on hover.  
 
 > UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
   
@@ -222,18 +258,18 @@ Add to recipes() in app.py:
 ```
 ---
 Issue: SOLVED  
-On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_before.png).  
+On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_before.png).  
 
-Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/icons_recipe_after.png) of Materialize.
+Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_after.png) of Materialize.
 
 ---
 Issue: partially SOLVED  
 When displaying the recipes on the index, recipes and profile page, the cards 
-[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_unequal.png) equal height.  
+[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_unequal.png) equal height.  
 
 Fix: Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
 Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
-Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/static/images/README/cards_equal.png).
+Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_equal.png).
 
 ---
 Issue: SOLVED  
@@ -247,7 +283,6 @@ to the columns of class 'equal-right':
     margin-right: auto;
 }
 ```
-The recipe is displayed in the middle. When 2 recipes are shown, the recipes are equally distributed over the width.
+The recipe is displayed in the middle. When 2 recipes are shown, the recipes are equallty distributed over the width.
 I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
----
 
