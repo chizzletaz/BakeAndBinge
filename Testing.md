@@ -253,9 +253,13 @@ Fix: see above at number 1.
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
 
 4. The ID's for 'step' are not unique because of the way they are created with javascript.
-Fix: 
+Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
+
 **The categories page:** 
-![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
+- 1 error and 1 warning are shown 4 times
+![html categories error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-categories.png)
+1. Duplicate ID modal4.
+use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
 
 **The add category page:**
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
