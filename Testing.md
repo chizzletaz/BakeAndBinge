@@ -225,7 +225,31 @@ Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID
 **The edit recipe page:**
 - 4 errors are shown.
  ![html edit recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-edit-recipe.png)
- 1. The ID's for ingredient, inputIngredientRow, step and inputStepRow are not unique because they are created using
+ 1. The ID's for inputIngredientRow are not unique because of the way they are created with javascript:
+ ```
+// add ingredient row
+$("#addRowIngredient").click(function () {
+    var html = `
+    <div class="row mb0" id="inputIngredientRow">
+        <div class="input-field col s12 mb0">
+            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
+            <label for="ingredient">Ingredient</label>
+            <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
+        </div>`;
+
+    $('#newRowIngredient').append(html);
+});
+// remove ingredient row
+$(document).on('click', '#removeRowIngredient', function () {
+    $(this).closest('#inputIngredientRow').remove();
+});
+ ```
+Fix: use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
+
+2. The ID's for inputStepRow are not unique because of the way they are created with javascript:
+Fix: see above at number 1.
+
+3.
 
 **The categories page:** 
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
