@@ -59,13 +59,13 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 - On smaller screens (< 992px) there is a dropdown menu to select a category.  
 <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-small.png" alt="category small image" width="400"/>
 
-**4. As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe.**
+**4. As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe.**  
 This is a feature left to implement.
 
-**5. As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.**
+**5. As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.**  
 This is a feature left to implement.
 
-**6. As a user, I want to be able to delete my profile, if I no longer wish to use the website.**
+**6. As a user, I want to be able to delete my profile, if I no longer wish to use the website.**  
 This is a feature left to implement.
 
 ### Regular users:
@@ -80,7 +80,6 @@ This is a feature left to implement.
 ![add recipe image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/add-recipe-button.png) 
 
 **3. As a regular user, I want to edit and delete my own recipes, so I can keep my recipes up to date.**
- —> edit/delete page + functionality.
 - When a user is logged in they can edit or delete their own recipes, by going to their profile page and click on the ‘edit’ or ‘delete’ button of the recipe they want to edit or delete.  
 ![edit delete buttons image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/edit-delete-recipe.png) 
 
@@ -90,13 +89,13 @@ This is a feature left to implement.
 - On the contact page, the user can fill in the form to contact the site owner.
 
 
-**5. As a regular user, I want to be able to rate other recipes.**    
+**5. As a regular user, I want to be able to rate other recipes.**  
 This is a feature left to implement.
 
-**6. As a regular user, I want to be able to save other people's recipes.**    
+**6. As a regular user, I want to be able to save other people's recipes.**  
 This is a feature left to implement.
 
-**7. As a regular user, I want to be able to share recipes.**    
+**7. As a regular user, I want to be able to share recipes.**  
 This is a feature left to implement.
 
 **8. As a regular user, I want to get the latest news and updates.** 
@@ -136,11 +135,45 @@ Result: The logo text and the home button direct the user to the landing page.
 ---
 ## Code validation
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
+Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.
+How to validate the rendered page:
+Right click on the page, show source code, then, copy all that and paste it into the validator.
+Or
+enter the url of the heroku live link.
 Running the code through the validator gives:  
 ### For index.html:
-- No errors or warnings to show.
+
 ![Index.html validation](assets/img/examples/html-index.png)
 
+**The recipes page:**
+
+**The recipe page:**
+
+**The contact page:**
+
+**The shop page:**
+
+**The register page:**
+
+**The login page:** 
+
+**The profile page:**
+
+**The add recipe page:**
+
+**The edit recipe page:**
+ 
+**The categories page:** 
+
+**The add category page:**
+
+**The edit category page:** 
+
+**The 403 error handler page:**
+
+**The 404 error handler page:**
+
+**The 500 error handler page:**
 
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
