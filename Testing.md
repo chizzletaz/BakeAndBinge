@@ -28,15 +28,16 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
  - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.  
- <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/> 
+  <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/>   
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
- per category. (see 'general users 3')
+ per category. (see General users 3)
 
 **3. As a user, I want to know how to add a recipe.**
 - When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
 - On this page there is a button with a question mark. 
 ![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)  
-- When the user clicks this button, a modal pops up with an explanation on how to add a recipe. The explanation consists of the ‘add recipe’ form with explanatory text.
+- When the user clicks this button, a modal pops up with an explanation on how to add a recipe. 
+- The explanation consists of the ‘add recipe’ form with explanatory text.
 ![how to add modal image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-modal.png)
 
 ### General users:  
@@ -84,19 +85,18 @@ This is a feature left to implement.
 ![edit delete buttons image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/edit-delete-recipe.png) 
 
 **4. As a regular user, I want to contact the site owner in case I have questions or remarks.**
- —> contact page.
 - The navbar has a link to the contact page. 
 ![contact link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/contact-link.png) 
 - On the contact page, the user can fill in the form to contact the site owner.
 
 
-**5. As a regular user, I want to be able to rate other recipes.**
+**5. As a regular user, I want to be able to rate other recipes.**    
 This is a feature left to implement.
 
-**6. As a regular user, I want to be able to save other people's recipes.**
+**6. As a regular user, I want to be able to save other people's recipes.**    
 This is a feature left to implement.
 
-**7. As a regular user, I want to be able to share recipes.**
+**7. As a regular user, I want to be able to share recipes.**    
 This is a feature left to implement.
 
 **8. As a regular user, I want to get the latest news and updates.** 
@@ -106,13 +106,12 @@ This is a feature left to implement.
 ## Developer stories:
 ### Admin/site owner:
 **1. As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.**
-- The navbar has a link to the shop page. 
+- The navbar has a link to the shop page.   
 ![shop link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/shop-link.png) 
 - This page has cards with info on baking tools. 
 - When the user clicks the ‘buy now’ button, they are redirected to an external page where they can buy the item.  
 ![buy now image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/buy-now.png) 
 
--> shop site
 **2. As a site owner, I want to be able to have access to the recipes categories and the option to manage them.**
 - When the site owner logs in as admin, they have an extra link in the navbar to manage categories. 
 ![manage categories image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/manage-categories.png)  
