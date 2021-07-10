@@ -159,7 +159,7 @@ I originally only had the 'go to recipe'-button acting as an anchor tag. Later I
 Fix: change the the anchor tag of the button to a button tag and remove the href.
 This gives another error: The element button must not appear as a descendant of the a element.
 Fix: Change button tag to p tag with button class.
-
+> Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
 
 **The recipes page:**
 
