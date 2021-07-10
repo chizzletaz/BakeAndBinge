@@ -1,18 +1,33 @@
-{% if not hide_nav %}{% extends "base.html" %}{% endif %}
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-{% block content %}
-<div class="container">
-    <div class="center-align">
-        <img class="error-img" src="{{ url_for('static', filename='images/403.jpg') }}" alt="error 403 image">
-        <h1>Oh crumbs! - Forbidden Access</h1><br>
-        <h4>Sorry, forbidden to enter here.</h4><br>
-        <a href="{{ url_for('home') }}">Click here to get back </a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        type="text/css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <!-- Own stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+    <title>Bake & Binge</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="center-align">
+            <img class="error-img" src="{{ url_for('static', filename='images/403.jpg') }}" alt="error 403 image">
+            <h1>Oh crumbs! - Forbidden Access</h1><br>
+            <h4>Sorry, forbidden to enter here.</h4><br>
+            <a href="{{ url_for('home') }}">Click here to get back </a>
+        </div>
     </div>
-</div>
-{% endblock %}
+</body>
 
 </html>
