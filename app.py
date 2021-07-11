@@ -427,7 +427,7 @@ def subscribe():
 @app.route("/shop")
 def shop():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return remder_template("shop.html", categories=categories)
+    return render_template("shop.html", categaries=categories)
 
 
 # ERROR HANDLERS
