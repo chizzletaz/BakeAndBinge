@@ -272,6 +272,7 @@ use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 
 **The 403 error handler page:**
 ![html 403 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
+I don't know how to test this page.
 
 **The 404 error handler page:**
 - No errors or warnings to show.
@@ -279,7 +280,7 @@ use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 
 **The 500 error handler page:**
 ![html 500 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
-
+I don't know how to test this page.
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
