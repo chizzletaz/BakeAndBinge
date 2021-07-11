@@ -134,6 +134,7 @@ Result: The logo text and the home button direct the user to the landing page.
 
 ---
 ## Code validation
+### HTML
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
 Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
 How to validate the rendered page:  
@@ -141,13 +142,13 @@ How to validate the rendered page:
     - Right click on the page
     - Click 'show source code'
     - Copy all HTML
-    - Paste into the validator.  
+    - Paste into the validator.      
 Or  
 - Enter the url of the heroku live link.  
 However, when authentication is used, the live link can't be used to validate the page.
 
 Running the code through the validator gives:  
-### For index.html:
+#### For index.html:
 - 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
 1. Element h4 not allowed as child of element ul in this context.  
@@ -162,11 +163,11 @@ This gives another error: The element button must not appear as a descendant of 
 Fix: Change button tag to p tag with button class.
 > Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
 
-**The recipes page:**
+#### For recipes.html:
 - No errors or warnings to show.
 ![html recipes error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipes.png)
 
-**The recipe page:**
+#### For recipe.html:
 - 2 different errors are shown:
 ![html recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipe.png)
 1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
@@ -176,7 +177,7 @@ Fix: add semi-colon after $nbsp.
 But ul elements can only have ```<li>``` elements as children.  
 Fix: remove the br element and add an empty li (```<li></li>```)
 
-**The contact page:**
+#### For contact.html:
 - 1 error and 1 warning are shown
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
 1. Duplicate ID email.
@@ -184,7 +185,7 @@ I used 'email' for the ID and name in the contact form. But 'email' is already u
 Fix: change the ID and name to 'contactemail'.
 2. The warning is gone after fixing error 1.
 
-**The shop page:**
+#### For shop.html:
 - 3 errors are shown
 ![html shop error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-shop.png)
 1.  End tag main seen, but there were open elements.
@@ -194,15 +195,15 @@ Fix: See below at number 2.
 I forgot to close 2 div's.  
 Fix: add closing div element.
 
-**The register page:**
+#### For register.html:
 - No errors or warnings to show.
 ![html register error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-register.png)
 
-**The login page:** 
+#### For login.html: 
 - No errors or warnings to show.
 ![html login error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-login.png)
 
-**The profile page:**
+#### For profile.html:
 ![html profile error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-profile.png)
 - 4 errors are shown.
 1. Element div not allowed as child of element ul in this context.  
@@ -219,31 +220,31 @@ There is a duplication of the modal that asks the user for confirmation on delet
 However, since the recipes are rendered by looping, the modals are duplicated as well. 
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
 
-**The add recipe page:**
+#### For add_recipe.html:
 - No errors or warnings to show.
 ![html add recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
-**The edit recipe page:**
+#### For edit_recipe.html:
 - 4 errors are shown.
  ![html edit recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-edit-recipe.png)
  1. The ID's for 'inputIngredientRow' are not unique because of the way they are created with javascript:
  ```
-// add ingredient row
-$("#addRowIngredient").click(function () {
-    var html = `
-    <div class="row mb0" id="inputIngredientRow">
-        <div class="input-field col s12 mb0">
-            <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
-            <label for="ingredient">Ingredient</label>
-            <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
-        </div>`;
+    // add ingredient row
+    $("#addRowIngredient").click(function () {
+        var html = `
+        <div class="row mb0" id="inputIngredientRow">
+            <div class="input-field col s12 mb0">
+                <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
+                <label for="ingredient">Ingredient</label>
+                <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
+            </div>`;
 
-    $('#newRowIngredient').append(html);
-});
-// remove ingredient row
-$(document).on('click', '#removeRowIngredient', function () {
-    $(this).closest('#inputIngredientRow').remove();
-});
+        $('#newRowIngredient').append(html);
+    });
+    // remove ingredient row
+    $(document).on('click', '#removeRowIngredient', function () {
+        $(this).closest('#inputIngredientRow').remove();
+    });
  ```
  Fix: use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
 
@@ -256,31 +257,32 @@ Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID
 4. The ID's for 'step' are not unique because of the way they are created with javascript.  
 Fix: use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
 
-**The categories page:** 
+#### For categories.html:
 - 1 error and 1 warning are shown 4 times
 ![html categories error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-categories.png)
 1. Duplicate ID modal4.
 use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
 
-**The add category page:**
+#### For add_category.html:
 - No errors or warnings to show.
 ![html add category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
-**The edit category page:** 
+#### For edit_category.html: 
 - No errors or warnings to show.
 ![html edit category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
-**The 403 error handler page:**
+#### For 403.html:  
 I don't know how to test this page.
 
-**The 404 error handler page:**
+#### For 404.html:
 - No errors or warnings to show.
 ![html 404 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
-**The 500 error handler page:**
+#### For 405.html:  
 I don't know how to test this page.
 
 ---
+### CSS  
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
 ### For style.css:
@@ -288,11 +290,14 @@ Running the code through the validator gives:
 ![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
 
 ---
+### Javascript  
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
 It is recommended to add **/* jshint esversion: 6 */** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.      
 Running the code through the validator gives:
 ### For style.js:
 - No errors or warnings are shown. 
+---
+### Python  
 
 ---
 ## Testing browser compatibility
