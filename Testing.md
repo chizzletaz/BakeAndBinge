@@ -288,11 +288,11 @@ Running the code through the validator gives:
 ![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
 
 ---
-[JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.    
+[JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
+It is recommended to add **/* jshint esversion: 6 */** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.      
 Running the code through the validator gives:
-### For start.js:
-- No errors, just some warnings about semi-colons and an error 'Expected an assignment or function call and instead saw an expression.'  
-![start.js validation](assets/img/examples/js-start.png)
+### For style.js:
+- No errors or warnings are shown. 
 
 ---
 ## Testing browser compatibility

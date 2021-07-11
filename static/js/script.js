@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 $(document).ready(function () {
     $(".dropdown-trigger").dropdown({ 
         constrainWidth: false,
@@ -53,7 +55,8 @@ $(document).ready(function () {
 $("#copyright").text(new Date().getFullYear()); 
 
 // Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery
-// add_recipe.html
+// on the add_recipe.html page
+// edited myself after W3C validation error, see validation on 'the edit recipe page'
 // add ingredient row
 $("#addRowIngredient").click(function () {
     var html = `
