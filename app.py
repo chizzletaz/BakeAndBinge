@@ -4,7 +4,8 @@ from flask import (
     request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import (generate_password_hash, 
+    check_password_hash)
 from datetime import date
 if os.path.exists("env.py"):
     import env
@@ -24,56 +25,71 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = list(mongo.db.recipes.find().sort("date_added", -1).limit(6))
-    # Credit for the relations between collections using ObjectId: my mentor, Antonio Rodriguez
-    # Since in the recipe collection, the category_name is stored as the ObjectId of the 
-    # category_name in the category collection, we have to convert the ObjectId-number
+    recipes = list(
+        mongo.db.recipes.find().sort("date_added", -1).limit(6))
+    # Credit for the relations between collections using ObjectId: 
+    # my mentor, Antonio Rodriguez
+    # Since in the recipe collection, the category_name is stored as 
+    # the ObjectId of the category_name in the category collection, we 
+    # have to convert the ObjectId-number
     # of the category name to the category name itself
     for recipe in recipes:
-        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        category = mongo.db.categories.find_one(
+            {'_id': ObjectId(recipe['category_name'])})
         recipe['category_name'] = category['category_name']
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
 
     # Getting all the category names 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("index.html", recipes=recipes, categories=categories)
+    return render_template("index.html", recipes=recipes, 
+                            categories=categories)
 
 
 # SEARCH
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    recipes = list(mongo.db.recipes.find(
+        {"$text": {"$search": query}}))
     for recipe in recipes:
-        category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+        category = mongo.db.categories.find_one(
+            {'_id': ObjectId(recipe['category_name'])})
         recipe['category_name'] = category['category_name']
 
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
 
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", recipes=recipes, 
+                            categories=categories)
 
 
 # FILTER ON CATEGORY
 @app.route("/recipes_filter/<category_name>")
 def recipes_filter(category_name):
     # Get the category that is queried 
-    category = mongo.db.categories.find_one({'category_name': category_name})
+    category = mongo.db.categories.find_one(
+        {'category_name': category_name})
     # and find all the recipes with that category
-    recipes = list(mongo.db.recipes.find({'category_name': category['_id']}))
+    recipes = list(mongo.db.recipes.find(
+        {'category_name': category['_id']}))
     
     for recipe in recipes:
         # convert the category_name ObjectId to the name
         recipe['category_name'] = category['category_name']
 
         # convert the created_by ObjectId to the name
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
 
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    return render_template("recipes.html", recipes=recipes, 
+                            categories=categories)
 
 
 # REGISTER
@@ -90,7 +106,8 @@ def register():
 
         register = {
             "username" : request.form.get("username").lower(),
-            "password" : generate_password_hash(request.form.get("password"))
+            "password" : generate_password_hash(
+                request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -154,9 +171,11 @@ def profile(username):
             recipe['created_by'] = user['username']
 
         categories = mongo.db.categories.find().sort("category_name", 1)
-        return render_template("profile.html", recipes=recipes, username=username, categories=categories)
+        return render_template("profile.html", recipes=recipes, 
+                            username=username, categories=categories)
 
-    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    flash("You don't have an account yet (or aren't logged in). \
+            Please register (or login).")
     return redirect(url_for('register'))
 
 
@@ -188,8 +207,10 @@ def recipes():
             {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
 
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("recipes.html", recipes=recipes, categories=categories)
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipes.html", recipes=recipes, 
+                        categories=categories)
 
 
 # INDIVIDUAL RECIPE
@@ -197,15 +218,19 @@ def recipes():
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # convert created_by ObjectId to the name
-    user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+    user = mongo.db.users.find_one(
+        {'_id': ObjectId(recipe['created_by'])})
     recipe['created_by'] = user['username']
 
     # convert category_name ObjectId to the name
-    category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+    category = mongo.db.categories.find_one(
+        {'_id': ObjectId(recipe['category_name'])})
     recipe['category_name'] = category['category_name']
     
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("recipe.html", recipe=recipe, categories=categories)
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
+    return render_template("recipe.html", recipe=recipe, 
+                        categories=categories)
 
 
 # ADD RECIPE
@@ -217,9 +242,11 @@ def add_recipe():
 
             user = mongo.db.users.find_one({'username': session["user"]})
             recipe = {
-                "category_name": ObjectId(request.form.get("category_name")),
+                "category_name": ObjectId(request.form.get(
+                                "category_name")),
                 "recipe_title": request.form.get("recipe_title"),
-                "recipe_description": request.form.get("recipe_description"),
+                "recipe_description": request.form.get(
+                                "recipe_description"),
                 "recipe_image": request.form.get("recipe_image"),
                 "prep_time": request.form.get("prep_time"),
                 "bake_time": request.form.get("bake_time"),
@@ -230,17 +257,20 @@ def add_recipe():
                 "steps": request.form.getlist("step[]"),
                 "tips": request.form.get("tips"),
                 "created_by": ObjectId(user['_id']),
-                # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
+# credit specific time format: 
+# https://www.programiz.com/python-programming/datetime/current-datetime
                 "date_added": date.today().strftime("%d %B %Y") 
             }
             mongo.db.recipes.insert_one(recipe)
             flash("Your recipe has been added.")
             return redirect(url_for('profile', username=session["user"]))
 
-        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        categories = list(
+            mongo.db.categories.find().sort("category_name", 1))
         return render_template("add_recipe.html", categories=categories)
 
-    flash("Action denied. You don't have an account yet (or aren't logged in). Please register (or login).")
+    flash("Action denied. You don't have an account yet (or aren't \
+        logged in). Please register (or login).")
     return redirect(url_for('register'))
 
 
@@ -252,18 +282,22 @@ def edit_recipe(recipe_id):
         # find the current recipe
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         # convert created_by ObjectId to the name
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
         
         # check if the recipe is made by the user
         if session['user'].lower() == recipe['created_by'].lower():
 
             if request.method == "POST":
-                user = mongo.db.users.find_one({'username': session["user"]})
+                user = mongo.db.users.find_one(
+                    {'username': session["user"]})
                 submit = {
-                    "category_name": ObjectId(request.form.get("category_name")),
+                    "category_name": ObjectId(request.form.get(
+                        "category_name")),
                     "recipe_title": request.form.get("recipe_title"),
-                    "recipe_description": request.form.get("recipe_description"),
+                    "recipe_description": request.form.get(
+                        "recipe_description"),
                     "recipe_image": request.form.get("recipe_image"),
                     "prep_time": request.form.get("prep_time"),
                     "bake_time": request.form.get("bake_time"),
@@ -274,25 +308,32 @@ def edit_recipe(recipe_id):
                     "steps": request.form.getlist("step[]"),
                     "tips": request.form.get("tips"),
                     "created_by": ObjectId(user['_id']),
-                    # credit specific time format: https://www.programiz.com/python-programming/datetime/current-datetime
+# credit specific time format: 
+# https://www.programiz.com/python-programming/datetime/current-datetime
                     "date_added": date.today().strftime("%d %B %Y") 
                 }
-                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+                mongo.db.recipes.update(
+                    {"_id": ObjectId(recipe_id)}, submit)
                 flash("Your recipe has been updated.")
                 return redirect(url_for("recipes"))
 
-            recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+            recipe = mongo.db.recipes.find_one(
+                {"_id": ObjectId(recipe_id)})
             # convert category_name ObjectId to the name
-            category = mongo.db.categories.find_one({'_id': ObjectId(recipe['category_name'])})
+            category = mongo.db.categories.find_one(
+                {'_id': ObjectId(recipe['category_name'])})
             recipe['category_name'] = category['category_name']
             
-            categories = list(mongo.db.categories.find().sort("category_name", 1))
-            return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+            categories = list(
+                mongo.db.categories.find().sort("category_name", 1))
+            return render_template("edit_recipe.html", recipe=recipe, 
+                                    categories=categories)
 
         flash("Action denied. This isn't your recipe.")
         return redirect(url_for('profile', username=session["user"]))
 
-    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    flash("You don't have an account yet (or aren't logged in). \
+            Please register (or login).")
     return redirect(url_for('register'))
 
 
@@ -304,27 +345,32 @@ def delete_recipe(recipe_id):
         # find the current recipe
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         # convert created_by ObjectId to the name
-        user = mongo.db.users.find_one({'_id': ObjectId(recipe['created_by'])})
+        user = mongo.db.users.find_one(
+            {'_id': ObjectId(recipe['created_by'])})
         recipe['created_by'] = user['username']
 
         # check if the recipe is made by the user
         if session['user'].lower() == recipe['created_by'].lower():
             # mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
             flash("Your recipe has been deleted.")
-            return redirect(url_for('profile', username=session["user"]))
+            return redirect(url_for('profile', 
+                        username=session["user"]))
         
         else:
             flash("Action denied. This is not your recipe")
-            return redirect(url_for('profile', username=session["user"]))
+            return redirect(url_for('profile', 
+                        username=session["user"]))
 
-    flash("You don't have an account yet (or aren't logged in). Please register (or login).")
+    flash("You don't have an account yet (or aren't logged in). \
+            Please register (or login).")
     return redirect(url_for('register'))
 
 
 # MANAGE CATEGORIES
 @app.route("/categories")
 def categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
@@ -363,12 +409,15 @@ def edit_category(category_id):
                 submit = {
                     "category_name": request.form.get("category_name")
                 }
-                mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+                mongo.db.categories.update(
+                    {"_id": ObjectId(category_id)}, submit)
                 flash('Category has been updated.')
                 return redirect(url_for('categories'))
 
-            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-            return render_template("edit_category.html", category=category)
+            category = mongo.db.categories.find_one(
+                {"_id": ObjectId(category_id)})
+            return render_template("edit_category.html", 
+                            category=category)
         
         flash("Access denied. You don't have permission for this page.")
         return redirect(url_for('home'))
@@ -386,7 +435,8 @@ def delete_category(category_id):
             flash("Category has been deleted.")
             return redirect(url_for('categories'))
         
-        flash("Access denied. You don't have permission for this page.")
+        flash("Access denied. You don't have permission \
+                for this page.")
         return redirect(url_for('profile', username=session["user"]))
 
     flash("Access denied. You don't have permission for this page.")
@@ -400,7 +450,8 @@ def contact():
         flash('Your message has been sent')
         return redirect(url_for('home'))
 
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
     return render_template("contact.html", categories=categories)
 
 
@@ -413,7 +464,8 @@ def subscribe():
             {"email": request.form.get("email").lower()})
 
         if existing_email:
-            flash("Apparently you've subscribe already. This email already exists.")
+            flash("Apparently you've subscribe already. \
+                    This email already exists.")
             return redirect(url_for('home'))
 
         subscribe = {
@@ -426,7 +478,8 @@ def subscribe():
 
 @app.route("/shop")
 def shop():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(
+        mongo.db.categories.find().sort("category_name", 1))
     return render_template("shop.html", categeries=categories)
 
 

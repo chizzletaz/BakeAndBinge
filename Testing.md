@@ -142,7 +142,7 @@ How to validate the rendered page:
     - Right click on the page
     - Click 'show source code'
     - Copy all HTML
-    - Paste into the validator.      
+    - Paste into the validator.        
 Or  
 - Enter the url of the heroku live link.  
 However, when authentication is used, the live link can't be used to validate the page.
@@ -285,19 +285,21 @@ I don't know how to test this page.
 ### CSS  
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
-### For style.css:
+#### For style.css:
 - No errors are found.  
 ![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
 
 ---
 ### Javascript  
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
-It is recommended to add **/* jshint esversion: 6 */** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.      
+It is recommended to add **```/* jshint esversion: 6 */```** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.      
 Running the code through the validator gives:
-### For style.js:
+#### For style.js:
 - No errors or warnings are shown. 
 ---
 ### Python  
+[PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
+#### For app.py:
 
 ---
 ## Testing browser compatibility
