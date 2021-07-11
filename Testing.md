@@ -301,7 +301,7 @@ Running the code through the validator gives:
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
 #### For app.py:
 Before checking the app.py file, I tried to remove as many mistakes beforehand, such as extra whitespaces, maximum
-code line length of 72, correct line breaks. 
+code line length of 72, correct line breaks, etc.   
 Nevertheless, there were a lot of issues that I missed.
 - Several notifications  
 ![pep8 python notifications](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/python-pep8.png)  
@@ -310,7 +310,7 @@ After fixing the notifications, I get an All right message.
 
 ---
 ## Testing browser compatibility
-I've tested the site on Safari, Chrome and Mozilla Firefox.
+I've tested the site on Safari, Chrome and Mozilla Firefox.  
 The testing was done by checking all elements, functionalities and links.
 No issues arose during testing.  
 
