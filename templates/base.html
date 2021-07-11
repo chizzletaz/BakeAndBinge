@@ -93,6 +93,8 @@
             <li><h4><a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a></h4></li>
             <li class="divider"></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
+            {% if request.endpoint != 'register' %}
+            {% if request.endpoint != 'login' %}
             <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
             <li class="no-padding">
@@ -110,6 +112,8 @@
                     </li>
                 </ul>
             </li>
+            {% endif %}
+            {% endif %}
             <li class="divider"></li>
             {% if session.user %}
             <li><a class="black-text hvr-ufc" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>

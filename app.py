@@ -115,9 +115,7 @@ def register():
         flash('Registration succesful!')
         return redirect(url_for("profile", username=session["user"]))
 
-    categories = list(
-        mongo.db.categories.find().sort("category_name", 1))
-    return render_template("register.html", categories=categories)
+    return render_template("register.html")
 
 
 # LOGIN
@@ -147,10 +145,8 @@ def login():
             # username doesn't exist
             flash("Incorrect username and/or password, try again.")
             return redirect(url_for('login'))
-            
-    categories = list(
-        mongo.db.categories.find().sort("category_name", 1))
-    return render_template("login.html", categories=categories)
+
+    return render_template("login.html")
 
 
 # PROFILE PAGE
