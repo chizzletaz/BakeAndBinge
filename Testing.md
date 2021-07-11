@@ -136,14 +136,14 @@ Result: The logo text and the home button direct the user to the landing page.
 ## Code validation
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
 Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
-How to validate the rendered page:
-Use the source code of the rendered page
-- Right click on the page
-- Click 'show source code'
-- Copy all HTML
-- Paste into the validator.  
+How to validate the rendered page:  
+- Use the source code of the rendered page
+    - Right click on the page
+    - Click 'show source code'
+    - Copy all HTML
+    - Paste into the validator.  
 Or  
-Enter the url of the heroku live link.
+- Enter the url of the heroku live link.  
 However, when authentication is used, the live link can't be used to validate the page.
 
 Running the code through the validator gives:  
@@ -271,7 +271,6 @@ use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 ![html edit category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 403 error handler page:**
-![html 403 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 I don't know how to test this page.
 
 **The 404 error handler page:**
@@ -279,14 +278,14 @@ I don't know how to test this page.
 ![html 404 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 500 error handler page:**
-![html 500 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 I don't know how to test this page.
+
 ---
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
 ### For style.css:
 - No errors are found.  
-![style.css validation](assets/img/examples/css-style.png)
+![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
 
 ---
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.    
