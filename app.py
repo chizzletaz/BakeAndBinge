@@ -147,6 +147,7 @@ def login():
             # username doesn't exist
             flash("Incorrect username and/or password, try again.")
             return redirect(url_for('login'))
+            
     categories = list(
         mongo.db.categories.find().sort("category_name", 1))
     return render_template("login.html", categories=categories)
