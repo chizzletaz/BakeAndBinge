@@ -274,6 +274,7 @@ use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 ![html 403 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 404 error handler page:**
+- No errors or warnings to show.
 ![html 404 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 **The 500 error handler page:**
@@ -429,3 +430,11 @@ to the columns of class 'equal-right':
 The recipe is displayed in the middle. When 2 recipes are shown, the recipes are equallty distributed over the width.
 I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
 
+---
+Issue: I don't want to show the header and footer on the error handler pages.
+Idea: use 'hide_nav=True' for rendering in app.py and Jinja condition on the error handler pages:
+```
+{% if not hide_nav %}{% extends "base.html" %}{% endif %}
+```
+However, this leaves out everything including the links in the head tag. This means you have to add some of the links again on the error handler page.
+I've decided to not extend the base and make a 'normal' page setup for each error handler page, leaving out the header and footer.
