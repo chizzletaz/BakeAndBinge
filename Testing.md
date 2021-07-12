@@ -131,6 +131,7 @@ Testing:
 4. Click on the button with the house-icon and verify you are directed to the landing page.
 
 Result: The logo text and the home button direct the user to the landing page.
+
 Expected -Feature is expected to do X why the user does Y
 Testing - Tested the feature by doing Y
 Result - The feature did not respond due to A,B,C
@@ -140,11 +141,17 @@ Fix - I did Z to the code because something was missing
 
 **Subscription option**
 Expected: 
-The user is subscribed to the newsletter when the user fills in the subscription form.
+The user is subscribed to the newsletter when the user fills in the subscription form correctly.
 Testing:
 1. Go to the footer of any page (except register or login).
 2. Don't fill in an emailaddress and click 'Subscribe'.
 3. Confirm a warning message appears.
+   Result:
+       A 'Subcription successfull' message appears.
+   Fix: 
+       Add 'required' to the input field.
+   Result:
+       A warning message appears.
 4. Fill in an invalid email address.
 5. Confirm a warning message appears.
 6. Fill in a valid email address.
@@ -152,8 +159,7 @@ Testing:
 8. Fill in the same email address.
 9. Confirm the message 'Apparently you've subscribe already. This email already exists.' appears.
 Result:
-@3 - A 'Subcription successfull' message appears.
-Fix: 
+The user is subscribed to the newsletter when the user fills in the subscription form correctly.
 
 Register functionality**
 Expected:
