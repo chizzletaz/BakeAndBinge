@@ -131,6 +131,136 @@ Testing:
 4. Click on the button with the house-icon and verify you are directed to the landing page.
 
 Result: The logo text and the home button direct the user to the landing page.
+Expected -Feature is expected to do X why the user does Y
+Testing - Tested the feature by doing Y
+Result - The feature did not respond due to A,B,C
+or
+Result - The feature acted as normally and it did Y
+Fix - I did Z to the code because something was missing
+
+**Subscription option**
+Expected: 
+The user is subscribed to the newsletter when the user fills in the subscription form.
+Testing:
+1. Go to the footer of any page (except register or login).
+2. Don't fill in an emailaddress and click 'Subscribe'.
+3. Confirm a warning message appears.
+4. Fill in an invalid email address.
+5. Confirm a warning message appears.
+6. Fill in a valid email address.
+7. Confirm the message 'Subscription successful!' appears.
+8. Fill in the same email address.
+9. Confirm the message 'Apparently you've subscribe already. This email already exists.' appears.
+Result:
+@3 - A 'Subcription successfull' message appears.
+Fix: 
+
+Register functionality**
+Expected:
+Testing:
+Result:
+
+Login functionality**
+Expected:
+Testing:
+Result:
+
+Logout functionality**
+Expected:
+Testing:
+Result:
+
+CTA button**
+Expected:
+Testing:
+Result:
+
+Search bar**
+Expected:
+Testing:
+Result:
+
+Category buttons**
+Expected:
+Testing:
+Result:
+
+Error handler pages**
+Expected:
+Testing:
+Result:
+
+Collapsible on shop page**
+Expected:
+Testing:
+Result:
+
+Modal for how to add recipe**
+Expected:
+Testing:
+Result:
+
+Confirmation modal**
+Expected:
+Testing:
+Result:
+
+Social icons**
+Expected:
+Testing:
+Result:
+
+Contact form**
+Expected:
+Testing:
+Result:
+
+#### CRUD
+
+Add recipe**
+Expected:
+Testing:
+Result:
+
+Add category**
+Expected:
+Testing:
+Result:
+
+Recipe overview on landing page**
+Expected:
+Testing:
+Result:
+
+Recipe overview on recipes page**
+Expected:
+Testing:
+Result:
+
+Link to individual recipe**
+Expected:
+Testing:
+Result:
+
+Edit recipe**
+Expected:
+Testing:
+Result:
+
+Edit category**
+Expected:
+Testing:
+Result:
+
+Delete recipe**
+Expected:
+Testing:
+Result:
+
+Delete category**
+Expected:
+Testing:
+Result:
 
 ---
 ## Code validation
