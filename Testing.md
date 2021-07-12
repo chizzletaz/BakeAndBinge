@@ -122,15 +122,6 @@ This is a feature left to implement.
 - A user has to register or log to add, edit or delete. (see above 'Regular users 1, 2 and 3')
 
 ## Manual testing features
-**Navigation to the landing page:**  
-Expected: The logo text and the home button direct the user to the landing page.  
-Testing:
-1. Go to any page but the landing page.  
-2. Click on ‘Triviata’-text at the top of the page and verify you are directed to the landing page.
-3. Go to any page but the landing page.
-4. Click on the button with the house-icon and verify you are directed to the landing page.
-
-Result: The logo text and the home button direct the user to the landing page.
 
 Expected -Feature is expected to do X why the user does Y
 Testing - Tested the feature by doing Y
@@ -142,10 +133,11 @@ Fix - I did Z to the code because something was missing
 **Subscription option**
 Expected: 
 The user is subscribed to the newsletter when the user fills in the subscription form correctly.
+
 Testing:
 1. Go to the footer of any page (except register or login).
 2. Don't fill in an emailaddress and click 'Subscribe'.
-3. Confirm a warning message appears.
+3. Confirm that a warning message appears.
    Result:
        A 'Subcription successfull' message appears.
    Fix: 
@@ -153,50 +145,131 @@ Testing:
    Result:
        A warning message appears.
 4. Fill in an invalid email address.
-5. Confirm a warning message appears.
+5. Confirm that a warning message appears.
 6. Fill in a valid email address.
-7. Confirm the message 'Subscription successful!' appears.
+7. Confirm that the message 'Subscription successful!' appears.
 8. Fill in the same email address.
-9. Confirm the message 'Apparently you've subscribe already. This email already exists.' appears.
+9. Confirm that the message 'Apparently you've subscribe already. This email already exists.' appears.
+
 Result:
 The user is subscribed to the newsletter when the user fills in the subscription form correctly.
 
-Register functionality**
-Expected:
-Testing:
-Result:
+**Register functionality**
+Expected: 
+The user can register to the website by filling in the register form correctly.
 
-Login functionality**
-Expected:
 Testing:
-Result:
+1. Go to the register page by clicking the 'register here' button on the landing page or click on the register link in the navbar.
+2. Don't fill in the register form.
+3. Confirm that a warning message appears.
+4. Only fill in the username.
+5. Confirm that a warning message appears.
+6. Only fill in the password.
+7. Confirm that a warning message appears.
+8. Fill in a unique username and password.
+9. Confirm that the message 'Registration succesful!' appears.
+10. Log out by clicking the logout button in the navbar.
+11. Repeat steps 1 and 8.
+12. Confirm that the message 'This username already exists, try another username.' appears.
 
-Logout functionality**
-Expected:
+Result:
+The user can register to the website by filling in the register form correctly.
+
+**Login functionality**
+Expected: 
+The user can log in to the website by filling in the login form correctly.
+
 Testing:
-Result:
+1. Go to the login page by clicking on the login link in the navbar.
+2. Don't fill in the login form.
+3. Confirm that a warning message appears.
+4. Only fill in the username.
+5. Confirm that a warning message appears.
+6. Only fill in the password.
+7. Confirm that a warning message appears.
+8. Fill in a wrong usermame and password.
+9. Confirm that the message 'Incorrect username and/or password, try again.' appears.
+10. Fill in your username and password.
+11. Confirm you are redirected to your profile page and the message 'welcome, your username' appears.
 
-CTA button**
-Expected:
+Result:
+The user can log in to the website by filling in the login form correctly.
+
+**Logout functionality**
+Expected: 
+The user is logged out when they click on the logout link in the navbar.
+
 Testing:
-Result:
+1. Log in.
+2. Click the logout button in the navbar.
+3. Confirm that a warning modal appears with the message 'Are you sure you want to log out?'.
+4. Click 'No'.
+5. Confirm you are still logged in and are kept on the current page.
+6. Repeat steps 2 and 3.
+7. Confirm you are logged out form the website and a message 'You have been logged out' appears and are redirected to the login page.
 
-Search bar**
-Expected:
+Result:
+The user is logged out when they click on the logout link in the navbar.
+
+**CTA button**
+Expected: 
+The user is redirected to the register page when they click on the 'REGISTER HERE' button.
+
 Testing:
-Result:
+1. Go to the landing page.
+2. Click the 'REGISTER HERE' button.
+3. Confirm you are redirected to the register page.
 
-Category buttons**
+Result:
+The user is redirected to the register page when they click on the 'REGISTER HERE' button.
+
+**Search bar**
 Expected:
-Testing:
-Result:
+The user can go to the search bar and search recipes by keyword.
 
-Error handler pages**
+Testing:
+1. On the landing page, click the 'BROWSE RECIPES' button.
+2. Confirm you are redirected to the recipes page and you see the search bar.
+3. Go to any other page (except register or login).
+4. Click the search icon.
+5. Confirm you are redirected to the recipes page and you see the search bar.
+6. Fill in the keyword 'strawberry'in the search bar.
+7. Confirm that a recipe for strawberry cake appears.
+8. Fill in the keyword 'test'in the search bar.
+9. Confirm that the message 'Sorry, no results were found.' appears.
+
+Result:
+The user can go to the search bar and search recipes by keyword.
+
+**Category buttons**
 Expected:
-Testing:
-Result:
+The user can use the category buttons on the recipes page to display the recipes by category.
 
-Collapsible on shop page**
+Testing:
+1. On the recipes page click the 'Cookies' button.
+2. Confirm that only recipes with category 'Cookies' are displayed.
+3. Repeat steps 1 and 2 for the other categories.
+4. On the recipes page click on the 'All' button.
+5. Confirm that all recipes are displayed.
+
+Result:
+The user can use the category buttons on the recipes page to display the recipes by category.
+
+**Error handler pages**
+Expected:
+The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
+
+Testing:
+1. Go to any page.
+2. In the browser's address bar, remove one or more characters and press enter.
+3. Confirm a message 404 page is shown, without navbar and footer.
+4. Confirm there is a button 'click here to get back' at the bottom of the page.
+5. Click the button and confirm you are redirected to the home page of the website.
+
+Result:
+The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
+
+**Collapsible on shop page**
 Expected:
 Testing:
 Result:
