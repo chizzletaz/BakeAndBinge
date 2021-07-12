@@ -346,5 +346,5 @@ footer .card-content {
 
 /* shop page */
 .medium {
-    height: 440px !important;
+    max-height: 450px !important;
 }
