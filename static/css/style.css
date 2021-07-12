@@ -343,3 +343,8 @@ footer .card-content {
 .error-img {
     width: 70%;
 }
+
+/* shop page */
+.medium {
+    overflow: auto !important;
+}
