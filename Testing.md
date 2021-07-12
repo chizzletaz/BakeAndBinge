@@ -282,6 +282,8 @@ Testing:
     Fix: 
     Due to the fact that I used 'medium' attribute on the cards, the max height is 400px.
     Change the height to 450px.
+    Result:
+    All the information text is shown.
 4. Click on the cross icon.
 5. Confirm that the text disappears and the image of the product is shown.
 
