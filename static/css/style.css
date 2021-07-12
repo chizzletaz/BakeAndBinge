@@ -346,5 +346,5 @@ footer .card-content {
 
 /* shop page */
 .medium {
-    overflow: auto !important;
+    overflow: scroll !important;
 }
