@@ -271,8 +271,17 @@ The user gets a error 404 page when a page can't be displayed and can get back b
 
 **Collapsible on shop page**
 Expected:
+The user can get more information about a shop product when they click on the three dots icon.
+
 Testing:
+1. Go to the shop page by clicking the shop link in the navbar.
+2. Click on th three dots icon in one of the shop products.
+3. Confirm that a text with more information about the product is shown.
+4. Click on the cross icon.
+5. Confirm that the text disappears and the image of the product is shown.
+
 Result:
+The user can get more information about a shop product when they click on the three dots icon.
 
 Modal for how to add recipe**
 Expected:
