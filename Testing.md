@@ -281,7 +281,7 @@ Testing:
     On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.
     Fix: 
     Due to the fact that I used 'medium' attribute on the cards, the max height is 400px.
-    Change the height to
+    Change the height to 450px.
 4. Click on the cross icon.
 5. Confirm that the text disappears and the image of the product is shown.
 
