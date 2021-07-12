@@ -290,37 +290,106 @@ Testing:
 Result:
 The user can get more information about a shop product when they click on the three dots icon.
 
-Modal for how to add recipe**
+**Modal for how to add recipe**
 Expected:
+A modal with info on how to add a recipe pops up, when the user clicks the 'how to add a new recipe' button.
 Testing:
-Result:
+1. Log in.
+2. Click the plus icon
+3. Confirm a modal pops up with information on how to add a new recipe.
+4. Click on the 'DONE' button.
+5. Confirm the modal closes.
+6. Repeat step 2.
+7. Click outside the modal.
+8. Confirm the modal closes.
 
-Confirmation modal**
-Expected:
-Testing:
 Result:
+A modal with info on how to add a recipe pops up, when the user clicks the 'how to add a new recipe' button.
 
-Social icons**
+**Confirmation modal**
 Expected:
-Testing:
-Result:
+A modal asking the user to confirm their action pops up, when the user clicks a 'delete' or 'logout' button.
 
-Contact form**
-Expected:
 Testing:
+1. Log in.
+2. Click the log out button in the navbar.
+3. Confirm a modal pops up that asks 'Are you sure you want to log out?'.
+4. Log in as admin.
+5. Click the 'DELETE' button on one of the recipes.
+6. Confirm a modal pops up that asks 'Are you sure you want to delete this recipe?'.
+7. Click 'no'.
+8. Go to the categories page by clicking the 'manage categories' link in the navbar.
+9. Click on the "DELETE' button of one of the categories.
+10. Confirm a modal pops up that asks 'Are you sure you want to delete this category?'.
+11. Click 'no'.
+
 Result:
+A modal asking the user to confirm their action pops up, when the user clicks a 'delete' or 'logout' button.
+
+**Social icons**
+Expected:
+The user is redirected to the respective social media page, when they click on a social media icon.
+
+Testing:
+1. Go to the footer of any page (except register or login).
+2. Click on a social media icon.
+3. Confirm you are redirected to that social media page.
+4. Confirm that the page is opened in a new window.
+5. Repeat steps 2, 3 and 4 for the other icons.
+
+Result:
+The user is redirected to the respective social media page, when they click on a social media icon.
+
+**Contact form**
+Expected:
+The user can send the site owner a message by filling in the contact form.
+
+Testing:
+1. Go to the contact page by clicking the 'contact' link in the navbar.
+2. Don't fill in the contact form.
+3. Confirm that a warning message appears.
+4. Fill in the contact form except for the firstname and click the 'SUBMIT' button.
+5. Confirm that a warning message appears.
+6. Repeat steps 4 and 5 for the lastname, email address and message inputs.
+7. Fill in the complete contact form and click the 'SUBMIT' button.
+8. Confirm that the message 'Your message has been sent' is shown.
+9. Confirm you are redirected to the home page.
+
+Result:
+The user can send the site owner a message by filling in the contact form.
 
 #### CRUD
 
-Add recipe**
+**Add recipe**
 Expected:
-Testing:
-Result:
+A new recipe is added when the user fills in the add recipe form.
 
-Add category**
-Expected:
 Testing:
+1. Log in.
+2. Click the plus icon.
+3. Confirm you are redirected to the add recipe page.
+4. Click the 'CANCEL' button at the bottom of the page.
+5. Confirm you are redirected to your profile page.
+6. Fill on the recipe form, except the recipe title.
+7. Confirm a warning message appears.
+8. Repeat steps 6 and 7 for the other inputs that are marked 'required'.
+9. Fill in the recipe form and the click 'ADD' button.
+10. Confirm that a message appears with 'Your recipe has been added.'
+11. Confirm you are redirected to you profile page.
+12. Confirm that the recipe you added is added to your profile page.
+
 Result:
+A new recipe is added when the user fills in the add recipe form.
+
+**Add category**
+Expected:
+A new category is added when the admin fills in the add category form.
+
+Testing:
+1. Log in as admin.
+2. 
+Result:
+A new category is added when the admin fills in the add category form.
 
 Recipe overview on landing page**
 Expected:
