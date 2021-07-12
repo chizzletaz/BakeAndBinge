@@ -277,6 +277,11 @@ Testing:
 1. Go to the shop page by clicking the shop link in the navbar.
 2. Click on th three dots icon in one of the shop products.
 3. Confirm that a text with more information about the product is shown.
+    Result:
+    On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.
+    Fix: 
+    Due to the fact that I used 'medium' attribute on the cards, the max height is 400px.
+    Change the height to
 4. Click on the cross icon.
 5. Confirm that the text disappears and the image of the product is shown.
 
