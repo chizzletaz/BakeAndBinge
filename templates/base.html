@@ -21,7 +21,7 @@
 </head>
 
 <body class="main">
-    <header>
+    <header id="top">
         <!-- main navbar -->
         <nav class="white">
             <div class="nav-wrapper">
@@ -156,6 +156,13 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <div class="row">
+        <div class="col">
+            <a href="#top"><i class="fas fa-chevron-up"></i></a>
+            <p>back to top</p>
+        </div>
+    </div>
 
     <hr>
     <!-- footer -->
