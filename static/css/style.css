@@ -145,6 +145,13 @@ p {
 #mobile-demo .brand-logo {
     font-size: 24px;
 }
+
+#back-to-top {
+    text-align: center;
+    margin-left: auto;
+    font-size: 24px;
+}
+
 /* footer */
 footer {
     padding: 25px 0 10px;
