@@ -387,44 +387,81 @@ A new category is added when the admin fills in the add category form.
 
 Testing:
 1. Log in as admin.
-2. 
+2. Click on the 'manage categories' link in the navbar.
+3. Click on the plus icon.
+4. Confirm you are redirected to the 'add a new category' page.
+5. Enter a category name and click the 'ADD CATEGORY' button.
+6. Confirm you are redirected to the categories page.
+7. Confirm your new category is added.
+
 Result:
 A new category is added when the admin fills in the add category form.
 
-Recipe overview on landing page**
+**Edit recipe**
 Expected:
-Testing:
-Result:
+An existing recipe is edited when the user fills in the edit recipe form.
 
-Recipe overview on recipes page**
-Expected:
 Testing:
-Result:
+1. Log in.
+2. On your profile page, click the 'EDIT' button of one of your recipes.
+3. Confirm you are redirected to the edit recipe page.
+4. Confirm the form is prefilled with the data of the existing recipe.
+5. Change any of the input fields.
+6. Click the 'EDIT RECIPE' button.
+7. Confirm you are redirected to your profile page.
+8. Click on the 'GO TO RECIPE' button of the edited recipe.
+9. Confirm that your change is shown in the recipe.
 
-Link to individual recipe**
-Expected:
-Testing:
 Result:
+An existing recipe is edited when the user fills in the edit recipe form.
 
-Edit recipe**
+**Edit category**
 Expected:
-Testing:
-Result:
+An existing category is edited when the admin fills in the edit category form.
 
-Edit category**
-Expected:
 Testing:
-Result:
+1. Log in as admin.
+2. Click on the 'manage categories' link in the navbar.
+3. Click the 'EDIT' button of one of your categories.
+4. Confirm you are redirected to the edit category page.
+5. Change the category name and click the 'EDIT CATEGORY' button.
+6. Confirm you are redirected to the categories page.
+7. Confirm your chosen category is edited. 
 
-Delete recipe**
-Expected:
-Testing:
 Result:
+An existing category is edited when the admin fills in the edit category form.
 
-Delete category**
+**Delete recipe**
 Expected:
+A recipe is deleted when the user clicks on the 'DELETE' button of a recipe.
+
 Testing:
+1. Log in.
+2. On your profile page, click the 'DELETE' button of one of your recipes (tip: create a test recipe first with only the required input fields).
+3. Confirm a modal pops up with the message 'Are you sure you want to delete this recipe?'
+4. Click 'YES'.
+5. Confirm you are redirected to your profile page.
+6. Confirm the recipe is deleted.
+
 Result:
+A recipe is deleted when the user clicks on the 'DELETE' button of a recipe.
+
+**Delete category**
+Expected:
+A category is deleted when the user clicks on the 'DELETE' button of a category.
+
+Testing:
+1. Log in as admin.
+2. Click on the 'manage categories' link in the navbar.
+3. Click the 'DELETE' button of one of your categories.
+4. Confirm a modal pops up with the message 'Are you sure you want to delete this category?'
+5. Click 'YES'.
+6. Confirm you are redirected to the categories page.
+7. Confirm your chosen category is deleted.
+
+Result:
+A category is deleted when the user clicks on the 'DELETE' button of a category.
+
 
 ---
 ## Code validation
