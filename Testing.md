@@ -109,6 +109,7 @@ This is a feature left to implement.
 - The navbar has a link to the shop page.   
 ![shop link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/shop-link.png) 
 - This page has cards with info on baking tools. 
+- When the user clicks the three dots icon on the right, they get more information about the product.
 - When the user clicks the ‘buy now’ button, they are redirected to an external page where they can buy the item.  
 ![buy now image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/buy-now.png) 
 
@@ -124,15 +125,8 @@ This is a feature left to implement.
 
 ## Manual testing features
 
-Expected -Feature is expected to do X why the user does Y
-Testing - Tested the feature by doing Y
-Result - The feature did not respond due to A,B,C
-or
-Result - The feature acted as normally and it did Y
-Fix - I did Z to the code because something was missing
-
-**Subscription option**
-Expected: 
+**Subscription option**  
+Expected:   
 The user is subscribed to the newsletter when the user fills in the subscription form correctly.
 
 Testing:
@@ -152,11 +146,11 @@ Testing:
 8. Fill in the same email address.
 9. Confirm that the message 'Apparently you've subscribe already. This email already exists.' appears.
 
-Result:
+Result:  
 The user is subscribed to the newsletter when the user fills in the subscription form correctly.
 
-**Register functionality**
-Expected: 
+**Register functionality**  
+Expected:   
 The user can register to the website by filling in the register form correctly.
 
 Testing:
@@ -173,11 +167,11 @@ Testing:
 11. Repeat steps 1 and 8.
 12. Confirm that the message 'This username already exists, try another username.' appears.
 
-Result:
+Result:  
 The user can register to the website by filling in the register form correctly.
 
-**Login functionality**
-Expected: 
+**Login functionality**  
+Expected:   
 The user can log in to the website by filling in the login form correctly.
 
 Testing:
@@ -193,11 +187,11 @@ Testing:
 10. Fill in your username and password.
 11. Confirm you are redirected to your profile page and the message 'welcome, your username' appears.
 
-Result:
+Result:  
 The user can log in to the website by filling in the login form correctly.
 
-**Logout functionality**
-Expected: 
+**Logout functionality**  
+Expected:   
 The user is logged out when they click on the logout link in the navbar.
 
 Testing:
@@ -209,11 +203,11 @@ Testing:
 6. Repeat steps 2 and 3.
 7. Confirm you are logged out form the website and a message 'You have been logged out' appears and are redirected to the login page.
 
-Result:
+Result:  
 The user is logged out when they click on the logout link in the navbar.
 
-**CTA button**
-Expected: 
+**CTA button**  
+Expected:   
 The user is redirected to the register page when they click on the 'REGISTER HERE' button.
 
 Testing:
@@ -221,11 +215,11 @@ Testing:
 2. Click the 'REGISTER HERE' button.
 3. Confirm you are redirected to the register page.
 
-Result:
+Result:  
 The user is redirected to the register page when they click on the 'REGISTER HERE' button.
 
-**Search bar**
-Expected:
+**Search bar**  
+Expected:  
 The user can go to the search bar and search recipes by keyword.
 
 Testing:
@@ -239,11 +233,11 @@ Testing:
 8. Fill in the keyword 'test'in the search bar.
 9. Confirm that the message 'Sorry, no results were found.' appears.
 
-Result:
+Result:  
 The user can go to the search bar and search recipes by keyword.
 
-**Category buttons**
-Expected:
+**Category buttons**  
+Expected:  
 The user can use the category buttons on the recipes page to display the recipes by category.
 
 Testing:
@@ -253,11 +247,11 @@ Testing:
 4. On the recipes page click on the 'All' button.
 5. Confirm that all recipes are displayed.
 
-Result:
+Result:  
 The user can use the category buttons on the recipes page to display the recipes by category.
 
-**Error handler pages**
-Expected:
+**Error handler pages**  
+Expected:  
 The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
 
 Testing:
@@ -267,7 +261,7 @@ Testing:
 4. Confirm there is a button 'click here to get back' at the bottom of the page.
 5. Click the button and confirm you are redirected to the home page of the website.
 
-Result:
+Result:  
 The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
 
 **Collapsible on shop page**

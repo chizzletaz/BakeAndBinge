@@ -77,8 +77,7 @@ With this project I also hope to show my knowledge and application of the added 
 *Admin/site owner:*
 - As a site owner, I want to promote certain baking tools, in order to increase commission on the sales.
 - As a site owner, I want to be able to have access to the recipes categories and the option to manage them.
-- As a site owner, I want users to register and login, before they can add, edit or delete their recipes. 
-- As a site owner, I want to give the users a pleasant user experience, so they will come back sooner.
+- As a site owner, I want users to register and login, before they can add, edit or delete their recipes.
 
 ## **Scope level**
 I've opted for an MVP (Minimal Viable Project) and work my way up from there.  
