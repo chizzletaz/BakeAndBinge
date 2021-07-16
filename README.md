@@ -38,7 +38,8 @@ For the CSS-framework I opted to work with Materialize instead of Bootstrap. Bot
 - [Testing](#testing)
 - [Deployment](#deployment)
     * [Deploying to GitHub Pages](#deploying-to-github-pages)
-    * [Making a Local Clone](#making-a-local-clone)
+    * [Forking this GitHub Repository](#forking-this-github-repository)
+    * [Cloning this GitHub Repository](#cloning-this-github-repository)
 - [Credits](#credits)
 
 ***
@@ -394,16 +395,16 @@ The Procfile is what Heroku looks for to know which file runs the app, and how t
 3. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
 4. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
 
-### Forking the GitHub Repository
+### Forking this GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
-1. Login to GitHub.com and follow this link to [the GitHub Repository](https://github.com/chizzletaz/Triviata).
+1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge).
 2. At the top right of the page, click on the fork button.
-![fork button](assets/img/examples/forking.png)
+![fork button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
-### Clone this GitHub repository
-1. Follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge)
+### Cloning this GitHub repository
+1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge)
 2. Click on the ‘Code’ button 
 ![Code button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/github-clone.png)
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
@@ -415,11 +416,6 @@ To achieve this follow these steps:
 8. A clone will be created locally.
 
 For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-
-### Preparing local copy
-Before we create our Heroku application, we need to setup some files that Heroku needs
-to run the app.
-1. Install the 'requirements.txt' file by typing: **pip3 install -r requirements.txt**
 
 ---
 # **Credits**

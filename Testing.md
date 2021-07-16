@@ -682,7 +682,7 @@ No issues arose during testing.
 To test the responsiveness of the  website, I've used Chrome Dev Tools by right clicking on the page and click inspect and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
 The testing was done on widths down to a screen resolution of 280px.  
 All the elements on each page were checked.  
-
+No issues arrose.
 
 ## Bugs and problems
 
