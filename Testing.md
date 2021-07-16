@@ -277,7 +277,7 @@ Testing:
     Result:  
     On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.  
     Fix:   
-    Due to the fact that I used 'medium' attribute on the cards, the max height is 400px.
+    Due to the fact that I used the 'medium' attribute of Materialize on the cards, the max height is 400px.
     Change the height to 450px.  
     Result:  
     All the information text is shown.
@@ -287,12 +287,13 @@ Testing:
 Result:  
 The user can get more information about a shop product when they click on the three dots icon.
 
-**Modal for how to add recipe**  
+**Modal for how to add a new recipe**  
 Expected:  
 A modal with info on how to add a recipe pops up, when the user clicks the 'how to add a new recipe' button.
+
 Testing:
 1. Log in.
-2. Click the plus icon
+2. On the profile page, click the plus icon
 3. Confirm a modal pops up with information on how to add a new recipe.
 4. Click on the 'DONE' button.
 5. Confirm the modal closes.
@@ -311,14 +312,15 @@ Testing:
 1. Log in.
 2. Click the log out button in the navbar.
 3. Confirm a modal pops up that asks 'Are you sure you want to log out?'.
-4. Log in as admin.
-5. Click the 'DELETE' button on one of the recipes.
-6. Confirm a modal pops up that asks 'Are you sure you want to delete this recipe?'.
-7. Click 'no'.
-8. Go to the categories page by clicking the 'manage categories' link in the navbar.
-9. Click on the "DELETE' button of one of the categories.
-10. Confirm a modal pops up that asks 'Are you sure you want to delete this category?'.
-11. Click 'no'.
+4. Click 'Yes'.
+5. Log in as admin.
+6. Click the 'DELETE' button on one of the recipes.
+7. Confirm a modal pops up that asks 'Are you sure you want to delete this recipe?'.
+8. Click 'no'.
+9. Go to the categories page by clicking the 'manage categories' link in the navbar.
+10. Click on the "DELETE' button of one of the categories.
+11. Confirm a modal pops up that asks 'Are you sure you want to delete this category?'.
+12. Click 'no'.
 
 Result:  
 A modal asking the user to confirm their action pops up, when the user clicks a 'delete' or 'logout' button.
@@ -328,7 +330,7 @@ Expected:
 The user is redirected to the respective social media page, when they click on a social media icon.
 
 Testing:
-1. Go to the footer of any page (except register or login).
+1. Go to the footer of any page.
 2. Click on a social media icon.
 3. Confirm you are redirected to that social media page.
 4. Confirm that the page is opened in a new window.
@@ -355,7 +357,7 @@ Testing:
 Result:  
 The user can send the site owner a message by filling in the contact form.
 
-#### CRUD
+    CRUD
 
 **Add recipe**  
 Expected:  
