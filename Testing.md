@@ -478,7 +478,7 @@ Or
 - Enter the url of the heroku live link.
 
 However, when authentication is used, the live link can't be used to validate the page.
-Furthermore, the live site of Heroku takes a while to update. 
+Furthermore, the live site of Heroku takes a while to update.   
 Therefore I've opted to use the source code to render the pages.
 
 Running the code through the validator gives:  
@@ -486,7 +486,7 @@ Running the code through the validator gives:
 - 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
 1. Element h4 not allowed as child of element ul in this context.  
-Fix: According to HTML5 spec, you can't have header tags as children within a ```<ul></ul>```, you can only have ```<li>``` elements as children. So you should populate it with ```<li></li>```, then insert your content within each list, so wrap the h4 in <li></li>
+Fix: According to HTML5 spec, you can't have header tags as children within a ```<ul></ul>```, you can only have ```<li>``` elements as children. So you should populate it with ```<li></li>```, then insert your content within each list, so wrap the h4 in ```<li></li>```
 Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
 2. Section lacks heading.   
 Fix: change section into div.
