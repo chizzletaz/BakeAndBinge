@@ -336,7 +336,7 @@ footer .card-content {
 }
 
 .recipe-list li {
-    padding-top: 8px;
+    padding-top: 8px !important;
 }
 
 /* add recipe */
