@@ -36,10 +36,10 @@
                     https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask -->
                     {% if request.endpoint != 'register' %}
                     {% if request.endpoint != 'login' %}
-                    <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
-                    <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
-                            <i class="material-icons right">arrow_drop_down</i></a></li>
+                        <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
+                        <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
+                                <i class="material-icons right">arrow_drop_down</i></a></li>
                     {% endif %}
                     {% endif %}
                 </ul>
@@ -100,25 +100,25 @@
             <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
             {% if request.endpoint != 'register' %}
             {% if request.endpoint != 'login' %}
-            <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
-            <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
-                                {% for category in categories %}
-                                <li><a class="black-text hvr-ufc"
-                                        href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{
-                                        category.category_name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+                <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <div class="collapsible-header hvr-ufc">Recipes<i class="fas fa-sort-down"></i></div>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
+                                    {% for category in categories %}
+                                    <li><a class="black-text hvr-ufc"
+                                            href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{
+                                            category.category_name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
             {% endif %}
             {% endif %}
             <li class="divider"></li>
