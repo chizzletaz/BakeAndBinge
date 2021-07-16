@@ -357,7 +357,7 @@ Testing:
 Result:  
 The user can send the site owner a message by filling in the contact form.
 
-    CRUD
+#### CRUD (Create, Read, Update, Delete) functionality.
 
 **Add recipe**  
 Expected:  
