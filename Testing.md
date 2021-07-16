@@ -649,7 +649,8 @@ Running the code through the validator gives:
 ---
 ### Javascript  
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
-It is recommended to add **```/* jshint esversion: 6 */```** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.      
+It is recommended to add **```/* jshint esversion: 6 */```** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.  
+
 Running the code through the validator gives:
 #### For style.js:
 - No errors or warnings are shown. 
@@ -668,7 +669,12 @@ After fixing the notifications, I get an All right message.
 ---
 ## Testing browser compatibility
 I've tested the site on Safari, Chrome and Mozilla Firefox.  
-The testing was done by checking all elements, functionalities and links.
+The testing was done by:
+
+- Visually checking the pages.
+- Checking all links.
+- Checking CRUD functionality.
+
 No issues arose during testing.  
 
 ---
