@@ -136,7 +136,7 @@ Testing:
    Result:  
         A 'Subcription successfull' message appears.  
    Fix:   
-        Add 'required' to the input field.
+        Add 'required' to the input field.  
    Result:  
         A warning message appears.
 4. Fill in an invalid email address.
@@ -182,10 +182,10 @@ Testing:
 5. Confirm that a warning message appears.
 6. Only fill in the password.
 7. Confirm that a warning message appears.
-8. Fill in a wrong usermame and password.
+8. Fill in a wrong username and password.
 9. Confirm that the message 'Incorrect username and/or password, try again.' appears.
 10. Fill in your username and password.
-11. Confirm you are redirected to your profile page and the message 'welcome, your username' appears.
+11. Confirm you are redirected to your profile page and the message 'welcome, *your username*' appears.
 
 Result:  
 The user can log in to the website by filling in the login form correctly.
@@ -201,7 +201,9 @@ Testing:
 4. Click 'No'.
 5. Confirm you are still logged in and are kept on the current page.
 6. Repeat steps 2 and 3.
-7. Confirm you are logged out form the website and a message 'You have been logged out' appears and are redirected to the login page.
+7. Click 'Yes'.
+8. Confirm you are logged out from the website and a message 'You have been logged out' appears.
+9. Confirm you are redirected to the login page.
 
 Result:  
 The user is logged out when they click on the logout link in the navbar.
@@ -224,11 +226,11 @@ The user can go to the search bar and search recipes by keyword.
 
 Testing:
 1. On the landing page, click the 'BROWSE RECIPES' button.
-2. Confirm you are redirected to the recipes page and you see the search bar.
+2. Confirm you are redirected to the recipes page and that you see the search bar.
 3. Go to any other page (except register or login).
 4. Click the search icon.
-5. Confirm you are redirected to the recipes page and you see the search bar.
-6. Fill in the keyword 'strawberry'in the search bar.
+5. Confirm you are redirected to the recipes page and that you see the search bar.
+6. Fill in the keyword 'strawberry' in the search bar.
 7. Confirm that a recipe for strawberry cake appears.
 8. Fill in the keyword 'test'in the search bar.
 9. Confirm that the message 'Sorry, no results were found.' appears.
@@ -250,7 +252,7 @@ Testing:
 Result:  
 The user can use the category buttons on the recipes page to display the recipes by category.
 
-**Error handler pages**  
+**Error 404 handler page**  
 Expected:  
 The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
 
@@ -270,14 +272,14 @@ The user can get more information about a shop product when they click on the th
 
 Testing:
 1. Go to the shop page by clicking the shop link in the navbar.
-2. Click on th three dots icon in one of the shop products.
-3. Confirm that a text with more information about the product is shown.
-    Result:
-    On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.
-    Fix: 
+2. Click on the three dots icon in one of the shop products.
+3. Confirm that a text with more information about the product is shown.  
+    Result:  
+    On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.  
+    Fix:   
     Due to the fact that I used 'medium' attribute on the cards, the max height is 400px.
-    Change the height to 450px.
-    Result:
+    Change the height to 450px.  
+    Result:  
     All the information text is shown.
 4. Click on the cross icon.
 5. Confirm that the text disappears and the image of the product is shown.
