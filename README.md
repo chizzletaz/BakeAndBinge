@@ -396,15 +396,15 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
 
 Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
 4. **Add config vars to Heroku**  
-    1. Go to the Settings tab.
+    1. Go to the Settings tab.  
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
-    2. Click on 'Reveal Config Vars'.
+    2. Click on 'Reveal Config Vars'.  
     ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)
     3. Enter the values of the config vars.
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
-    > Tip: copy the secret key from the env.py file and enter as the value for the secret key.
-    4. Go back to the Deploy Tab.
-    5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.
+    > Tip: copy the secret key from the env.py file and enter as the value for the secret key.  
+    4. Go back to the Deploy Tab.  
+    5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
     ![enable automatic deploy button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/automatic-deploy.png)
     7. Click on ‘Deploy Branch’.
     ![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
