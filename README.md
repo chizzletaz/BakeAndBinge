@@ -413,17 +413,7 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
     7. When Heroku has finished building the application, the following message should appear:
     ![succesful deployment](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/succesful-deploy.png)
-
-**Create a MongoDB Database**
-1. Login to MongoDB.
-2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
-
-**Create new collections**
-1. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
-2. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
-3. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
-4. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
-
+---
 ### Forking this GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
