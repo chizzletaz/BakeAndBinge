@@ -362,52 +362,52 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 ### Deployment to Heroku
 Before we deploy our Heroku application, we need to setup some files that Heroku needs to run the app.  
 1. **Create a 'requirements.txt' file**  
-A requirements.txt file contains a list of the Python dependencies that our project needs in order to run successfully.  
-First, we need to tell Heroku which applications and dependencies are required to run our app:
+    A requirements.txt file contains a list of the Python dependencies that our project needs in order to run successfully.  
+    First, we need to tell Heroku which applications and dependencies are required to run our app:
     1. In the terminal window of the IDE type: **pip3 freeze --local > requirements.txt**
     2. Then type: **git add -A**
     3. Then type: **git commit -m “Add requirements.txt”**
 
 2. **Create a Heroku 'Procfile'**  
-The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
+    The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
     1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
     2. Then type: **git add Procfile**
     3. Then type: **git commit -m “Add Profile.”**
     4. Then type: **git push**
 
-> The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
+    > The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
 
 3. **Create a Heroku App**
-1. Click ‘Create New App’ button
-2. Give a unique name and set region to your nearest region.
-3. Click ‘Create App’
+    1. Click ‘Create New App’ button
+    2. Give a unique name and set region to your nearest region.
+    3. Click ‘Create App’
 
 4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**
-1. Go to the Deploy tab.  
-![deploy tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy.png)  
-2. Under 'Deployment method', Click on 'Connect to GitHub'.
-![connect to github button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-to-github.png)
-3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’.
-![search repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-repo.png)
-4. Click 'Connect'.
-![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
+    1. Go to the Deploy tab.  
+    ![deploy tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy.png)  
+    2. Under 'Deployment method', Click on 'Connect to GitHub'.
+    ![connect to github button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-to-github.png)
+    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’.
+    ![search repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-repo.png)
+    4. Click 'Connect'.
+    ![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
 
 Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.
 4. **Add config vars to Heroku**
-1. Go to the Settings tab.
-![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
-2. Click on 'Reveal Config Vars'.
-![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)
-3. Enter the values of the config vars.
-![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
-> Tip: copy the secret key from the env.py file and enter as the value for the secret key.
-4. Go back to the Deploy Tab.
-5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.
-![enable automatic deploy button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/automatic-deploy.png)
-7. Click on ‘Deploy Branch’.
-![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
-8. When Heroku has finished building the application, the following message should appear:
-![succesful deployment](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/succesful-deploy.png)
+    1. Go to the Settings tab.
+    ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
+    2. Click on 'Reveal Config Vars'.
+    ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)
+    3. Enter the values of the config vars.
+    ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
+    > Tip: copy the secret key from the env.py file and enter as the value for the secret key.
+    4. Go back to the Deploy Tab.
+    5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.
+    ![enable automatic deploy button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/automatic-deploy.png)
+    7. Click on ‘Deploy Branch’.
+    ![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
+    8. When Heroku has finished building the application, the following message should appear:
+    ![succesful deployment](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/succesful-deploy.png)
 
 **Create a MongoDB Database**
 1. Login to MongoDB.
