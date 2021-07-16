@@ -497,7 +497,7 @@ I originally only had the 'go to recipe'-button acting as an anchor tag. Later I
 Fix:  
 Change the the anchor tag of the button to a button tag and remove the href.  
 This gives another error:  
-*The element button must not appear as a descendant of the a element.*    
+4. *The element button must not appear as a descendant of the a element.*    
 Fix:  
 Change button tag to `<p>` tag with button class.
 > Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
@@ -522,7 +522,7 @@ Remove the br element and add an empty li (```<li></li>```)
 #### For contact.html:
 - 1 error and 1 warning are shown
 ![html contact error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-contact.png)
-1. *Duplicate ID email.*
+1. *Duplicate ID email.*  
 I used 'email' for the ID and name in the contact form. But 'email' is already used for ID and name in the subcribe form in the footer.   
 Fix:  
 Change the ID and name to 'contactemail'.
@@ -531,11 +531,11 @@ Change the ID and name to 'contactemail'.
 #### For shop.html:
 - 2 errors are shown
 ![html shop error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-shop.png)
-1.  *End tag main seen, but there were open elements.*
+1.  *End tag main seen, but there were open elements.*  
 I forgot to close 2 div's.   
 Fix:  
 See below at number 2.
-2. *Unclosed element div.*
+2. *Unclosed element div.*  
 I forgot to close 2 div's.  
 Fix:  
 Add closing div element.
@@ -577,24 +577,24 @@ Use Jinja to add the loop index at every loop, so the modal has a unique ID ever
  ![html edit recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-edit-recipe.png)
  1. *Duplicate ID for 'inputIngredientRow'*  
  The ID's for 'inputIngredientRow' are not unique because of the way they are created with javascript:
- ```
-    // add ingredient row
-    $("#addRowIngredient").click(function () {
-        var html = `
-        <div class="row mb0" id="inputIngredientRow">
-            <div class="input-field col s12 mb0">
-                <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
-                <label for="ingredient">Ingredient</label>
-                <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
-            </div>`;
+    ```
+        // add ingredient row
+        $("#addRowIngredient").click(function () {
+            var html = `
+            <div class="row mb0" id="inputIngredientRow">
+                <div class="input-field col s12 mb0">
+                    <textarea id="ingredient" name="ingredient[]" class="materialize-textarea" required></textarea>
+                    <label for="ingredient">Ingredient</label>
+                    <i id="removeRowIngredient" class="far fa-trash-alt prefix right"></i>    
+                </div>`;
 
-        $('#newRowIngredient').append(html);
-    });
-    // remove ingredient row
-    $(document).on('click', '#removeRowIngredient', function () {
-        $(this).closest('#inputIngredientRow').remove();
-    });
- ```
+            $('#newRowIngredient').append(html);
+        });
+        // remove ingredient row
+        $(document).on('click', '#removeRowIngredient', function () {
+            $(this).closest('#inputIngredientRow').remove();
+        });
+    ```
  Fix:  
  Use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
 
