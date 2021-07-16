@@ -364,16 +364,16 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
 1. **Create a 'requirements.txt' file**  
 A requirements.txt file contains a list of the Python dependencies that our project needs in order to run successfully.  
 First, we need to tell Heroku which applications and dependencies are required to run our app:
-  1. In the terminal window of the IDE type: **pip3 freeze --local > requirements.txt**
-  2. Then type: **git add -A**
-  3. Then type: **git commit -m “Add requirements.txt”**
+    1. In the terminal window of the IDE type: **pip3 freeze --local > requirements.txt**
+    2. Then type: **git add -A**
+    3. Then type: **git commit -m “Add requirements.txt”**
 
 2. **Create a Heroku 'Procfile'**  
 The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
-1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
-2. Then type: **git add Procfile**
-3. Then type: **git commit -m “Add Profile.”**
-4. Then type: **git push**
+    1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
+    2. Then type: **git add Procfile**
+    3. Then type: **git commit -m “Add Profile.”**
+    4. Then type: **git push**
 
 > The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
 
