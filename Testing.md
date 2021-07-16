@@ -679,11 +679,10 @@ No issues arose during testing.
 
 ---
 ## Testing responsiveness
-To test the responsiveness of the  website, I've used [Chrome Dev Tools](https://github.com/chizzletaz/MilestoneProject1/blob/master/assets/img/extra/responsiveness_chrome_dev_tools.png) and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
-The testing was done on widths down to a screen resolution of 280px. All the elements on each page were checked.  
-The following issues arose:
-- Issue: At a width of 280px, the size of the buttons on the landing page go outside the screen.   
-![button responsive wrong](assets/img/examples/responsive-button-wrong.png)
+To test the responsiveness of the  website, I've used Chrome Dev Tools by right clicking on the page and click inspect and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
+The testing was done on widths down to a screen resolution of 280px.  
+All the elements on each page were checked.  
+
 
 ## Bugs and problems
 
