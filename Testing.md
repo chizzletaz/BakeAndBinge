@@ -595,8 +595,8 @@ Use Jinja to add the loop index at every loop, so the modal has a unique ID ever
             $(this).closest('#inputIngredientRow').remove();
         });
     ```
- Fix:  
- Use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
+    Fix:  
+    Use parent('div) instead of closest('#inputIngredientRow'). This way the id="inputIngredientRow" doesn't have to be used.
 
 2. *Duplicate ID for 'inputStepRow'*  
 The ID's for 'inputStepRow' are not unique because of the way they are created with javascript.  
