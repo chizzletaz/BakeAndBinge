@@ -37,7 +37,7 @@ For the CSS-framework I opted to work with Materialize instead of Bootstrap. Bot
     * [Tools and Programmes](#tools-and-programmes-used)
 - [Testing](#testing)
 - [Deployment](#deployment)
-    * [Deploying to GitHub Pages](#deploying-to-github-pages)
+    * [Deployment to Heroku](#deployment-to-heroku)
     * [Forking this GitHub Repository](#forking-this-github-repository)
     * [Cloning this GitHub Repository](#cloning-this-github-repository)
 - [Credits](#credits)
