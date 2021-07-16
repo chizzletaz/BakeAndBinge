@@ -384,7 +384,7 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![name and region input](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/name-region.png)
     3. Click ‘Create App’
 
-4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**
+4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
     ![deploy tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy.png)  
     2. Under 'Deployment method', Click on 'Connect to GitHub'.
@@ -395,11 +395,11 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
 
 Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
-4. **Add config vars to Heroku**  
+5. **Add config vars to Heroku**  
     1. Go to the Settings tab.  
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
     2. Click on 'Reveal Config Vars'.  
-    ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)
+    ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)  
     3. Enter the values of the config vars.
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
     > Tip: copy the secret key from the env.py file and enter as the value for the secret key.  
