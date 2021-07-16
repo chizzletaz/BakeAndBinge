@@ -335,7 +335,7 @@ footer .card-content {
     padding: 0;
 }
 
-.recipe-list, #test4 > li, #test5 > li {
+.recipe-list li {
     padding-bottom: 5px !important;
 }
 
