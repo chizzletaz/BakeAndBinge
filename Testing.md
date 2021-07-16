@@ -452,7 +452,7 @@ A category is deleted when the user clicks on the 'DELETE' button of a category.
 Testing:
 1. Log in as admin.
 2. Click on the 'manage categories' link in the navbar.
-3. Click the 'DELETE' button of one of your categories.
+3. Click the 'DELETE' button of one of your categories (tip: create a new category first.).
 4. Confirm a modal pops up with the message 'Are you sure you want to delete this category?'
 5. Click 'YES'.
 6. Confirm you are redirected to the categories page.
@@ -465,17 +465,21 @@ A category is deleted when the user clicks on the 'DELETE' button of a category.
 ---
 ## Code validation
 ### HTML
-[W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.
-Bacause Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
-How to validate the rendered page:  
+[W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.  
+Because Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
+You can validate the rendered page by:  
 - Use the source code of the rendered page
     - Right click on the page
     - Click 'show source code'
     - Copy all HTML
-    - Paste into the validator.        
+    - Paste into the validator. 
+
 Or  
-- Enter the url of the heroku live link.  
+- Enter the url of the heroku live link.
+
 However, when authentication is used, the live link can't be used to validate the page.
+Furthermore, the live site of Heroku takes a while to update. 
+Therefore I've opted to use the source code to render the pages.
 
 Running the code through the validator gives:  
 #### For index.html:
