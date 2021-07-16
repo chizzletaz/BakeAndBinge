@@ -394,8 +394,9 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     4. Click 'Connect'.
     ![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
 
+
 Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
-5. **Add config vars to Heroku**  
+5. **Add config vars to Heroku**    
     1. Go to the Settings tab.  
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
     2. Click on 'Reveal Config Vars'.  
