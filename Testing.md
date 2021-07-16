@@ -131,13 +131,13 @@ The user is subscribed to the newsletter when the user fills in the subscription
 
 Testing:
 1. Go to the footer of any page (except register or login).
-2. Don't fill in an emailaddress and click 'Subscribe'.
-3. Confirm that a warning message appears.
-   Result:
+2. Don't fill in an email address and click 'Subscribe'.
+3. Confirm that a warning message appears.  
+   Result:  
        A 'Subcription successfull' message appears.
-   Fix: 
+   Fix:   
        Add 'required' to the input field.
-   Result:
+   Result:  
        A warning message appears.
 4. Fill in an invalid email address.
 5. Confirm that a warning message appears.
