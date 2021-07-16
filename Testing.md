@@ -4,13 +4,13 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 ## Table of Contents
 - [Testing User stories](#testing-user-stories)  
     * [First time users](#first-time-users)
+    * [General users](#general-users)
     * [Regular users](#regular-users)
-    * [Returning users](#returning-users)
 - [Testing Developer stories](#developer-stories)
     * [Admin/site owner](#adminsite-owner)
 - [Manual testing features](#manual-testing-features)
 - [Code Validation](#code-validation)  
-- [Testing across web browsers](#testing-across-web-browsers)  
+- [Testing browser compatibility](#testing-browser-compatibility)  
 - [Testing Responsiveness](#testing-responsiveness)  
 - [Bugs and Problems](#bugs-and-problems)  
 ***
@@ -28,7 +28,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
  - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.  
-  <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/>   
+  <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/>     
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
  per category. (see General users 3)
 

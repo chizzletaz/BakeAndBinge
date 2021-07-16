@@ -16,7 +16,7 @@
     <!-- Own stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
     <title>Bake & Binge</title>
 </head>
 
@@ -26,19 +26,19 @@
         <nav class="white">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="center brand-logo black-text">B & B</a>
-                
+
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
-                    
+
                     <!-- Don't display these navbar links when page is register or login 
                     credit: yuxiaoy on 
                     https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask -->
                     {% if request.endpoint != 'register' %}
                     {% if request.endpoint != 'login' %}
-                        <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
-                        <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('shop') }}">Shop</a></li>
+                    <li><a class="black-text hvr-ufc" href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a class="black-text dropdown-trigger hvr-ufc" data-target="dropdown1">Recipes
                             <i class="material-icons right">arrow_drop_down</i></a></li>
                     {% endif %}
                     {% endif %}
@@ -49,10 +49,10 @@
                             href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% if session.user|lower == 'admin'|lower %}
                     <li><a class="black-text hvr-ufc" href="{{ url_for('categories') }}">Manage Categories</a></li>
-                    {% endif %} 
+                    {% endif %}
                     <!-- Modal Trigger for log out confirmation -->
                     <li><a class="black-text hvr-ufc modal-trigger" href="#modal3">Logout</a></li>
-                    
+
                     {% else %}
                     <li class="nav-item">
                         <a class="black-text hvr-ufc" href="{{ url_for('register') }}"><i class="fas fa-user-edit"></i>
@@ -67,7 +67,7 @@
                         <a class="black-text hvr-ufc" href="{{ url_for('recipes') }}"><i class="fas fa-search"></i></a>
                     </li>
                 </ul>
-                
+
                 <!-- Modal Structure for log out confirmation-->
                 <div id="modal3" class="modal">
                     <div class="modal-content center-align">
@@ -75,22 +75,27 @@
                     </div>
                     <div class="modal-footer">
                         <a class="modal-close waves-effect waves-green btn-small left">No</a>
-                        <a href="{{ url_for('logout') }}" class="modal-close waves-effect waves-green btn-small right">Yes</a>
+                        <a href="{{ url_for('logout') }}"
+                            class="modal-close waves-effect waves-green btn-small right">Yes</a>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
         <!-- dropdown menu -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
             {% for category in categories %}
-            <li><a class="black-text hvr-ufc" href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{ category.category_name }}</a></li>
+            <li><a class="black-text hvr-ufc"
+                    href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{
+                    category.category_name }}</a></li>
             {% endfor %}
         </ul>
         <!-- sidebar menu -->
         <ul class="sidenav" id="mobile-demo">
-            <li><h4><a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a></h4></li>
+            <li>
+                <h4><a href="{{ url_for('home') }}" class="center brand-logo black-text">Bake & Binge</a></h4>
+            </li>
             <li class="divider"></li>
             <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
             {% if request.endpoint != 'register' %}
@@ -105,7 +110,9 @@
                             <ul>
                                 <li><a class="black-text hvr-ufc" href="{{ url_for('recipes') }}">All recipes</a></li>
                                 {% for category in categories %}
-                                <li><a class="black-text hvr-ufc" href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{ category.category_name }}</a></li>
+                                <li><a class="black-text hvr-ufc"
+                                        href="{{ url_for('recipes_filter', category_name=category.category_name) }}">{{
+                                        category.category_name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -142,13 +149,13 @@
     <div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row">
-                    <h4 class="center-align flashes">{{ message }}</h4>
-                </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row">
+            <h4 class="center-align flashes">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </div>
 
@@ -157,12 +164,13 @@
         {% endblock %}
     </main>
 
-    
-        <div id="back-to-top" class="center-align">
-            <a href="#top" class="btn-floating"><i class="fas fa-chevron-up"></i></a>
-            <p>back to top</p>
-        </div>
-    
+
+    <!-- back to top indication -->
+    <div id="back-to-top" class="center-align">
+        <a href="#top" class="btn-floating"><i class="fas fa-chevron-up"></i></a>
+        <p>back to top</p>
+    </div>
+
 
     <hr>
     <!-- footer -->
