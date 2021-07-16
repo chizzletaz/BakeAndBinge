@@ -373,13 +373,15 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
     2. Then type: **git add Procfile**
     3. Then type: **git commit -m “Add Profile.”**
-    4. Then type: **git push**
+    4. Then type: **git push**  
 
     > The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
 
 3. **Create a Heroku App**
-    1. Click ‘Create New App’ button
+    1. Create a new app by clicking the ‘New’ button.
+    ![new Heroku app button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/new-app.png)
     2. Give a unique name and set region to your nearest region.
+    ![name and region input](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/name-region.png)
     3. Click ‘Create App’
 
 4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**
@@ -392,7 +394,7 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     4. Click 'Connect'.
     ![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
 
-Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.
+Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
 4. **Add config vars to Heroku**
     1. Go to the Settings tab.
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)
