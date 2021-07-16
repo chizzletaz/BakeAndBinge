@@ -50,7 +50,7 @@
                 <div class="card-content show-on-medium-and-down hide-on-med-and-up">
                     <div id="test4">
                         {% for ingredient in recipe.ingredients %}
-                        <ul>
+                        <ul class="recipe-list">
                             <li>
                                 <label>
                                     <input type="checkbox" />
@@ -62,7 +62,7 @@
                     </div>
                     <div id="test5">
                         {% for step in recipe.steps %}
-                        <ul>
+                        <ul class="recipe-list">
                             <li>{{ loop.index }}. {{ step }}</li>
                             <li></li>
                         </ul>
@@ -74,7 +74,7 @@
                     <div class="col s12 l5 hide-on-med-and-down">
                         <h4 class="text-pink">Ingredients</h4><br>
                         {% for ingredient in recipe.ingredients %}
-                        <ul>
+                        <ul class="recipe-list">
                             <li>
                                 <label>
                                     <input type="checkbox" />
@@ -88,7 +88,7 @@
                     <div class="col s12 l7 hide-on-med-and-down">
                         <h4 class="text-pink">Instructions</h4>
                         {% for step in recipe.steps %}
-                        <ul>
+                        <ul class="recipe-list">
                             <li>{{ loop.index }}. {{ step }}</li>
                             <li></li>
                         </ul>
