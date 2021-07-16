@@ -264,8 +264,8 @@ Testing:
 Result:  
 The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
 
-**Collapsible on shop page**
-Expected:
+**Collapsible on shop page**  
+Expected:  
 The user can get more information about a shop product when they click on the three dots icon.
 
 Testing:
@@ -282,11 +282,11 @@ Testing:
 4. Click on the cross icon.
 5. Confirm that the text disappears and the image of the product is shown.
 
-Result:
+Result:  
 The user can get more information about a shop product when they click on the three dots icon.
 
-**Modal for how to add recipe**
-Expected:
+**Modal for how to add recipe**  
+Expected:  
 A modal with info on how to add a recipe pops up, when the user clicks the 'how to add a new recipe' button.
 Testing:
 1. Log in.
@@ -298,11 +298,11 @@ Testing:
 7. Click outside the modal.
 8. Confirm the modal closes.
 
-Result:
+Result:  
 A modal with info on how to add a recipe pops up, when the user clicks the 'how to add a new recipe' button.
 
-**Confirmation modal**
-Expected:
+**Confirmation modal**  
+Expected:  
 A modal asking the user to confirm their action pops up, when the user clicks a 'delete' or 'logout' button.
 
 Testing:
@@ -318,11 +318,11 @@ Testing:
 10. Confirm a modal pops up that asks 'Are you sure you want to delete this category?'.
 11. Click 'no'.
 
-Result:
+Result:  
 A modal asking the user to confirm their action pops up, when the user clicks a 'delete' or 'logout' button.
 
-**Social icons**
-Expected:
+**Social icons**  
+Expected:  
 The user is redirected to the respective social media page, when they click on a social media icon.
 
 Testing:
@@ -332,11 +332,11 @@ Testing:
 4. Confirm that the page is opened in a new window.
 5. Repeat steps 2, 3 and 4 for the other icons.
 
-Result:
+Result:  
 The user is redirected to the respective social media page, when they click on a social media icon.
 
-**Contact form**
-Expected:
+**Contact form**  
+Expected:  
 The user can send the site owner a message by filling in the contact form.
 
 Testing:
@@ -350,13 +350,13 @@ Testing:
 8. Confirm that the message 'Your message has been sent' is shown.
 9. Confirm you are redirected to the home page.
 
-Result:
+Result:  
 The user can send the site owner a message by filling in the contact form.
 
 #### CRUD
 
-**Add recipe**
-Expected:
+**Add recipe**  
+Expected:  
 A new recipe is added when the user fills in the add recipe form.
 
 Testing:
@@ -373,11 +373,11 @@ Testing:
 11. Confirm you are redirected to you profile page.
 12. Confirm that the recipe you added is added to your profile page.
 
-Result:
+Result:  
 A new recipe is added when the user fills in the add recipe form.
 
-**Add category**
-Expected:
+**Add category**  
+Expected:  
 A new category is added when the admin fills in the add category form.
 
 Testing:
@@ -389,11 +389,11 @@ Testing:
 6. Confirm you are redirected to the categories page.
 7. Confirm your new category is added.
 
-Result:
+Result:  
 A new category is added when the admin fills in the add category form.
 
-**Edit recipe**
-Expected:
+**Edit recipe**  
+Expected:  
 An existing recipe is edited when the user fills in the edit recipe form.
 
 Testing:
@@ -407,11 +407,11 @@ Testing:
 8. Click on the 'GO TO RECIPE' button of the edited recipe.
 9. Confirm that your change is shown in the recipe.
 
-Result:
+Result:  
 An existing recipe is edited when the user fills in the edit recipe form.
 
-**Edit category**
-Expected:
+**Edit category**  
+Expected:  
 An existing category is edited when the admin fills in the edit category form.
 
 Testing:
@@ -423,11 +423,11 @@ Testing:
 6. Confirm you are redirected to the categories page.
 7. Confirm your chosen category is edited. 
 
-Result:
+Result:  
 An existing category is edited when the admin fills in the edit category form.
 
-**Delete recipe**
-Expected:
+**Delete recipe**  
+Expected:  
 A recipe is deleted when the user clicks on the 'DELETE' button of a recipe.
 
 Testing:
@@ -438,11 +438,11 @@ Testing:
 5. Confirm you are redirected to your profile page.
 6. Confirm the recipe is deleted.
 
-Result:
+Result:  
 A recipe is deleted when the user clicks on the 'DELETE' button of a recipe.
 
-**Delete category**
-Expected:
+**Delete category**  
+Expected:  
 A category is deleted when the user clicks on the 'DELETE' button of a category.
 
 Testing:
@@ -454,7 +454,7 @@ Testing:
 6. Confirm you are redirected to the categories page.
 7. Confirm your chosen category is deleted.
 
-Result:
+Result:  
 A category is deleted when the user clicks on the 'DELETE' button of a category.
 
 
