@@ -134,11 +134,11 @@ Testing:
 2. Don't fill in an email address and click 'Subscribe'.
 3. Confirm that a warning message appears.  
    Result:  
-       A 'Subcription successfull' message appears.
+        A 'Subcription successfull' message appears.  
    Fix:   
-       Add 'required' to the input field.
+        Add 'required' to the input field.
    Result:  
-       A warning message appears.
+        A warning message appears.
 4. Fill in an invalid email address.
 5. Confirm that a warning message appears.
 6. Fill in a valid email address.
