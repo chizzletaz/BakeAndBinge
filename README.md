@@ -464,5 +464,5 @@ The other recipes are my own or come from my own collection of recipes written o
 ---
 # Acknowledgements
 I want to thank my mentor Antonio Rodriguez for guiding me through this project and helping me with some solutions.
-Especially with the relations between collections on MongoDB and the development of the corresponding python code for the functions in the app.py file.
+Especially with the relations between collections on MongoDB and the development of the corresponding python code for the functions in the app.py file.  
 I want to thank Tutor support at CI and fellow Slack members for answering my questions.

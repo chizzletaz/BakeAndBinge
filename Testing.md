@@ -679,9 +679,19 @@ No issues arose during testing.
 
 ---
 ## Testing responsiveness
-To test the responsiveness of the  website, I've used Chrome Dev Tools by right clicking on the page and click inspect and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
+To test the responsiveness of the  website, I've used Chrome Dev Tools by`;
+- right clicking on the page
+- click inspect 
+- click toggle device toolbar
+![toggle device toolbar button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/toggle-device-toolbar.png)
+- select the different devices.
+![responsive choices](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/responsive.png)
+
+and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
+
 The testing was done on widths down to a screen resolution of 280px.  
 All the elements on each page were checked.  
+
 No issues arrose.
 
 ## Bugs and problems
