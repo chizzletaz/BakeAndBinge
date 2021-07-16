@@ -682,9 +682,9 @@ No issues arose during testing.
 To test the responsiveness of the  website, I've used Chrome Dev Tools by`;
 - right clicking on the page
 - click inspect 
-- click toggle device toolbar
-![toggle device toolbar button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/toggle-device-toolbar.png)
-- select the different devices.
+- click toggle device toolbar  
+![toggle device toolbar button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/toggle-device-toolbar.png)  
+- select the different devices.  
 ![responsive choices](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/responsive.png)
 
 and [Responsinator](https://www.responsinator.com/) to test the site at different screen resolutions.   
