@@ -28,8 +28,8 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 **2. As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.**
  - The landing page has a 'Browse recipes'-button, which directs the user to the recipes page.
- <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/>
-    
+   <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/browse-recipes.png" alt="browse recipes image" width="400"/>
+
  - The recipes page has buttons (for large screens) or a dropdown-menu (for smaller screens) to browse
  per category. (see General users 3)
 
