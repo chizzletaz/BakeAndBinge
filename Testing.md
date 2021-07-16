@@ -485,16 +485,18 @@ Running the code through the validator gives:
 #### For index.html:
 - 4 errors and 1 warning shown  
 ![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
-1. Element h4 not allowed as child of element ul in this context.  
+1. Element `<h4>` not allowed as child of element `<ul>` in this context.  
 Fix: According to HTML5 spec, you can't have header tags as children within a ```<ul></ul>```, you can only have ```<li>``` elements as children. So you should populate it with ```<li></li>```, then insert your content within each list, so wrap the h4 in ```<li></li>```
 Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
 2. Section lacks heading.   
 Fix: change section into div.
-3. Start tag a seen but an element of the same type was already open.  
+3. Start tag `<a>` seen but an element of the same type was already open.  
 I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag.   
-Fix: change the the anchor tag of the button to a button tag and remove the href.
+Fix:  
+change the the anchor tag of the button to a button tag and remove the href.  
 This gives another error: The element button must not appear as a descendant of the a element.  
-Fix: Change button tag to p tag with button class.
+Fix:  
+Change button tag to `<p>` tag with button class.
 > Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
 
 #### For recipes.html:
@@ -504,10 +506,11 @@ Fix: Change button tag to p tag with button class.
 #### For recipe.html:
 - 2 different errors are shown:
 ![html recipe error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-recipe.png)
-1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)
-I forgot to add the ; after $nbsp to indicate a space.  
-Fix: add semi-colon after $nbsp.
-2. Element br not allowed as child of element ul in this context. According to HTML5 spec, you can only have ```<li>``` elements as children. I used the ```<br>``` element to add padding between each ingredient and step.
+1. Named character reference was not terminated by a semicolon. (Or & should have been escaped as &amp;.)  
+I forgot to add the **;** after **$nbsp** to indicate a space.  
+Fix: add semi-colon after **$nbsp**.
+2. Element `<br>` not allowed as child of element `<ul>` in this context.  
+According to HTML5 spec, you can only have ```<li>``` elements as children. I used the ```<br>``` element to add padding between each ingredient and step.
 But ul elements can only have ```<li>``` elements as children.  
 Fix: remove the br element and add an empty li (```<li></li>```)
 
