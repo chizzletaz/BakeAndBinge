@@ -11,7 +11,7 @@ That way you can bake good recipes and binge them at the same time!
 I have narrowed the recipes down to only baking recipes, in order to reduce the amount and difficulty of programming and design options.   
 For the CSS-framework I opted to work with Materialize instead of Bootstrap. Both to learn to work with another framework and to show that I can work with other frameworks.
 
-#### A live version can be viewed [here](https://git.heroku.com/bake-and-binge.git)
+#### A live version can be viewed [here](https://bake-and-binge.herokuapp.com)
 
 # Table of Content
 - [User Experience (UX)](#user-experience-ux)  
