@@ -75,7 +75,7 @@
                         <h4 class="text-pink">Ingredients</h4><br>
                         {% for ingredient in recipe.ingredients %}
                         <ul>
-                            <li>
+                            <li class="recipe-list">
                                 <label>
                                     <input type="checkbox" />
                                     <span>{{ ingredient }}</span>
@@ -89,7 +89,7 @@
                         <h4 class="text-pink">Instructions</h4>
                         {% for step in recipe.steps %}
                         <ul>
-                            <li>{{ loop.index }}. {{ step }}</li>
+                            <li class="recipe-list">{{ loop.index }}. {{ step }}</li>
                             <li></li>
                         </ul>
                         {% endfor %}
