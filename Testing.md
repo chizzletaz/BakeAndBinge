@@ -34,7 +34,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
  per category. (see General users 3)
 
 **3. As a user, I want to know how to add a recipe.**
-- When a user is logged in, they are redirected to their own profile page or they can use the button to go to their profile page.
+- When a user is logged in, they are redirected to their own profile page or they can use the 'Profile' link to go to their profile page.
 - On this page there is a button with a question mark. 
 ![how to add button image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/how-to-add-button.png)  
 - When the user clicks this button, a modal pops up with an explanation on how to add a recipe. 
@@ -85,7 +85,7 @@ This is a feature left to implement.
 ![edit delete buttons image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/edit-delete-recipe.png) 
 
 **4. As a regular user, I want to contact the site owner in case I have questions or remarks.**
-- The navbar has a link to the contact page. 
+- The navbar has a link to the contact page.   
 ![contact link image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/contact-link.png) 
 - On the contact page, the user can fill in the form to contact the site owner.
 
