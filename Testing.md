@@ -837,6 +837,6 @@ Use 'hide_nav=True' for rendering in app.py and Jinja condition on the error han
 ```
 {% if not hide_nav %}{% extends "base.html" %}{% endif %}
 ```
-However, this leaves out everything including the links in the head tag. This means you have to add some of the links again on the error handler page.
+However, this leaves out everything including the links in the head tag. This means you have to add some of the links again on the error handler page.  
 Fix:  
 I've decided to not extend the base and make a 'normal' page setup for each error handler page, leaving out the header and footer.
