@@ -706,7 +706,8 @@ Issue: SOLVED
 The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.  
 Furthermore, when clicking on the 'Recipes', the name disappears.  
 
-Fix: according to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/contrainwidth.png).  
+Fix:  
+According to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/contrainwidth.png).  
 add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).  
 
 Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/covertrigger.png), so the dropdown menu will display below the trigger.   
@@ -722,7 +723,8 @@ to the add_recipe() function.
 I wanted to dynamically add the categories to the navbar as well. However, this time it worked for the navbar, but not for the 
 select option on the 'add recipe' page.   
 
-Fix: I remembered from the Task Manager Walkthrough that I'm looping over the categories list twice.
+Fix:  
+I remembered from the Task Manager Walkthrough that I'm looping over the categories list twice.
 This means that the first (navbar) iterate over the list, it unpacks and leaves it empty afterwards.   
 Also the list that comes from the find() method, isn't a actual list, but a Mongo Cursor Object.
 By wrapping the find() method in a Python list(), the list can be used again.
@@ -740,7 +742,8 @@ ObjectId of category_name in the categories collection), the preloading of the c
         {% endif %}
     {% endfor %}
 ```
-Fix: The category_name in the Categories collection has to be connected to the category_id in the Recipe collection.
+Fix:  
+The category_name in the Categories collection has to be connected to the category_id in the Recipe collection.
 Add this to the "GET" method of the recipe() function:
 ```
 try:
@@ -762,7 +765,7 @@ I used 'ingredients' and 'steps' for the id, label and name:
     <input id="steps" name="steps[]" type="text" class="validate">
     <label for="steps">Instruction</label>
 ```
-Fix:
+Fix:  
 I changes the id, label and name to 'ingredient' and 'step':
 ```
     <input id="ingredient" name="ingredient[]" type="text" class="validate">
@@ -784,7 +787,8 @@ The Jinja condition to only show the edit and delete buttons for the user that c
         </div>
     {% endif %}
 ```
-Fix: In the recipes collection, the 'created_by' name is stored as the ObjectId of that name in the user collection.
+Fix:  
+In the recipes collection, the 'created_by' name is stored as the ObjectId of that name in the user collection.
 To use the condition, the 'created_by' has to be converted to the name. 
 Add to recipes() in app.py:
 ```
@@ -796,14 +800,16 @@ Add to recipes() in app.py:
 Issue: SOLVED  
 On the recipe page, I can't get the icons and text of the times and servings aligned on [1 line](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_before.png).  
 
-Idea: use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_after.png) of Materialize.
+Fix:  
+Use the [collections component](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_after.png) of Materialize.
 
 ---
 Issue: partially SOLVED  
 When displaying the recipes on the index, recipes and profile page, the cards 
 [aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_unequal.png) equal height.  
 
-Fix: Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
+Fix:  
+Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
 Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
 Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_equal.png).
 
@@ -811,7 +817,8 @@ Now each row has the height of the [largest card](https://github.com/chizzletaz/
 Issue: SOLVED  
 When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.  
 
-Fix: Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
+Fix:  
+Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
 to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding margin-right: auto
 to the columns of class 'equal-right':
 ```
@@ -823,10 +830,13 @@ The recipe is displayed in the middle. When 2 recipes are shown, the recipes are
 I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
 
 ---
-Issue: I don't want to show the header and footer on the error handler pages.
-Idea: use 'hide_nav=True' for rendering in app.py and Jinja condition on the error handler pages:
+Issue: SOLVED  
+I don't want to show the header and footer on the error handler pages.
+Idea:  
+Use 'hide_nav=True' for rendering in app.py and Jinja condition on the error handler pages:
 ```
 {% if not hide_nav %}{% extends "base.html" %}{% endif %}
 ```
 However, this leaves out everything including the links in the head tag. This means you have to add some of the links again on the error handler page.
+Fix:  
 I've decided to not extend the base and make a 'normal' page setup for each error handler page, leaving out the header and footer.
