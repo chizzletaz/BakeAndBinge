@@ -438,26 +438,32 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 
 ### Setup local deployment
 1. Clone or fork this repository (see above).
-2. Install the requirements by typing:
-        `pip3 install -r requirements.txt`
+2. Install the requirements by typing:  
+        `pip3 install -r requirements.txt`  
    in the terminal.
-3. Create a MongoDB Database**
+3. Create a MongoDB Database
     1. Login to MongoDB.
-    2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
-    3. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
-    4. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
-    5. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
+    2. Create a cluster by clicking Cluster:  
+    ![Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
+    3. Create a collection named 'categories' by clicking Collections.  
+    ![Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
+    4. Create Database by clicking Create Database.  
+    !['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
+    5. Add database and collection name and click Create.  
+    ![create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
     6. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
 4. Set the environment variables.
     1. Create a .gitignore file in the root directory, if there isn't one.
     2. Open the .gitignore file and add 'env.py' to it. 
-    3. Create an env.py file and set the environment variables by adding the following text:
-        `import os
+    3. Create an env.py file and set the environment variables by adding the following text: 
+        ```
+        import os
         os.environ.setdefault("IP", *enter your IP address e.g. 0.0.0.0*)
         os.environ.setdefault("PORT", *enter a portnumber*)
         os.environ.setdefault("SECRET_KEY", *enter a secret key*)
         os.environ.setdefault("MONGO_URI", *enter the MONGO_URI, see below*)
-        os.environ.setdefault("MONGO_DBNAME", *enter the mongodb database name you created*)    
+        os.environ.setdefault("MONGO_DBNAME", *enter the mongodb database name you created*) 
+        ```   
 5. Connect the database to the app
     1. Log in to MongoDB
     2. Click on the 'Connect' Tab.  
@@ -468,11 +474,11 @@ For more info on how to clone a repository check [here](https://docs.github.com/
     ![mongodb connection string](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/mongodb-connection-string.png)  
     5. Copy the application code and add it as the value for the 'MONGO_URI' in the env.py file. 
 6. Set up an instance of PyMongo.
-    1. In your python file add:
+    1. In your python file add:  
         `mongo = Pymongo(app)`
 7. Run the app:
-    1. In the terminal, type:
-        `python3 <your python file name>.py`
+    1. In the terminal, type:  
+        `python3 <your python file name>.py`  
         and hit enter.
         
 ---
