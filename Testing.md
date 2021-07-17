@@ -521,7 +521,10 @@ Add semi-colon after **$nbsp**.
 According to HTML5 spec, you can only have ```<li>``` elements as children. I used the ```<br>``` element to add padding between each ingredient and step.
 But ul elements can only have ```<li>``` elements as children.  
 Fix:  
-Remove the br element and add an empty li (```<li></li>```)
+Remove the br element and add an empty li (```<li></li>```).
+> Update: the empty link doesn't seem to work.  
+> Fix:  
+> Add padding-top to the `<li>`.
 
 #### For contact.html:
 - 1 error and 1 warning are shown
@@ -633,14 +636,14 @@ Use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 ![html edit category error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 #### For 403.html:  
-I don't know how to test this page.
+I don't know how to test this page. However, since the 403, 404, 500 pages are similar and the 404 page is showing no errors, I assume this page has no errors as well.
 
 #### For 404.html:
 - No errors or warnings to show.
 ![html 404 errorhandler error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-add-recipe.png)
 
 #### For 405.html:  
-I don't know how to test this page.
+I don't know how to test this page. However, since the 403, 404, 500 pages are similar and the 404 page is showing no errors, I assume this page has no errors as well.
 
 ---
 ### CSS  
@@ -663,8 +666,7 @@ Running the code through the validator gives:
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
 #### For app.py:
 Before checking the app.py file, I tried to remove as many mistakes beforehand, such as extra whitespaces, maximum
-code line length of 72, correct line breaks, etc.   
-Nevertheless, there were a lot of issues that I missed.
+code line length of 72, correct line breaks, etc. Nevertheless, there were a lot of issues that I missed.  
 - Several notifications  
 ![pep8 python notifications](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/python-pep8.png)  
 After fixing the notifications, I get an All right message.
