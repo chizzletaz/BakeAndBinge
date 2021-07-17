@@ -401,7 +401,7 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)  
     2. Click on 'Reveal Config Vars'.  
     ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)  
-    3. Enter the values of the config vars.
+    3. Enter the values of the config vars (see nr.5 [below](#setup-local-deployment) for the MONGO_URI value).
     ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
 
     > Tip: copy the secret key from the env.py file and enter as the value for the secret key.  
@@ -436,6 +436,45 @@ To achieve this follow these steps:
 
 For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
+### Setup local deployment
+1. Clone or fork this repository (see above).
+2. Install the requirements by typing:
+        `pip3 install -r requirements.txt`
+   in the terminal.
+3. Create a MongoDB Database**
+    1. Login to MongoDB.
+    2. Create a cluster by clicking [Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
+    3. Create a collection named 'categories' by clicking [Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
+    4. Create Database by clicking ['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
+    5. Add database and collection name and click [create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
+    6. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
+4. Set the environment variables.
+    1. Create a .gitignore file in the root directory, if there isn't one.
+    2. Open the .gitignore file and add 'env.py' to it. 
+    3. Create an env.py file and set the environment variables by adding the following text:
+        `import os
+        os.environ.setdefault("IP", *enter your IP address e.g. 0.0.0.0*)
+        os.environ.setdefault("PORT", *enter a portnumber*)
+        os.environ.setdefault("SECRET_KEY", *enter a secret key*)
+        os.environ.setdefault("MONGO_URI", *enter the MONGO_URI, see below*)
+        os.environ.setdefault("MONGO_DBNAME", *enter the mongodb database name you created*)    
+5. Connect the database to the app
+    1. Log in to MongoDB
+    2. Click on the 'Connect' Tab.  
+    ![connect mongodb](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/mongodb-connect.png)  
+    3. Click on 'Connect your application'.  
+    ![connect mongodb application](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-application.png)  
+    4. Select the Python driver and the recent version (3.6 or higher).  
+    ![mongodb connection string](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/mongodb-connection-string.png)  
+    5. Copy the application code and add it as the value for the 'MONGO_URI' in the env.py file. 
+6. Set up an instance of PyMongo.
+    1. In your python file add:
+        `mongo = Pymongo(app)`
+7. Run the app:
+    1. In the terminal, type:
+        `python3 <your python file name>.py`
+        and hit enter.
+        
 ---
 # **Credits**
 ### code
