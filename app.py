@@ -317,7 +317,7 @@ def edit_recipe(recipe_id):
                     {"_id": ObjectId(recipe_id)}, submit)
                 flash("Your recipe has been updated.")
                 return redirect(url_for('profile',
-                                    username=session["user"]))
+                                username=session["user"]))
 
             recipe = mongo.db.recipes.find_one(
                 {"_id": ObjectId(recipe_id)})
@@ -482,7 +482,7 @@ def subscribe():
 def shop():
     categories = list(
         mongo.db.categories.find().sort("category_name", 1))
-    return render_template("shop.html", categeries=categories)
+    return render_template("shop.html", categories=categories)
 
 
 # ERROR HANDLERS

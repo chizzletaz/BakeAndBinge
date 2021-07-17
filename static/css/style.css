@@ -7,7 +7,6 @@
     color: black;
 }
 /* general */
-
 h1 {
     margin-bottom: 20px;
     margin-top: 0;
@@ -116,7 +115,7 @@ p {
     position: relative;
     overflow: hidden;
   }
-  .hvr-ufc:before {
+.hvr-ufc:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -132,10 +131,10 @@ p {
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
-  .hvr-ufc:hover:before, .hvr-ufc:focus:before, .hvr-ufc:active:before {
+.hvr-ufc:hover:before, .hvr-ufc:focus:before, .hvr-ufc:active:before {
     left: 0;
     right: 0;
-  }
+}
 /* end credit */
 
 #mobile-demo li, #mobile-demo a {
