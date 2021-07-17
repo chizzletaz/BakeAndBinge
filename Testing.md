@@ -679,7 +679,7 @@ No issues arose during testing.
 
 ---
 ## Testing responsiveness
-To test the responsiveness of the  website, I've used Chrome Dev Tools by`;
+To test the responsiveness of the  website, I've used Chrome Dev Tools by:
 - right clicking on the page
 - click inspect 
 - click toggle device toolbar  
