@@ -207,7 +207,7 @@ After consulting with my mentor, Antonio Rodriguez, he explained that in these c
 So instead of using the category name in the recipe collection, the ObjectID that belongs to this category name is used.
 The same principle is used for the username.
 
-This meant that the routes and function had to be adjusted, resulting in more complex functions.
+This means that the routes and function had to be adjusted, resulting in more complex functions.
 With the help of my mentor it worked out in the end.
 
 Below are examples of the database collections:  
