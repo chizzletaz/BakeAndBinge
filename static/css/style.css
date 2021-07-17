@@ -236,6 +236,7 @@ footer .card-content {
 
 button i {
     color: #fff !important;
+    padding-left: 5px;
 }
 
 .btn:hover, .btn:active, .hover:hover .hover:active {
