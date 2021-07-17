@@ -231,7 +231,7 @@ footer .card-content {
 }
 
 .btn, button {
-    color: #000;
+    color: #000 !important;
     font-weight: bold;
 }
 
