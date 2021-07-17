@@ -230,6 +230,10 @@ footer .card-content {
     opacity: 0.7;
 }
 
+.btn {
+    color: #000;
+}
+
 .btn:hover, .btn:active, .hover:hover .hover:active {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0 ,0.24),0 17px 50px 0 rgba(0, 0, 0, 0.5);
     transform: translate(-0.1rem, 0.1rem);
