@@ -803,10 +803,10 @@ Add to recipes() in app.py:
 ---
 Issue: SOLVED  
 On the recipe page, I can't get the icons and text of the times and servings aligned on 1 line.  
-<img src="hhttps://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_before.png" alt="icons recipe before image" width="400"/>
+<img src="https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_before.png" alt="icons recipe before image" width="400"/>  
 Fix:  
-Use the collections component of Materialize.
-<img src="hhttps://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_after.png" alt="icons recipe after image" width="400"/>
+Use the collections component of Materialize.  
+<img src="https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/icons_recipe_after.png" alt="icons recipe after image" width="400"/>
 
 ---
 Issue: partially SOLVED  
