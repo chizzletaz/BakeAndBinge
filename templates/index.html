@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <div class="welcome">
     <div class="center-align lead">
         <h1 class="display-5 white-text">Welcome to Bake & Binge</h1>
@@ -12,13 +11,14 @@
                     <div class="card-content">
                         <h6 class="white-text">Do you like baking? Are you tired of collecting pieces of paper with
                             recipes? Loosing them from time to time?</h6>
-                        <h6 class="white-text">Why not start adding your recipe online and share it?</h6> 
+                        <h6 class="white-text">Why not start adding your recipe online and share it?</h6>
                         <h6 class="white-text">No more scribbling, no more loose papers!</h6>
                         <h6 class="white-text">Now you can bake good recipes and binge them at the same time!</h6>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- CTA buttons -->
         <h6 class="center-align">
             <a class="waves-effect waves-light pink accent-1 btn hover" href="{{ url_for('recipes') }}"
                 role="button">Browse
@@ -31,55 +31,60 @@
     </div>
 </div>
 
+<!-- latest recipes -->
 <section class="container">
     <div class="row">
         <h2>Latest recipes</h2>
     </div>
     <div class="row equal-col">
         {% for recipe in recipes %}
-        <div class="col s12 m6 l4">
-            <a class="hover" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                <div class="card z-depth-2 bs hover">
-                    <div class="card-image ">
-                        <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
-                        <p>By: {{ recipe.created_by | capitalize }}</p>
-                    </div>
-                    <div class="divider"></div> <!-- from Materialize: 1 pixel lines that helps break up the content -->
-                    <div class="card-content center-align pb0">
-                        <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
-                    </div>
-                    <div class="col s12 card-content grey-bb pt0">
-                        <!-- 'divider'- from Materialize doesn't work, so I added my own line with grey-bb-->
-                        <blockquote>{{ recipe.recipe_description }}</blockquote>
-                    </div>
-                    <div class="row">
-                        <div class="card-content indications">
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
-                                </li>
-                            </ul>
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
-                                </li>
-                            </ul>
-                            <ul class="col collection">
-                                <li class="collection-item">
-                                    <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}
-                                    </p>
-                                </li>
-                            </ul>
-
+            <div class="col s12 m6 l4">
+                <a class="hover" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                    <div class="card z-depth-2 bs hover">
+                        <!-- created by -->
+                        <div class="card-image ">
+                            <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                            <p>By: {{ recipe.created_by | capitalize }}</p>
+                        </div>
+                        <!-- recipe title -->
+                        <div class="divider"></div> <!-- from Materialize: 1 pixel lines that helps break up the content -->
+                        <div class="card-content center-align pb0">
+                            <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
+                        </div>
+                        <!-- recipe description -->
+                        <div class="col s12 card-content grey-bb pt0">
+                            <!-- 'divider'- from Materialize doesn't work, so I added my own line with grey-bb-->
+                            <blockquote>{{ recipe.recipe_description }}</blockquote>
+                        </div>
+                        <div class="row">
+                            <div class="card-content indications">
+                                <!-- total time -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
+                                    </li>
+                                </ul>
+                                <!-- servings -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
+                                    </li>
+                                </ul>
+                                <!-- recipe category -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-action center-align">
+                            <p class="btn pink lighten-3">Go to recipe</p>
                         </div>
                     </div>
-                    <div class="card-action center-align">
-                        <p class="btn pink lighten-3">Go to
-                            recipe</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
 </section>

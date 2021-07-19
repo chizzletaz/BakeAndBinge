@@ -9,32 +9,41 @@
         <div class="col s12">
             <div class="card recipe">
                 <div class="col s12 l7 card-image">
+                    <!-- recipe image -->
                     <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                    <!-- created by -->
                     <p>By: {{ recipe.created_by | capitalize }}</p>
+                    <!-- recipe category -->
                     <p><i class="fas fa-list-ul"></i> &nbsp; Category: {{ recipe.category_name | capitalize }}</p>
                 </div>
                 <div class="col s12 l5 card-content indicators">
                     <ul class="col s6 l12 collection">
+                        <!-- prep time -->
                         <li class="collection-item">
                             <p><i class="fas fa-hourglass-end prefix"></i> &nbsp; prep: {{ recipe.prep_time }}</p>
                         </li>
+                        <!-- bake time -->
                         <li class="collection-item">
                             <p><i class="fas fa-hourglass-start prefix"></i> &nbsp;&nbsp; bake: {{ recipe.bake_time }}</p>
                         </li>
                     </ul>
                     <ul class="col s6 l12 collection">
+                        <!-- total time -->
                         <li class="collection-item">
                             <p><i class="fas fa-hourglass prefix"></i> &nbsp;&nbsp; total: {{ recipe.total_time }}</p>
                         </li>
+                        <!-- servings -->
                         <li class="collection-item">
                             <p><i class="fas fa-user-friends prefix"></i> &nbsp;&nbsp; Serves: {{ recipe.servings }}</p>
                         </li>
                     </ul>
+                    <!-- recipe description -->
                     <div class="col s12 card-content">
                         <blockquote>{{ recipe.recipe_description }}</blockquote>
                     </div>
                 </div>
                 <ul class="col s12 collection">
+                    <!-- tools needed -->
                     <li class="collection-item">
                         <p><i class="fas fa-utensils"></i> &nbsp;&nbsp;Tools:</p>
                         <p>{{ recipe.tools }}</p>
@@ -42,12 +51,14 @@
                 </ul>
                 <!-- for screen sizes < 992px -->
                 <div class="card-tabs show-on-medium-and-down hide-on-med-and-up">
+                    <!-- tabs for ingredients and instructions -->
                     <ul class="tabs tabs-fixed-width">
                         <li class="tab"><a class="active" href="#test4">Ingredients</a></li>
                         <li class="tab"><a href="#test5">Instructions</a></li>
                     </ul>
                 </div>
                 <div class="card-content show-on-medium-and-down hide-on-med-and-up">
+                    <!-- loop for ingredients -->
                     <div id="test4">
                         {% for ingredient in recipe.ingredients %}
                         <ul>
@@ -60,6 +71,7 @@
                         </ul>
                         {% endfor %}
                     </div>
+                    <!-- loop for instruction steps -->
                     <div id="test5">
                         {% for step in recipe.steps %}
                         <ul>
@@ -72,34 +84,31 @@
                 <div class="row card-content">
                     <div class="col s12 l5 hide-on-med-and-down recipe-list">
                         <h4 class="text-pink">Ingredients</h4><br>
+                        <!-- loop for ingredients -->
                         {% for ingredient in recipe.ingredients %}
-                        <ul>
-                            <li class="recipe-list">
-                                <label>
-                                    <input type="checkbox" />
-                                    <span>{{ ingredient }}</span>
-                                </label>
-                            </li>
-                        </ul>
-
+                            <ul>
+                                <li class="recipe-list">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>{{ ingredient }}</span>
+                                    </label>
+                                </li>
+                            </ul>
                         {% endfor %}
                     </div>
                     <div class="col s12 l7 hide-on-med-and-down">
                         <h4 class="text-pink">Instructions</h4>
+                        <!-- loop for instruction steps -->
                         {% for step in recipe.steps %}
-                        <ul>
-                            <li class="recipe-list">{{ loop.index }}. {{ step }}</li>
-                        </ul>
+                            <ul>
+                                <li class="recipe-list">{{ loop.index }}. {{ step }}</li>
+                            </ul>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
-
-
 </div>
 
 

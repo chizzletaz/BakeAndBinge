@@ -26,11 +26,9 @@
         <nav class="white">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="center brand-logo black-text">B & B</a>
-
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="left hide-on-med-and-down">
                     <li><a class="black-text hvr-ufc" href="{{ url_for('home') }}">Home</a></li>
-
                     <!-- Don't display these navbar links when page is register or login 
                     credit: yuxiaoy on 
                     https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask -->
@@ -91,6 +89,7 @@
                     category.category_name }}</a></li>
             {% endfor %}
         </ul>
+
         <!-- sidebar menu -->
         <ul class="sidenav" id="mobile-demo">
             <li>
@@ -149,13 +148,13 @@
     <div>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row">
-            <h4 class="center-align flashes">{{ message }}</h4>
-        </div>
-        {% endfor %}
-        {% endif %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row">
+                        <h4 class="center-align flashes">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% endwith %}
     </div>
 
@@ -176,6 +175,7 @@
     <!-- footer -->
     <footer class="grey lighten-3">
         <div class="row center-align">
+            <!-- subscribe form -->
             <div class="col s10 offset-s1 l5 offset-l1">
                 <div class="card">
                     <div class="card-content">
@@ -196,6 +196,7 @@
                     </div>
                 </div>
             </div>
+            <!-- social links -->
             <div class="col s12 l4 offset-l1 socials center-align">
                 <a class="list-inline-item fb" href="https://www.facebook.com" target="_blank" rel="noopener">
                     <i class="fab fa-facebook-f"></i>

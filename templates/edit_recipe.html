@@ -45,7 +45,7 @@
                             <label for="recipe_description">Short recipe description:</label>
                         </div>
                     </div>
-                <!-- recipe image -->
+                    <!-- recipe image -->
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="recipe_image" name=recipe_image type="text"
@@ -100,34 +100,36 @@
                     <!-- Credit: https://shouts.dev/add-or-remove-input-fields-dynamically-using-jquery-->
                     <!-- ingredients -->
                     {% for ingredient in recipe.ingredients %}
-                    <div class="row mb0">
-                        <div class="input-field col s12 mb0">
-                            <textarea id="ingredient{{ loop.index }}" name="ingredient[]" class="materialize-textarea" required>
-                                {{- ingredient -}}
-                            </textarea>
-                            <label for="ingredient{{ loop.index }}">Ingredient</label>
-                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
+                        <div class="row mb0">
+                            <div class="input-field col s12 mb0">
+                                <textarea id="ingredient{{ loop.index }}" name="ingredient[]" class="materialize-textarea" required>
+                                    {{- ingredient -}}
+                                </textarea>
+                                <label for="ingredient{{ loop.index }}">Ingredient</label>
+                                <span class="helper-text right" data-error="wrong" data-success="right">required</span>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
                     <div id="newRowIngredient"></div>
+                    <!-- add new ingredient button -->
                     <div class="col s12">
                         <a id="addRowIngredient" class="btn-floating btn waves-effect waves-light"><i
                                 class="fas fa-plus"></i></a> Add ingredient
                     </div>
                     <!-- instructions -->
                     {% for step in recipe.steps %}
-                    <div class="row mb0">
-                        <div class="input-field col s12 mb0">
-                            <textarea id="step{{ loop.index }}" name="step[]" class="materialize-textarea" required>
-                                {{- step -}}
-                            </textarea>
-                            <label for="step{{ loop.index }}">Instructions</label>
-                            <span class="helper-text right" data-error="wrong" data-success="right">required</span>
+                        <div class="row mb0">
+                            <div class="input-field col s12 mb0">
+                                <textarea id="step{{ loop.index }}" name="step[]" class="materialize-textarea" required>
+                                    {{- step -}}
+                                </textarea>
+                                <label for="step{{ loop.index }}">Instructions</label>
+                                <span class="helper-text right" data-error="wrong" data-success="right">required</span>
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
                     <div id="newRowStep"></div>
+                    <!-- add new instruction step button -->
                     <div class="col s12">
                         <a id="addRowStep" class="btn-floating btn waves-effect waves-light"><i
                                 class="fas fa-plus"></i></a> Add instruction

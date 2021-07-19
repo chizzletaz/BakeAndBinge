@@ -4,6 +4,7 @@
 <div class="container">
     <h3>{{ username | capitalize }}'s profile page</h3>
 
+    <!-- add new recipe button -->
     <div class="center-align">
         <a class="btn-floating btn-large pink accent-2" href="{{ url_for('add_recipe') }}"><i
                 class="fas fa-plus"></i></a>
@@ -14,58 +15,61 @@
     <button data-target="modal2" class="btn-floating modal-trigger"><i class="fas fa-question"></i></button>
     <h5>How to add a new recipe</h5>
 
-    <!-- <img src="/static/images/how_to1.png"> -->
-
     <div class="row equal-col">
         {% for recipe in recipes %}
             <div class="col s12 m6 l4">
                 <div class="card z-depth-2 hover">
                     <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                        <!-- created by -->
                         <div class="card-image">
                             <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
                             <p>By: {{ recipe.created_by | capitalize }}</p>
                         </div>
                         <div class="divider"></div> <!-- from Materialize: 1 pixel lines that helps break up the content -->
+                        <!-- recipe title -->
                         <div class="card-content center-align pb0">
                             <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
                         </div>
+                        <!-- recipe description -->
                         <div class="col s12 card-content grey-bb pt0">
                             <blockquote>{{ recipe.recipe_description }}</blockquote>
                         </div>
                         <div class="row">
                             <div class="card-content indications">
+                                <!-- total time -->
                                 <ul class="col collection">
                                     <li class="collection-item">
                                         <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
                                     </li>
                                 </ul>
+                                <!-- servings -->
                                 <ul class="col collection">
                                     <li class="collection-item">
                                         <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
                                     </li>
                                 </ul>
+                                <!-- recipe category -->
                                 <ul class="col collection">
                                     <li class="collection-item">
                                         <p><i class="fas fa-list-ul"></i> Category: {{ recipe.category_name | capitalize }}
                                         </p>
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
+                        <!-- go to recipe button -->
                         <div class="card-action center-align">
                             <p class="btn pink lighten-3">Go to
                                 recipe</p>
                         </div>
                     </a>
                     {% if session.user|lower == recipe.created_by|lower %}
-                    <div class="card-action">
-                        <a class="btn-small blue-grey lighten-4 black-text gb"
-                            href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-                        <!-- Modal Trigger for confirmation -->
-                        <a class="btn-small blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1-{{ loop.index }}">Delete</a>
-                    </div>
-
+                        <div class="card-action">
+                            <a class="btn-small blue-grey lighten-4 black-text gb"
+                                href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                            <!-- Modal Trigger for confirmation -->
+                            <a class="btn-small blue-grey lighten-4 black-text right rb modal-trigger" href="#modal1-{{ loop.index }}">Delete</a>
+                        </div>
                     {% endif %}
                 </div>
 
@@ -84,6 +88,7 @@
             </div>
         {% endfor %}
     </div>
+
     <!-- Modal Structure for 'how to add a recipe'-->
     <div id="modal2" class="modal">
         <div class="modal-content center-align">
@@ -95,7 +100,5 @@
             <a href="#!" class="modal-close waves-effect waves-green btn white-text">Done</a>
         </div>
     </div>
-
-
 </div>
 {% endblock %}

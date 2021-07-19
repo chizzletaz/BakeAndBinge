@@ -6,14 +6,13 @@
         <h2>Recipes</h2>
     </div>
     
-    
     <div class="row">
         <!-- Categories display only on large and extra large size > 992px -->
         <div class="center-align hide-on-med-and-down pb">
             <a href="{{ url_for('recipes') }}" class="waves-effect waves-light pink accent-1 btn">All</a>
             {% for category in categories %}
-            <a href="{{ url_for('recipes_filter', category_name=category.category_name) }}"
-                class="waves-effect waves-light pink accent-1 btn">{{ category.category_name }}</a>
+                <a href="{{ url_for('recipes_filter', category_name=category.category_name) }}"
+                    class="waves-effect waves-light pink accent-1 btn">{{ category.category_name }}</a>
             {% endfor %}
         </div>
 
@@ -32,7 +31,7 @@
                     {% endfor %}
                 </ul>
             </div>
-            <!-- search and reset buttons -->
+            <!-- search bar -->
             <div class="searchbar col s12 m8 l12">
                 <form action="{{ url_for('search') }}" method="POST">
                     <div class="row">
@@ -40,6 +39,7 @@
                             <input placeholder="What do you want to bake today?" id="query" name="query" type="text"
                                 class="validate">
                         </div>
+                        <!-- search and cancel buttons -->
                         <div class="col s12 m4 center-align">
                             <button type="submit" class="waves-effect waves-light teal lighten-3 btn"><i
                                     class="fas fa-search"></i></button>
@@ -53,55 +53,60 @@
     </div>
     <!-- recipes overview -->
     {% if recipes|length > 0 %}
-    <div class="row equal-col">
-        {% for recipe in recipes %}
-        <div class="col s12 m6 l4">
-            <a class="hover" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-            <div class="card z-depth-2 hover">
-                <div class="card-image">
-                    <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
-                    <p>By: {{ recipe.created_by | capitalize }}</p>
-                </div>
-                <div class="divider"></div>     <!-- from Materialize: 1 pixel lines that helps break up the content -->
-                <div class="card-content center-align pb0">
-                    <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
-                </div>
-                <div class="col s12 card-content grey-bb pt0">
-                    <blockquote>{{ recipe.recipe_description }}</blockquote>
-                </div>
-                <div class="row">
-                    <div class="card-content indications">
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
-                            </li>
-                        </ul>
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
-                            </li>
-                        </ul>
-                        <ul class="col collection">
-                            <li class="collection-item">
-                                <p><i class="fas fa-list-ul"></i> {{ recipe.category_name | capitalize }}</p>
-                            </li>
-                        </ul>
+        <div class="row equal-col">
+            {% for recipe in recipes %}
+                <div class="col s12 m6 l4">
+                    <a class="hover" href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                    <div class="card z-depth-2 hover">
+                        <div class="card-image">
+                            <!-- recipe image -->
+                            <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_title }}">
+                            <!-- created by -->
+                            <p>By: {{ recipe.created_by | capitalize }}</p>
+                        </div>
+                        <div class="divider"></div>     <!-- from Materialize: 1 pixel lines that helps break up the content -->
+                        <!-- recipe title -->
+                        <div class="card-content center-align pb0">
+                            <h5><strong>{{ recipe.recipe_title | capitalize }}</strong></h5>
+                        </div>
+                        <!-- recipe description -->
+                        <div class="col s12 card-content grey-bb pt0">
+                            <blockquote>{{ recipe.recipe_description }}</blockquote>
+                        </div>
+                        <div class="row">
+                            <div class="card-content indications">
+                                <!-- total time -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="far fa-clock"></i> {{ recipe.total_time }}</p>
+                                    </li>
+                                </ul>
+                                <!-- servings -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="fas fa-user-friends"></i> {{ recipe.servings }}</p>
+                                    </li>
+                                </ul>
+                                <!-- recipe category -->
+                                <ul class="col collection">
+                                    <li class="collection-item">
+                                        <p><i class="fas fa-list-ul"></i> {{ recipe.category_name | capitalize }}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-action center-align">
+                            <p class="btn pink lighten-3">Go to
+                                recipe</p>
+                        </div>
                     </div>
+                </a>
                 </div>
-                <div class="card-action center-align">
-                    <p class="btn pink lighten-3">Go to
-                        recipe</p>
-                </div>
-            </div>
-        </a>
+            {% endfor %}
         </div>
-        {% endfor %}
-
-    </div>
     {% else %}
     <h4 class="red-text center-align">Sorry, no results were found</h4>
     {% endif %}
 </div>
-
 
 {% endblock %}
