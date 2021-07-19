@@ -222,15 +222,9 @@ Then you state that the value of 'category_name' in the recipe collection is equ
 
 This was quite challenging, but with the help of my mentor it worked out in the end.
 
-Below are examples of the database collections:  
-**category collections:**  
-![database category collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_category.png)  
-**recipe collections:**  
-![database recipe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_recipe.png)  
-**subscribe collections:**  
-![database subscribe collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_subscribe.png)  
-**users collections:**  
-![database users collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/DB_users.png)
+Below are examples of the database collections and their relations:  
+ 
+![database collections schema](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/database-schema.png)  
 
 ## **Skeleton Level**
 ### Wireframes
