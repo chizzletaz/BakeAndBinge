@@ -275,9 +275,12 @@ button i {
     margin: 0;
 }
 
+.collection-item {
+    padding: 10px 0 !important;
+}
+
 .collection-item i {
     font-size: 16px;
-    padding: 10px 0 !important;
 }
 
 .card-title {
