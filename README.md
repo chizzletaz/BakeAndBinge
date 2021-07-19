@@ -199,17 +199,29 @@ Below is a chart of the webpages and their mutual connections:
 ![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/Recipe_pages.png)
 
         BACKEND
-MongoDB Atlas is used as a database. MongoDB is a non-relational database that operates in the cloud.
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is used as the database. MongoDB is a non-relational database that operates in the cloud.  
 Nevertheless, there are relations between the collections:
 - The category name is used in the recipe collection.
 - The username is used in the recipe collection.
 
-After consulting with my mentor, Antonio Rodriguez, he explained that in these cases you can also create relations with foreign keys, by using the ObjectId (created by MongoDB) instead of the name and linking those in the collections.
-So instead of using the category name in the recipe collection, the ObjectID that belongs to this category name is used.
-The same principle is used for the username.
+During a meeting to discuss my project my mentor (Antonio Rodriguez) explained that in these cases you can also create relations with foreign keys, by linking the ObjectId (created by MongoDB) in the collections, instead of the actual name.
+So instead of using the category name in the recipe collection, the ObjectID that belongs to this category name is used. The same principle is used for the username.  
+The advantage is that when a category (or username) is changed, the name automatically changes in the recipe collection.
 
-This means that the routes and function had to be adjusted, resulting in more complex functions.
-With the help of my mentor it worked out in the end.
+To use this the routes and function had to be adjusted, resulting in more complex functions. 
+The ObjectID number has to be converted to a name.  
+In case of the category name you find the document in the categories collection, where the ID is equal to the ObjectID of the category name that is stored in the recipes collection.  
+```
+for recipe in recipes:
+        category = mongo.db.categories.find_one(
+            {'_id': ObjectId(recipe['category_name'])})
+```  
+Then you state that the value of 'category_name' in the recipe collection is equal to the category name in the categories collection.  
+```
+    recipe['category_name'] = category['category_name']
+```
+
+This was quite challenging, but with the help of my mentor it worked out in the end.
 
 Below are examples of the database collections:  
 **category collections:**  
