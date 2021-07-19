@@ -5,7 +5,7 @@ Like many others, I've always loved baking and cooking. Over the years you try o
 When the recipe is a hit you often you get the question: 'Can I get the recipe?'.
 Usually you scribble the recipe down on a piece of paper. You collect them and put them on a pile.
 I have a lot of those papers lying in the kitchen as well and I also lost some of the recipes, because I lost the piece of paper.  
-So wouldn't it would be much easier to add your recipe online and share it that way? No more scribbling, no more loose papers!
+So wouldn't it would be much easier to add your recipe online and share it that way? No more scribbling, no more loose papers!  
 That way you can bake good recipes and binge them at the same time!
 
 I have narrowed the recipes down to only baking recipes, in order to reduce the amount and difficulty of programming and design options.   
@@ -47,20 +47,21 @@ For the CSS-framework I opted to work with Materialize instead of Bootstrap. Bot
 # **User Experience (UX)**
 ## **Strategic level**
 
-The target audience are users that want to search or browse recipes and add their own. By adding their own recipe, they can share it with others.  
+The target audience are users that want to search or browse recipes and add their own.  
+By adding their own recipe, they can share it with others via this website.  
 With this website I want to create a website for people to find and try out nice recipes and give them the opportunity to add their own. This way users can share their recipes online.   
-With this project I also hope to show my knowledge and application of the added coding skills I’ve learned, i.e. Python, using Flask and MongoDB, as well as using a different CSS-framework, namely Materialize.
+I also hope to show my knowledge and application of the added coding skills I’ve learned, i.e. Python, using Flask and MongoDB, as well as using a different CSS-framework, namely Materialize.
 
 ### **User stories:**  
 *First time users:*
 - As a first time user, I want to navigate easily across the site.
 - As a first time user, I want to browse the recipes, so I can find inspiration for a recipe.  
-- As a first user, I want to know how to add a recipe.
+- As a first time user, I want to know how to add a recipe.
 
 *General users:*
 - As a user, I want to be able to use the website on different screen sizes. 
 - As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully. 
-- As a user, I want to filter recipes by category, so I narrow down my search and/or search per category. 
+- As a user, I want to filter recipes by category, so I can narrow down my search and/or search per category. 
 - As a user, I want to sort the recipes by date, popularity, alphabet, so I can better choose a recipe. 
 - As a user, I want to see if a recipe is gluten free, vegan, etc so I can find out quickly if it matches my diet.
 - As a user, I want to be able to delete my profile, if I no longer wish to use the website. 
@@ -72,7 +73,7 @@ With this project I also hope to show my knowledge and application of the added 
 - As a regular user, I want to contact the site owner in case I have questions or remarks. 
 - As a regular user, I want to be able to rate other recipes. 
 - As a regular user, I want to be able to save other people's recipes.
-- As a regular user, I want to be able to share recipes. 
+- As a regular user, I want to be able to share recipes via socials. 
 - As a regular user, I want to get the latest news and updates. 
 
 ### **Developer stories**
@@ -110,14 +111,14 @@ Based on the user stories the minimal requirements for this project are:
 
 ## **Structure Level**
 ### **Interaction Design and Information Design**
-The overall look is kept the same on each page as much as possible, to enhances single-use-learning:
-- Header and footer are kept mostly the same on each page.
+The overall look is kept the same on each page as much as possible, to enhance single-use-learning:
+- The header and footer are kept mostly the same on each page.
 - Buttons are styled in the same way.
 - The use of colours are kept the same on each page.
 
 The navigation is kept simple and consistent:
 - A responsive navigation bar at the top of the page.
-- A landing page with clearly indicating the options for first time users.
+- A landing page with clearly indicating the options and information for first time users.
 - The logo at the top of the page is also the link to the home page.
 - Buttons can be used to navigate.
 
@@ -126,10 +127,10 @@ The information provided should be easily visible:
 - The amount of information is kept to a minimum.
 
 The user is given feedback, in order to enhance a pleasant user experience:
-- The user get’s a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
+- The user gets a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
 - Flash messages are used to confirm actions.
 - Modal pop ups are used as defensive programming, i.e. prompting the user if they are sure of their action.
-- The user get's a feedback when an error has occurred (warning text or via error handlers).
+- The user get's a feedback when an error has occurred (via warning text or error handlers).
 
 ### **The pages**
         FRONTEND  
@@ -145,7 +146,7 @@ The footer has a section to subscribe to the newsletter and links to socials.
 #### Description of the pages
 
 - **The landing page/home page:** *(index.html - route: /, /home)*  
-The main page has the main navbar. Below that a hero image and a short explanation for the site. Beneath that are the latest recipes.
+The main page has the main navbar. Below that is a hero image and a short explanation for the site. Beneath that are the latest 6 recipes.
 
 - **The recipes page:** *(recipes.html - route: /recipes)*  
 On this page all the recipes are shown. For large screens there are buttons to filter the recipes by category (route: /recipes/< category_name >). For smaller screens, there is a select input.   
@@ -158,7 +159,7 @@ This is the page were individual recipes are shown.
 This page has a contact form to ask questions or give remarks.
 
 - **The shop page:** *(shop.html - route: /shop)*  
-This page has an overview of items that the user can purchase. The links lead to an external website, which opens up in a new window.
+This page has an overview of items that the user can purchase. The links lead to an external website, which open up in a new window.
 
 - **The register page:** *(register.html - route: /register)*  
 This page has a register form where the user can register and create an account. After registration the user is redirected to their own profile page. There is a button to go to the login page, if a user already has an account.
@@ -167,7 +168,7 @@ This page has a register form where the user can register and create an account.
 This page has a login form where users that have an account can login. After login the user will be redirected to their own profile page. There is a button to the register page, in case the user has no account.
 
 - **The profile page:** *(profile.html - route: /profile/< username >*  
-This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. There is an edit and a delete button for each recipe. There is also a button that opens a modal with an explanation on how to add a new recipe. When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
+This is the personal profile page of the user. Recipes that the user has added themselves are displayed here. The user has the option to add a new recipe here. There is also a button that opens a modal with an explanation on how to add a new recipe. There are edit and a delete buttons displayed on each recipe card.  When the user is logged in, the navbar has extra links for profile and logout. The links for register and login are not shown.
 
 - **The add recipe page:** *(add_recipe.html - route: /add_recipe)*  
 This page has a form where the user can add new recipes. When submitted, the user is redirected to their profile page. There is a cancel button to abort the action, the user will be redirected to their own profile page.
@@ -179,10 +180,10 @@ This page has a pre-filled form where the user can edit their own recipe. When s
 This is an admin only page. This page has an overview of the existing categories. The admin can add, edit or delete categories by clicking the respective buttons.
 
 - **The add category page:** *(add_category.html - route: /add_category)*   
-This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the user will be redirected to categories page.
+This page is admin only and has and option to add a new category. There is a cancel button to abort the action, the admin will be redirected to the categories page.
 
 - **The edit category page:** *(edit_category.html - route: /edit_category)*  
-This page is admin only and has a prefilled form to change an existing category. There is a cancel button to abort the action, the user will be redirected to categories page.
+This page is admin only and has a prefilled form to change an existing category. There is a cancel button to abort the action, the admin will be redirected to the categories page.
 
 - **The 403 error handler page:** *(403.html - errorhandler: 403)*  
 This page is shown in case of forbidden access.
