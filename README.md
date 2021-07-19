@@ -512,6 +512,7 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 - Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)  
 - Better aligning the recipe cards [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)  
 - [Hide](https://jinja.palletsprojects.com/en/3.0.x/tricks/) navbar and footer on error handler pages.
+- Correct child element of `<ul>`, [Mike Hanslo](https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context) 
 
 ### Content
 Recipes:

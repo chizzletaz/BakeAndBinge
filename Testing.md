@@ -76,8 +76,8 @@ This is a feature left to implement.
 ### Regular users:
 **1. As a regular user, I want to have my own page, so I can manage my own recipes.**
 - When a user registers or logs in, they are redirected to their own profile page. 
-- On this page, the user can manage (add, edit or delete) their recipes (see [CRUD](#crud) below).
-- The user can go to their profile page by clicking the 'Profile' link in the navbar.  
+- On this page, the user can manage (add, edit or delete) their recipes (see [CRUD](#crud-create-read-update-delete-functionality) below).
+- The user can also go to their profile page by clicking the 'Profile' link in the navbar.  
 ![profile image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/profile-page.png) 
 
  **2. As a regular user, I want to add my own recipes, so I can share them with others on the website.**
@@ -232,7 +232,7 @@ Testing:
 1. On the landing page, click the 'BROWSE RECIPES' button.
 2. Confirm you are redirected to the recipes page and that you see the search bar.
 3. Go to any other page (except register or login).
-4. Click the search icon.
+4. Click the search icon in the navbar.
 5. Confirm you are redirected to the recipes page and that you see the search bar.
 6. Fill in the keyword 'strawberry' in the search bar.
 7. Confirm that a recipe for strawberry cake appears.
@@ -258,11 +258,11 @@ The user can use the category buttons on the recipes page to display the recipes
 
 **Error 404 handler page**  
 Expected:  
-The user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
+The user gets a error 404 page when a page can't be displayed and can get back by clicking a button.
 
 Testing:
 1. Go to any page.
-2. In the browser's address bar, remove one or more characters and press enter.
+2. In the browser's address bar, remove one or more characters from the end and press enter.
 3. Confirm a message 404 page is shown, without navbar and footer.
 4. Confirm there is a button 'click here to get back' at the bottom of the page.
 5. Click the button and confirm you are redirected to the home page of the website.
@@ -281,8 +281,8 @@ Testing:
     Result:  
     On smaller screen sizes (< 326px ), the text doesn't scroll all the way up and is cut off.  
     Fix:   
-    Due to the fact that I used the 'medium' attribute of Materialize on the cards, the max height is 400px.
-    Change the height to 450px.  
+    Due to the fact that I used the 'medium' attribute of Materialize on the cards, the max height is 400px.  
+    In style.css change the height to 450px.  
     Result:  
     All the information text is shown.
 4. Click on the cross icon.
@@ -297,7 +297,7 @@ A modal with info on how to add a recipe pops up, when the user clicks the 'how 
 
 Testing:
 1. Log in.
-2. On the profile page, click the plus icon
+2. On the profile page, click the question mark icon
 3. Confirm a modal pops up with information on how to add a new recipe.
 4. Click on the 'DONE' button.
 5. Confirm the modal closes.
@@ -373,7 +373,7 @@ Testing:
 3. Confirm you are redirected to the add recipe page.
 4. Click the 'CANCEL' button at the bottom of the page.
 5. Confirm you are redirected to your profile page.
-6. Fill on the recipe form, except the recipe title.
+6. Click the plus icon and fill in the recipe form, except the recipe title.
 7. Confirm a warning message appears.
 8. Repeat steps 6 and 7 for the other inputs that are marked 'required'.
 9. Fill in the recipe form and the click 'ADD' button.
@@ -476,10 +476,10 @@ You can validate the rendered page by:
     - Right click on the page
     - Click 'show source code'
     - Copy all HTML
-    - Paste into the validator. 
+    - Paste it into the validator. 
 
 Or  
-- Enter the url of the heroku live link.
+- Enter the url of the Heroku live link.
 
 However, when authentication is used, the live link can't be used to validate the page.
 Furthermore, the live site of Heroku takes a while to update.   
@@ -522,7 +522,7 @@ According to HTML5 spec, you can only have ```<li>``` elements as children. I us
 But ul elements can only have ```<li>``` elements as children.  
 Fix:  
 Remove the br element and add an empty li (```<li></li>```).
-> Update: the empty link doesn't seem to work.  
+> Update: the empty li doesn't seem to work.  
 > Fix:  
 > Add padding-top to the `<li>`.
 
@@ -573,7 +573,8 @@ After fixing the mistakes, other errors suddenly appear.
 There is a duplication of the modal that asks the user for confirmation on deleting a recipe.
 However, since the recipes are rendered by looping, the modals are duplicated as well.   
 Fix:  
-Use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
+Use Jinja to add the loop index at every loop, so the modal has a unique ID every time.  
+    `<div id="modal1-{{ loop.index }}" class="modal">`   
 
 #### For add_recipe.html:
 - No errors or warnings to show.
@@ -608,24 +609,27 @@ Use Jinja to add the loop index at every loop, so the modal has a unique ID ever
 2. *Duplicate ID for 'inputStepRow'*  
 The ID's for 'inputStepRow' are not unique because of the way they are created with javascript.  
 Fix:  
-See above at number 1.
+See number 1 above.
 
 3. *Duplicate ID for 'ingredient'*  
 The ID's for 'ingredient' are not unique because of the way they are created with javascript.  
 Fix:  
-Use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
+Use Jinja to add the loop index at every loop (in the script.js file as well), so the modal has a unique ID every time.    
+    `<textarea id="ingredient{{ loop.index }}"`
 
 4. *Duplicate ID for 'step'*  
 The ID's for 'step' are not unique because of the way they are created with javascript.  
 Fix:  
-Use Jinja to add the loop index at every loop, so the modal has a unique ID every time.
+Use Jinja to add the loop index at every loop, so the modal has a unique ID every time.    
+    `<textarea id="step{{ loop.index }}"`
 
 #### For categories.html:
 - 1 error and 1 warning are shown 4 times
 ![html categories error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-categories.png)
 1. *Duplicate ID modal4.*  
 Fix:  
-Use Jinja to add the loop index at every loop, so the modal has a unique ID every time. 
+Use Jinja to add the loop index at every loop, so the modal has a unique ID every time.  
+    `<div id="modal4-{{ loop.index }}" class="modal">`
 
 #### For add_category.html:
 - No errors or warnings to show.
@@ -674,7 +678,7 @@ After fixing the notifications, I get an All right message.
 
 ---
 ## Testing browser compatibility
-I've tested the site on Safari, Chrome and Mozilla Firefox.  
+I've tested the website on Safari, Chrome and Mozilla Firefox.  
 The testing was done by:
 
 - Visually checking the pages.
@@ -718,7 +722,7 @@ And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/
 ---
 Issue: SOLVED  
 I used Jinja to add categories dynamically to the 'add recipe page', by adding  
-    categories = mongo.db.categories.find().sort("category_name", 1)  
+    `categories = mongo.db.categories.find().sort("category_name", 1)`  
 to the add_recipe() function.  
 I wanted to dynamically add the categories to the navbar as well. However, this time it worked for the navbar, but not for the 
 select option on the 'add recipe' page.   
@@ -726,7 +730,7 @@ select option on the 'add recipe' page.
 Fix:  
 I remembered from the Task Manager Walkthrough that I'm looping over the categories list twice.
 This means that the first (navbar) iterate over the list, it unpacks and leaves it empty afterwards.   
-Also the list that comes from the find() method, isn't a actual list, but a Mongo Cursor Object.
+Also according to the documentation the list that comes from the find() method, isn't a actual list, but a Mongo Cursor Object.
 By wrapping the find() method in a Python list(), the list can be used again.
 
 ---
@@ -774,7 +778,7 @@ I changes the id, label and name to 'ingredient' and 'step':
     input id="step" name="step[]" type="text" class="validate">
     <label for="step">Instruction</label>
 ```
-This seemed to solve the problem.
+This seemed to have solved the problem.
 
 ---
 Issue: SOLVED  
@@ -806,10 +810,10 @@ Use the [collections component](https://github.com/chizzletaz/GrandmasBakingColl
 ---
 Issue: partially SOLVED  
 When displaying the recipes on the index, recipes and profile page, the cards 
-[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_unequal.png) equal height.  
+[aren't](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_unequal.png) equal in height.  
 
 Fix:  
-Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089)
+Apparently Materialize doesn't support flexblox [acburst](https://github.com/Dogfalo/materialize/issues/2089).  
 Another partial solution is given by [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)
 Now each row has the height of the [largest card](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/cards_equal.png).
 
@@ -818,21 +822,21 @@ Issue: SOLVED
 When selecting recipes by category and only 1 recipe displays, the recipe is displayed on the right side of the page.  
 
 Fix:  
-Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to margin-right: auto, moves the recipe 
-to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding margin-right: auto
-to the columns of class 'equal-right':
+Upon inspecting the page, the margin-left of .row .col is set to auto. Changing it to **margin-right: auto**, moves the recipe to the left. However this is a custom CSS by Materialize. I wasn't able to override this CSS, but by adding **margin-right: auto**
+to the columns of class 'equal-right', the recipe is displayed in the middle:
 ```
 .equal-col .col {
     margin-right: auto;
 }
 ```
-The recipe is displayed in the middle. When 2 recipes are shown, the recipes are equallty distributed over the width.
-I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the right.
+When 2 recipes are shown, the recipes are equally distributed over the width.
+I find this visually more pleasing. So I didn't try to adjust the CSS to align the recipes to the left.
 
 ---
 Issue: SOLVED  
 I don't want to show the header and footer on the error handler pages.
 Idea:  
+Credit: [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/tricks/)
 Use 'hide_nav=True' for rendering in app.py and Jinja condition on the error handler pages:
 ```
 {% if not hide_nav %}{% extends "base.html" %}{% endif %}
