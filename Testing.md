@@ -26,7 +26,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 ![navbar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar.png) 
 - The user can return to the landing page by clicking the logo or clicking the Home button in the navbar.  
 ![navbar2 image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar2.png) 
-- The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the indivudual recipe page.  
+- The user can use buttons on the page to navigate to certain pages, e.g. 'Go to recipe'-button to go to the individual recipe page.  
 <img src="https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/go-to-recipe.png" alt="go to recipe image" width="400"/>
 
 
@@ -47,7 +47,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 ### General users:  
 **1. As a user, I want to be able to use the website on different screen sizes.**
-- This website is designed to be responsive, so the users can play on a mobile device, a tablet or a desktop for different view screens. 
+- This website is designed to be responsive, so the users can use this website on a mobile device, a tablet or a desktop for different view screens. 
 - When the size of the window is changed, the content adapts responsively.
 
 **2. As a user, I want to search recipes by keyword(s), so I can find recipes more purposefully.**
@@ -58,7 +58,7 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 
 
 **3. As a user, I want to filter recipes by category, so I narrow down my search and/or search per category.**
-- On the recipes page, the user can select a category to filter by that category.
+- On the recipes page, the user can select a category to filter the recipes by that category.
 - On large screens (> 992px) there are individual buttons.  
 ![category large image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/category-large.png) 
 - On smaller screens (< 992px) there is a dropdown menu to select a category.  
@@ -76,7 +76,7 @@ This is a feature left to implement.
 ### Regular users:
 **1. As a regular user, I want to have my own page, so I can manage my own recipes.**
 - When a user registers or logs in, they are redirected to their own profile page. 
-- On this page, the use can manage (add, edit or delete) their recipes (see below).
+- On this page, the user can manage (add, edit or delete) their recipes (see [CRUD](#crud) below).
 - The user can go to their profile page by clicking the 'Profile' link in the navbar.  
 ![profile image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/profile-page.png) 
 

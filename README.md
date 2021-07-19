@@ -73,7 +73,7 @@ I also hope to show my knowledge and application of the added coding skills I’
 - As a regular user, I want to contact the site owner in case I have questions or remarks. 
 - As a regular user, I want to be able to rate other recipes. 
 - As a regular user, I want to be able to save other people's recipes.
-- As a regular user, I want to be able to share recipes via socials. 
+- As a regular user, I want to be able to share recipes via socials, email or other ways of communication. 
 - As a regular user, I want to get the latest news and updates. 
 
 ### **Developer stories**
@@ -204,12 +204,11 @@ Nevertheless, there are relations between the collections:
 - The category name is used in the recipe collection.
 - The username is used in the recipe collection.
 
-During a meeting to discuss my project my mentor (Antonio Rodriguez) explained that in these cases you can also create relations with foreign keys, by linking the ObjectId (created by MongoDB) in the collections, instead of the actual name.
+During a meeting, to discuss my project, my mentor (Antonio Rodriguez) explained that in these cases you can also create relations with foreign keys, by linking the ObjectId (created by MongoDB) in the collections, instead of the actual name.
 So instead of using the category name in the recipe collection, the ObjectID that belongs to this category name is used. The same principle is used for the username.  
-The advantage is that when a category (or username) is changed, the name automatically changes in the recipe collection.
+The advantage is that when a category name (or username) is changed, the name automatically changes when it is called from the recipe collection.
 
-To use this the routes and function had to be adjusted, resulting in more complex functions. 
-The ObjectID number has to be converted to a name.  
+To use this the routes and function had to be adjusted, resulting in more complex functions, because the ObjectID number has to be converted to a name.  
 In case of the category name you find the document in the categories collection, where the ID is equal to the ObjectID of the category name that is stored in the recipes collection.  
 ```
 for recipe in recipes:
@@ -253,8 +252,8 @@ Below are examples of the database collections:
 ## **Service Level**
 
 ### **Colors**
-To ensure that colours match well, I've choosen to use the colours of Materialize.  
-In food, bright colours signify flavours such as sweets and desserts - pink is expecially associated with baking and sweets.
+To ensure that colours match well, I've chosen to use the colours of Materialize.  
+In food, bright colours signify flavours such as sweets and desserts - pink is expecially associated with baking and sweets.  
 Therefore the main colour is pink. As a contrasting colour I've chosen green.
 
 ![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/coloursB&B.png)  
@@ -269,16 +268,16 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
 
 ### **Typography** 
-For the title(h1) and the logo, I've used Kaushan Script. This is a handwritten font, which adds a more unique and homemade feeling.  
+For the title(h1) and the logo, I've used 'Kaushan Script'. This is a handwritten font, which adds a more unique and homemade feeling.  
 > ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/kaushan-script.png)  
 
 To keep the design consistent, I've decided to use one font-family: Noto.  
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
 
-For the other headers (h2 to h5) I've used Noto Serif. 
+For the other headers (h2 to h5) I've used 'Noto Serif'. 
 > ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-serif.png)  
 
-For the rest of the text I've used Noto Sans, this is a sans serif font, which are well suited for displaying text on computer screens.  
+For the rest of the text I've used 'Noto Sans', this is a sans serif font, which are well suited for displaying text on computer screens.  
 
 > ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-sans.png)  
 ---
@@ -286,16 +285,16 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 
 ## **Existing Features**
 
-- **Responsiveness** on all viewports, which allow users to use the website on all devices.
-- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, the navbar collapses into a hamburger menu, to reduce the real estate and create a cleaner, calmer look.
+- **Responsiveness** on all viewports, which allows users to use the website on all devices.
+- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
 - A **subscription option**, which allows users to subscribe to the newsletter, by entering their email address in the subscribe card. 
 
 - **Recipe cards**, which allow users to see information about a recipe. By clicking on the recipe, the user is redirected to the recipe page.
 - **Register functionality**, which allows users to create an account, by filling in the register form. 
 - **Login functionality**, which allows users to log in their account, by filling in the login form. 
 - **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
-- A **CTA (Call to Action button) button**, which allows users to register to the website (incase they are not logged in).
-- A **search bar**, which allows users to search recipes, by entering a keyword in the search bar.
+- A **CTA (Call to Action button) button**, which allows users to register to the website (incase they don't have an account yet).
+- A **search bar**, which allows users to search recipes, by entering a keyword into the search bar.
 - **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.
 - **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
 - A **collapsible**, which allows users to get more information about a product on the shop page, by clicking on the three dots icon.
@@ -333,11 +332,11 @@ For the rest of the text I've used Noto Sans, this is a sans serif font, which a
 
 ## **Features left to implement**
 - **Rating/liking recipes** by other users.
-- **Sharing recipes** via social media, email or other communication forms.
+- **Sharing recipes** via social media, email or other ways of communication.
 - A **save option** to save other users' recipes.
 - **Deleting a profile**, when a user doesn't want to use the account anymore.
 - A **sort option**, so users can sort by attribute (alphabetically, time, rating, etc).
-- An **add labels** option to add labels about (e.g. vegan, gluten free) to recipes.
+- An **add labels** option to add labels (e.g. vegan, gluten free) to recipes.
 - **Pagination**, in case the number of recipes gets too large. It would be more user friendly to have pagination.
 - **Reset password**, in case the user has lost their password and wants to reset it.
 ---
@@ -473,13 +472,13 @@ For more info on how to clone a repository check [here](https://docs.github.com/
     3. Create a collection named 'categories' by clicking Collections.  
     ![Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
     4. Create Database by clicking Create Database.  
-    !['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png) and enter 
-    5. Add database and collection name and click Create.  
+    !['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png)
+    5. Add a database and collection name and click Create.  
     ![create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
     6. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
 4. Set the environment variables.
     1. Create a .gitignore file in the root directory, if there isn't one.
-    2. Open the .gitignore file and add 'env.py' to it. 
+    2. Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
     3. Create an env.py file and set the environment variables by adding the following text: 
         ```
         import os
