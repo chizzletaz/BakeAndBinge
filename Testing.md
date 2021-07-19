@@ -492,7 +492,7 @@ Running the code through the validator gives:
 1. *Element `<h4>` not allowed as child of element `<ul>` in this context.*  
 Fix:  
 According to HTML5 spec, you can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children. So you should populate it with `<li></li>`, then insert your content within each list, so wrap the h4 in `<li></li>`  
-Credit: Mike Hanslo @ https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context
+Credit: [Mike Hanslo](https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context)
 2. *Section lacks heading.*   
 Fix:  
 Change section into div.
